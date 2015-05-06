@@ -1,0 +1,170 @@
+html, body {
+    background:#000;
+    color:#f0f0f0;
+    text-align:left;
+    -moz-user-select: -moz-none;
+    cursor:default;
+    white-space:nowrap;
+    overflow:hidden;
+    width: 100%;
+    overflow: hidden;
+}
+
+#toolstrip #bd {
+    height:26px;
+    position:relative;
+}
+
+#feedback_container {
+    padding-top:2px;
+    margin: auto;
+}
+
+#send-feedback {
+    margin:0 auto;
+    text-align: center;
+    font:13px;
+    color:#b6b6b6;
+    position: relative;
+}
+
+#discuss-experience-link,
+#send-feedback-link {
+    color:#ceb966;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+#button_container {
+    text-align:center;
+}
+
+.button {
+    width:44px;
+    height:26px;
+    cursor:pointer;
+    display:inline-block;
+}
+
+.button.hidden {
+    display:none;
+}
+
+.button.disabled {  
+    cursor:default;
+}
+
+#quests-container {        
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 130px;
+    overflow: hidden;
+}
+
+#quests-container div {
+    cursor: pointer;
+    background: url('img/quests-test_icon_sprites.png') no-repeat;
+    width: 26px;
+    height: 26px;
+    display: inline-block;    
+}
+
+#quests-container div .sparkle {
+    width: 22px;
+    height: 26px;
+    padding-left: 6px;
+}
+
+#quests-container.error {
+    background: url('img/quests_error-icon.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    margin: 4px;
+}
+
+#not-connected-container {
+    background: url('../img/icon_24_warning.png') no-repeat;
+    z-index: 100;
+    position: absolute;
+    right: 0px;
+    width: 200px;
+    height: 24px;
+    top: 0px;
+    margin: 4px;
+    overflow: hidden;
+    display: none;
+}
+
+#not-connected-container div {
+    color: red;
+    vertical-align: middle;
+    margin: 2px;
+    padding-left: 26px;
+    cursor:pointer;
+}
+
+#text-chat-button                { background:url(img/tool_button_chat.png) no-repeat; }
+#text-chat-button:hover          { background:url(img/tool_button_chat_hover.png) no-repeat; }
+#text-chat-button.active         { background:url(img/tool_button_chat_active.png) no-repeat; }
+#text-chat-button.active:hover   { background:url(img/tool_button_chat_active_hover.png) no-repeat; }
+#text-chat-button.disabled       { background:url(img/tool_button_chat_inactive.png) no-repeat; }
+#text-chat-button.disabled:hover { background:url(img/tool_button_chat_inactive.png) no-repeat; }
+
+#chat-button                { background:url(img/tool_button_chat.png) no-repeat; }
+#chat-button:hover          { background:url(img/tool_button_chat_hover.png) no-repeat; }
+#chat-button.active         { background:url(img/tool_button_chat_active.png) no-repeat; }
+#chat-button.active:hover   { background:url(img/tool_button_chat_active_hover.png) no-repeat; }
+#chat-button.disabled       { background:url(img/tool_button_chat_inactive.png) no-repeat; }
+#chat-button.disabled:hover { background:url(img/tool_button_chat_inactive.png) no-repeat; }
+
+#clothing-button                 { background:url(img/tool_button_clothing.png) no-repeat; }
+#clothing-button:hover           { background:url(img/tool_button_clothing_hover.png) no-repeat; }
+#clothing-button.active          { background:url(img/tool_button_clothing_active.png) no-repeat; }
+#clothing-button.active:hover    { background:url(img/tool_button_clothing_active_hover.png) no-repeat; }
+#clothing-button.disabled        { background:url(img/tool_button_clothing_inactive.png) no-repeat; }
+#clothing-button.disabled:hover  { background:url(img/tool_button_clothing_inactive.png) no-repeat; }
+
+#furniture-button                { background:url(img/tool_button_furniture.png) no-repeat; }
+#furniture-button:hover          { background:url(img/tool_button_furniture_hover.png) no-repeat; }
+#furniture-button.active         { background:url(img/tool_button_furniture_active.png) no-repeat; }
+#furniture-button.active:hover   { background:url(img/tool_button_furniture_active_hover.png) no-repeat; }
+#furniture-button.disabled       { background:url(img/tool_button_furniture_inactive.png) no-repeat; }
+#furniture-button.disabled:hover { background:url(img/tool_button_furniture_inactive.png) no-repeat; }
+
+#music-button                    { background:url(img/tool_button_music.png) no-repeat; }
+#music-button:hover              { background:url(img/tool_button_music_hover.png) no-repeat; }
+#music-button.active             { background:url(img/tool_button_music_active.png) no-repeat; }
+#music-button.active:hover       { background:url(img/tool_button_music_active_hover.png) no-repeat; }
+#music-button.disabled           { background:url(img/tool_button_music_inactive.png) no-repeat; }
+#music-button.disabled:hover     { background:url(img/tool_button_music_inactive.png) no-repeat; }
+
+#htmlmusic-button                    { background:url(img/tool_button_music.png) no-repeat; }
+#htmlmusic-button:hover              { background:url(img/tool_button_music_hover.png) no-repeat; }
+#htmlmusic-button.active             { background:url(img/tool_button_music_active.png) no-repeat; }
+#htmlmusic-button.active:hover       { background:url(img/tool_button_music_active_hover.png) no-repeat; }
+#htmlmusic-button.disabled           { background:url(img/tool_button_music_inactive.png) no-repeat; }
+#htmlmusic-button.disabled:hover     { background:url(img/tool_button_music_inactive.png) no-repeat; }
+
+#outfits-button                      { background:url(img/tool_button_outfit.png) no-repeat; }
+#outfits-button:hover                { background:url(img/tool_button_outfit_hover.png) no-repeat; }
+#outfits-button.active               { background:url(img/tool_button_outfit_active.png) no-repeat; }
+#outfits-button.active:hover         { background:url(img/tool_button_outfit_active_hover.png) no-repeat; }
+#outfits-button.disabled             { background:url(img/tool_button_outfit_inactive.png) no-repeat; }
+#outfits-button.disabled:hover       { background:url(img/tool_button_outfit_inactive.png) no-repeat; }
+#outfits-button.outFitSavedHighlight { background:url(img/tool_button_outfit_active.png) no-repeat; }
+
+#scenes-button                   { background:url(img/tool_button_rooms.png) no-repeat; }
+#scenes-button:hover             { background:url(img/tool_button_rooms_hover.png) no-repeat; }
+#scenes-button.active            { background:url(img/tool_button_rooms_active.png) no-repeat; }
+#scenes-button.active:hover      { background:url(img/tool_button_rooms_active_hover.png) no-repeat; }
+#scenes-button.disabled          { background:url(img/tool_button_rooms_inactive.png) no-repeat; }
+#scenes-button.disabled:hover    { background:url(img/tool_button_rooms_inactive.png) no-repeat; }
+
+#photo-button                    { background:url(img/tool_button_snapshot.png) no-repeat; }
+#photo-button:hover              { background:url(img/tool_button_snapshot_hover.png) no-repeat; }
+#photo-button.active             { background:url(img/tool_button_snapshot_active.png) no-repeat; }
+#photo-button.active:hover       { background:url(img/tool_button_snapshot_active_hover.png) no-repeat; }
+#photo-button.disabled           { background:url(img/tool_button_snapshot_inactive.png) no-repeat; }
+#photo-button.disabled:hover     { background:url(img/tool_button_snapshot_inactive.png) no-repeat; }

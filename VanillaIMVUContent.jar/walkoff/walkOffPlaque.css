@@ -1,0 +1,409 @@
+.walk-off-plaque {
+    display: none;
+    height: 128px;
+    color: white;
+    position: relative;
+    margin-bottom: -12px;
+}
+
+.walk-off-plaque > .meter-background,
+.walk-off-plaque > .button-background,
+.walk-off-plaque > .glow-hover,
+.walk-off-plaque > .frost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 127px;
+}
+
+.walk-off-plaque.right > .meter-background,
+.walk-off-plaque.right > .button-background,
+.walk-off-plaque.right > .glow-hover,
+.walk-off-plaque.right > .frost {
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.walk-off-plaque > .meter-background,
+.walk-off-plaque > .button-background,
+.walk-off-plaque > .glow-hover,
+.walk-off-plaque > .frost,
+.walk-off-plaque > .move-icon,
+.walk-off-plaque > .gem-count-overlay,
+.walk-off-plaque > .gem-count-hotspot,
+.walk-off-plaque > .mask,
+.walk-off-plaque > .label,
+.walk-off-plaque > .label > .name,
+.walk-off-plaque > .label > .ready,
+.walk-off-plaque > .reticle {
+    cursor: inherit;
+}
+
+.walk-off-plaque.left.enabled.is-current-player:not(.frozen) {
+    cursor: pointer;
+}
+
+/* glow-hover */
+
+.walk-off-plaque > .glow-hover {
+    opacity: 0;
+}
+.walk-off-plaque.right > .glow-hover {
+    display: none;
+}
+
+/* mask */
+
+.walk-off-plaque > .mask {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 46px;
+}
+.walk-off-plaque.left > .mask {
+    left: 23px;
+}
+.walk-off-plaque.right > .mask {
+    right: 23px;
+}
+
+/* move-icon */
+
+.walk-off-plaque > .move-icon {
+    position: absolute;
+    top: 28px;
+    width: 92px;
+    height: 90px;
+}
+
+.walk-off-plaque > .move-icon {
+    display: none;
+}
+.walk-off-plaque.ready > .move-icon {
+    display: block;
+}
+
+.walk-off-plaque.left > .move-icon {
+    left: 0px;
+}
+
+.walk-off-plaque.right > .move-icon {
+    right: 0px;
+}
+
+/* gem-icon */
+
+.walk-off-plaque > .gem-icon {
+    position: absolute;
+    top: 28px;
+    width: 92px;
+    height: 90px;
+}
+
+.walk-off-plaque.blue > .gem-icon {
+    background: transparent url('../walkoff_img/hud_blue_gem.png') no-repeat 0px -28px;
+}
+.walk-off-plaque.green > .gem-icon {
+    background: transparent url('../walkoff_img/hud_green_gem.png') no-repeat 0px -28px;
+}
+.walk-off-plaque.pink > .gem-icon {
+    background: transparent url('../walkoff_img/hud_pink_gem.png') no-repeat 0px -28px;
+}
+.walk-off-plaque.red > .gem-icon {
+    background: transparent url('../walkoff_img/hud_red_gem.png') no-repeat 0px -28px;
+}
+.walk-off-plaque.yellow > .gem-icon {
+    background: transparent url('../walkoff_img/hud_yellow_gem.png') no-repeat 0px -28px;
+}
+
+.walk-off-plaque.left > .gem-icon {
+    left: 0px;
+}
+.walk-off-plaque.right > .gem-icon {
+    right: 0px;
+}
+
+.walk-off-plaque > .gem-icon {
+    display: block;
+}
+.walk-off-plaque.ready > .gem-icon {
+    display: none;
+}
+
+/* gem-count */
+
+.walk-off-plaque > .gem-count {
+    position: absolute;
+    top: 16px;
+    width: 23px;
+    height: 16px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+.walk-off-plaque.left > .gem-count {
+    left: 48px;
+}
+.walk-off-plaque.right > .gem-count {
+    right: 48px;
+}
+.walk-off-plaque > .gem-count-hotspot {
+    display: block;
+    position: absolute;
+    top: 9px;
+    width: 31px;
+    height: 31px;
+}
+.walk-off-plaque.left > .gem-count-hotspot {
+    left: 44px;
+}
+.walk-off-plaque.right > .gem-count-hotspot {
+    right: 44px;
+}
+
+.walk-off-plaque > .gem-count-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 127px;
+}
+
+.walk-off-plaque.right > .gem-count-overlay {
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.walk-off-plaque > .gem-count-overlay,
+.walk-off-plaque > .gem-icon,
+.walk-off-plaque > .button-background {
+    display: none;
+}
+.walk-off-plaque.gaining > .gem-count {
+    display: none;
+}
+.walk-off-plaque.gaining.pulse > .gem-count-overlay,
+.walk-off-plaque.gaining.pulse > .gem-icon,
+.walk-off-plaque.gaining.pulse > .button-background {
+    display: block;
+}
+.walk-off-plaque.ready > .gem-count-overlay,
+.walk-off-plaque.ready > .button-background {
+    display: block;
+}
+.walk-off-plaque.fading > .gem-icon,
+.walk-off-plaque.fading > .button-background {
+    display: block;
+}
+.walk-off-plaque.fading > .gem-icon,
+.walk-off-plaque.fading > .gem-count-overlay {
+    display: none;
+}
+.walk-off-plaque.fading > .gem-count {
+    display: none;
+}
+.walk-off-plaque.fading.pulse > .gem-count {
+    display: block;
+}
+
+/* label */
+
+.walk-off-plaque > .label {
+    position: absolute;
+    top: 100px;
+    width: 76px;
+    height: 18px;
+    overflow: hidden;
+}
+.walk-off-plaque.left > .label {
+    left: 6px;
+}
+.walk-off-plaque.right > .label {
+    right: 6px;
+}
+.walk-off-plaque > .label > .name,
+.walk-off-plaque > .label > .ready {
+    display: none;
+    
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.walk-off-plaque:not(.ready) > .label {
+    text-shadow:  0 0 1px black;
+}
+.walk-off-plaque.ready.blue > .label,
+.walk-off-plaque.ready.green.frozen > .label,
+.walk-off-plaque.ready.pink.frozen > .label,
+.walk-off-plaque.ready.red.frozen > .label,
+.walk-off-plaque.ready.yellow.frozen > .label {
+    text-shadow:  0 0 1px black, 0 0 5px #0af, 0 0 5px #0af, 0 0 5px #0af;
+}
+.walk-off-plaque.ready.green > .label {
+    text-shadow:  0 0 1px black, 0 0 5px #2e3, 0 0 5px #2e3, 0 0 5px #2e3;
+}
+.walk-off-plaque.ready.pink > .label {
+    text-shadow:  0 0 1px black, 0 0 5px #f4f, 0 0 5px #f4f, 0 0 5px #f4f;
+}
+.walk-off-plaque.ready.red > .label {
+    text-shadow:  0 0 1px black, 0 0 5px #f00, 0 0 5px #f00, 0 0 5px #f00;
+}
+.walk-off-plaque.ready.yellow > .label {
+    text-shadow:  0 0 1px black, 0 0 5px #dfa, 0 0 5px #dfa, 0 0 5px #dfa;
+}
+
+.walk-off-plaque:not(.show-ready) > .label > .name,
+.walk-off-plaque:not(.ready) > .label > .name,
+.ready-pulse > .walk-off-plaque.show-ready.ready > .label > .ready,
+:not(.ready-pulse) > .walk-off-plaque.show-ready.ready > .label > .name {
+    display: block;
+}
+
+/* reticle */
+
+.walk-off-plaque .reticle {
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: 14px;
+    background-image: url(../walkoff_img/reticle_big.png);
+    background-repeat: no-repeat;
+    height: 65px;
+    width: 65px;
+}
+
+.walk-off-plaque.marked .reticle {
+    display: block;
+}
+
+/* tooltips */
+
+.walk-off-plaque > .tooltip {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 27px;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: none;
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.walk-off-plaque.right > .tooltip {
+    -moz-border-image: url(../walkoff_img/toolTip_lmedium.png) 8 18 8 35 stretch;
+    border-width: 8px 18px 8px 35px;
+    left: 75px;
+}
+
+.walk-off-plaque.left > .tooltip {
+    -moz-border-image: url(../walkoff_img/toolTip_rmedium.png) 8 35 8 18 stretch;
+    border-width: 8px 35px 8px 18px;
+    right: 75px;
+}
+
+.walk-off-plaque .gemtooltip {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: -5px;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: none;
+    height: 21px;
+    line-height: 21px;
+    width: 100px;
+    font-weight: bold;
+    text-align: left;
+    pointer-events: none;
+}
+
+.walk-off-plaque.right .gemtooltip {
+    -moz-border-image: url(../walkoff_img/toolTip_lsmall.png) 10 12 10 32 stretch;
+    border-width: 10px 12px 10px 32px;
+    left: 23px;
+}
+
+.walk-off-plaque.left .gemtooltip {
+    -moz-border-image: url(../walkoff_img/toolTip_rsmall.png) 8 28 8 12 stretch;
+    border-width: 8px 28px 8px 12px;
+    right: 23px;
+}
+
+/* images */
+
+.walk-off-plaque.blue > .meter-background {
+    background: transparent url('../walkoff_img/hud_blue_filling.png') no-repeat;
+}
+.walk-off-plaque.green > .meter-background {
+    background: transparent url('../walkoff_img/hud_green_filling.png') no-repeat;
+}
+.walk-off-plaque.pink > .meter-background {
+    background: transparent url('../walkoff_img/hud_pink_filling.png') no-repeat;
+}
+.walk-off-plaque.red > .meter-background {
+    background: transparent url('../walkoff_img/hud_red_filling.png') no-repeat;
+}
+.walk-off-plaque.yellow > .meter-background {
+    background: transparent url('../walkoff_img/hud_yellow_filling.png') no-repeat;
+}
+
+.walk-off-plaque.blue > .button-background {
+    background: transparent url('../walkoff_img/hud_blue_active.png') no-repeat;
+}
+.walk-off-plaque.green > .button-background {
+    background: transparent url('../walkoff_img/hud_green_active.png') no-repeat;
+}
+.walk-off-plaque.pink > .button-background {
+    background: transparent url('../walkoff_img/hud_pink_active.png') no-repeat;
+}
+.walk-off-plaque.red > .button-background {
+    background: transparent url('../walkoff_img/hud_red_active.png') no-repeat;
+}
+.walk-off-plaque.yellow > .button-background {
+    background: transparent url('../walkoff_img/hud_yellow_active.png') no-repeat;
+}
+
+.walk-off-plaque.blue > .gem-count-overlay {
+    background: transparent url('../walkoff_img/hud_blue_circle.png') no-repeat;
+}
+.walk-off-plaque.green > .gem-count-overlay {
+    background: transparent url('../walkoff_img/hud_green_circle.png') no-repeat;
+}
+.walk-off-plaque.pink > .gem-count-overlay {
+    background: transparent url('../walkoff_img/hud_pink_circle.png') no-repeat;
+}
+.walk-off-plaque.red > .gem-count-overlay {
+    background: transparent url('../walkoff_img/hud_red_circle.png') no-repeat;
+}
+.walk-off-plaque.yellow > .gem-count-overlay {
+    background: transparent url('../walkoff_img/hud_yellow_circle.png') no-repeat;
+}
+
+.walk-off-plaque.blue > .glow-hover {
+    background: transparent url('../walkoff_img/hud_blue_hover.png') no-repeat;
+}
+.walk-off-plaque.green > .glow-hover {
+    background: transparent url('../walkoff_img/hud_green_hover.png') no-repeat;
+}
+.walk-off-plaque.pink > .glow-hover {
+    background: transparent url('../walkoff_img/hud_pink_hover.png') no-repeat;
+}
+.walk-off-plaque.red > .glow-hover {
+    background: transparent url('../walkoff_img/hud_red_hover.png') no-repeat;
+}
+.walk-off-plaque.yellow > .glow-hover {
+    background: transparent url('../walkoff_img/hud_yellow_hover.png') no-repeat;
+}
+
+.walk-off-plaque > .frost {
+    background: transparent url('../walkoff_img/hud_coldshoulder_applied.png') no-repeat;
+}
+

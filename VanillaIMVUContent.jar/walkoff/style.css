@@ -1,0 +1,1271 @@
+@font-face {
+    font-family:"Babyface";
+    src:url("../fonts/Babyface.ttf");
+}
+
+@font-face {
+    font-family:"Edunline";
+    src:url("../fonts/Edunline.ttf");
+}
+
+* {
+    -moz-user-select: -moz-none;
+    cursor: default;
+}
+
+body, html {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.Babyface-loadmepls {
+    font-family: Babyface;
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    z-index: -9999;
+}
+
+#walkoff .button {
+    display: inline-block;
+    padding: 7px 25px 5px 25px;
+    border-width: 10px 20px;
+    color: #000;
+    margin: 8px -10px 0 -10px;
+    -moz-border-image: url(../walkoff_img/dialog_button_mouseout.png) 10 20 10 20 stretch;
+    cursor: pointer;
+    min-height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+    #walkoff .button:hover {
+        -moz-border-image: url(../walkoff_img/dialog_button_mouseover.png) 10 20 10 20 stretch;
+    }
+
+#walkoff .small-button {
+    display: inline-block;
+    padding: 0px 5px 2px 5px;
+    border-width: 5px 5px;
+    color: #000;
+    margin: -5px -10px 0px -10px;
+    -moz-border-image: url(../walkoff_img/dialog_button_mouseout.png) 10 20 10 20 stretch;
+    cursor: pointer;
+    min-height: 14px;
+    font-size: 11px;
+    font-weight: normal;
+}
+    #walkoff .small-button:hover {
+        -moz-border-image: url(../walkoff_img/dialog_button_mouseover.png) 10 20 10 20 stretch;
+    }
+    
+#walkoff > .menu {
+    display: none;
+    position: absolute;
+    background: #000 url('../walkoff_img/background_pattern.gif') repeat 0 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#walkoff > .menu > .menu-frame {
+    position: absolute;
+    background: transparent url('../walkoff_img/main_menu_visual_2.png') no-repeat 0 0;
+    width: 934px;
+    height: 558px;
+    left: 50%;
+    top: 30%;
+    margin-left: -467px;
+    margin-top: -180px;
+    overflow: visible;
+}
+
+#walkoff > .menu .menu_button {
+    position: absolute;
+    cursor: pointer;
+}
+
+#walkoff > .menu > .menu-frame > .logo {
+    width: 409px;
+    height: 100px;
+    background: transparent url(../walkoff_img/walkoff_logo.png) no-repeat;
+    position: absolute;
+    left: 285px;
+    top: -14px;
+}
+
+#walkoff > .menu > .menu-frame > .promo_container {
+    position: absolute;
+    top: 75px;
+    left: 292px;
+    width: 623px;
+    height: 100px;
+    padding: 4px;
+    overflow: hidden;
+}
+
+#walkoff > .menu > .menu-frame > .promo_container > .leaderboard_promo {
+    display: none;
+    position: absolute;
+    max-width: 550px;
+    padding: 8px 20px;
+    background: url(../walkoff_img/leaderboard_promo_bg.jpg);
+    text-align: left;
+    -moz-box-shadow: 0px 0px 4px 2px #00FFF0;
+    -moz-border-radius: 8px;
+}
+    #walkoff > .menu > .menu-frame > .promo_container > .leaderboard_promo > .title {
+        font-size: 25px;
+        
+        color: #FFF;
+        text-shadow: 0 0 8px #00FFF0;
+    }
+    #walkoff > .menu > .menu-frame > .promo_container > .leaderboard_promo > .body {
+        font-size: 14px;
+        
+        color: #FFF;
+    }
+
+#walkoff > .menu > .menu-frame > .level_bar {
+    position: absolute;
+    left: -30px;
+    top: 3px;
+    width: 256px;
+    height: 68px;
+}
+    #walkoff > .menu > .menu-frame > .level_bar > .bar_bg {
+        position: absolute;
+        left: 10px;
+        bottom: 13px;
+        width: 246px;
+        height: 37px;
+        background-image: url(../walkoff_img/main_menu_level_bar_bg.png);
+    }
+    #walkoff > .menu > .menu-frame > .level_bar > .bar_fg {
+        position: absolute;
+        left: 10px;
+        bottom: 13px;
+        width: 246px;
+        height: 37px;
+        background-image: url(../walkoff_img/main_menu_level_bar.png);
+    }
+    #walkoff > .menu > .menu-frame > .level_bar > .level_icon {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 72px;
+        height: 68px;
+        background-image: url(../walkoff_img/main_menu_level_icon.png);
+    }
+        #walkoff > .menu > .menu-frame > .level_bar > .level_icon > .level_number {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            margin-top: -10px;
+            
+            font-size: 25px;
+            text-align: center;
+        }
+
+#walkoff > .menu > .menu-frame > .avname {
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    font-family: Babyface;
+    font-size: 25px;
+    color: #FFF;
+    text-shadow: 0 0 8px #00FFF0;
+}
+
+#walkoff .leaderboard_container_menu {
+     position: absolute;
+     left: -30px;
+     top: 28px; /* Change to 72px when adding leveling */
+    bottom: 30px;
+ }
+
+#walkoff .leaderboard_container_game {
+    position: absolute;
+    left: -250px;
+    top: 95px;
+    bottom: 75px;
+    z-index: 11;
+}
+
+#walkoff .leaderboard {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom:0px;
+    width: 255px; /* + tab width? */
+}
+    #walkoff .leaderboard > .side-tab {
+        position: absolute;
+        width: 30px;
+        height: 153px;
+        left: 249px;
+        top:150px;
+        background-image: url(../walkoff_img/leaderboard_tab.png);
+        display: none;
+        cursor: pointer;
+    }
+    #walkoff .leaderboard > .leaderboard-bg {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-width: 60px 10px 15px;
+        -moz-border-image: url(../walkoff_img/main_menu_leaderboard_tabs_imvu.png) 60 10 15 10 stretch stretch;
+    }
+    #walkoff .leaderboard > .title {
+        position: absolute;
+        width: 100%;
+        top: 7px;
+        font-family: Babyface;
+        font-size: 20px;
+        color: #FFF;
+    }
+    #walkoff .leaderboard > .tab_title {
+        position: absolute;
+        top: 38px;
+        
+        font-size: 13px;
+        color: #FFF;
+        text-shadow: 0 0 8px #00FFF0;
+    }
+        #walkoff .leaderboard > .tab_title.all-time {
+            left: 7px;
+            width: 100px;
+            text-align: center;
+        }
+    #walkoff .leaderboard > .column_header.rank {
+        position: absolute;
+        top: 60px;
+        left: 17px;
+        font-size: 10px;
+        color: #FFF;
+    }
+    #walkoff .leaderboard > .list {
+        position: absolute;
+        left: 9px;
+        right: 10px;
+        top: 75px;
+        bottom: 9px;
+        border-top: 1px #00CFC3 solid;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+        #walkoff .leaderboard > .list > .friend {
+            position: absolute;
+            width: 100%;
+            height: 63px;
+            border-bottom: 1px #00CFC3 solid;
+        }
+            #walkoff .leaderboard > .list > .friend:nth-child(1) {
+                background-color: #440044;
+            }
+            #walkoff .leaderboard > .list > .friend.self {
+                background-color: #004444;
+            }
+        #walkoff .leaderboard .friend > .rank_icon {
+            position: absolute;
+            left: 6px;
+            top: 5px;
+            width: 36px;
+            height: 45px;
+            background-image: url(../walkoff_img/main_menu_leaderboard_rank_icon.png);
+        }
+            #walkoff .leaderboard .friend > .rank_icon > .rank_number {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                margin-top: -8px;
+                
+                font-size: 16px;
+                text-align: center;
+            }
+        #walkoff .leaderboard .friend > .portrait {
+            position: absolute;
+            top: 4px;
+            left: 49px;
+            height: 55px;
+            width: 40px;
+            -moz-box-shadow: 0px 0px 2px 2px #00FFF0;
+        }
+        #walkoff .leaderboard .friend > .name {
+            position: absolute;
+            top: 2px;
+            left: 100px;
+            color: #00FFF0;
+            
+            font-size: 12px;
+            text-shadow: 0 0 8px #00FFF0;
+        }
+        #walkoff .leaderboard .friend > .score {
+            position: absolute;
+            top: 16px;
+            left: 100px;
+            color: #FFF;
+            
+            font-size: 14px;
+            text-shadow: 0 0 8px #00FFF0;
+        }
+        #walkoff .leaderboard .friend > .info_button {
+            position: absolute;
+            top: 35px;
+            left: 100px;
+            height: 16px;
+            padding: 0px;
+            width: 16px;
+            -moz-border-radius: 8px;
+            background: #CCC url(../img/info_i.png) center center no-repeat;
+        }
+            #walkoff .leaderboard .friend > .info_button:hover {
+                background-color: #999;
+            }
+        #walkoff .leaderboard .friend > .offline,
+        #walkoff .leaderboard .friend > .online {
+            position: absolute;
+            top: 35px;
+            left: 120px;
+            color: #F00;
+            display: none;
+        }
+        #walkoff .leaderboard .friend > .offline > img,
+        #walkoff .leaderboard .friend > .online > img {
+            width: 16px;
+            height: 16px;
+        }
+        #walkoff .leaderboard .friend > .self_rank {
+            position: absolute;
+            top: 35px;
+            left: 100px;
+            color: #00FFF0;
+            
+            font-size: 12px;
+            text-shadow: 0 0 8px #00FFF0;
+            display: none;
+        }
+            #walkoff .leaderboard .friend > .self_rank > .rank_number {
+                position: absolute;
+                top: 0px;
+                left: 35px;
+                color: #FFFFFF;
+                
+                font-size: 12px;
+                text-shadow: 0 0 8px #00FFF0;
+            }
+    #walkoff .leaderboard > .vip_upsell {
+        position: absolute;
+        left: 9px;
+        right: 9px;
+        top: 75px;
+        bottom: 9px;
+        background: -moz-linear-gradient(bottom, black, black 20%, rgba(0, 0, 0, 0.7) 50%);
+        display: none;
+    }
+        #walkoff .leaderboard > .vip_upsell > .upsell_text {
+            position: absolute;
+            bottom: 6px;
+            width: 100%;
+            color: #FFF;
+            
+            font-size: 14px;
+            text-shadow: 0 0 8px #00FFF0;
+        }
+        #walkoff .leaderboard > .vip_upsell > .upsell_text > .button {
+            position: relative;
+        }
+    #walkoff .leaderboard > .self_entry_bg {
+        position: absolute;
+        width: 255px;
+        height: 85px;
+        left: -1px;
+        bottom: -70px;
+        background-image: url(../walkoff_img/leaderboard_self_bg.png);
+        display: none;
+    }
+        #walkoff .leaderboard > .self_entry_bg > .self_entry_container {
+            position: absolute;
+            left: -7px;
+            right: 10px;
+            top: 11px;
+        }
+
+#walkoff > .menu > .menu-frame > .menu_button.new_game {
+    width: 332px;
+    height: 111px;
+    background-image: url(../walkoff_img/bt_playnow.png);
+    bottom: -42px;
+    right: 240px;
+}
+#walkoff > .menu > .menu-frame > .menu_button.new_game:hover {
+    background-image: url(../walkoff_img/bt_playnow_mo.png);
+}
+
+#walkoff > .menu > .menu-frame > .menu_button.invite {
+    width: 100px;
+    height: 95px;
+    background-image: url(../walkoff_img/bt_invitesfriends.png);
+    bottom: -36px;
+    right: 542px;
+}
+#walkoff > .menu > .menu-frame > .menu_button.invite:hover {
+    background-image: url(../walkoff_img/bt_invitesfriends_mo.png);
+}
+
+#walkoff > .menu > .menu-frame > .menu_button.settings {
+    width: 36px;
+    height: 36px;
+    background-image: url(../walkoff_img/bt_settings.png);
+    right: 15px;
+    bottom: 16px;
+}
+#walkoff > .menu > .menu-frame > .menu_button.settings:hover {
+    background-image: url(../walkoff_img/bt_settings_mo.png);
+}
+#walkoff > .menu > .menu-frame > .menu_button.settings.open {
+    background-image: url(../walkoff_img/bt_settings_mo.png);
+}
+#walkoff > .menu > .menu-frame > .menu_button.settings.open:hover {
+    background-image: url(../walkoff_img/bt_settings.png);
+}
+
+#walkoff > .menu > .menu-frame > .menu_button.how_to_play {
+    width: 156px;
+    height: 36px;
+    background-image: url(../walkoff_img/bt_howtoplay.png);
+    right: 54px;
+    bottom: 16px;
+}
+#walkoff > .menu > .menu-frame > .menu_button.how_to_play:hover {
+    background-image: url(../walkoff_img/bt_howtoplay_mo.png);
+}
+
+#walkoff > .menu > .menu-frame > .settings-panel {
+    right: 51px;
+    bottom: 13px;
+}
+
+#walkoff > .game > .settings-panel {
+    right: 67px;
+    bottom: 6px;
+    z-index: 50;
+}
+
+#walkoff > .menu > .how-to-frame {
+    position: absolute;
+    background-color: black;
+    background-image: url('../walkoff_img/instructions_screen.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#walkoff > .menu > .how-to-frame > .menu_button.back_to_menu {
+    width: 265px;
+    height: 110px;
+    background-image: url(../walkoff_img/bt_backtomenu.png);
+    left: 50%;
+    margin-left: -475px;
+    top: 50%;
+    margin-top: 80px;
+}
+#walkoff > .menu > .how-to-frame > .menu_button.back_to_menu:hover {
+    background-image: url(../walkoff_img/bt_backtomenu_mo.png);
+}
+
+#walkoff .settings-panel {
+    display: none;
+    position: absolute;
+    width: 148px;
+    height: 155px;
+    background: transparent url(../walkoff_img/music_background.png) no-repeat 0 0;
+    overflow: hidden;
+    
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: bold;
+    color: white; 
+    cursor: default;
+}
+#walkoff .settings-panel > .options {
+    margin-top: 18px;
+    text-align: left;
+}
+#walkoff .settings-panel > .options > .check-button {
+    margin: 4px 0 4px 21px;
+    cursor: pointer;
+}
+#walkoff .settings-panel > .options > .check-button > .checkbox {
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent url(../walkoff_img/checkbox_unchecked_small.png) no-repeat;
+    margin-right: 3px;
+}
+#walkoff .settings-panel > .options > .check-button.checked > .checkbox {
+    background: transparent url(../walkoff_img/checkbox_checked_small.png) no-repeat;
+}
+#walkoff .settings-panel > .separator {
+    margin: 8px auto 4px auto;
+    background: transparent url(../walkoff_img/separator.png) no-repeat;
+    width: 129px;
+    height: 11px;
+}
+#walkoff .settings-panel > .music-settings {
+    text-align: center;
+}
+#walkoff .settings-panel > .music-settings > .track-name {
+    color: #0fe;
+    font-style: italic;
+    white-space: nowrap;
+    max-width: 130px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+#walkoff .settings-panel > .music-settings > .track-controls {
+    margin-top: 2px;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button {
+    display: inline-block;
+    width: 27px;
+    height: 21px;
+    cursor: pointer;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.previous {
+    background: transparent url(../walkoff_img/bt_fastforward.png) no-repeat 0 0;
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.previous:hover {
+    background: transparent url(../walkoff_img/bt_fastforward_mo.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.next {
+    background: transparent url(../walkoff_img/bt_fastforward.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.next:hover {
+    background: transparent url(../walkoff_img/bt_fastforward_mo.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.stop {
+    background: transparent url(../walkoff_img/bt_stop.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.stop:hover {
+    background: transparent url(../walkoff_img/bt_stop_mo.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.play {
+    background: transparent url(../walkoff_img/bt_play.png) no-repeat 0 0;
+}
+#walkoff .settings-panel > .music-settings > .track-controls > .music-button.play:hover {
+    background: transparent url(../walkoff_img/bt_play_mo.png) no-repeat 0 0;
+}
+#walkoff .settings-panel.playing > .music-settings > .track-controls > .music-button.play,
+#walkoff .settings-panel:not(.playing) > .music-settings > .track-controls > .music-button.stop {
+    display: none;
+}
+
+#walkoff > .game {
+    display: none;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    image-rendering: optimizeQuality;
+}
+
+#walkoff > .game.low-quality {
+    image-rendering: optimizeSpeed;
+}
+
+.template {
+    display: none;
+}
+
+#walkoff > .game > .electric_arc > .arc {
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 10;
+    background: transparent;
+    pointer-events: none;
+}
+
+#walkoff > .game > .electric_arc > .aura {
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 9;
+    background: transparent;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#walkoff > .game > .status_bar {
+    position: absolute;
+    height: 93px;
+    width: 324px;
+    background-image: url(../walkoff_img/style_bar_background.png);
+}
+
+#walkoff > .game > .status_bar.left {
+    left: 8px;
+}
+
+#walkoff > .game > .status_bar.right {
+    right: 8px;
+}
+
+#walkoff > .game > .status_bar > .name {
+    position: absolute;
+    top: 7px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow: hidden;
+    width: 205px;
+    height: 20px;
+    cursor: default;
+}
+
+#walkoff > .game > .status_bar > .effect-icon {
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    bottom: 10px;
+    background-color: transparent;
+}
+    #walkoff > .game > .status_bar.left > .effect-icon.icon1 {
+        left: 10px;
+    }
+    #walkoff > .game > .status_bar.left > .effect-icon.icon2 {
+        left: 45px;
+    }
+    #walkoff > .game > .status_bar.left > .effect-icon.icon3 {
+        left: 80px;
+    }
+    #walkoff > .game > .status_bar.left > .effect-icon.icon4 {
+        left: 115px;
+    }
+    #walkoff > .game > .status_bar.left > .effect-icon.icon5 {
+        left: 150px;
+    }
+    #walkoff > .game > .status_bar.left > .effect-icon.icon6 {
+        left: 185px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon1 {
+        right: 10px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon2 {
+        right: 45px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon3 {
+        right: 80px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon4 {
+        right: 115px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon5 {
+        right: 150px;
+    }
+    #walkoff > .game > .status_bar.right > .effect-icon.icon6 {
+        right: 185px;
+    }
+    #walkoff > .game .effect-icon > .tooltip {
+        display: none;
+        position: absolute;
+        top: 30px;
+        width: 152px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        border-width: 35px 20px 20px 20px;
+    }
+
+    #walkoff > .game > .status_bar.left > .effect-icon > .tooltip {
+        -moz-border-image: url(../walkoff_img/toolTip_leffect.png) 35 20 20 20 stretch;
+        left: -18px;
+    }
+
+    #walkoff > .game > .status_bar.right > .effect-icon > .tooltip {
+        -moz-border-image: url(../walkoff_img/toolTip_reffect.png) 35 20 20 20 stretch;
+        right: -18px;
+    }
+
+#walkoff > .game > .status_bar > .style-label {
+    position: absolute;
+    top: 10px;
+    color: #ddd;
+    font-weight: bold;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow: hidden;
+    cursor: default;
+}
+    #walkoff > .game > .status_bar.left > .style-label {
+        right: 22px;
+    }
+    #walkoff > .game > .status_bar.right > .style-label {
+        left: 22px;
+    }
+
+.status_bar.left .name {
+    text-align: left;
+    left: 14px;
+}
+
+.status_bar.right .name {
+    text-align: right;
+    right: 14px;
+}
+
+.status_bar.right .add-friend { 
+    position: absolute;
+    bottom: 16px;
+    color: yellow;
+    cursor: pointer;
+    left: 20px;
+    font-size: 10px;
+}
+
+.status_bar.left .add-friend { 
+    display: none;
+}
+
+#walkoff > .game > .status_bar .energy_meter {
+}
+
+#walkoff > .game > .status_bar .energy_meter .bar {
+    position: absolute;
+    top: 25px;
+    left: 8px;
+}
+
+#walkoff > .game > .status_bar .energy_meter .label {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 18.5px;
+    top: 28px;
+    cursor: default;
+}
+
+.status_bar.left .energy_meter .label {
+    right: 22px;
+}
+
+.status_bar.right .energy_meter .label {
+    left: 22px;
+}
+
+#walkoff > .game > .status_bar > .power_move {
+    position: absolute;
+    left: 9px;
+    height: 37px;
+    width: 270px;
+    background-image: url(../walkoff_img/inventory_button_gray.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .mask {
+    position: absolute;
+    z-index: 1;
+    left: -1px;
+    top: -1px;
+    height: 37px;
+    width: 270px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#walkoff > .game > .status_bar > .power_move.unmasked > .mask {
+    background-color: transparent;
+}
+
+#walkoff > .game > .status_bar > .power_move > .name {
+    text-align: center;
+    position: absolute;
+    font-size: 12px;
+    top: 10px;
+    left: 4px;
+    height: 24px;
+    width: 88px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met > .name {
+    top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray {
+    position: absolute;
+    top: 6px;
+    left: 89px;
+    height: 23px;
+    width: 138px;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 2px 0 2px;
+    text-align: left;
+    padding-left: 4px;
+}
+
+#walkoff > .game > .status_bar > .power_move.r > .gem_tray {
+    top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met.r > .gem_tray {
+    top: 5px;
+}
+
+#walkoff > .game > .status_bar > .power_move.b > .gem_tray {
+    top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met.b > .gem_tray {
+    top: 5px;
+}
+
+#walkoff > .game > .status_bar > .power_move.p > .gem_tray {
+    top: 7px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met.p > .gem_tray {
+    top: 5px;
+}
+
+#walkoff > .game > .status_bar > .power_move.g > .gem_tray {
+    top: 8px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met.g > .gem_tray {
+    top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move.y > .gem_tray {
+    top: 7px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met.y > .gem_tray {
+    top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .gem_tray_gem {
+    top: 2px;
+    margin-top: 4px;
+    display: inline-block;
+    height: 19px;
+    width: 17px;
+}
+
+#walkoff > .game > .status_bar > .power_move.requirements-met > .gem_tray > .gem_tray_gem {
+    margin-top: 6px;
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .r.dim {
+    background-image: url(../walkoff_img/inventory_gem_red_dim.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .r {
+    background-image: url(../walkoff_img/inventory_gem_red.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .b.dim {
+    background-image: url(../walkoff_img/inventory_gem_blue_dim.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .b {
+    background-image: url(../walkoff_img/inventory_gem_blue.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .p.dim {
+    background-image: url(../walkoff_img/inventory_gem_pink_dim.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .p {
+    background-image: url(../walkoff_img/inventory_gem_pink.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .g.dim {
+    background-image: url(../walkoff_img/inventory_gem_green_dim.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .g {
+    background-image: url(../walkoff_img/inventory_gem_green.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .y.dim {
+    background-image: url(../walkoff_img/inventory_gem_yellow_dim.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .y {
+    background-image: url(../walkoff_img/inventory_gem_yellow.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.r.requirements-met {
+    background-image: url(../walkoff_img/inventory_button_red.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.r.requirements-met.unmasked:hover {
+    background-image: url(../walkoff_img/inventory_button_red_hover.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.b.requirements-met {
+    background-image: url(../walkoff_img/inventory_button_blue.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.b.requirements-met.unmasked:hover {
+    background-image: url(../walkoff_img/inventory_button_blue_hover.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.p.requirements-met {
+    background-image: url(../walkoff_img/inventory_button_pink.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.p.requirements-met.unmasked:hover {
+    background-image: url(../walkoff_img/inventory_button_pink_hover.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.g.requirements-met {
+    background-image: url(../walkoff_img/inventory_button_green.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.g.requirements-met.unmasked:hover {
+    background-image: url(../walkoff_img/inventory_button_green_hover.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.y.requirements-met {
+    background-image: url(../walkoff_img/inventory_button_yellow.png);
+}
+
+#walkoff > .game > .status_bar > .power_move.y.requirements-met.unmasked:hover {
+    background-image: url(../walkoff_img/inventory_button_yellow_hover.png);
+}
+
+#walkoff > .game > .status_bar > .power_move > .gem_tray > .overflow {
+    height: 20px;
+    width: 25px;
+    position: absolute;
+    left: 145px;
+    top: 9px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#walkoff > .game > .status_bar > .power_move > .tooltip > .name {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#walkoff > .game > .status_bar > .power_move > .tooltip > .description {
+}
+
+#walkoff > .game > .stage {
+    z-index: 2;
+}
+
+#walkoff > .game > .stage > .turn_status {
+    position: absolute;
+    background: transparent url('../walkoff_img/board_timer_background.png') no-repeat 0 0;
+    width: 355px;
+    height: 69px;
+    margin-top: -9px;
+}
+
+#walkoff > .game > .stage > .turn_status .end-game-message {
+    display: none;
+    font-family: Edunline;
+    font-size: 40px;
+    color: #00FFF0;
+    text-shadow: #00FFF0 0 0 10px;
+    padding-top: 9px;
+    cursor: default;
+}
+
+#walkoff > .game .countdown {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70px;
+}
+#walkoff > .game > .stage > .turn_status .countdown {
+    opacity: 0;
+}
+#walkoff > .game .greenroom-dialog .countdown {
+    opacity: 1;
+    display: inline-block;
+}
+#walkoff > .game .countdown .number {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 42px;
+}
+#walkoff > .game > .stage > .turn_status .countdown {
+    top: 15px;
+}
+#walkoff > .game .greenroom-dialog .countdown {
+    top: -27px;
+}
+#walkoff > .game .countdown .number.tens {
+    left: 0px;
+}
+#walkoff > .game .countdown .number.ones {
+    left: 32px;
+}
+
+#walkoff > .game .countdown .digit_0 {
+    background-image: url(../walkoff_img/timer_0.png);
+}
+#walkoff > .game .countdown .digit_1 {
+    background-image: url(../walkoff_img/timer_1.png);
+}
+#walkoff > .game .countdown .digit_2 {
+    background-image: url(../walkoff_img/timer_2.png);
+}
+#walkoff > .game .countdown .digit_3 {
+    background-image: url(../walkoff_img/timer_3.png);
+}
+#walkoff > .game .countdown .digit_4 {
+    background-image: url(../walkoff_img/timer_4.png);
+}
+#walkoff > .game .countdown .digit_5 {
+    background-image: url(../walkoff_img/timer_5.png);
+}
+#walkoff > .game .countdown .digit_6 {
+    background-image: url(../walkoff_img/timer_6.png);
+}
+#walkoff > .game .countdown .digit_7 {
+    background-image: url(../walkoff_img/timer_7.png);
+}
+#walkoff > .game .countdown .digit_8 {
+    background-image: url(../walkoff_img/timer_8.png);
+}
+#walkoff > .game .countdown .digit_9 {
+    background-image: url(../walkoff_img/timer_9.png);
+}
+
+#walkoff > .game .countdown > .transition {
+    position: absolute;
+    top: 0;
+    width: 98px;
+    display: none;
+}
+
+#walkoff > .game > .stage > .turn_status > .turn_indicator {
+    width: 89px;
+    height: 40px;
+    position: absolute;
+    opacity: 0;
+    display: none;
+    top: 15px;
+}
+#walkoff > .game > .stage > .turn_status > .turn_indicator.left {
+    left: 72px;
+}
+#walkoff > .game > .stage > .turn_status > .turn_indicator.right {
+    right: 72px;
+}
+#walkoff > .game > .stage > .turn_status > .turn_indicator > img {
+    position: relative;
+}
+
+#walkoff > .game > .stage > .plaques {
+    position: absolute;
+    width: 95px;
+    height: 440px;
+    top: 70px;
+}
+    #walkoff > .game > .stage > .plaques.left {
+        left: -55px;
+    }
+        #walkoff > .game > .stage > .plaques.left.in_greenroom {
+            z-index: 4;
+        }
+    #walkoff > .game > .stage > .plaques.right {
+        right: -55px;
+    }
+
+#walkoff > .game > .qa-panel {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    z-index: 100;
+}
+
+#walkoff > .game > .qa-panel > .add-gems-button {
+    display: none;
+    background: #222222;
+    color: #444444;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#walkoff .gem_inventory_segment {
+    position: absolute;
+    border: 1px solid black;
+}
+
+#walkoff > .game > .stage > .outer-board > .board {
+    overflow: hidden;
+    position: absolute;
+}
+
+/* stage position and size is dynamically set in code */
+#walkoff > .game > .stage,
+#walkoff > .game > .stage > .background,
+#walkoff > .game > .stage > .front {
+    overflow: visible;
+    position: absolute;
+
+}
+
+#walkoff > .game > .stage > .background,
+#walkoff > .game > .stage > .front {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#walkoff > .game > .stage > .front {
+    pointer-events: none;
+}
+
+.gem_holder {
+    position: absolute;
+}
+    .gem_holder > .gem {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-size: 100% 100%; /* fifteen frame image */
+        -moz-background-size: 100% 100%;
+        pointer-events: none;
+    }
+        .gem_holder > .gem.filmstrip {
+            background-size: 1500% 100%; /* fifteen frame image */
+            -moz-background-size: 1500% 100%;
+        }
+        .gem_holder > .gem.shattering {
+            z-index: 100;
+        }
+        .gem_holder > .gem.super {
+            position: absolute;
+            z-index: 10;
+            height: 200%;
+            width: 200%;
+            top: -50%;
+            left: -50%;
+        }
+
+.stage.clickable .gem_holder:hover { 
+    cursor: pointer;
+}
+    .stage.clickable .gem_holder:hover > .gem {
+        height: 120%;
+        width: 120%;
+        top: -10%;
+        left: -10%;
+    }
+    .stage.clickable .gem_holder:hover > .gem.super {
+        height: 240%;
+        width: 240%;
+        top: -70%;
+        left: -70%;
+    }
+
+#walkoff > .game > .stage > .board .reticle_holder {
+    position: absolute;
+    display: none;
+    z-index: -1;
+}
+
+#walkoff > .game > .stage > .board .reticle {
+    position: absolute;
+}
+
+#walkoff .game .oos_message {
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    text-align: center;
+    color: #F00;
+    opacity: 1;
+    font-size: 20px;
+    z-index: 50;
+}
+
+#walkoff > .game > .text_effect_container {
+    pointer-events: none;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+#walkoff > .game > .text_effect_container > .text_effect {
+    pointer-events: none;
+    z-index: 15;
+}
+
+#walkoff > .game .aux-panel {
+    z-index: 15;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 50;
+}
+
+#walkoff > .game > .aux-panel > .settings-button {
+    cursor: pointer;
+    margin: 8px;
+    width: 36px;
+    height: 36px;
+    background: transparent url(../walkoff_img/bt_settings.png) no-repeat 0 0;
+}
+
+#walkoff > .game > .aux-panel > .settings-button:hover {
+    background-image: url(../walkoff_img/bt_settings_mo.png);
+}
+
+#walkoff > .game > .aux-panel > .settings-button.open {
+    background-image: url(../walkoff_img/bt_settings_mo.png);
+}
+
+#walkoff > .game > .aux-panel > .settings-button.open:hover {
+    background-image: url(../walkoff_img/bt_settings.png);
+}
+
+#walkoff > .game .crowd-strip {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: url(../walkoff_img/crowd-tile.png) repeat-x;
+    bottom: -210px;
+    height: 210px;
+    z-index: 10;
+    display: none;
+}
+

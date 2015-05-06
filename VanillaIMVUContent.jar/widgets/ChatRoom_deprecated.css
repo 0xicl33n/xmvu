@@ -1,0 +1,547 @@
+body.mimic-chat-rooms-bg {
+    background-color: #212121;
+    padding: 20px;
+}
+
+.room-widget {
+    position: relative;
+    width: 207px;
+    height: 220px;
+    cursor: default;
+    margin: 0 18px 26px 0;
+    display: inline-block;
+}
+
+    .room-widget .new-underlay {
+        display: none;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 213px;
+        height: 226px;
+        background: #E7C208;
+    }
+
+        .room-widget.highlight-new .new-underlay {
+            display: block;
+        }
+
+        .room-widget .new-underlay .title {
+            float: left;
+            margin-top: -15px;
+            background: #E7C208;
+            padding: 0 10px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #9E0B0F;
+        }
+
+    .room-widget * {
+        -moz-user-select: -moz-none;
+    }
+    .room-widget a {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .room-widget .icon {
+        cursor: pointer;
+    }
+    .room-widget.locked .icon {
+        display: none;
+    }
+    .room-widget .bd .info-cta {
+        display: none;
+        position: absolute;
+    }
+    .room-widget .bd .info.icon {
+        position: relative;
+        display: inline-block;
+        background: url(../img/icon_info_normal.png) no-repeat;
+        width: 19px;
+        height: 20px;
+        margin: 4px 0px 0px 0px;
+    }
+    .room-widget .bd .flag.icon {
+        position: relative;
+        display: inline-block;
+        background: url(../img/icon_flag_normal.png) no-repeat;
+        width: 19px;
+        height: 20px;
+        margin: 4px 0px 0px 4px;
+    }
+    .room-widget .ap.icon {
+        position: absolute;
+        right: -8px;
+        top: 11px;
+        background: url(../img/icon_ap_medium.png) no-repeat;
+        width: 25px;
+        height: 21px;
+    }
+    .room-widget .vip.icon {
+        position: absolute;
+        right: -8px;
+        top: 32px;
+        background: url(../img/icon_vip_medium.png) no-repeat;
+        width: 28px;
+        height: 21px;
+        display: none;
+    }
+    .room-widget .av.icon {
+        position: absolute;
+        right: -8px;
+        top: 53px;
+        background: url(../img/icon_av_medium.png) no-repeat;
+        width: 28px;
+        height: 21px;
+        display: none;
+    }
+    .room-widget .bd {
+        height: 200px;
+        background: -moz-linear-gradient(top, #505050, #1a1a1a);
+        color: #E2DBC0;
+        position: relative;
+    }
+        .room-widget:not(.null_upsell_locked):hover .bd {
+            background: -moz-linear-gradient(top, #707070, #1a1a1a);
+        }
+        .room-widget .bd .thumbnail {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            display: block;
+            width: 205px;
+            min-height: 91px;
+            background-color: black;
+            clip: rect(0px 205px 91px 0px);
+        }
+            .bd .thumbnail:hover,
+            .bd .click-to-see-card:hover,
+            .bd .thumbnail + .info-cta {
+                cursor: pointer;
+            }
+            .room-widget:not(.null_upsell_locked) .bd .info-cta:hover,
+            .room-widget:not(.manage):not(.null_upsell_locked) .bd .click-to-see-card:hover ~ .info-cta {
+                display: block;
+            }
+            .room-widget:not(.null_upsell_locked) .bd .info.icon:hover {
+                background: url(../img/icon_info_hover.png) no-repeat;
+            }
+            .room-widget:not(.null_upsell_locked) .bd .flag.icon:hover {
+                background: url(../img/icon_flag_hover.png) no-repeat;
+            }
+        .room-widget .bd .info.section {
+            position: absolute;
+            top: 93px;
+            left: 0;
+            right: 0;
+            
+            font-size: 13px;
+            padding: 6px 10px 6px 10px;
+            height: 96px;
+        }
+            .bd .info.section:hover {
+                cursor: pointer;
+            }
+            .room-widget:not(.manage):not(.null_upsell_locked) .bd .info.section:hover + .info-cta {
+                display: block;
+            }
+            .room-widget .bd .info.section .name {
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .room-widget .bd .info.section .owner .owner-name {
+                color: #BCA54F;
+            }
+
+            .room-widget.null_upsell_locked .bd .info.section .owner .owner-name {
+                cursor: default;
+            }
+
+            .room-widget .bd .info.section .language {
+                line-height: 14px;
+                font-size: 11px;
+                margin-left: 1px;
+            }
+            .room-widget .bd .info.section .favorite {
+                background: url(../img/room_favorite_actionicons.png) no-repeat 0 -15px;
+                line-height: 14px;
+                font-size: 11px;
+                color: #999999;
+                padding-left: 23px;
+            }
+            .room-widget.manage .bd .info.section .favorite {
+                display: none;
+            }
+            .room-widget.favorite .bd .info.section .favorite {
+                background-position: 0 3px;
+            }
+            .room-widget .bd .info.section .visitor {
+                display: none;
+            }
+            .room-widget.manage .bd .info.section .visitor {
+                display: block;
+                margin-top: 3px;
+                line-height: 14px;
+                margin-left: 1px;
+                font-size: 11px;
+            }
+            .room-widget .bd .info.section .hearts {
+                position: absolute;
+                left: 10px;
+                bottom: 8px;
+            }
+            .room-widget .bd .info.section .occupancy {
+                position: absolute;
+                right: 10px;
+                bottom: 8px;
+                padding: 0 0 0 16px;
+                background: url(../img/peep.png) no-repeat left bottom;
+                color: #FFE702;
+                height: 12px;
+                line-height: 12px;
+            }
+            .room-widget.full:not(.manage) .bd .info.section .occupancy {
+                background-image: url(img/red_peep.png);
+                color: #CF0000;
+            }
+    .room-widget .ft {
+        height: 20px;
+        position: absolute;
+        width: 100%;
+    }
+        .room-widget .ft .info.button,
+        .room-widget .ft .delete.button,
+        .room-widget .ft .edit.button,
+        .room-widget .ft .go.button {
+            float: right;
+            height: 20px;
+            border-bottom: solid 1px black;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 0 10px 0 10px;
+            cursor: pointer;
+            color: black;
+        }
+            .room-widget.full:not(.manage) .ft .go.button {
+                cursor: default;
+            }
+
+        .room-widget .ft .delete.button,
+        .room-widget .ft .edit.button,
+        .room-widget .ft .info.button {
+            background: -moz-linear-gradient(top, #ddd, #d7d7d7, #d0d0d0, #d0d0d0, #d0d0d0, #adadad, #adadad, #9c9c9c, #9c9c9c, #909090);
+            text-align: center;
+            margin-right: 1px;
+        }
+        .room-widget .ft .go.button {
+            background: -moz-linear-gradient(top, #FFF599, #FFF499, #FFF299, #FFF299, #FFF299, #FFD601, #FFD601, #FFD601, #FFD401, #FFC201);
+            text-align: center;
+        }
+        .room-widget.full:not(.manage) .ft .go.button {
+            background: -moz-linear-gradient(top, #E83333, #E83333, #E13333, #C90000, #C90000, #B80000);
+        }
+
+    .room-widget .vip-create {
+        height: 200px;
+        width: 207px;
+        background: -moz-radial-gradient(circle, #666666, #141414);
+        position: relative;
+        display: none;
+        
+    }
+        .room-widget .vip-create .panel-content {
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .room-widget .vip-create p {
+            text-align: center;
+            
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 24px;
+            margin-bottom: 15px;
+        }
+
+        .room-widget .vip-create p em {
+            
+            color: #FEDF4C;
+            font-weight: bold;
+        }
+
+        .room-widget .vip-create .create-room-button {
+            display: inline-block;
+        }
+
+        .room-widget .vip-create .create-room-button .middle .text {
+            padding-top: 2px;
+        }
+
+    .room-widget .vip-available {
+        height: 200px;
+        width: 207px;
+        background: #DDDDDD url(img/chatroom-vip-available-bg.png);
+        position: relative;
+        display: none;
+    }
+        .room-widget .vip-available .panel-icon {
+            position: absolute;
+            left: 17px;
+            top: 12px;
+            width: 21px;
+            height: 23px;
+            background: url(img/chatroom-available-unlocked.png);
+        }
+
+        .room-widget .vip-available .panel-content {
+            position: absolute;
+            top: 50%;
+            left: 27px;
+            margin-top: -50px;
+            height: 100px;
+            text-align: center;
+            background: #fff;
+            width: 151px;
+            -moz-border-radius: 15px;
+        }
+
+        .room-widget .vip-available p {
+            text-align: center;
+            
+            color: #6F6F6F;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 24px;
+            margin: 15px 15px 15px 15px;
+        }
+
+    .room-widget .free-create {
+        height: 200px;
+        width: 207px;
+        background: -moz-radial-gradient(circle, #666666, #141414);
+        position: relative;
+        display: none;
+    }
+        .room-widget .free-create .panel-icon {
+            position: absolute;
+            left: 14px;
+            top: 10px;
+            width: 21px;
+            height: 23px;
+            background: url(img/chatroom-create-chat-unlocked.png);
+        }
+
+        .room-widget .free-create .panel-content {
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .room-widget .free-create p {
+            text-align: center;
+            
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 24px;
+            margin-bottom: 15px;
+        }
+
+        .room-widget .free-create p em {
+            
+            color: #FEDF4C;
+            font-weight: bold;
+        }
+
+        .room-widget .free-create .create-room-button {
+            display: inline-block;
+        }
+
+        .room-widget .free-create .create-room-button .middle .text {
+            padding-top: 2px;
+        }
+
+    .room-widget .free-unavailable {
+        height: 200px;
+        width: 207px;
+        background: #858585;
+        position: relative;
+        display: none;
+        cursor: pointer;
+    }
+        .room-widget .free-unavailable .panel-icon {
+            position: absolute;
+            left: 13px;
+            top: 9px;
+            width: 17px;
+            height: 24px;
+            background: url(img/chatroom-unavailable-locked.png);
+        }
+
+        .room-widget .free-unavailable .panel-content {
+            position: absolute;
+            top: 50%;
+            left: 27px;
+            margin-top: -90px;
+            height: 100px;
+            text-align: center;
+            width: 151px;
+        }
+
+        .room-widget .free-unavailable p {
+            text-align: center;
+            
+            color: #D9D9D9;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 24px;
+            margin: 15px 15px 15px 15px;
+        }
+
+        .room-widget .free-unavailable .vip-icon {
+            display: block;
+            margin: -13px auto;
+            width: 83px;
+            height: 68px;
+            background: url(img/chatroom-unavailable-VIP-icon.png);
+        }
+
+        .room-widget .free-unavailable p strong {
+            
+            font-weight: bold;
+        }
+
+        .room-widget .free-unavailable p em {
+            
+            color: #6E2828;
+            font-weight: bold;
+        }
+
+    .room-widget .lock-overlay {
+        height: 200px;
+        width: 207px;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        cursor: pointer;
+    }
+        .room-widget .lock-overlay .panel-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(img/vip_upsell_overlay.png);
+        }
+
+        .room-widget .lock-overlay .panel-icon {
+            display: none;
+        }
+
+        .room-widget .lock-overlay .panel-content {
+            position: absolute;
+            top: 50%;
+            left: 27px;
+            margin-top: -90px;
+            height: 100px;
+            text-align: center;
+            width: 151px;
+        }
+
+        .room-widget .lock-overlay p {
+            text-align: center;
+            
+            color: #FFF;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 24px;
+            margin: 15px 15px 15px 15px;
+        }
+
+        .room-widget .lock-overlay .vip-icon {
+            display: block;
+            margin: -13px auto;
+            width: 83px;
+            height: 68px;
+        }
+
+        .room-widget .lock-overlay p strong {
+            
+            font-weight: bold;
+        }
+
+    .room-widget .chatroom-slot-upsell {
+        height: 200px;
+        width: 207px;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        cursor: pointer;
+    }
+
+        .room-widget .chatroom-slot-upsell {
+            text-align: center;
+        }
+        .room-widget .chatroom-slot-upsell .crs-icon {
+            display: block;
+            margin: -13px auto;
+            width: 83px;
+            height: 68px;
+        }
+
+        .room-widget .chatroom-slot-upsell .cta-button {
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .room-widget .chatroom-slot-upsell .cta-button .middle .text {
+            padding-top: 2px;
+        }
+
+        .room-widget .chatroom-slot-upsell .crs-icon {
+            display: block;
+            margin: -13px auto;
+            width: 83px;
+            height: 68px;
+        }
+        .room-widget .chatroom-slot-upsell .panel-content {
+            position: absolute;
+            top: 50%;
+            left: 7px;
+            margin-top: -90px;
+            height: 100px;
+            text-align: center;
+            width: 191px;
+        }
+
+        .room-widget .chatroom-slot-upsell p {
+            text-align: center;
+            color: #FFF;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 24px;
+            margin: 15px 15px 15px 15px;
+        }
+        .room-widget .chatroom-slot-upsell .panel-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(img/RoomSlot_Upsell_Client_OldMode_LTO.png) no-repeat;
+        }
+

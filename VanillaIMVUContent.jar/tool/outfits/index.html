@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<link rel="stylesheet" type="text/css" href="../../yui/reset-fonts-grids-base-min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../../widgets/hint/HintWidget.css">
+        <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+
+        <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script src="../../yui/animation/animation.js"></script>
+        <script src="../../yui/connection/connection.js"></script>
+        <script src="../../yui/json/json.js"></script>
+        <script src="../../js/imvu.js"></script>
+        <script src="../../js/outfits.js"></script>
+        <script src="../../js/eventbus.js"></script>
+        <script src="../../widgets/arrow/Arrow.js"></script>
+        <script src="../../widgets/dropdown/DropDown.js"></script>
+        <script src="../../widgets/CircleDial.js"></script>
+        <script src="../../widgets/button/imvuButton.js"></script>
+        <script src="../../widgets/hint/HintWidget.js"></script>
+        <script src="Carousel.js"></script>
+        <script src="Toolbar.js"></script>
+        <script src="CategorySelector.js"></script>
+        <script src="DotPaginator.js"></script>
+        <script src="OutfitsTool.js"></script>
+    </head><body>
+        <div id="tool">
+            <div id="try-again" class="hidden">
+                <div class="message"><script id="inline_translate">_iT("There was a problem loading your outfits.", "inline_translate")</script><br><script id="inline_translate">_iT("Please try again later.", "inline_translate")</script></div>
+            </div>
+            <div id="toolbar">
+                <span class="title"><script id="inline_translate">_iT("My Outfits", "inline_translate")</script></span>
+                <div class="categories">
+                    <div class="show"><script id="inline_translate">_iT("Show", "inline_translate")</script></div>
+                    <div id="category_selector">
+                        <div class="label"></div>
+                    </div>
+                </div>               
+                <div class="filters">
+                    <div class="btn_ga"></div><div class="btn_all"></div><div class="btn_ap"></div>
+                </div>              
+
+                <div class="close"></div>
+                <div class="btn_save" id="save">
+                <div id="click_here_to_save"></div>
+                    <span class="saveText"><script id="inline_translate">_iT("Save Outfit", "inline_translate")</script></span>
+                </div>
+                <div id="manage" class="btn_manage"><script id="inline_translate">_iT("Manage Outfits", "inline_translate")</script></div> 
+            </div>
+            <div id="earn_credits">
+                <div class="panel">
+                    <div id="close_button_shadow"><div class="v"></div><div class="h"></div></div>
+                    <div id="close_button"><div class="v"></div><div class="h"></div></div>
+                    <h2><script id="inline_translate">_iT("Got Style? Earn Credits!", "inline_translate")</script></h2>
+                    <p><script id="inline_translate">_iT("Sell your Outfits in the Shop and earn credits for your fashion sense.", "inline_translate")</script></p>
+                    <p><script id="inline_translate">_iT("Click the", "inline_translate")</script> <img src="../../img/info.png"> <script id="inline_translate">_iT("icon on any Outfit to the right to learn more.", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div id="carousel">
+                <div id="dot_paginator" class="invisible">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div id="page_left" class="page_left hidden"></div>
+                <div id="spinner"></div>
+                <div id="outfit_list_container">
+                    <div id="outfit_list"></div>
+                </div>
+                <div id="page_right" class="page_right hidden"></div>
+            </div>
+        </div>
+        <script>
+        if (IMVU.runJS()) {
+            var shouldShowSaveOutfitButton=true;
+            if(match = /shouldShowSaveOutfitButton=(.*)/.exec(document.location)) {
+               if( match[1] == "False"){
+                shouldShowSaveOutfitButton=false;
+               }
+            }
+            var outfitsTool = new OutfitsTool({
+                rootElement: YAHOO.util.Dom.get('tool'),
+                imvu: imvu,
+                eventBus: IMVU.Client.EventBus,
+                network: IMVU.Network,
+                shouldShowSaveOutfitButton: shouldShowSaveOutfitButton
+            });
+            if (IMVU.IS_FIREFOX) {
+                for (var i=1; i<40; ++i) {
+                    var id = i;
+                    var outfitData = {
+                        id: id,
+                        imageUrl: 'img/aen1.jpg',
+                        name: 'My Outfit ' + id,
+                        description: 'My outfit description ' + id,
+                        isAp: 0,
+                        pids: [80],
+                        categoryId: 1,
+                        dirty: 0
+                    };
+                    outfitsTool.carousel.insertNewOutfitMarkup(outfitData);
+                }
+            }
+            outfitsTool.load();
+        }
+        //HtmlTool invokes these
+        var tool = {show:function(){}, hide:function(){}};
+        </script>
+    </body></html>

@@ -1,0 +1,631 @@
+div.product {
+    width:140px;
+    height:156px;
+    margin:0 auto 16px;
+    position:relative;
+}
+
+div.product div.bd {
+    border:1px solid #4d4d4d;
+    height:140px;
+    position:relative;
+}
+
+#wishlist div.product div.bd {
+    border-color:#ddd;
+}
+
+div.product.trying div.bd, #wishlist div.product.trying div.bd {
+    border:1px solid #e4c950;
+}
+
+div.product div.try-x {
+    display:none;
+    position:absolute;
+    right:-10px;
+    top:-10px;
+    cursor:pointer;
+}
+
+div.product.trying div.try-x {
+    width:18px;
+    height:17px;
+    background: transparent url(../../widgets/product/img/try_x.png) no-repeat;
+    display:block;
+}
+
+div.product div.ft {
+    position:relative;
+    height:18px;
+}
+
+div.product h3 {
+    color:#a8a8a8;
+   
+    font-size:10px;
+    text-align:center;
+    margin:5px 0;
+    white-space:nowrap;
+    overflow:hidden;
+    width:138px;
+}
+
+#wishlist div.product h3 {
+    color:#363636;
+}
+
+div.product.hidden h3 {
+    color:#666;
+}
+
+div.product.whitelisted h3 {
+    color:#333;
+}
+
+div.product:hover h3 {
+    color:#e5e5e5;
+}
+
+#wishlist div.product:hover h3 {
+    color:#1c1c1c;
+}
+
+div.product.in-inventory h3 {
+    color:#444;
+}
+
+div.product.in-inventory:hover h3 {
+    color:#000;
+}
+
+div.product div.thumb {
+    overflow:visible;
+    width:100px;
+    height:80px;
+    margin:0 auto;
+    background:#222;
+    position:relative;
+}
+div.product.outfit div.thumb {
+    background: transparent;
+}
+    div.thumb img {
+        width: 100px;
+        height: 80px;
+    }
+
+div.product div.info {
+    position:relative;
+    height:123px;
+    overflow:hidden;
+}
+
+div.product.hidden div.info {
+    background:#960000;
+}
+
+div.product.whitelisted div.info {
+    background:#89b757;
+}
+
+div.product.in-inventory div.bd {
+    background:#b2b2b0;
+}
+
+div.product div.price {
+    text-align: right;
+    position: absolute;
+    right: 3px;
+    bottom: 5px;
+    font-weight: bold;
+
+    font-size: 11px;
+    color: #ccc;
+    padding-left: 10px;
+}
+
+div.product.purchasable div.price {
+    background:transparent url(../../widgets/product/img/credits_inactive.png) 1px 5px no-repeat;
+}
+
+div.product.purchasable div.price span.display-only {
+    display: none;
+}
+
+div.product div.price span.display-only {
+    display: inline;
+}
+
+div.product div.price span {
+    display: none;
+}
+
+div.product.purchasable div.price span {
+    display: inline;
+}
+
+div.product.purchasable.in-inventory div.price, div.product.purchasable.in-inventory:hover div.price {
+    color:#303030;
+    padding-left:10px;
+    background:transparent url(../../widgets/product/img/credits_inactive_dark.png) 1px 5px no-repeat;
+}
+
+div.product.purchasable:hover div.price {
+    padding-left:12px;
+    background:transparent url(../../widgets/product/img/credits_active.png) 0px 2px no-repeat;
+}
+
+div.product div.bd div.creator {
+    background:#4d4d4d;
+    height:17px;
+    overflow:hidden;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+#wishlist div.product div.bd div.creator {
+    background:#ddd;
+}
+
+div.product div.bd div.creator a {
+    opacity:0.5;
+}
+
+div.product:hover div.bd div.creator a {
+    opacity:1.0;
+}
+
+div.product div.creator h4 {
+    text-align:center;
+    color:#a6a6a6;
+    font-size:9px;
+   
+    margin:0;
+    padding:3px;
+    white-space:nowrap;
+}
+
+#wishlist div.product div.creator h4 {
+    color:#000;
+}
+
+div.product div.creator h4 a {
+    color:#dbdbdb;
+}
+
+#wishlist div.product div.creator h4 a {
+    color:#000;
+}
+
+div.chat-product div.clickable,
+div.product div.clickable {
+    cursor:pointer;
+}
+
+div.product div.ap {
+    position:absolute;
+    right:-10px;
+    top:5px;
+    width:23px;
+    height:19px;
+    background:transparent url(../../widgets/product/img/ap.png) no-repeat;
+    display:none;
+}
+
+div.product.ap div.ap {
+    display:block;
+}
+
+div.product div.info-button {
+    width:19px;
+    height:19px;
+    background:transparent url(../../img/icon_info_normal.png) no-repeat;
+    position:absolute;
+    left: 26px;
+    top: 4px;
+    opacity:0;
+    z-index:2;
+}
+
+div.product:hover div.info-button {
+    opacity:1.0;
+}
+div.product div.info-button:hover {
+    background:transparent url(../../img/icon_info_hover.png) no-repeat;
+}
+
+div.product div.flag-icon {
+    width: 19px;
+    height: 19px;
+    background: transparent url(../../img/icon_flag_normal.png) no-repeat;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    opacity: 0;
+    z-index: 2;
+}
+
+div.product:hover div.flag-icon {
+    opacity: 1;
+}
+div.product div.flag-icon:hover {
+    background: transparent url(../../img/icon_flag_hover.png) no-repeat;
+}
+
+div.product img.pro {
+    display:none;
+}
+
+div.product.pro img.pro {
+    vertical-align:middle;
+    padding-bottom:1px;
+    margin-left:2px;
+    opacity:0.5;
+    display:inline;
+}
+
+div.product:hover img.pro {
+    opacity:1.0;
+}
+
+div.product div.gift {
+    display:none;
+    float:left;
+    cursor:pointer;
+    width:19px;
+    height:15px;
+    background:transparent url(../../widgets/product/img/icon_gift.png) no-repeat bottom center;
+    margin-right:7px;
+    padding-top:2px;
+}
+
+div.product.purchasable:hover div.gift {
+    display:block;
+}
+
+div.product.in-inventory div.wishlist {
+    display:none;
+}
+
+div.product div.wishlist {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    background:transparent url(../../widgets/product/img/wishlist_star.png) no-repeat;
+    color:#fff;
+    height:15px;
+    width:100px;
+    font-size:9px;
+    padding-left:18px;
+}
+
+div.product div.wishlist:hover {
+    background:transparent url(../../widgets/product/img/wishlist_star_hover.png) no-repeat;   
+}
+
+div.product.in-wishlist div.wishlist, div.product.in-wishlist div.wishlist:hover {
+    background:transparent url(../../widgets/product/img/wishlist_star_selected.png) no-repeat;
+}
+
+div.product div.wishlist span {
+    display:none;
+    line-height:16px;
+}
+
+div.product div.wishlist:hover span {
+    display:inline;
+}
+
+/*div.product:hover div.wishlist {
+    float:left;
+    display:none;
+    width:19px;
+    height:14px;
+    margin-right:5px;
+    margin-top:3px;
+    background:transparent url(../../widgets/product/img/icon_wishlist_add.png) no-repeat;
+}*/
+
+div.product div.cart {
+    float:left;
+    width:19px;
+    height:17px;
+    margin-right:5px;
+    background:transparent url(../../widgets/product/img/icon_cart_add.png) no-repeat bottom left;
+    display:none;
+}
+
+div.product.purchasable:hover div.cart {
+    display:block;
+}
+
+div.product.in-inventory:hover div.wishlist {
+    display:none;
+}
+
+div.product.in-inventory:hover div.cart {
+    display:none;
+}
+
+div.product div.buttons {
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+div.product div.buttons div.try {
+    width:33px;
+    height:20px;
+    background:transparent url(../../widgets/product/img/button_try.png) no-repeat;
+    display:none;
+}
+div.product div.buttons div.try { 
+    float:left;
+}
+
+div.product div.buttons div.off {
+    display:none;
+}
+
+div.product div.buttons div.try:hover {
+    background:transparent url(../../widgets/product/img/button_try_hover.png) no-repeat;
+}
+
+#wishlist div.product div.buttons div.try {
+    background:transparent url(../../widgets/product/img/button_try.png) no-repeat;
+}
+
+#wishlist div.product div.buttons div.try:hover {
+    background:transparent url(../../widgets/product/img/button_try_hover.png) no-repeat;
+}
+
+div.product.trying div.buttons div.try, 
+#wishlist div.product.trying div.buttons div.try { 
+    background:transparent url(../../widgets/product/img/button_off.png) no-repeat;
+}
+
+div.product.tryable div.buttons div.try {
+    display:block;
+}
+
+div.product div.buttons div.buy, div.chat-product div.buy-link {
+    width:33px;
+    height:20px;
+    margin-left:1px;
+    background:transparent url(../../widgets/product/img/button_buy.png) no-repeat;
+}
+
+div.chat-product .buy-link, div.product div.buy {
+    display: none;
+}
+div.product div.buttons div.buy {
+    float:left;
+}
+
+div.product div.buttons div.buy:hover {
+    background:transparent url(../../widgets/product/img/button_buy_hover.png) no-repeat;
+}
+
+div.chat-product.purchasable .buy-link, div.product.purchasable div.buy {
+    display: block;
+}
+
+div.chat-product.in-inventory div.buy-link,
+div.product.in-inventory div.buy {
+    display:none;
+}
+
+div.product div.you-own-this {
+    float:left;
+    width:58px;
+    height:18px;
+    background:transparent url(../../widgets/product/img/you_own_this.png) no-repeat;
+    display:none;
+}
+
+div.product.purchasable div.display-only, div.product.in-inventory div.display-only {
+    display: none;
+}
+
+div.product div.display-only {
+    float:left;
+    width:56px;
+    height:18px;
+    background:transparent url(../../widgets/product/img/display_only.png) no-repeat;
+    display: block;
+}
+
+div.product.in-inventory div.you-own-this {
+    display:block;
+}
+
+div.product.hidden div.buy, div.product.hidden div.cart {
+    display:none;
+}
+
+div.product div.voice {
+    display:none;
+    background:url(../../widgets/product/img/bg_voice.png) repeat-x;
+    position:absolute;
+    top:18px;
+    left:0;
+    width:140px;
+    height:18px;
+    padding:8px 0;
+}
+
+#voice_mode div.product.trying div.voice, #voice_mode div.product.try div.voice {
+    display:block;
+}
+
+div.product div.voice div.voice-try {
+    background:url(../../widgets/product/img/btn_push_talk.png) no-repeat;
+    width:104px;
+    height:20px;
+    margin:0 auto;
+    cursor:pointer;
+}
+
+div.product div.new {
+    display:none;
+    position:absolute;
+    left:0;
+    bottom:0;
+    background:url(../../widgets/product/img/new.png) no-repeat;
+    width:28px;
+    height:30px;
+}
+
+div.product.new div.new {
+    display:block;
+}
+
+.outfit.product.new .new {
+    bottom: 17px;
+}
+
+div.product.purchasable div.price span.original_price {
+    display: none;
+    font-size: 70%;
+    text-decoration: line-through;
+}
+
+div.product.purchasable div.price.two_priced span.original_price {
+    display: inline;
+}
+div.buttons .clickable,
+div.buttons .display-only,
+div.buttons .you-own-this {
+    text-indent: -999em;
+}
+div.buttons .display-only {
+    text-indent: 0;
+}
+div#panel_product_info div.buttons div.you-own-this {
+    text-indent: 0;
+}
+div.suggest {
+    display: none;
+}
+.shopTogether div.product div.wishlist,
+.shopTogether div.product div.cart {
+    display: none;
+}
+.shopTogether div.product:hover div.cart {
+    display:none;
+}
+.shopTogether div.product div.buttons div.try:hover,
+.shopTogether div.product div.buttons div.buy:hover {
+    background-image: none;
+}
+
+.shopTogether div.product.purchasable div.clickable.gift,
+.shopTogether div.product div.suggest {
+    display: block;
+}
+
+.shopTogether div.product div.display-only {
+    display: none;
+}
+
+.shopTogether div.product div.clickable.try,
+.shopTogether div.product div.clickable.gift,
+.shopTogether div.product div.clickable.buy,
+.shopTogether div.product div.clickable.off,
+.shopTogether div.product div.you-own-this,
+.shopTogether div.product div.display-only,
+div.chat-product div.try-link,
+div.chat-product div.display-only,
+div.chat-product div.gift-link,
+div.chat-product div.buy-link,
+div.chat-product div.off-link,
+div.chat-product div.you-own-this,
+.shopTogether div.product div.clickable.suggest {
+    -moz-border-image: url(../../css/imvu-button-level4-dark-gray.png) 4 stretch;
+    background-image: none;
+    border-width: 3px;
+    height: 16px;
+    float: left;
+    
+    font-size: 10px;
+    font-weight: 400;
+    margin: 3px 3px 0 0px;
+    min-width: 0;
+    padding: 0 2px;
+    text-indent: 0;
+    text-shadow: none;
+    width: auto;
+    line-height: 16px;
+}
+.shopTogether div.product .buttons div.clickable:hover {
+    -moz-border-image: url(../../css/imvu-button-level4-dark-gray-hover.png) 4 stretch;
+}
+
+div.chat-product div.off-link,
+.shopTogether div.product div.clickable.off {
+    -moz-border-image: url(../../css/imvu-button-level4-light-gray.png) 4 stretch;
+    color: #000;
+}
+
+div.chat-product.trying div.try-link,
+.shopTogether div.product.trying div.buttons div.try {
+    display: none;
+}
+
+div.chat-product:not(.trying) div.off-link { 
+    display: none;
+}
+
+.shopTogether div.product.trying div.buttons div.off {
+    display: block;
+}
+
+ div.chat-product div.you-own-this,
+ div.chat-product div.display-only,
+.shopTogether div.product div.display-only,
+.shopTogether div.product div.clickable.buy,
+.shopTogether div.product div.you-own-this {
+    margin-right: 0;
+}
+
+ div.chat-product div.try-link,
+.shopTogether div.product div.clickable.try {
+     margin-right: -2px;
+ }
+
+div.chat-product.purchasable div.try,
+div.chat-product.in-inventory div.try,
+.shopTogether div.product.in-inventory div.clickable.try,
+.shopTogether div.product.purchasable div.clickable.try {
+     margin-right: 3px;
+ }
+
+ div.chat-product div.you-own-this,
+ div.chat-product div.display-only,
+.shopTogether div.product div.display-only,
+.shopTogether div.product div.you-own-this {
+    -moz-border-image: none;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.shopTogether div.product div.you-own-this {
+    margin-top: 5px;
+}
+div.chat-product div.you-own-this { 
+    display:none;
+}
+div.chat-product.in-inventory div.you-own-this { 
+    display:inline-block;
+}
+div.chat-product div.buy-link,
+.shopTogether div.product div.clickable.buy {
+    color: #000;
+    -moz-border-image: url(../../css/imvu-button-level4.png) 4 stretch;
+}
+    div.chat-product div.buy-link:hover,
+    .shopTogether div.product div.clickable.buy:hover { 
+        -moz-border-image: url(../../css/imvu-button-level4-hover.png) 4 stretch;
+    }
+

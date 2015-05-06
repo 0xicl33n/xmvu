@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    
+        <script src="../../js/jquery-1.6.js"></script>
+        <script src="../../js/underscore.js"></script>
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head><body>
+        <div id="music-widget-container"></div>
+
+        <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script src="../../js/imvu.js"></script>
+        <script src="../../js/eventbus.js"></script>
+        <script src="MusicTool.js"></script>
+        <script>
+        if (IMVU.runJS()) {
+            IMVU.Client.MusicTool = new MusicTool(
+                imvu,
+                IMVU.Network,
+                IMVU.Client.EventBus,
+                document.getElementById('music-widget-container'),
+                function(){ 
+                    return document.createElement('embed');
+                });
+            var tool = {show:function(){}, hide:function(){}};
+        }
+        </script>
+    </body></html>

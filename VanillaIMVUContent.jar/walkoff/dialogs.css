@@ -1,0 +1,1016 @@
+@font-face {
+    font-family: Babyface;
+    src:url("../fonts/Babyface.ttf");
+}
+
+@font-face {
+    font-family:"Edunline";
+    src:url("../fonts/Edunline.ttf");
+}
+
+#walkoff .dialog-background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    display: none;
+}
+
+#walkoff .board-mask.dialog-background {
+    position: fixed;
+    z-index: 2;
+}
+
+#walkoff .info-dialog {
+    cursor: default;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -190px;
+    margin-left: -320px;
+    width: 550px;
+    border-width: 40px 25px;
+    -moz-border-image: url(../walkoff_img/dialog_largebox.png) 40 45 40 45 stretch;
+    
+    color: #EEF2F3;
+    
+    font-size: 24px;
+}
+
+    #walkoff .info-dialog .box {
+        margin-top: 18px;
+    }
+        #walkoff .info-dialog .box .label {
+            color: #00FFF0;
+            font-size: 15px;
+            text-align: left;
+            margin-left: 20px;
+        }
+        #walkoff .info-dialog .box input.text {
+            -moz-user-select: all;
+            border: 1px solid #FFF;
+            background: #000;
+            font-size: 20px;
+        }
+        #walkoff .info-dialog .box > .content {
+            position: relative;
+            background: #242424;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: 0px 0px 4px 1px #00FFF0;
+            box-shadow: 0px 0px 4px 1px #00FFF0;
+            font-size: 16px;
+        }
+            #walkoff .info-dialog .box > .content.dark {
+                background: #000;
+                border-style: solid;
+                border-color: #00FFF0;
+                border-width: 3px;
+                -moz-border-radius: 14px;
+                border-radius: 14px;
+                -moz-box-shadow: 0px 0px 8px 1px #00FFF0;
+                box-shadow: 0px 0px 8px 1px #00FFF0;
+            }
+            #walkoff .info-dialog .box > .content .header {
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            #walkoff .info-dialog .box > .content .scrollable {
+                overflow-y: scroll;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+    #walkoff .info-dialog .title {
+        color: #00FFF0;
+        text-shadow: 0px 1px 5px #00FFF0;
+        text-transform: lowercase;
+        font-size: 28px;
+        font-family: Babyface, Baby Face, sans-serif;
+        margin-bottom: 13px;
+        margin-top: -8px;
+    }
+    #walkoff .info-dialog .text-inset {
+        position: absolute;
+        top: 151px;
+        left: 9px;
+        height: 91px;
+        width: 472px;
+        border-width: 12px;
+        margin: 4px 8px;
+        padding: 8px 12px 14px 12px;
+        -moz-border-image: url(../walkoff_img/dialog_smallbox.png) 12 12 12 12 stretch;
+    }
+    #walkoff .info-dialog strong {
+        font-weight: normal;
+        color: #00FFF0;
+    }
+    #walkoff .info-dialog ul {
+        margin: 20px 65px;
+    }
+    #walkoff .info-dialog .button-bar {
+        position: absolute;
+        bottom: -20px;
+    }
+    #walkoff .info-dialog .checkbox {
+        height: 23px;
+        padding-left: 30px;
+        background: url(../walkoff_img/box_unchecked.png) no-repeat;
+    }
+        #walkoff .info-dialog .checkbox.checked {
+            background: url(../walkoff_img/box_checked.png) no-repeat;
+        }
+    #walkoff .info-dialog .close {
+        background: url(../walkoff_img/dialog_close.png);
+        width: 32px;
+        height: 33px;
+        position: absolute;
+        top: -11px;
+        right: -12px;
+        cursor: pointer;
+    }
+        #walkoff .info-dialog .close:hover {
+            background: url(../walkoff_img/dialog_close_mouseover.png);
+        }
+    #walkoff .info-dialog .option {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+/************************************************************************
+ VIP Upsell Dialog
+************************************************************************/
+
+#walkoff .vip-upsell-dialog .info-dialog {
+    width: 420px;
+    margin-left: -210px;
+    margin-top: -260px;
+}
+    #walkoff .vip-upsell-dialog .body-text {
+        text-align: left;
+        font-size: 15px;
+        margin-left: 17px;
+        margin-bottom: 20px;
+    }
+
+/************************************************************************
+ Invite Dialog
+************************************************************************/
+
+#walkoff .invite-dialog > .info-dialog {
+    width: 650px;
+    margin-left: -372px;
+}
+
+    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content {
+        height: 350px;
+        background: #000;
+    }
+        #walkoff .invite-dialog > .info-dialog .friend-list.box .label.count {
+            margin-left: 0;
+            color: #FFF;
+            position: absolute;
+            top: 45px;
+            left: 20px;
+        }
+        #walkoff .invite-dialog > .info-dialog .friend-list.box .online-filter {
+            position: absolute;
+            top: 45px;
+            right: 20px;
+        }
+        #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable {
+            position: absolute;
+            text-align: left;
+            left: 0px;
+            right: 0px;
+            top: 75px;
+            bottom: 0px;
+            padding-left: 20px;
+        }
+            #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box {
+                position: relative;
+                display: inline-block;
+                width: 295px;
+                height: 85px;
+                border-top: 1px #00CFC3 solid;
+            }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box:nth-child(2n) {
+                        -moz-box-shadow: 1px 0px 5px 1px #00615C inset;
+                    }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box:nth-child(2n+1) {
+                        -moz-box-shadow: -1px 0px 5px 1px #00615C inset;
+                        border-right: 1px #00CFC3 solid;
+                    }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box:nth-last-child(2),
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box:nth-last-child(1) {
+                        border-bottom: 1px #00CFC3 solid;
+                    }
+                #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .portrait-box {
+                    display: inline-block;
+                    width: 80px;
+                    height: 80px;
+                }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .portrait-box > .portrait {
+                        position: relative;
+                        top: 13px;
+                        left: 20px;
+                        height: 55px;
+                        width: 40px;
+                        -moz-box-shadow: 0px 0px 8px 1px #00FFF0;
+                        box-shadow: 0px 0px 8px 1px #00FFF0;
+                        background-repeat: no-repeat;
+                    }
+                #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box {
+                    position: absolute;
+                    top: 3px;
+                    left: 80px;
+                    height: 80px;
+                    width: 205px;
+                }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box > .name {
+                        left: 0px;
+                        top: 0px;
+                        color: #00FFF0;
+                        text-shadow: 0px 1px 5px #00FFF0;
+                        font-size: 20px;
+                    }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box > .status {
+                        left: 0px;
+                        top: 0px;
+                        margin-left: 15px;
+                        font-size: 14px;
+                        display: none;
+                    }
+                        #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box > .status.online {
+                            color: #0F0;
+                        }
+                        #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box > .status.offline {
+                            color: #F00;
+                        }
+                    #walkoff .invite-dialog > .info-dialog .friend-list.box > .content > .scrollable > .friend-box > .info-box > .friend-invite.button {
+                        position: relative;
+                        width: 120px;
+                        display: block;
+                        left: 5px;
+                        top: -15px;
+                    }
+
+/************************************************************************
+ Decline Dialog
+************************************************************************/
+
+#walkoff > .game > .decline-dialog > .info-dialog > .title {
+    margin-bottom: 60px;
+}
+
+/************************************************************************
+ Invite Timeout Dialog
+************************************************************************/
+
+#walkoff > .game > .invite-timeout-dialog > .info-dialog > .title {
+    display: none;
+}
+
+/************************************************************************
+ Greenroom Dialog
+************************************************************************/
+
+#walkoff > .game > .greenroom-dialog {
+    height: 0;
+    width: 0;
+    display: none;
+    left: 50%;
+}
+    #walkoff > .game > .greenroom-dialog > .info-dialog {
+        width: 558px;
+        height: 470px;
+        margin-left: -324px;
+        margin-top: -263px;
+    }
+        #walkoff > .game > .greenroom-dialog > .info-dialog .button-bar {
+            width: 100%;
+        }
+        #walkoff > .game > .greenroom-dialog > .info-dialog .countdown-holder {
+            color: white;
+            text-shadow: 0px 1px 5px #00FFF0;
+            font-size: 17px;
+            margin-top: 35px;
+        }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .greenroom-panel {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .waiting {
+        }
+            #walkoff > .game > .greenroom-dialog.waiting > .info-dialog > .waiting {
+                display: block;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .waiting > .message {
+                display: none;
+                margin-top: 170px;
+                text-align: center;
+            }
+                #walkoff > .game > .greenroom-dialog.invite > .info-dialog > .waiting > .message.invite,
+                #walkoff > .game > .greenroom-dialog.invitee > .info-dialog > .waiting > .message.invitee,
+                #walkoff > .game > .greenroom-dialog:not(.invite):not(.invitee) > .info-dialog > .waiting > .message.quickmatch {
+                    display: block;
+                }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .instruction {
+            font-family:sans-serif;
+            font-size: 16px;
+            color: #FFF;
+            text-shadow: 0px 0 5px #00FFF0;
+        }
+            #walkoff > .game > .greenroom-dialog.instruction > .info-dialog > .instruction {
+                display: block;
+            }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .starting {
+        }
+            #walkoff > .game > .greenroom-dialog.starting > .info-dialog > .starting {
+                display: block;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .starting > .message {
+                display: block;
+                margin-top: 170px;
+                text-align: center;
+            }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .select {
+        }
+            #walkoff > .game > .greenroom-dialog.selecting > .info-dialog > .select {
+                display: block;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .title {
+                text-transform: none;
+                font-size: 30px;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .help-text {
+                height: 34px;
+                margin-top: 14px;
+                margin-bottom: 28px;
+                margin-left: 10px;
+                margin-right: 10px;
+                color: white;
+                text-shadow: 0px 1px 5px #06FAF0;
+                text-align: justify;
+                font-size: 13px;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .countdown-holder {
+                margin-top: 29px;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .button-bar {
+                bottom: -22px;
+            }
+            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box {
+            }
+                #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .title {
+                    color: #00FFF0;
+                    font-size: 19px;
+                    text-shadow: 0 1px 5px #06FAF0;
+                    background-color: transparent;
+                }
+                #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content {
+                    height: 200px;
+                    width: 380px;
+                    overflow: hidden;
+                }
+                    #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .scroll-area {
+                        width: 100%;
+                        position: relative;
+                    }
+                    #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move {
+                        display: block;
+                        position: relative;
+                        float: left;
+                        height: 59px;
+                        width: 59px;
+                        padding-left: 7px;
+                        padding-top: 7px;
+                        text-align: center;
+                        margin-bottom: 30px;
+                        margin-left: 5px;
+                    }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .pie {
+                            display: block;
+                            padding-top: 3px;
+                            padding-left: 3px;
+                            height: 51px;
+                            width: 51px;
+                        }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .mask {
+                            display: block;
+                            position: absolute;
+                            top: 7px;
+                            left: 6px;
+                            background-image: url(../walkoff_img/styleMove-circle.png);
+                            background-repeat: no-repeat;
+                            height: 57px;
+                            width: 57px;
+                        }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .move-icon {
+                            position: absolute;
+                            top: -33px;
+                            left: -10px;
+                            display: block;
+                            height: 96px;
+                            width: 96px;
+                            background-color: transparent;
+                            background-repeat: no-repeat;
+                            opacity: 1.0;
+                        }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .gray-out {
+                            display: none;
+                            position: absolute;
+                            top: 3px;
+                            left: 2px;
+                            background-image: url(../walkoff_img/styleMove-grayout.png);
+                            background-repeat: no-repeat;
+                            height: 61px;
+                            width: 61px;
+                        }
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move.selected > .gray-out,
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move.locked > .gray-out {
+                                display: block;
+                            }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .select-msg {
+                            display: none;
+                            font-size: 8px;
+                            font-weight: bold;
+                            color: white;
+                            position: absolute;
+                            top: 30px;
+                            left: 14px;
+                            text-align: center;
+                        }
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move.selected > .select-msg {
+                                display: block;
+                            }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .lock {
+                            display: none;
+                            position: absolute;
+                            top: 24px;
+                            left: 25px;
+                            background-image: url(../walkoff_img/lock.png);
+                            background-repeat: no-repeat;
+                            height: 22px;
+                            width: 20px;
+                        }
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move.locked > .lock {
+                                display: block;
+                            }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .label {
+                            display: block;
+                            font-size: 10px;
+                            font-weight: bold;
+                            color: white;
+                            position: absolute;
+                            top: 65px;
+                            left: -19px;
+                            width: 69px;
+                            text-align: center;
+                            margin-top: 5px;
+                        }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .glow-hover {
+                            display: none;
+                            position: absolute;
+                            top: 3px;
+                            left: 2px;
+                            background-image: url(../walkoff_img/styleMove-circleGlow.png);
+                            background-repeat: no-repeat;
+                            height: 65px;
+                            width: 65px;
+                        }
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move:not(.locked):hover > .glow-hover {
+                                display: block;
+                            }
+                        #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move > .reticle {
+                            display: none;
+                            position: absolute;
+                            top: 3px;
+                            left: 2px;
+                            background-image: url(../walkoff_img/reticle_big.png);
+                            background-repeat: no-repeat;
+                            height: 65px;
+                            width: 65px;
+                        }
+                            #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box > .content .available-power-move.marked > .reticle {
+                                display: block;
+                            }
+                #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box .jspVerticalBar {
+                    width: 12px;
+                }
+                #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box .jspTrack {
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: #00F2E2;
+                    background-color: black;
+                }
+                #walkoff > .game > .greenroom-dialog > .info-dialog > .select > .power.box .jspDrag {
+                    background-color: #00F2E2;
+                }
+        #walkoff > .game > .greenroom-dialog > .info-dialog > .instruction {
+            
+            font-size: 16px;
+            color: #FFF;
+            text-shadow: 0px 0 5px #00FFF0;
+        }
+
+/************************************************************************
+ End Game Dialog
+************************************************************************/
+
+#walkoff .in-board-background {
+    display: none;
+}
+
+#walkoff .in-board {
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -192px;
+    margin-top: -205px;
+    height: 386px;
+    width: 386px;
+    z-index:10;
+    
+}
+
+    #walkoff .in-board .title {
+        font-family: Babyface, Baby Face, sans-serif;
+        text-shadow: 0 0 2px white;
+        font-size: 76px;
+        line-height: 58px;
+    }
+    
+    #walkoff .in-board .explanation {
+        margin-top: 15px;
+        
+        font-size: 16px;
+    }
+    
+    #walkoff .in-board .message {
+        margin-top: 170px;
+        font-size: 24px;
+        
+        text-align: center;
+    }
+    
+    #walkoff .in-board .button {
+        display: inline-block;
+        padding: 7px 25px 5px 25px;
+        border-width: 10px 20px;
+        color: #000;
+        margin: 0 -10px 0 -10px;
+        -moz-border-image: url(../walkoff_img/dialog_button_mouseout.png) 10 20 10 20 stretch;
+        cursor: pointer;
+        min-height: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        
+    }
+        #walkoff .in-board .button:hover {
+            -moz-border-image: url(../walkoff_img/dialog_button_mouseover.png) 10 20 10 20 stretch;
+        }
+    
+    #walkoff .in-board .add-friend {
+        margin: auto;
+        
+        font-size: 12px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    #walkoff .in-board .add-friend.sent {
+        cursor: default;
+    }
+    
+        #walkoff .in-board .add-friend .add-friend-icon {
+            background: url(../walkoff_img/gameover_add_friend_icon.png);
+            display: inline-block;
+            margin-right: -5px;
+            margin-top: -12px;
+            margin-bottom: -7px;
+            width: 25px;
+            height: 25px;
+        }
+        
+        #walkoff .in-board .add-friend:hover .add-friend-icon {
+            background-image: url(../walkoff_img/gameover_add_friend_icon_over.png);
+        }
+
+        #walkoff .in-board .add-friend .add-friend-name {
+            color: #00FFF0;
+        }
+    
+    #walkoff .end-game-dialog .summary {
+        display: none;
+        padding-bottom: 0px;
+        cursor: default;
+    }
+    
+    #walkoff .end-game-dialog.notify-unlock .summary {
+    }
+    
+    #walkoff .end-game-dialog .content {
+        padding-top: 54px;
+    }
+    
+    #walkoff .end-game-dialog.notify-unlock .content {
+        padding-top: 20px;
+    }
+    
+    #walkoff .end-game-dialog.show-summary .summary {
+        display: block;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-desc {
+        font-size: 30px;
+        font-family: Babyface, Baby Face, sans-serif;
+        color: #00fff0;
+        text-shadow: #00FFF0 0 0 10px;
+        margin-top: 10px;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-desc .standard-content,
+    #walkoff .end-game-dialog .summary .total-desc.new-high-score .high-score-content {
+        display: block;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-desc .high-score-content,
+    #walkoff .end-game-dialog .summary .total-desc.new-high-score .standard-content {
+        display: none;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-desc .high-score-content {
+        background-image: url(../walkoff_img/wo_highscore_bg.png);
+        width: 348px;
+        height: 82px;
+        margin: -35px auto -3px;
+        position: relative;
+        top: 6px;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-desc .high-score-content .label {
+        color: white;
+        
+        font-size: 20px;
+        left: 24px;
+        top: 21px;
+        width: 300px;
+        font-weight: bold;
+        line-height: 114%;
+        font-style: italic;
+        position: relative;
+        text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black, 2px 0 black, 0 2px black, -2px 0 black, 0 -2px black;
+    }
+
+    #walkoff .end-game-dialog .defeat-text {
+        
+        font-size: 14px;
+        cursor: default;
+    }
+    
+    #walkoff .end-game-dialog.victor .victory-text {
+       display: block;
+    }
+    
+    #walkoff .end-game-dialog.abandoned .rematch-button {
+        display: none;
+    }
+    #walkoff .end-game-dialog.abandoned .add-friend {
+        display: none;
+    }
+    
+    #walkoff .end-game-dialog .victory-text,
+    #walkoff .end-game-dialog.victor .defeat-text {
+        display: none;
+    }
+    
+    #walkoff .end-game-dialog .summary .total-score {
+        font-size: 42px;
+        
+        color: #fff;
+        font-weight: bold;
+    }
+
+    #walkoff .end-game-dialog > .in-board > .content > .unlock-notify {
+        display: none;
+        position: relative;
+        background: url(../walkoff_img/dash_texture.png);
+        -moz-border-radius: 10px;
+        padding: 10px 10px;
+        width: 335px;
+        margin: auto;
+        margin-top: 3px;
+    }
+        #walkoff .end-game-dialog.notify-unlock > .in-board > .content > .unlock-notify {
+            display: block;
+        }
+        #walkoff .end-game-dialog > .in-board > .content > .unlock-notify > .gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
+        }
+        #walkoff .end-game-dialog > .in-board > .content > .unlock-notify .unlock-title {
+            
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 25px;
+            margin: auto;
+            text-shadow: 0px 1px 1px #000;
+            margin-bottom: 15px;
+            color: #00FFF0;
+        }
+        #walkoff .end-game-dialog > .in-board .unlock-notify .unlock-icon {
+            display: inline-block;
+            background: url(../walkoff_img/gameover_unlock_icon.png) no-repeat left top;
+            height: 25px;
+            width: 25px;
+            margin-bottom: -2px;
+            margin-right: 5px;
+        }
+        #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box {
+            position: relative;
+            padding: 10px;
+            background-color: #222;
+            -moz-border-radius: 10px;
+            text-align: left;
+        }
+            #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .icon {
+                display: inline-block;
+                position: relative;
+                width: 57px;
+                height: 57px;
+                margin-right: 8px;
+                vertical-align: top;
+            }
+                #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .icon > .background-color {
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    height: 50px;
+                    width: 50px;
+                    -moz-border-radius: 27px;
+                }
+                #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .icon > .mask {
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    background-image: url(../walkoff_img/styleMove-circle.png);
+                    background-repeat: no-repeat;
+                    height: 57px;
+                    width: 57px;
+                }
+                #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .icon > .move-icon {
+                    position: absolute;
+                    background: no-repeat;
+                    background-position: center center;
+                    height: 100%;
+                    width: 100%;
+                    top: -6px;
+                    left: 3px;
+                }
+            #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .info {
+                display: inline-block;
+                position: relative;
+                text-align: left;
+                display: inline-block;
+                width: 245px;
+            }
+                #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .info > .name {
+                    font-size: 15px;
+                    font-weight: bold;
+                    text-shadow: 0px 1px 1px #000;
+                }
+                #walkoff .end-game-dialog > .in-board .unlock-notify > .reward-box > .info > .descr {
+                    font-size: 12px;
+                    text-shadow: 0px 1px 1px #000;
+                }
+
+/************************************************************************
+ Score Breakdown
+************************************************************************/
+
+#walkoff .score-breakdown-button {
+    width: 96px;
+}
+
+#walkoff .score-breakdown-tray {
+    position: absolute;
+    width: 189px;
+    height: 252px;
+    overflow: hidden;
+}
+
+#walkoff .score-breakdown-tray .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 252px;
+    background-image: url(../walkoff_img/boardShadow.png);
+}
+
+#walkoff .score-breakdown {
+    position: relative;
+    left: -100px;
+    width: 189px;
+    height: 252px;
+    padding-top: 6px;
+    background-image: url(../walkoff_img/breakdown_bg.png);
+}
+
+#walkoff .score-breakdown .close {
+    background: url(../walkoff_img/btn-close-normal.png);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    cursor: pointer;
+}
+
+#walkoff .score-breakdown .scroll-area {
+    height: 222px;
+    overflow: hidden;
+    margin-right: 2px;
+}
+
+#walkoff .score-breakdown .title {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 25px;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 5px;
+}
+
+#walkoff .score-breakdown .close:hover {
+    background: url(../walkoff_img/btn-close-over.png);
+}
+
+#walkoff .score-breakdown .detail {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0px;
+    height: 19px;
+    width: 137px;
+    margin-left: 8px;
+    margin-bottom: 3px;
+    background-color: #2C2C2C;
+    color: white;
+    padding-top: 2px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#walkoff .score-breakdown .detail .move {
+    color: #06FFE1;
+    font-size: 12px;
+    padding-top: 1px;
+    display: inline-block;
+    float: left;
+}
+
+#walkoff .score-breakdown .detail .points {
+    display: inline-block;
+    float: right;
+}
+
+#walkoff .score-breakdown .detail.header .move {
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 0px;
+}
+
+#walkoff .score-breakdown .detail.header .points {
+    font-weight: bold;
+}
+
+#walkoff .score-breakdown .scroll-area {
+    height: 216px;
+    width: 183px;
+}
+
+#walkoff .score-breakdown .scroll-pane {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#walkoff .score-breakdown .horizontal-only {
+    height: auto;
+}
+
+#walkoff .score-breakdown .jspTrack {
+    background: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #26A697;
+    height: 216px;
+}
+
+#walkoff .score-breakdown .jspDrag {
+    background: #03F2DF;
+}
+
+#walkoff .score-breakdown .box-bottom {
+    position: relative;
+    left: 167px;
+    height: 2px;
+    width: 16px;
+    background:#26A697;
+}
+
+/*<table>*/
+/*<tr class='template'>*/
+/*<div class='detail'>*/
+/*<div class='move'>Move</div>*/
+/*<div class='points'>Style Points</div>*/
+/*</div>*/
+/*</tr>*/
+/*</table>*/
+
+/************************************************************************
+ Loading Panel
+************************************************************************/
+
+#walkoff > .loading-dialog {
+    display: block;
+}
+
+.loading-dialog .logo {
+    z-index: 999;
+}
+
+.loading-dialog .page {
+    text-align: left;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    opacity: 0;
+    overflow: visible;
+}
+
+.loading-dialog .dialog {
+    position: relative;
+    display: inline-block;
+    height: 558px;
+    top: 30%;
+    margin-top: -180px;
+}
+
+/*
+ * Give the first page position: static so that it sizes the dialog for us.
+ * -- andy 9 May 2012
+ */
+.loading-dialog .page.one {
+    position: static;
+    display: block;
+}
+
+.loading-dialog .caption {
+    font: 40px Edunline;
+    color: #00FFF0;
+    position: relative;
+    top: -93px;
+    text-shadow: #00FFF0 0 0 10px;
+}
+
+.loading-dialog .progress-bar {
+    width: 431px;
+    height: 65px;
+    background: transparent url(../walkoff_img/Loading_bar_background.png);
+    position: relative;
+    margin: auto;
+    top: -93px;
+}
+
+.loading-dialog .progress-bar > .current-progress {
+    background: transparent url(../walkoff_img/Loading_bar.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 65px;
+}
+
+.loading-dialog                    .ellipses span { visibility: hidden; }
+.loading-dialog[data-ellipsis="1"] .ellipses .one { visibility: visible; }
+.loading-dialog[data-ellipsis="2"] .ellipses .one { visibility: visible; }
+.loading-dialog[data-ellipsis="2"] .ellipses .two { visibility: visible; }
+.loading-dialog[data-ellipsis="3"] .ellipses span { visibility: visible; }

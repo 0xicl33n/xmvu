@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+<script src="../js/jquery-1.6.js"></script>
+<script src="../js/underscore.js"></script>
+<title>Room loading</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../widgets/button/imvuButton.css">
+
+    <script src="../js/imvu.js"></script>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/json/json.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="../js/RoomUtil.js"></script>
+
+    <script src="../widgets/button/imvuButton.js"></script>
+    <script src="../widgets/CircleDial.js"></script>
+
+    <script src="../js/Timer.js"></script>
+
+    <script src="RoomLoading.js"></script>
+    <script src="tips.js"></script>
+</head><body>
+
+    <div id="roomloader">
+        <div id="loadInfo">
+            <span class="loadingTip"><script id="inline_translate">_iT("YOU ARENT MAKING MONEY OFF ME. KEEP YOUR ADS", "inline_translate")</script></span>
+            <span class="percentLoaded"></span>
+            <span class="loadingText"></span>
+            <button class="skip"><script id="inline_translate">_iT("Skip", "inline_translate")</script></button>
+        </div>
+        <div id="adspace">
+        </div>
+        <div id="videoadspace">
+        </div>
+
+        <div id="leftTip" class="tip">
+            <h1 class="title"></h1>
+            <p class="content"></p>
+        </div>
+        <div class="encouragement"><script id="inline_translate">_iT("I like butts.", "inline_translate")</script></div>
+        <div class="upsell"><a href="#vip"><script id="inline_translate">_iT("Fuck your ads, and your VIP.", "inline_translate")</script> <strong><script id="inline_translate">_iT("420 BLAZE IT", "inline_translate")</script></strong></a></div>
+        <div id="bottomTip" class="tip">
+            <h1 class="title"></h1>
+            <p class="content"></p>
+        </div>
+    </div>
+
+    <script>
+    (function(IMVU) {
+        if (IMVU.runJS()) {
+            var timer = new Timer(),
+                tips = getTips(imvu);
+            window.LoadingDialog = new RoomLoading('#roomloader', tips, false, imvu, IMVU.Network, timer);
+            window.setLoadingProgress = LoadingDialog.setLoadingProgress.bind(LoadingDialog);
+            window.hideLoadingProgress = LoadingDialog.hideLoadingProgress.bind(LoadingDialog);
+            window.switchToStaticLayout = LoadingDialog.switchToStaticLayout.bind(LoadingDialog);
+            window.showSkipButton = LoadingDialog.showSkipButton.bind(LoadingDialog);
+
+            if(IMVU.IS_FIREFOX) {
+                setLoadingProgress(0.75, 'Configuring room atmosphere');
+            }
+        }
+    })(IMVU);
+    </script>
+</body></html>

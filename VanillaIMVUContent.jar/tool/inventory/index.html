@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Inventory</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../yui/container/assets/container.css">
+    <link rel="stylesheet" type="text/css" href="../../css/new-visd-base.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="CategoryPanel.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/hint/HintWidget.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/event-mouseenter/event-mouseenter.js"></script>
+
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="../../js/Timer.js"></script>
+    <script src="../../yui/container/container.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="../../widgets/hint/HintWidget.js"></script>
+    <script src="../../js/jquery-ui-1.8.7.custom.min.js"></script>
+    <script src="CategoryPanel.js"></script>
+    <script src="InventoryTool.js"></script>
+    <script src="FakeProduct.js"></script>
+    <script src="FakeInventoryDataSource.js"></script>
+    <script src="InventoryDataSource.js"></script>
+    <script src="../../js/FakeImvu.js"></script>
+</head><body class="yui-skin-sam">
+    <div id="tool">
+        <div class="toolbar">
+            <div class="title">
+                <span class="clothing-mode"><script id="inline_translate">_iT("My Avatar", "inline_translate")</script></span>
+                <span class="furniture-mode"><script id="inline_translate">_iT("My Furniture", "inline_translate")</script></span>
+                <span class="scenes-mode"><script id="inline_translate">_iT("My Rooms", "inline_translate")</script></span>
+            </div>
+            <div class="tabs">
+                <div class="category title active">
+                    <span class="clothing-mode"><script id="inline_translate">_iT("My Avatar", "inline_translate")</script></span>
+                    <span class="furniture-mode"><script id="inline_translate">_iT("My Furniture", "inline_translate")</script></span>
+                    <span class="scenes-mode"><script id="inline_translate">_iT("My Rooms", "inline_translate")</script></span>
+                </div>
+                <div class="list title">
+                    <span class="list"><script id="inline_translate">_iT("My Lists", "inline_translate")</script></span>
+                </div>
+            </div>
+            <div class="close"></div>
+            <div class="refresh" title="Refresh inventory"></div>
+            <div class="search-container">
+                <div class="search" title="Contains these letters">
+                    <input id="search-field">
+                    <label id="search-field-label" for="search-field"><script id="inline_translate">_iT("Search...", "inline_translate")</script></label>
+                    <div id="search-x"></div>
+                </div>
+            </div>
+            <div class="new-views">
+                <div class="default"></div>
+                <div class="old active"></div>
+                <div class="list"></div>
+            </div>
+            <div class="views">
+                <div class="thumbnail"></div>
+                <div class="list"></div>
+            </div>
+            <div class="new-gender both">
+                <div class="female" filter="{&quot;gender&quot;:&quot;F&quot;}"></div>
+                <div class="both" filter="{}"></div>
+                <div class="male" filter="{&quot;gender&quot;:&quot;M&quot;}"></div>
+            </div>
+            <div class="new-maturity both">
+                <div class="ga" filter="{&quot;products_mature&quot;:&quot;N&quot;}"></div>
+                <div class="both" filter="{}"></div>
+                <div class="ap" filter="{&quot;products_mature&quot;:&quot;Y&quot;}"></div>
+            </div>
+            <div class="save-outfit-container">
+                <div class="save-outfit" title="Save your current outfit"><script id="inline_translate">_iT("Save Outfit", "inline_translate")</script><span class="icon"></span></div>
+            </div>
+            <div class="undo-container">
+                <div class="undo" title="Undo your latest change"><script id="inline_translate">_iT("Undo", "inline_translate")</script><span class="icon"></span></div>
+            </div>
+            <div class="redo-container">
+                <div class="redo" title="Redo your latest undone change"><script id="inline_translate">_iT("Redo", "inline_translate")</script><span class="icon"></span></div>
+            </div>
+        </div>
+        <div class="category-panel">
+            <div class="category-panel-inner">
+                <div class="category-selection">
+                    <h2 class="category-name">
+                        <embed class="bar" type="image/svg+xml" src="category-bar.svg">
+                        <span class="text"><script id="inline_translate">_iT("Category", "inline_translate")</script></span>
+                    </h2>
+                    <ul class="categories">
+                        <li class="recently-added" data-filter="recent" filter="{}" genderless="1"><span><script id="inline_translate">_iT("Recently Added", "inline_translate")</script></span></li>
+                        <li class="wearing" data-filter="wearing" filter="{}" genderless="1"><span><script id="inline_translate">_iT("Wearing", "inline_translate")</script></span></li>
+                        <li class="all-categories" data-filter="all" filter="{&quot;categories&quot;:[106, 108, 425]}"><span><script id="inline_translate">_iT("All Categories", "inline_translate")</script></span></li>
+                        <li class="category-divider"></li>
+                        <li class="tops" data-filter="tops" filter="{&quot;categories&quot;:[69, 128]}" shopcategory="Tops"><span><script id="inline_translate">_iT("Tops", "inline_translate")</script></span></li>
+                        <li class="bottoms" data-filter="bottoms" filter="{&quot;categories&quot;:[70, 78]}" shopcategory="Bottoms"><span><script id="inline_translate">_iT("Bottoms", "inline_translate")</script></span></li>
+                        <li class="shoes" data-filter="shoes" filter="{&quot;categories&quot;:[101, 102]}" shopcategory="Shoes"><span><script id="inline_translate">_iT("Shoes", "inline_translate")</script></span></li>
+                        <li class="accessories" data-filter="bling" filter="{&quot;categories&quot;:[71, 97, 98, 153]}" shopcategory="Accessories"><span><script id="inline_translate">_iT("Accessories", "inline_translate")</script></span></li>
+                        <li class="category-divider"></li>
+                        <li class="hairstyles" data-filter="hair" filter="{&quot;categories&quot;:[67, 75]}" shopcategory="Hairstyles"><span><script id="inline_translate">_iT("Hairstyles", "inline_translate")</script></span></li>
+                        <li class="eyes" data-filter="eyes" filter="{&quot;categories&quot;:[89, 90, 91, 92]}" shopcategory="Eyes"><span><script id="inline_translate">_iT("Eyes", "inline_translate")</script></span></li>
+                        <li class="heads" data-filter="heads" filter="{&quot;categories&quot;:[295, 296]}" shopcategory="Heads"><span><script id="inline_translate">_iT("Heads", "inline_translate")</script></span></li>
+                        <li class="skins" data-filter="skins" filter="{&quot;categories&quot;:[68, 76]}" shopcategory="Skins"><span><script id="inline_translate">_iT("Skins", "inline_translate")</script></span></li>
+                        <li class="avatars" data-filter="avatars" filter="{&quot;categories&quot;:[108]}"><span><script id="inline_translate">_iT("Avatars", "inline_translate")</script></span></li>
+                        <li class="actions" data-filter="actions" filter="{&quot;categories&quot;:[1329, 1328, 111, 112, 113, 115, 116]}" shopcategory="Actions" genderless="1"><span><script id="inline_translate">_iT("Actions", "inline_translate")</script></span></li>
+                        <li class="category-divider"></li>
+                        <li class="pets" data-filter="pets" filter="{&quot;categories&quot;:[425]}" shopcategory="Miscellaneous" genderless="1"><span><script id="inline_translate">_iT("Pets", "inline_translate")</script></span></li>
+                        <li class="homes hidden" data-filter="homes" filter="{&quot;categories&quot;:[2102, 1980]}" shopcategory="Homes"><span><script id="inline_translate">_iT("Homes", "inline_translate")</script></span></li>
+                        <li class="cityscape hidden" data-filter="clubs" filter="{&quot;categories&quot;:[1564, 1907]}" shopcategory="Clubs"><span><script id="inline_translate">_iT("Clubs", "inline_translate")</script></span></li>
+                        <li class="nature hidden" data-filter="nature" filter="{&quot;categories&quot;:[1901, 1787]}" shopcategory="Nature Scenes"><span><script id="inline_translate">_iT("Nature Scenes", "inline_translate")</script></span></li>
+
+                        <li class="chairs hidden" data-filter="chairs" filter="{&quot;categories&quot;:[909, 906]}" shopcategory="Chairs"><span><script id="inline_translate">_iT("Seating", "inline_translate")</script></span></li>
+                        <li class="tables hidden" data-filter="tables" filter="{&quot;categories&quot;:[1199]}" shopcategory="Tables"><span><script id="inline_translate">_iT("Tables", "inline_translate")</script></span></li>
+                        <li class="lamp hidden" data-filter="lamp" filter="{&quot;categories&quot;:[949]}" shopcategory="Lamps &amp; Lighting"><span><script id="inline_translate">_iT("Lamps &amp; Lighting", "inline_translate")</script></span></li>
+                        <li class="TV hidden" data-filter="televisions" filter="{&quot;categories&quot;:[917]}" shopcategory="Televisions"><span><script id="inline_translate">_iT("Televisions", "inline_translate")</script></span></li>
+
+                    </ul>
+                    <div class="go-shopping-link">
+                        <div><script id="inline_translate">_iT("Want more cool stuff?", "inline_translate")</script> <a><script id="inline_translate">_iT("Go shopping!", "inline_translate")</script></a></div>
+                    </div>
+                </div>
+                <div class="list-management">
+                    <div class="template">
+                        <div class="count"><script id="inline_translate">_iT("0", "inline_translate")</script></div>
+                        <span class="name"></span>
+                    </div>
+                    <button class="button imvu-button level2">
+                        <span class="plus"><script id="inline_translate">_iT("+", "inline_translate")</script></span>
+                        <span class="text"><script id="inline_translate">_iT("Create a list", "inline_translate")</script></span></button>
+                    <div class="list-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inventory-wrapper"><div class="inventory"></div></div>
+    </div>
+
+    <script>
+        if (IMVU.runJS()) {
+            if (IMVU.IS_FIREFOX) {
+                var pids = [260, 238924, 303669, 323170, 458850, 1188718, 1204357, 1281725, 1337620, 2046520, 2487630, 2639084, 2914542, 2960145, 3752794, 3875610, 3920701, 3926804, 4217549, 4224151, 4282211, 4288318, 4300573, 4300795, 4388392, 4545994, 4936464];
+                while (pids.length < 100) {
+                    pids = pids.concat(pids.slice(0));
+                }
+                var dataSource = new FakeInventoryDataSource(function (pids) {
+                    var result = [];
+
+                    for (var i = 0; i < pids.length; i++) {
+                        result[result.length] = new FakeProduct({pid: pids[i], name: 'Test product ' + i, creator_name: 'IMVU inc.', category_name: 'Avatars', is_female:1});
+                    }
+                    return result;
+                }(pids));
+                imvu = new FakeImvu();
+                imvu._respond('shouldSeeFeature', true);
+                imvu._respond('isSideView', true);
+                imvu._respond('showCreateListDialog', "new list with really super long name that's long");
+                imvu._respond('hasOpenedModeBefore', true);
+            } else {
+                var dataSource = new InventoryDataSource({imvu: imvu});
+            }
+
+
+            var mode = getQueryVariable('mode');
+            mode = mode || 'clothing';
+
+            var shouldShowSaveOutfitButton = convertPyBoolStr(getQueryVariable('shouldShowSaveOutfitButton') || 'True');
+            var shouldShowDefaultRoom = convertPyBoolStr(getQueryVariable('shouldShowDefaultRoom') || 'True');
+            var tool = new InventoryTool({
+                rootElement: document.getElementById('tool'),
+                imvu: imvu,
+                network: IMVU.Network,
+                dataSource: dataSource,
+                eventBus: IMVU.Client.EventBus,
+                mode:mode,
+                timer: new Timer(),
+                shouldShowSaveOutfitButton:shouldShowSaveOutfitButton,
+                shouldShowDefaultRoom:shouldShowDefaultRoom,
+                categoryPanel: new CategoryPanel({
+                    root: '.category-panel-inner',
+                    inventoryTool: tool,
+                    imvu: imvu,
+                }),
+            });
+
+            if (IMVU.IS_FIREFOX) {
+                tool.show();
+                tool.setLists([
+                    {lid: '1-1', products: [], order: 1, name: 'a'},
+                    {lid: '1-2', products: [], order: 3, name: 'b'},
+                    {lid: '1-3', products: [], order: 4, name: 'c'},
+                    {lid: '1-4', products: [], order: 5, name: 'd'},
+                    {lid: '1-5', products: [], order: 6, name: 'e'},
+                    {lid: '1-6', products: [], order: 7, name: 'f'},
+                    {lid: '1-7', products: [], order: 8, name: 'g'},
+                    {lid: '1-8', products: [], order: 9, name: 'h'},
+                    {lid: '1-9', products: [], order: 10, name: 'i'}
+                ])
+            }
+        }
+    </script>
+
+</body></html>
