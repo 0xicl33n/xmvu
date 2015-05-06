@@ -1,0 +1,51 @@
+.icons div {
+    width: 29px;
+    height: 32px;
+    background: transparent black no-repeat;
+    display: inline-block;
+}
+
+.icons .active  {
+    background-color: #fed200;
+}
+
+#settings {
+    display: none;
+}
+
+#explore:hover { background-image: url(decorate/explore_hover.png); }
+#move:hover { background-image: url(decorate/move_hover.png); }
+#rotate:hover { background-image: url(decorate/rotate_hover.png); }
+#scale:hover { background-image: url(decorate/scale_hover.png); }
+#clone:hover { background-image: url(decorate/duplicate_hover.png); }
+#straighten:hover { background-image: url(decorate/reset_hover.png); }
+#settings:hover { background-image: url(decorate/portalSettings_hover.png); }
+#lock:hover { background-image: url(decorate/lock_hover.png); }
+#delete:hover { background-image: url(decorate/delete_hover.png); }
+#undo:hover { background-image: url(decorate/undo_hover.png); }
+#redo:hover { background-image: url(decorate/redo_hover.png); }
+#info:hover { background-image: url(decorate/info_hover.png); }
+
+#explore { background-image: url(decorate/explore.png); }
+#move { background-image: url(decorate/move.png); }
+#rotate { background-image: url(decorate/rotate.png); }
+#scale { background-image: url(decorate/scale.png); }
+#clone { background-image: url(decorate/duplicate.png); }
+#straighten { background-image: url(decorate/reset.png); }
+#lock { background-image: url(decorate/lock.png); }
+#delete { background-image: url(decorate/delete.png); }
+#undo { background-image: url(decorate/undo.png); }
+#redo { background-image: url(decorate/redo.png); }
+#info { background-image: url(decorate/info.png); }
+
+#furni_caption {
+    color: #fed200;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.furni_toolinfo {
+   color: #fed200;
+   text-align: center;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Get Matched</title>
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/jquery-ui-1.8.7.custom.min.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="GetMatchedDialogManager.js"></script>
+
+</head><body>
+    <div id="dialog">
+        <div class="intro bd">
+            <h1><script id="inline_translate">_iT("\"Get Matched\" and connect to people!", "inline_translate")</script></h1>
+            <div class="tricol">
+                <div class="col">
+                    <div class="image first"></div>
+                    <div class="text"><script id="inline_translate">_iT("Browse profiles of interesting people!", "inline_translate")</script></div>
+                </div>
+                <div class="col">
+                    <div class="image second"></div>
+                    <div class="text"><div class="check"></div> <script id="inline_translate">_iT("to \'like\',", "inline_translate")</script> <div class="x"></div> <script id="inline_translate">_iT("to pass.", "inline_translate")</script></div>
+                </div>
+                <div class="col">
+                    <div class="image third"></div>
+                    <div class="text"><script id="inline_translate">_iT("If they", "inline_translate")</script> <div class="check"></div> <script id="inline_translate">_iT("you back, It\'s a match!", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-ok ui-event" data-ui-name="get_matched_intro_see_my_profile"><script id="inline_translate">_iT("View my profile", "inline_translate")</script></button>
+                <button class="imvu-button interstitial action-close ui-event" data-ui-name="get_matched_intro_ok"><script id="inline_translate">_iT("Got it!", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="re-order bd">
+            <div class="header">
+                <span class="title"><script id="inline_translate">_iT("Re-order Photos", "inline_translate")</script></span>
+                <span class="directions"><script id="inline_translate">_iT("Click and drag to re-order", "inline_translate")</script></span>
+                <button class="imvu-button level2 dark-gray action-close ui-event" data-ui-name="reorder_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="imvu-button level2 action-ok ui-event" data-ui-name="reorder_done"><script id="inline_translate">_iT("Done", "inline_translate")</script></button>
+            </div>
+            <ul class="photos">
+                <li><div class="photo"></div></li>
+                <li><div class="photo"></div></li>
+                <li><div class="photo"></div></li>
+                <li><div class="photo"></div></li>
+                <li><div class="photo"></div></li>
+            </ul>
+        </div>
+        <div class="progress bd">
+            <h1><script id="inline_translate">_iT("Boost Your Matches", "inline_translate")</script></h1>
+            <div class="content">
+                <div class="header"><script id="inline_translate">_iT("Get more likes and matches with an updated profile.", "inline_translate")</script></div>
+                <div class="bar"></div>
+                <div class="steps">
+                    <ul>
+                        <li><span class="box"></span><script id="inline_translate">_iT("Join Get Matched", "inline_translate")</script></li>
+                        <li class="ui-event" data-ui-name="get_matched_progress_story"><span class="box"></span><span class="story link"><script id="inline_translate">_iT("Create an interesting story", "inline_translate")</script></span></li>
+                        <li class="ui-event" data-ui-name="get_matched_progress_photos"><span class="box"></span><span class="photo link"><script id="inline_translate">_iT("Add an awesome photo", "inline_translate")</script></span></li>
+                        <li class="ui-event" data-ui-name="get_matched_progress_likes"><span class="box"></span><script id="inline_translate">_iT("Browse and", "inline_translate")</script> <div class="check"></div> <script id="inline_translate">_iT("a person", "inline_translate")</script></li>
+                    </ul>
+                    <div class="status"><span class="percent"><script id="inline_translate">_iT("25%", "inline_translate")</script></span> <script id="inline_translate">_iT("complete", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-ok ui-event" data-ui-name="get_matched_progress_ok"><script id="inline_translate">_iT("Okay", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="re-activate bd">
+            <h1><script id="inline_translate">_iT("Opt-in to use Get Matched?", "inline_translate")</script></h1>
+            <div class="content">
+                <div class="image"></div>
+                <div class="text">
+                    <p class="strong"><script id="inline_translate">_iT("Ready to come back?", "inline_translate")</script></p>
+                    <br>
+                    <p><script id="inline_translate">_iT("Clicking", "inline_translate")</script> <span class="check"></span> <script id="inline_translate">_iT("on a profile will re-activate your profile and will be visible to others for getting matched.", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button interstitial dark-gray white-text action-close ui-event" data-ui-name="get_matched_reactivate_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="imvu-button interstitial action-ok ui-event" data-ui-name="get_matched_reactivate"><script id="inline_translate">_iT("Opt-in", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="de-activate bd">
+            <h1><script id="inline_translate">_iT("Are you sure?", "inline_translate")</script></h1>
+            <div class="content">
+                <div class="image"></div>
+                <div class="text">
+                    <p class="strong"><script id="inline_translate">_iT("Opting out means your profile will no longer be shown to anyone in Get Matched.", "inline_translate")</script></p>
+                    <br>
+                    <p><script id="inline_translate">_iT("If you want to start playing again, you will be prompted to opt back into Get Matched after your first", "inline_translate")</script> <span class="check"></span><script id="inline_translate">_iT(".", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close ui-event" data-ui-name="get_matched_deactivate_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="imvu-button dark-gray white-text interstitial action-ok ui-event" data-ui-name="get_matched_deactivate"><script id="inline_translate">_iT("Opt-out", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="its-a-match bd">
+            <h1><script id="inline_translate">_iT("It\'s a match!", "inline_translate")</script></h1>
+            <div class="match-text"><script id="inline_translate">_iT("You and", "inline_translate")</script> <span class="avatarname ui-event" data-ui-name="match_avatarname"></span> <script id="inline_translate">_iT("liked each other!", "inline_translate")</script></div>            
+            <div class="left picture"></div>
+            <div class="right picture ui-event" data-ui-name="match_picture"></div>
+            <div class="glowing-check"></div>
+            <div class="button-footer first">
+                <button class="invite-button imvu-button level2 ui-event" data-ui-name="invite_to_chat">
+                    <span class="chat-bubble"></span>
+                    <span class="text"><script id="inline_translate">_iT("Invite to chat", "inline_translate")</script></span>
+                </button>
+                <button class="send-message-button imvu-button level2 ui-event" data-ui-name="send_message">
+                    <span class="chat-bubble"></span>
+                    <span class="text"><script id="inline_translate">_iT("Send message", "inline_translate")</script></span>
+                </button>
+            </div>
+            <div class="button-footer">
+                <button class="continue-button imvu-button dark-gray level2 ui-event" data-ui-name="continue_playing"><script id="inline_translate">_iT("Continue playing", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="make-profile-ap bd">
+            <div class="content">
+                <div class="text">
+                    <p><script id="inline_translate">_iT("Now you can have AP-themed content in your profile.", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button level2 action-ok ui-event" data-ui-name="get_matched_make_profile_ap"><script id="inline_translate">_iT("Okay", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="make-profile-ga bd">
+            <div class="content">
+                <div class="text">
+                    <p><script id="inline_translate">_iT("Make sure your story and photos are GA-appropriate!", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button level2 action-ok ui-event" data-ui-name="get_matched_make_profile_ga"><script id="inline_translate">_iT("Okay", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    if (IMVU.runJS()) {
+        var info;
+        if (IMVU.IS_FIREFOX) {
+            info = {
+                mode: 'make-profile-ga',
+                photos: [
+                    {id: 1, url: "http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/90006134_1284979663545275f49896a.jpg"},
+                    {id: 2, url: "http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/90006134_1284979663545275f49896a.jpg"},
+                    {id: 3, url: "http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/90006134_1284979663545275f49896a.jpg"},
+                    {id: 4, url: "http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/90006134_1284979663545275f49896a.jpg"}
+                ]
+            };
+        } else {
+            info = imvu.call('getDialogInfo');
+        }
+        args = {
+            el:document.querySelector('#dialog'),
+            imvu: imvu,
+            eventBus: IMVU.Client.EventBus,
+            info: info
+        };
+        new GetMatchedDialogManager(args);
+        
+        if (IMVU.IS_FIREFOX) {
+            $('#dialog').addClass('make-profile-ap');
+            $('.match-text .avatarname').text('slezakattack');
+        }
+    }
+    </script>
+</body></html>

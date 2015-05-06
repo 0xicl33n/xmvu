@@ -1,0 +1,31 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version|0.11|$
+
+[PLUGINS]
+nphwndproxy.dll|$
+C:\Users\chris_2\Documents\imvu_stuff\clientinjection\IMVUClient\nphwndproxy.dll|$
+1.0.0.1|$
+1428371342000|1|5|$
+|$
+|$
+1
+0|application/nphwndproxy-plugin|||$
+NPSWF32.dll|$
+C:\Users\chris_2\Documents\imvu_stuff\clientinjection\IMVUClient\NPSWF32.dll|$
+14.0.0.125|$
+1428370220000|1|5|$
+Shockwave Flash 14.0 r0|$
+Shockwave Flash|$
+2
+0|application/x-shockwave-flash|Adobe Flash movie|swf|$
+1|application/futuresplash|FutureSplash movie|spl|$
+npfpbase_vc10.dll|$
+C:\Users\chris_2\Documents\imvu_stuff\clientinjection\IMVUClient\npfpbase_vc10.dll|$
+1.0.1.11|$
+1428370192000|1|5|$
+1.0|$
+Blue Cava Fingerprint Plugin|$
+1
+0|application/x-Fingerprint-component|BlueCavaPlugin|bcfp|$

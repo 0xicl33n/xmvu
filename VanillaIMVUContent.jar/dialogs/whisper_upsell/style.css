@@ -1,0 +1,59 @@
+body { 
+    overflow: hidden;
+    font-size:14px;
+    color:#383836;
+    background:#F0F0E8;
+}
+* {
+    -moz-user-select: -moz-none;
+}
+
+.regular {
+    background: url("./vip_dialog2.jpg") no-repeat;
+    width: 530px;
+    height: 397px;    
+    margin-top:0px;
+    position: relative;
+}
+
+h2 {
+    font-size:18px;
+}
+
+button.imvu-button.signup {    
+    font-family: Arial, "HelveticaNeue", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.title {
+    padding: 8px 0 0 40px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.content {
+    width: 530px;    
+    margin: 210px 20px 0 0;  
+    position: relative;
+}
+
+.description {
+    font-size: 22px;
+    color: #FFFFFF;     
+    text-align: right; 
+    position: absolute;
+    right: 10px;
+    width: 210px;
+}
+
+.close {
+    width: 12px;
+    height: 12px;
+    background: no-repeat url("x.png") 0 0 transparent;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    top: 10px;
+}

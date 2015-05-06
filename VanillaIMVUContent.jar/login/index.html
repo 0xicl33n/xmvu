@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>IMVU Login</title>
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../yui/container/assets/container.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/animation/animation.js"></script>
+    <script src="../yui/json/json.js"></script>
+    <script src="../yui/container/container.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="login.js"></script>
+    <script src="SocialScroller.js"></script>
+</head><body>
+    <div id="login_body">
+    <div id="loginfrm">
+        <div id="new_user_top">
+            <a tabindex="6"></a>
+        </div>
+        <div id="form">
+            <form action="" onsubmit="return false;">
+
+                <div id="socialLogin">
+                    <h2><script id="inline_translate">_iT("Login using:", "inline_translate")</script></h2>
+                    <div id="gigya-carousel">
+                        <div class="container">
+                            <ul>
+                                <li><button type="button" value="facebook" class="social"><script id="inline_translate">_iT("facebook", "inline_translate")</script></button></li>
+                                <li><button type="button" value="messenger" class="social"><script id="inline_translate">_iT("messenger", "inline_translate")</script></button></li>
+                                <li><button type="button" value="yahoo" class="social"><script id="inline_translate">_iT("yahoo", "inline_translate")</script></button></li>
+                                <li><button type="button" value="twitter" class="social"><script id="inline_translate">_iT("twitter", "inline_translate")</script></button></li>
+                                <li><button type="button" value="google" class="social"><script id="inline_translate">_iT("google", "inline_translate")</script></button></li>
+                                <li><button type="button" value="myspace" class="social"><script id="inline_translate">_iT("myspace", "inline_translate")</script></button></li>
+                                <li><button type="button" value="orkut" class="social"><script id="inline_translate">_iT("orkut", "inline_translate")</script></button></li>
+                                <li><button type="button" value="aol" class="social"><script id="inline_translate">_iT("aol", "inline_translate")</script></button></li>
+                                <li><button type="button" value="linkedin" class="social"><script id="inline_translate">_iT("linkedin", "inline_translate")</script></button></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2><script id="inline_translate">_iT("Or use your IMVU login:", "inline_translate")</script></h2>
+                </div>
+
+                <div id="userData">
+                    <div class="returning_users"><script id="inline_translate">_iT("Returning users:", "inline_translate")</script></div>
+                    <div class="name">
+                        <label id="avatarname-label" for="avatarname"><strong><script id="inline_translate">_iT("Email", "inline_translate")</script></strong> <script id="inline_translate">_iT("or", "inline_translate")</script> <strong><script id="inline_translate">_iT("Avatar name", "inline_translate")</script></strong></label>
+                        <input name="avatarname" id="avatarname" tabindex="1" type="text">
+                    </div>
+
+                    <div class="password">
+                        <label for="password"><script id="inline_translate">_iT("Password:", "inline_translate")</script> <a id="forgot-password"><script id="inline_translate">_iT("Forgot password?", "inline_translate")</script></a></label>
+                        <input id="password" tabindex="1" type="password">
+                    </div>
+                    
+                    <div class="google_auth_container">
+                        <div class="enable_google_auth"><script id="inline_translate">_iT("Google Authenticator", "inline_translate")</script></div>
+                        <label id="google_auth_label" for="google_auth"><script id="inline_translate">_iT("Google Code:", "inline_translate")</script> </label>
+                        <input id="google_auth" tabindex="1" type="text">
+                    </div>
+                </div>
+                <div id="settings">
+                    <div>
+                        <input id="rememberPassword" tabindex="1" type="checkbox">
+                        <label for="rememberPassword"><script id="inline_translate">_iT("Save password", "inline_translate")</script></label>
+                    </div>
+
+                    <div id="runOnStartupDiv">
+                        <input id="runOnStart" tabindex="1" type="checkbox">
+                        <label for="runOnStart"><script id="inline_translate">_iT("Run IMVU on startup", "inline_translate")</script></label>
+                    </div>
+               </div>
+               <div id="langSel">
+                   <label for="languageSelector"><script id="inline_translate">_iT("Select Language", "inline_translate")</script></label>
+                   <select id="langOpt"></select>
+               </div>
+
+               <div class="signup">
+                   <a><script id="inline_translate">_iT("New?  Click here to register", "inline_translate")</script></a>
+               </div>
+               <button id="submit" class="imvu-button level1" tabindex="1"><script id="inline_translate">_iT("Login", "inline_translate")</script></button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script>
+
+    if (IMVU.runJS()) {
+        $(document).ready(function() {
+            new login({root: '#login_body', imvu: imvu, window: window});
+        });
+    }
+    </script>
+</body></html>

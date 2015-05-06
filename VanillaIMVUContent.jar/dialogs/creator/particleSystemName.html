@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <title>Particle System</title>
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <script src="../../widgets/button/imvuButton.js"></script>
+
+    <script src="../../js/imvu.js"></script>
+    <script src="creatorParticleSystemNameDialog.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head><body>
+
+<div id="dialog" class="particleSystemName">
+    <div id="hd">
+        <p id="title"><script id="inline_translate">_iT("Add particle system", "inline_translate")</script></p>
+        <div class="close-button"></div>
+    </div>
+    <div id="specify" class="particleSystemName">
+        <div class="title"><script id="inline_translate">_iT("Specify Particle System Name", "inline_translate")</script></div>
+        <div class="specify-particleSystemName">
+            <input id="particleSystemName-text" type="text">
+            <div id="particleSystemName-info"><script id="inline_translate">_iT("INFO", "inline_translate")</script></div>
+            <div id="go-button"><script id="inline_translate">_iT("Go", "inline_translate")</script></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (IMVU.runJS()) {
+        CreatorParticleSystemNameDialog = new CreatorParticleSystemNameDialog({
+            el: 'dialog',
+            imvu: imvu
+        });
+    }
+</script>
+
+</body></html>

@@ -1,0 +1,73 @@
+@import url(../../css/new-visd-buttons.css);
+body, html {
+    -moz-user-select: -moz-none;
+    cursor:default;
+}
+
+#dialog {
+    width:754px;
+    height:463px;
+    background:red;
+    position:relative;
+    background-repeat: no-repeat;
+}
+
+#dialog #closeButton {
+    position:absolute;
+    top:0;
+    right:0;
+    width:32px;
+    height:32px;
+    cursor:pointer;
+    background-image:url(../img/close.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index:5;
+}
+
+.bd {
+    display:none;
+    color:#ffffff;
+    position:absolute;
+    right:0px;
+    padding-right: 59px;
+    padding-left: 65px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    top:0px;
+    width: 274px;
+    font-size:15px;
+    background:url(../img/texture_bg.jpg);
+}
+h1 {
+    font-size: 23px;
+    line-height:29px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+p {
+    font-size: 16px;
+    margin-bottom:1em;
+    margin-top:1em;
+}
+p b {
+}
+.button {
+    width:332px;
+    height:42px;
+    background:url(img/main-btn.png);
+    color:#312e23;
+    text-align:center;
+    padding:4px;
+    padding-top:12px;
+    float:right;
+    cursor:pointer;
+}
+.button:after {
+    content:'\00a0\00a0\00a0'; /*nbsp*/
+}
+
+.button-bar {
+    float:right;
+}
+

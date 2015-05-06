@@ -1,0 +1,109 @@
+body { 
+    color: #000;
+    overflow: hidden;
+    background: #000000;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    -moz-user-select: -moz-none;
+}
+
+.im-dialog.ui-dialog.input-dialog {
+    margin: 15px;
+
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+}
+.im-dialog.ui-dialog.input-dialog .ui-dialog-titlebar {
+    margin: 6px 12px 24px 12px;
+    padding: 0px 0px 12px 0px;
+    line-height: normal;
+    height: auto;
+}
+
+.im-dialog.ui-dialog.input-dialog .ui-dialog-titlebar .ui-dialog-title{
+    font-size: 20px;
+    color: #ffcc00;
+    font-family:;
+    text-shadow: 0 0 2px #000;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    text-shadow: 0 0 2px #101;
+    -moz-text-shadow: 0 0 2px #101;
+}
+
+.ui-dialog.input-dialog .ui-dialog-titlebar-close {
+    top: 0px;
+    right: -4px;
+    margin: 0;
+}
+
+.im-dialog.ui-dialog.input-dialog .ui-dialog-titlebar .ui-dialog-title.create-list-icon{
+    padding: 2px 15px 0px 40px;
+    background: url('create_list.png') 4px 2px no-repeat;
+}
+
+.input-dialog {
+    height: 210px;
+}
+
+input {
+    height: 22px;
+    width: 97.5%;
+    
+    border: 1px solid #999;
+    cursor: text;
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    background-color: #f2f2f2;
+    padding: 3px 2px 3px 6px;
+}
+
+.input-dialog .input-container{
+    padding: 0px 11px 0 12px;
+    margin: 0;
+    
+    font-size: 16px;
+    height: 80px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    -moz-text-shadow: 0 0 2px #000;
+}
+
+.input-dialog.ui-dialog .ui-dialog-buttonpane {
+    margin: 15px 12px 0 12px;
+    padding: 15px 0 0 0;
+    line-height: normal;
+    height: auto;
+}
+
+.ui-dialog-titlebar-close:hover {
+    background: url("../../img/icon_16_close_hover.png") no-repeat scroll center center transparent;
+}
+.ui-dialog-titlebar-close:active {
+    background: url("../../img/icon_16_close_active.png") no-repeat scroll center center transparent;
+}
+
+.input-dialog button.button-css-cta:disabled {
+    opacity: 0.25;
+}
+
+.input-dialog form {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.input-dialog .hint {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    color: #999999;
+    text-shadow: none;
+    top: 7px;
+    left: 8px;
+    
+    font-size: 12px;
+}

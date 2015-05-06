@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<!-- This dummy file prevents gecko from complaining that it can't find a blocklist. -->
+<blocklist>
+</blocklist>

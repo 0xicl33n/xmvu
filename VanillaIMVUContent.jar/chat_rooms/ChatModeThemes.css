@@ -1,0 +1,161 @@
+
+div.tab.themes .themes-wrapper {
+    display: table;
+    width: 1060px;
+    margin: 0 12px;
+}
+
+    div.tab.themes .themes-wrapper .column.rooms {
+        position: fixed;
+        top: 52px;
+        bottom: 0;
+        left: 329px;
+        right: 0;
+    }
+    
+    div.tab.themes .themes-wrapper .themes-list-wrapper {
+        position: fixed;
+        left: 0;
+        top: 52px;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+        overflow: hidden;
+        padding-top: 12px;
+        padding-bottom:12px;
+        position: absolute;
+        width: 332px;
+    }
+    
+    div.tab.themes .themes-wrapper .themes-list-wrapper .themes-list {
+        overflow: hidden;
+    }
+    
+    div.tab.themes .themes-wrapper .scroll-buttons-container {
+        position: fixed;
+        bottom: 12px;
+        display: none; /* Hide while rooms are loading to avoid jerky visuals. */
+        width: 308px;
+        height: 31px;
+        clear: both;
+        margin-left: 12px;
+        margin-top: -34px;
+        border-top: solid 3px rgba(0, 0, 0, .7);
+    }
+        div.tab.themes.ready .scroll-buttons-container {
+            display: block;
+        }
+    
+    div.tab.themes .themes-wrapper .button {
+        display: inline-block;
+        width: 154px;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: rgba(69, 69, 69, 1);
+        opacity: 1;
+        cursor: pointer;
+    }
+        div.tab.themes .themes-wrapper .button:hover {
+            background-color: #6d6b6b;
+        }
+        div.tab.themes .themes-wrapper .button:active {
+            background-color: #333;
+        }
+
+        div.tab.themes .themes-wrapper .button.disabled {
+            background-color: rgba(30, 30, 30, 1);
+            cursor: default;
+        }
+ 
+    div.tab.themes .themes-wrapper .up-button .wrapper {
+        width: 154px;
+        height: 30px;
+        background: url(img/room_lister_theme_up_arrow.png) no-repeat center center;
+    }
+    
+    div.tab.themes .themes-wrapper .down-button .wrapper {
+        width: 152px;
+        height: 30px;
+        background: url(img/room_lister_theme_down_arrow.png) no-repeat center center;
+    }
+    
+    div.tab.themes .themes-wrapper .down-button {
+        border-left: 0px;
+        width: 154px;
+    }
+
+    div.tab.themes .themes-wrapper .column .scrollable {
+        height: 700px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    div.tab.themes .rooms{
+        width: 100%;
+    }
+
+    .room-scrollarea-holder .scrollable {
+        padding: 8px;
+    }
+
+    div.tab.themes .theme-option {
+        display: table;
+        height: 86px;
+        line-height: 86px;
+        width: 308px;
+        background-color: rgba(69, 69, 69, .5);
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+        color: #d1d1d1;
+    }
+        div.tab.themes .theme-option:hover {
+            background-color: #7b7b7b;
+        }
+        div.tab.themes .theme-option>* {
+            display: table-cell;
+            cursor: pointer;
+        }
+
+        div.tab.themes .theme-option .image {
+            width: 130px;
+        }
+
+        div.tab.themes .theme-option .name {
+            display: block;
+            height: 83px;
+            font-weight: bold;
+            padding-left: 24px;
+        }
+        div.tab.themes .theme-option.selected {
+            background-color: #7b7b7b;
+            color: #111111;
+        }
+            div.tab.themes .theme-option.selected .name {
+                border-bottom: solid 3px #f2bd43;
+            }
+        div.tab.themes .theme-option.Welcome:not(.selected) #welcome-room-bubble { 
+            display:none;
+        }
+        div.tab.themes .theme-option #welcome-room-bubble { 
+            color: #D1D1D1;
+            line-height: normal;
+            position: absolute;
+            z-index:1000;
+            width:400px;
+            top:65px;
+            left:317px;
+            margin-left: 26px;
+            padding:12px 120px 12px 12px;
+        }
+            div.tab.themes .theme-option #welcome-room-bubble img#triangle { 
+                position:absolute;
+                left: -14px;
+                top: 32px;
+            }
+            div.tab.themes .theme-option #welcome-room-bubble img#avatars { 
+                position: absolute;
+                bottom: 0;
+                right: -40px;
+            }
+
+

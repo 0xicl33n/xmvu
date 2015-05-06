@@ -1,0 +1,126 @@
+html, body {
+    font-family: Arial, "HelveticaNeue", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;
+}
+
+div#panel_buy *:focus, div#panel_product_info *:focus, div#dialog_alert *:focus {
+    -moz-outline-style: none;
+}
+
+div.client-panel div.yui-panel a.container-close {
+    background:transparent url(../img/panel_x.png) no-repeat;
+    width:32px;
+    height:30px;
+    right:-16px;
+    top:-12px;
+}
+
+div.client-panel div.yui-panel > div.bd {
+    padding:10px;
+    overflow:visible;
+}
+
+div.client-panel div.yui-panel {
+    overflow:visible;
+    background:#e0ddd6 url(../img/panel_bg.png) repeat-x;
+}
+
+div.client-panel div.yui-panel div.hd {
+    background:transparent url(../img/panel_hd.png) no-repeat scroll top right;
+    height:15px;
+    padding:7px 7px;
+    border:1px solid #f0f0e8;
+    border-bottom:none;
+    font-family:sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#f0f0e8;
+    line-height: 12px;
+}
+
+div.client-panel div.yui-panel div.bd {
+    border:1px solid #f0f0e8;
+    background:transparent;
+}
+
+div.client-panel div.wait {
+    background:#000;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0.75;
+    z-index:2;
+    display:none;
+}
+
+div#dialog_alert .confirm {
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+div.client-panel .confirm {
+   
+    display:none;
+}
+
+div.client-panel .confirm h3 {
+    margin:0 0 10px 0;
+    font-weight:bold;
+    font-size:14px;
+}
+
+div.client-panel .confirm p {
+    margin:0 0 10px 0;
+    font-size:12px;
+}
+
+div.client-panel .confirm a {
+    margin:0 0 10px 0;
+    font-size:14px;
+    text-decoration:underline;
+    color:red;
+    font-weight:bold;
+}
+
+div.client-panel.confirm .initial {
+    display:none;
+}
+
+div.client-panel.confirm .confirm {
+    display:block;
+}
+
+div.client-panel.waiting div.wait {
+    display:block;
+}
+
+div.client-panel.waiting a.container-close {
+    display:none;
+}
+
+div.client-panel div.wait img.loading {
+    display:block;
+    height:48px;
+    left:50%;
+    margin:-24px 0 0 -24px;
+    position:absolute;
+    top:50%;
+    width:48px;
+}
+
+div.mask {
+    background-color:#000;
+    opacity:0.5;
+}
+
+#dialog_alert div.bd {
+   
+    font-size:12px;
+    font-weight:bold;
+    text-align:center;
+    color:#000;
+}

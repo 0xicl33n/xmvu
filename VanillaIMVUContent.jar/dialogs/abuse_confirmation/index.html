@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Abuse confirmation</title>
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../alert/Alert.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../js/imvu.js"></script>
+    <script src="./abuseConfirmation.js"></script>
+    <script src="../../js/buttons.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+</head><body>
+<div id="dialog" class="alert">
+    <header>
+        <h2><script id="inline_translate">_iT("Report Abuse", "inline_translate")</script></h2>
+        <div class="close"></div>
+    </header>
+    <hr class="standard">
+        <div id="content">
+        <div id="text">
+            <p>
+                <script id="inline_translate">_iT("Are you sure you want to file an abuse report against", "inline_translate")</script> <span id="other-avname"></span><script id="inline_translate">_iT("?", "inline_translate")</script>
+            </p>
+
+            <div id="copy">
+            <p>
+                <script id="inline_translate">_iT("** BE AWARE THAT MIS-REPORTING AN ABUSE CAN GET YOU INTO TROUBLE.", "inline_translate")</script><br>
+                <script id="inline_translate">_iT("When you report an abuse, the conversation transcript from BOTH parties is sent to IMVU for review.  A review of the text will lead to one of the following outcomes:", "inline_translate")</script>
+            </p>
+
+            <p class="outcomes">
+                <span><script id="inline_translate">_iT("a)", "inline_translate")</script></span><script id="inline_translate">_iT("if no abuse is found, the complaint will be voided;", "inline_translate")</script><br>
+                <span><script id="inline_translate">_iT("b)", "inline_translate")</script></span><script id="inline_translate">_iT("if the accused person is found to be guilty of \"unprovoked abusive behavior\", further action will be taken against them;", "inline_translate")</script><br>
+                <span><script id="inline_translate">_iT("c)", "inline_translate")</script></span><script id="inline_translate">_iT("IF THE ACCUSED PERSON IS FOUND TO HAVE BEEN PROVOKED BY THE COMPLAINER, OR IF THE COMPLAINER RESPONDED IN AN EQUALLY DISCOURTEOUS WAY TO THE BEHAVIOR OF THE ACCUSED PERSON, ACTION AGAINST BOTH PARTIES OR AGAINST NEITHER PARTY MAY BE TAKEN;", "inline_translate")</script><br>
+                <span><script id="inline_translate">_iT("d)", "inline_translate")</script></span><script id="inline_translate">_iT("IF THE COMPLAINER IS THE ONE FOUND TO BE ABUSIVE, OR IS THE ONE WHO PROVOKED THE ABUSIVE CONVERSATION, ACTION WILL BE TAKEN AGAINST THE COMPLAINER.", "inline_translate")</script>
+            </p>
+
+            <p>
+                <script id="inline_translate">_iT("** TAKE HOME LESSON:  Do not file an abuse report unless you are truly the victim of unprovoked abusive behavior from a chat partner. Remember, we read the entire chat transcript -- you CAN incriminate yourself for your own behavior or for provoking or responding poorly to abusive behavior from others.", "inline_translate")</script>
+            </p>
+            </div>
+        </div>
+        </div>
+        <hr class="shadow">
+        <footer>
+            <div id="button-bar">
+                <button id="no" class="imvu-button level2 dark-gray white-text"><script id="inline_translate">_iT("No", "inline_translate")</script></button><button id="yes" class="imvu-button level2 light-gray"><script id="inline_translate">_iT("Yes", "inline_translate")</script></button>
+            </div>
+        </footer>
+</div>
+
+<script>
+    if (IMVU.runJS()) {
+        abuseConfirmationDialog = new AbuseConfirmationDialog('#dialog', imvu);
+    }
+</script>
+
+</body></html>

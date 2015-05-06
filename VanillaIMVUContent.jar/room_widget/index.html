@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    <meta charset="UTF-8">
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/jquery-ui-1.8.7.custom.min.js"></script>
+    <script src="../js/underscore.js"></script>
+<title>Room Label</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="DecorateWidget.css">
+    <link rel="stylesheet" href="MusicWidget.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="PerformanceWidget.css">
+    <link rel="stylesheet" href="../widgets/Hearts.css">
+    <link rel="stylesheet" href="RatingsWidget.css">
+    <link rel="stylesheet" href="ThemedRoomWidget.css">
+    <link rel="stylesheet" href="RoomColorWidget.css">
+    <link rel="stylesheet" href="../dialogs/css/themed_room_dialog.css">
+
+    <script src="../js/imvu.js"></script>
+</head><body>
+    <div id="roomWidget">
+        <div id="labelSausage">
+            <div id="toggleHolder"><span id="toggle" class="notranslate">-</span></div>
+            <div id="roomWidgetRest">
+                <div id="tabsHolder"></div>
+                <div id="nameHolder">
+                    <div id="thename"></div><div id="infoHolder"><img id="infoicon" src="img/info_icon.png"></div>
+                </div>
+                <div id="addFavorite">
+                    <div id="add"></div><div id="addHolder"><span id="addFavIcon"></span><span id="addFavText"><script id="inline_translate">_iT("Add to Favorites", "inline_translate")</script></span></div>
+                </div>
+                <div id="activePanelHolder"></div>
+            </div>
+        </div>
+        <div id="loadingSausage"><div id="circleDialHolder"></div><span id="loadingText"><script id="inline_translate">_iT("LOADING...", "inline_translate")</script></span></div>
+        <div id="inactivePanelHolder" style="display: none;">
+            <div id="decoratePanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Furniture Tools (ctrl + F)", "inline_translate")</script></span>
+                    
+                    <span class="closeButton"></span>
+                </div>
+                <div class="bd">
+                    <div class="icons">
+                        <div id="explore"></div><div id="move"></div><div id="rotate"></div><div id="scale"></div><div id="clone"></div><div id="straighten"></div><div id="lock"></div><div id="delete"></div><div id="undo"></div><div id="redo"></div><div id="info"></div>
+                    </div>
+                    <div class="furni_toolinfo"><span id="furni_caption"><script id="inline_translate">_iT("Tool Name", "inline_translate")</script></span><span id="furni_hotkey"><script id="inline_translate">_iT("Hotkey", "inline_translate")</script></span></div>
+                    <div><script id="inline_translate">_iT("Room size:", "inline_translate")</script> <span id="room_size_indicator"><script id="inline_translate">_iT("2145 KB", "inline_translate")</script></span></div>
+                </div>
+            </div>
+            <div id="musicPanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Music", "inline_translate")</script></span>
+                    <span class="closeButton"></span>
+                </div>
+                <div class="bd">
+                    <div class="volumeBackground"><div class="volume">
+                        <span class="is-muted"></span>
+                        <span class="quiet"></span>
+                        <span class="slider"><span class="knob"></span></span>
+                        <span class="loud"></span>
+                    </div></div>
+                    <div class="spinner"></div>
+                    <div class="currently-playing visible">
+                        <span class="inner"><span class="artist"><script id="inline_translate">_iT("Artist Name Here", "inline_translate")</script></span><span class="notranslate">: </span><span class="title"><script id="inline_translate">_iT("Song title that is kinda long", "inline_translate")</script></span></span>
+                    </div>
+                </div>
+            </div>
+            <div id="performancePanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Performance", "inline_translate")</script></span>
+                    <span class="closeButton"></span>
+                </div>
+                <div class="bd">
+                    <div id="breakdown-selector"><span class="visual"><script id="inline_translate">_iT("Visual Complexity", "inline_translate")</script></span><span class="download"><script id="inline_translate">_iT("Download", "inline_translate")</script></span><span class="memory"><script id="inline_translate">_iT("Memory", "inline_translate")</script></span></div>
+                    <div id="breakdown">
+                        <h3 id="room"><script id="inline_translate">_iT("Room:", "inline_translate")</script><span class="metric"><script id="inline_translate">_iT("10,000", "inline_translate")</script></span></h3>
+                        <div class="details">
+                            <div class="pid-1234"><span class="product-name"><script id="inline_translate">_iT("Castle", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("5,000", "inline_translate")</script></span></div>
+                            <div class="pid=5678 alt"><span class="product-name"><script id="inline_translate">_iT("Throne", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("1,000", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Dragon", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("1,000", "inline_translate")</script></span></div>
+                            <div class="pid=1854 alt"><span class="product-name"><script id="inline_translate">_iT("Guillotine", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("3,000", "inline_translate")</script></span></div>
+                        </div>
+                        <h3 id="avatar-1"><script id="inline_translate">_iT("Avatar1:", "inline_translate")</script><span class="metric"><script id="inline_translate">_iT("5,000", "inline_translate")</script></span></h3>
+                        <div class="details">
+                            <div class="pid-1234"><span class="product-name"><script id="inline_translate">_iT("Avatar", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("3,000", "inline_translate")</script></span></div>
+                            <div class="pid=5678 alt"><span class="product-name"><script id="inline_translate">_iT("Armor", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("1,000", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Horse", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("600", "inline_translate")</script></span></div>
+                            <div class="pid=1854 alt"><span class="product-name"><script id="inline_translate">_iT("Sword", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("400", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Helmet", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("600", "inline_translate")</script></span></div>
+                            <div class="pid=1854 alt"><span class="product-name"><script id="inline_translate">_iT("Boots", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("400", "inline_translate")</script></span></div>
+                        </div>
+                        <h3 id="avatar-2"><script id="inline_translate">_iT("Avatar2:", "inline_translate")</script><span class="metric"><script id="inline_translate">_iT("20,000", "inline_translate")</script></span></h3>
+                        <div class="details">
+                            <div class="pid-1234"><span class="product-name"><script id="inline_translate">_iT("Avatar", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("3,000", "inline_translate")</script></span></div>
+                            <div class="pid=5678 alt"><span class="product-name"><script id="inline_translate">_iT("Robe", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("1,000", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Wizard Hat", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("600", "inline_translate")</script></span></div>
+                        </div>
+                        <h3 id="avatar-3"><script id="inline_translate">_iT("Avatar3:", "inline_translate")</script><span class="metric"><script id="inline_translate">_iT("15,000", "inline_translate")</script></span></h3>
+                        <div class="details">
+                            <div class="pid-1234"><span class="product-name"><script id="inline_translate">_iT("Avatar", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("3,000", "inline_translate")</script></span></div>
+                            <div class="pid=5678 alt"><span class="product-name"><script id="inline_translate">_iT("Pants", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("1,000", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Shirt", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("600", "inline_translate")</script></span></div>
+                            <div class="pid=1854 alt"><span class="product-name"><script id="inline_translate">_iT("Monocle", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("400", "inline_translate")</script></span></div>
+                            <div class="pid=4561"><span class="product-name"><script id="inline_translate">_iT("Hat", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("600", "inline_translate")</script></span></div>
+                            <div class="pid=1854 alt"><span class="product-name"><script id="inline_translate">_iT("Cane", "inline_translate")</script></span><span class="metric"><script id="inline_translate">_iT("400", "inline_translate")</script></span></div>
+                        </div>
+                    </div>
+
+                    <table style="display: none;">
+                        <tbody><tr>
+                            <td class="perfCategory"><script id="inline_translate">_iT("Visual Complexity", "inline_translate")</script></td>
+                            <td><div id="perfGeometrySlider" class="perfSlider"></div></td>
+                            <td id="perfGeometryValue"></td>
+                        </tr>
+                        <tr>
+                            <td class="perfCategory"><script id="inline_translate">_iT("Memory", "inline_translate")</script></td>
+                            <td><div id="perfMemorySlider" class="perfSlider"></div></td>
+                            <td id="perfMemoryValue"></td>
+                        </tr>
+                        <tr>
+                            <td class="perfCategory"><script id="inline_translate">_iT("Download", "inline_translate")</script></td>
+                            <td><div id="perfDownloadSlider" class="perfSlider"></div></td>
+                            <td id="perfDownloadValue"></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div id="ratingsPanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Rate This Room", "inline_translate")</script></span>
+                    <span class="closeButton"></span>
+                </div>
+                <div class="userRatingSection">
+                    <div class="instructions"><script id="inline_translate">_iT("Rollover stars and click to rate it", "inline_translate")</script></div>
+                    <div id="ratingDescription" class="ratingDescription"></div>
+                    <table>
+                        <tbody><tr>
+                            <td id="userRating" class="hearts"><div id="fill" class="fill"></div></td>
+                            <td id="check" class="check"></td>
+                            <td id="submittedText" class="submittedText"><script id="inline_translate">_iT("Rating posted", "inline_translate")</script></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="averageRatingSection">
+                    <table>
+                        <tbody><tr>
+                            <td class="averageRating"><script id="inline_translate">_iT("Room Rating :", "inline_translate")</script></td>
+                        </tr>
+                        <tr>
+                            <td class="hearts"><div id="averageRatingFill" class="fill"></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div id="themedroomPanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Submit this Room to Featured Rooms", "inline_translate")</script></span>
+                    <span class="closeButton"></span>
+                </div>
+                <div class="eligibleRoom">
+                    <p><script id="inline_translate">_iT("Want this Chat Room listed in Featured Rooms?", "inline_translate")</script></p>
+                    <p><script id="inline_translate">_iT("Click \"Submit\" to start this Chat Room for consideration.", "inline_translate")</script></p>
+                    <p class="button-bar"><button class="imvu-button level2 enabled visible ui-event nominateRoom"><script id="inline_translate">_iT("Submit", "inline_translate")</script></button></p>
+                </div>
+                <div class="reviewingRoom">
+                    <p><script id="inline_translate">_iT("Thanks for submitting your Chat Room! We\'re in the process of reviewing it right now.", "inline_translate")</script></p>
+                    <p><script id="inline_translate">_iT("No longer want it to be considered? Click", "inline_translate")</script> <a href="#" class="themed-room-cancel-link"><script id="inline_translate">_iT("here", "inline_translate")</script></a> <script id="inline_translate">_iT("to cancel.", "inline_translate")</script></p>
+                </div>
+                <div class="canceledSubmission">
+                    <p><script id="inline_translate">_iT("Your Chat Room will no longer be considered for the Themed Room section.", "inline_translate")</script></p>
+                </div>
+                <div class="featuredRoom">
+                    <p><script id="inline_translate">_iT("Your Chat Room is featured in Themes!", "inline_translate")</script></p>
+                    <p><script id="inline_translate">_iT("No longer want it listed there? Click", "inline_translate")</script> <a href="#" class="themed-room-remove-link"><script id="inline_translate">_iT("here", "inline_translate")</script></a> <script id="inline_translate">_iT("to remove it.", "inline_translate")</script></p>
+                </div>
+                <div class="removedRoom">
+                    <p><script id="inline_translate">_iT("Your Chat Room has been removed from the Themed Rooms list.", "inline_translate")</script></p>
+                </div>
+                <div class="notEligibleRoom">
+                    <p><script id="inline_translate">_iT("Sorry, this room can not be submitted for Themed Rooms list at this time. Click", "inline_translate")</script> <a class="public-rooms-faq-link" href="#"><script id="inline_translate">_iT("here", "inline_translate")</script></a> <script id="inline_translate">_iT("to see why.", "inline_translate")</script></p>
+                </div>
+                <div class="rateLimitSubmission">
+                    <p><script id="inline_translate">_iT("Sorry, this room can not be submitted for Themed Rooms list at this time. Click", "inline_translate")</script> <a class="public-rooms-faq-link" href="#"><script id="inline_translate">_iT("here", "inline_translate")</script></a> <script id="inline_translate">_iT("to see why.", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div id="roomcolorPanel" class="tabPanel">
+                <div class="hd">
+                    <span class="panelName"><script id="inline_translate">_iT("Pick your background color!", "inline_translate")</script></span>
+                    <span class="closeButton"></span>
+                </div>
+                <div class="colorPickerSection">
+                    <div id="colorPicker" class="colorPicker">
+                        <table>
+                            <tbody><tr>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="../yui/container/container.js"></script>
+<script src="../yui/connection/connection.js"></script>
+<script src="../yui/dragdrop/dragdrop.js"></script>
+<script src="../yui/event-mouseenter/event-mouseenter.js"></script>
+<script src="../yui/slider/slider.js"></script>
+<script src="../yui/animation/animation.js"></script>
+<script src="../js/eventbus.js"></script>
+<script src="../js/dialog.js"></script>
+<script src="../js/RoomUtil.js"></script>
+<script src="../widgets/dropdown/DropDown.js"></script>
+<script src="../widgets/CircleDial.js"></script>
+<script src="RoomWidget.js"></script>
+<script src="DecorateWidget.js"></script>
+<script src="PerformanceWidget.js"></script>
+<script src="RatingsWidget.js"></script>
+<script src="RoomColorWidget.js"></script>
+<script src="MusicWidget.js"></script>
+<script src="ThemedRoomWidget.js"></script>
+<script src="../widgets/Hearts.js"></script>
+<script>
+    if (IMVU.runJS()) {
+        if(IMVU.IS_FIREFOX) {
+            console.log("Hello Firefox");
+            IMVU.Client.RoomWidget = new RoomWidget({
+                elt:document.querySelector('#roomWidget'),
+                document:document,
+                imvu:{call: function() {return '';}, callAsync: function () { return '';}},
+                network:IMVU.Network,
+                eventBus:IMVU.Client.EventBus,
+            });
+            IMVU.Client.RoomWidget.setInfo("The Best Room in the Universe", 555, {'rating': 3} );
+            IMVU.Client.RoomWidget.setLoadingProgress(0.1);
+            IMVU.Client.RoomWidget.addTab('music');
+            IMVU.Client.RoomWidget.addTab('decorate');
+            IMVU.Client.RoomWidget.addTab('ratings');
+            IMVU.Client.RoomWidget.addTab('roomcolor');
+            IMVU.Client.RoomWidget.addTab('performance');
+            IMVU.Client.RoomWidget.addTab('themedroom');
+            IMVU.Client.RoomWidget.activateTabByName('performance');
+        } else {
+            IMVU.Client.RoomWidget = new RoomWidget({
+                elt:document.querySelector('#roomWidget'),
+                $root: $('#roomWidget'),
+                document:document,
+                imvu: imvu,
+                network:IMVU.Network,
+                eventBus:IMVU.Client.EventBus
+            });
+        }
+    }
+</script>
+
+</body></html>

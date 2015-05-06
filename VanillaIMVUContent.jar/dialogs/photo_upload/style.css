@@ -1,0 +1,76 @@
+@import url(../css/new-visd-dialog.css);
+
+body { 
+    overflow: hidden;
+    width: 570px;
+}
+
+#dialog {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+#dialog h1.title {
+    background: url(../../img/albums-icon.png) no-repeat;
+    padding-left: 32px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 20px;
+    margin-bottom: 11px;
+    vertical-align: middle;
+}
+
+.dialog-content {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid #343434;
+    -moz-border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.photo-container, 
+.photo-options-container {
+    display: inline-block;
+    padding: 10px;
+}
+
+.photo-options-container {
+    width: 290px;
+}
+
+.photo-container img {
+    vertical-align: bottom;
+}
+
+.photo-options-container {
+    padding: 30px 10px 30px 20px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.photo-options-container .disclaimer {
+    display: none;
+    font-size: 11px;
+}
+
+.photo-option {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.photo-option input[type=checkbox],
+.photo-option label {
+    vertical-align: middle;
+    margin: 0;
+}
+
+#footer .disclaimer {
+    max-width: 320px;
+    line-height: 12px;
+    display: inline-block;
+}
+
+#footer .disclaimer p,
+#footer .disclaimer p a {
+    font-weight: 500;
+    font-size: 11px;
+}

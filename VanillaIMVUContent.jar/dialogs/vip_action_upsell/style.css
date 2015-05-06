@@ -1,0 +1,125 @@
+@import url("../../css/font.css");
+* {
+    -moz-user-select: -moz-none;
+}
+
+body {
+    padding: 1px;
+    border: 0px;
+    margin: 0px;
+    width: 531px;
+    height: 425px;
+    overflow: hidden;
+}
+
+div {
+    cursor: default;
+}
+
+.heading {
+    background: #3D3D3D url(../../img/panel_hd.png) repeat-x;
+    position: relative;
+    width: 529px;
+    height: 29px;
+}
+
+.heading .vip-icon {
+    background: transparent url(../../img/icon_vip_medium.png) no-repeat;
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 28px;
+    height: 21px;
+}
+
+.heading .close-button {
+    background: transparent url(../../img/panel_x_inner.png) no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.dialog-body {
+    position: absolute;
+    background-image: url(background.jpg);
+    width: 529px;
+    height: 394px;
+}
+
+.subheading {
+    position: absolute;
+    left: 22px;
+    top: 26px;
+    width: 400px;
+    height: 400px;
+    
+    font-size: 17px;
+    color: #033a1e;
+}
+
+.main-heading {
+    position: absolute;
+    left: 22px;
+    top: 43px;
+    width: 400px;
+    height: 400px;
+    
+    font-size: 47px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #04733b;
+}
+
+.details {
+    position: absolute;
+    left: 22px;
+    top: 114px;
+    width: 268px;
+    height: 400px;
+    
+    font-size: 14px;
+    color: #033a1e;
+}
+
+.caption {
+    font-family: arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #567462;
+}
+
+.caption.one {
+    position: absolute;
+    left: 84px;
+    top: 264px;
+    width: 55px;
+    height: 23px;
+}
+
+.caption.two {
+    position: absolute;
+    left: 421px;
+    top: 134px;
+    width: 26px;
+    height: 23px;
+}
+
+.caption.three {
+    position: absolute;
+    left: 463px;
+    top: 187px;
+    width: 33px;
+    height: 23px;
+}
+
+.cta-button {
+    background-color: gold;
+    position: absolute;
+    left: 23px;
+    top: 320px;
+    height: 17px;
+    cursor: pointer;
+}

@@ -1,0 +1,112 @@
+body { 
+}
+
+#templates { 
+    display: none;
+}
+div.cart-dialog {
+    color:#000;
+}
+
+div.cart-dialog div.cart-body {
+    max-height:385px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    margin-bottom:10px;
+}
+
+div.cart-dialog div.cart-footer {
+    height:100px;
+    position:relative;
+}
+
+div.cart-dialog div.cart-footer div.balance {
+    position:absolute;
+    bottom:10px;
+    left:0;
+    font-size:10px;
+   
+}
+
+div.cart-dialog div.cart-footer div.balance h3 {
+    font-weight:bold;
+    font-size:11px;
+    height:16px;
+    margin:0;
+    padding-left:20px;
+    background:transparent url(../img/credits_large.png) no-repeat;
+}
+
+div.cart-dialog div.cart-footer div.balance p {
+    margin:0;
+}
+
+div.cart-dialog div.cart-footer div.balance p label {
+    font-weight:normal;
+    margin-right:3px;
+}
+
+div.cart-dialog div.cart-footer div.balance p span {
+    font-weight:bold;
+    font-size:11px;
+}
+
+div.cart-dialog div.cart-footer div.button-buy-all {
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}
+
+div.cart-dialog div.cart-footer div.totals {
+    position:absolute;
+    right:0;
+    bottom:40px;
+   
+    font-size:12px;
+}
+
+
+div.cart-dialog div.cart-footer div.totals p {
+    position:relative;
+    text-align:right;
+    margin:0 0 5px 0;
+}
+
+div.cart-dialog div.cart-footer div.totals p.discount {
+    color:#ff0000;
+}
+
+div.cart-dialog.discounted div.cart-footer div.totals p.discount {
+    display:block;
+    background:#fff;
+    position:relative;
+}
+
+div.cart-dialog.discounted div.cart-footer div.totals p.discount img {
+    position:absolute;
+    left:-2px;
+    top:-3px;
+}
+
+div.cart-dialog div.cart-footer div.totals p.total span {
+    font-size:16px;
+}
+
+div.cart-dialog div.cart-footer div.totals label {
+    font-size:10px;
+    margin-right:10px;
+    display:block;
+    float:left;
+    width:75px;
+    text-align:right;
+    vertical-align:middle;
+}
+
+div.cart-dialog div.cart-footer div.totals span {
+    font-size:12px;
+    font-weight:bold;
+}
+
+div.cart-dialog div.product-info div.balance {
+    display:none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <link rel="stylesheet" type="text/css" href="../marriage_package_info/style.css">
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <script src="../../js/imvu.js"></script>
+    <script src="../learn_more/LearnMore.js" charset="utf-8"></script>
+</head><body>
+<div style="display: table; width: 100%; height: 100%;">
+    <div id="title">
+        <script id="inline_translate">_iT("Our Room", "inline_translate")</script>
+    </div>
+    <img src="../marriage_package_info/marriage_package_dialog.png">
+    <div class="regular">
+        <h2><script id="inline_translate">_iT("Make this your shared room!", "inline_translate")</script></h2>
+        <p><script id="inline_translate">_iT("Make your commitment official with IMVU\'s Marriage Package and get the Our Room feature for you and your partner! As married partners, you will be able to share and decorate a room together! Plus, you can celebrate your exclusive relationship in many ways as part of the package.", "inline_translate")</script></p>
+        <div id="button-bar">
+            <button id="cancel" class="imvu-button level2 light-gray"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+            <button id="learn-more" class="imvu-button level2"><script id="inline_translate">_iT("Learn more", "inline_translate")</script></button>
+        </div>
+    </div>
+</div>
+<script>
+if (IMVU.runJS()) {
+    new LearnMoreDialog({root: '.regular', imvu: imvu});
+}
+</script>
+
+</body></html>

@@ -1,0 +1,24 @@
+#dialog {
+    -moz-border-radius: 0;
+    border: 0;
+    margin: 0;
+    padding: 15px;
+}
+
+#dialog #header {
+    height: 45px; /* 60 - 15 */
+    line-height: 45px;
+}
+
+#dialog #text {
+    text-align: center;
+}
+
+#dialog #footer {
+    height: auto;
+    text-align: right;
+}
+#dialog #button-bar {
+    display: inline-block;
+    float: none;
+}

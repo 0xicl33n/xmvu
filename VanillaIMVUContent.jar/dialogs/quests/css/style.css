@@ -1,0 +1,199 @@
+#dialog h1 {
+    background: url('../img/quests_modal_header-icon.png') no-repeat;
+    padding: 5px 0px 0px 42px;
+    height: 31px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.quests-border-container {
+    background: url('../img/quests_gold-border.png') no-repeat;
+    padding: 21px;
+}
+
+.quests-container {
+    width: 441px;
+}
+
+.quests-container .header {
+    background-color: #232323;
+    padding: 7px 0px 6px 0px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #999999;
+    position: relative;
+    height: 24px;
+}
+
+.quests-container .header .left {
+    position: absolute;
+    left: 43px;
+}
+
+.quests-container .header .right {
+    position: absolute;
+    right: 33px;
+}
+
+.quests-list {
+    height: 380px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #000000;
+}
+
+.quest-item-container {    
+    border-color: #323232;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    background-color: #919191;    
+}
+
+.quest-item {
+    padding: 14px 29px 20px 0;
+    
+    font-weight: bold;    
+    color: #FFFFFF;    
+    position: relative;
+    background: url('../img/quests_icon_holder_grey.png') no-repeat scroll 42px 6px transparent;
+}
+
+.quest-item.completed {
+    background: url('../img/quests_icon_holder.png') no-repeat scroll 42px 6px transparent;
+}
+
+
+.quest-item-container.odd {
+    background-color: #7C7C7C;
+}
+
+.quest-item .count {
+    font-size: 24px;
+    font-weight: bold;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: right;
+    width: 39px;
+}
+
+.quest-item .icon {
+    width: 26px;
+    height: 26px;
+    background: url('../img/quests-test_icon_sprites.png') no-repeat;    
+    margin: 0 14px 0 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.quest-item-container .name {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.quest-item .checkbox {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 29px;
+    top: 6px;
+    background: url('../img/quests_chkbox_unchked.png') no-repeat scroll 0px 0px transparent;
+}
+
+.quest-item.completed .checkbox {
+    background: url('../img/quests_chkbox_chked.png') no-repeat scroll 0px 0px transparent;
+}
+
+.quest-item-container .more-info {
+    background: url('../img/quests_more-info_tab.png') no-repeat;
+    position: absolute;
+    bottom: 0px;
+    right: 80px;
+    font-size: 10px;
+    width: 57px;
+    color: #CCCCCC;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.quest-item-container.selected .more-info {
+    background: url('../img/quests_more-info_tab-open.png') no-repeat;
+    bottom: -1px;
+    border-bottom: 1px solid #555555;
+    z-index: 10;
+}
+
+.quest-item-container .quest-description {
+    display: none;
+}
+
+.quest-item-container.selected .quest-description {
+    color: #CCCCCC;
+    font-size: 12px;
+    background-color: #555555;
+    border-color: #323232;
+    border-style: solid;
+    border-top-width: 1px;
+    position: relative;
+    min-height: 32px;
+    padding: 18px 25px 0 0;    
+    display: block;
+}
+
+.quest-item-container.selected .quest-description ul {    
+    padding-left: 39px;
+    padding-bottom: 37px;
+}
+
+.quest-item-container.selected .quest-description ul li {
+   list-style-type: disc;
+}
+
+.quest-item-container.selected .quest-description .reward-footer {
+    position: relative;
+}
+
+.quest-item-container.selected .quest-description .reward-text {
+    position: absolute;
+    bottom: 6px;
+    right: 29px;
+}
+
+.quest-item-container.selected .quest-description .reward-text .amount {
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+.buttons {
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+.buttons .close-button {
+    position: absolute;
+    right: -3px;
+    bottom: 9px;
+}
+
+.quests-container.loading .loading-spinner {
+    background: url('../img/loading_dark.gif') no-repeat;
+    width: 48px;
+    height: 48px;
+    margin: 16px auto;
+}
+.error-text {
+    display: none;
+}
+
+.quests-container.error .error-text {
+    background: url('../img/quests_error-icon.png') no-repeat;
+    background-position: 0px 4px;
+    color: #BD5055;
+    font-weight: bold;
+    margin: 64px auto;
+    width: 80%;
+    padding-left: 20px;
+    display: block;
+}

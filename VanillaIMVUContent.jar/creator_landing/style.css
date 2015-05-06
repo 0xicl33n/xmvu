@@ -1,0 +1,330 @@
+@import url(../css/new-visd-base.css);
+
+body {
+    background: url(img/bg-orbgs-left.png) no-repeat,
+                url(img/bg-orbs-right.png) no-repeat,
+                url(img/bg-leaves-left.png) no-repeat,
+                url(img/bg-leaves-right.png) no-repeat,
+                url(../img/background-pattern.png),
+                -moz-linear-gradient(top, #272727, #323232, #323232 85%, #4c4c4c 100%);
+    background-position: bottom left, bottom right, bottom left, bottom right, top left;
+    background-attachment: fixed, fixed, fixed, fixed, fixed;
+    color: #B8B8B8;
+    padding: 20px;
+}
+
+h1 {
+    background: transparent url(img/logo-title.png) no-repeat;
+    background-position: -20px 0;
+    font-size: 29px;
+    height: 42px;
+    line-height: 26px;
+    padding-left: 45px;
+}
+h2 {
+    color: #B8B8B8;
+    font-size: 16px;
+    font-weight: 300px;
+}
+h3 {
+    color: #000;
+}
+
+hr {
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #2a2a2a;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+#left-column {
+    width: 684px;
+}
+#right-column {
+    cursor: default;
+    left: 720px;
+    position: fixed;
+    top: 0;
+    width: 265px;
+}
+    #right-column hr {
+        margin-top: 18px;
+        border-bottom: solid 1px rgba(127, 127, 127, 0.4);
+    }
+
+.collapsible {
+    -moz-border-radius: 3px;
+    border: solid 1px rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.45);
+}
+    .collapsible h2 {
+        background: url(../img/icon_16_minus_normal.png) no-repeat;
+        background-position: 20px 10px, top left;
+        cursor: pointer;
+        height: 34px;
+        line-height: 35px;
+        padding-left: 45px;
+    }
+        .collapsible h2:hover {
+            background: url(../img/icon_16_minus_hover.png) no-repeat;
+            background-position: 20px 10px, top left;
+        }
+        .collapsible h2:active {
+            background: url(../img/icon_16_minus_onclick.png) no-repeat;
+            background-position: 20px 10px, top left;
+        }
+    .welcoming #welcome h2,
+    #news.collapsible.collapsed h2 {
+        background: url(../img/icon_16_plus_normal.png) no-repeat;
+        background-position: 20px 10px, top left;
+    }
+        .welcoming #welcome h2:hover,
+        #news.collapsible.collapsed h2:hover {
+            background: url(../img/icon_16_plus_hover.png) no-repeat;
+            background-position: 20px 10px, top left;
+        }
+        .welcoming #welcome h2:active,
+        #news.collapsible.collapsed h2:active {
+            background: url(../img/icon_16_plus_onclick.png) no-repeat;
+            background-position: 20px 10px, top left;
+        }
+    .collapsible.collapsed hr {
+        display: none;
+    }
+
+#news {
+    margin: 0 0 17px 0;
+}
+    #news .holder {
+        padding: 10px 10px 10px 20px;
+        background: transparent;
+    }
+        #news.collapsed .holder {
+            display: none;
+        }
+    #news .feed {
+        max-height: 135px;
+        overflow-y: scroll;
+    }
+        #news .feed .title {
+            font-size: 20px;
+            color: white;
+            margin: 0 0 14px 0;
+        }
+        #news .feed {
+            font-size: 13px;
+            line-height: 16px;
+        }
+        #news .feed p {
+            margin: 0 18px 18px 0;
+        }
+        #news .feed a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+/* This section is collapsed by removing the "welcoming" class from #main.
+   TODO: Collapse by applying the "collapsed" class to #welcome, so that it's
+         consistent with the news section. */
+#welcome {
+    margin: 0 0 17px 0;
+}
+    #welcome .holder {
+        padding: 15px 0 15px 15px;
+    }
+        .welcoming #welcome .holder {
+            height: 22px; /* 62 - 20 - 20 */
+            padding-top: 2px;
+            padding-bottom: 40px;
+            border-top: 0;
+        }
+
+    .tool-column {
+        -moz-border-radius: 3px;
+        display: inline-block;
+        height: 158px;
+        margin: 0 17px 0 0;
+        padding: 13px 10px 15px 10px;
+        width: 182px; /* 202 - 10 - 10 */
+        vertical-align: top;
+        cursor: default;
+        background: url(../img/background-pattern.png),
+                    -moz-linear-gradient(top, #a9a9a9, #848484);
+        border: solid 1px black;
+    }
+        .welcoming .tool-column {
+            background: none;
+            border: solid 1px transparent;
+            height: auto;
+        }
+        .tool-column:last-child {
+            margin: 0;
+        }
+        .tool-column .spiel {
+            height: 128px;
+            color: black;
+        }
+            .welcoming .tool-column .spiel {
+                display: none;
+            }
+        .tool-column h3 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            font-weight: 900;
+            text-shadow: #c3c3c3 0 1px 1px;
+        }
+        .tool-column p {
+            font-size: 13px;
+            margin: 0 0 12px 0;
+            line-height: 16px;
+        }
+        #main #welcome .tool-column button {
+            width: 190px;
+            font-weight: bold;
+        }
+        .imvu-button .icon svg {
+            float: left;
+            position: relative;
+            left: -4.5px;
+            top: -2px;
+        }
+
+#recent-projects {
+    -moz-border-radius: 3px;
+    border: solid 1px rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px 20px 12px 20px;
+}
+    #recent-projects h2 {
+        color: #CED0D0;
+        cursor: default;
+        margin: 0 0 15px 0;
+    }
+    #recent-projects table {
+        
+        font-size: 12px;
+    }
+    #recent-projects th {
+        color: #A1A2A2;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    #recent-projects th.edit {
+        width: 75px;
+    }
+    #recent-projects th.name {
+        width: 180px;
+    }
+    #recent-projects th.type {
+        width: 160px;
+    }
+    #recent-projects tbody tr {
+        background: #000;
+        color: #767676;
+        cursor: pointer;
+        height: 28px;
+    }
+        #recent-projects tbody tr * {
+            cursor: pointer;
+        }
+        #recent-projects tbody tr:nth-child(odd) {
+            background: #242424;
+        }
+        #recent-projects tbody tr:nth-child(odd) td {
+            border-top: solid 1px #323232;
+        }
+        #recent-projects tbody tr:hover {
+            background-color: #A2A3A3;
+            color: #000;
+            cursor: pointer;
+        }
+        #recent-projects tbody tr:hover td {
+            color: black;
+        }
+    #recent-projects td {
+        font-weight: 800;
+        height: 28px;
+    }
+        #recent-projects td .edit {
+            background: url(img/dim-edit-icon.png) no-repeat;
+            background-position: 9px 3px;
+            font-size: 10px;
+            font-weight: 900;
+            height: 17px;
+            line-height: 17px;
+            margin: 0 0 0 8px;
+            padding: 0 0 0 14px;
+            text-align: center;
+            width: 35px; /* 49 - 14 */
+        }
+            #recent-projects tr:hover td .edit {
+                -moz-border-radius: 2px;
+                background: #FFCC00 url(img/hover-edit-icon.png) no-repeat;
+                background-position: 9px 3px;
+            }
+    #recent-files {
+        width:100%;
+        border-collapse: separate;
+        cursor:default;
+        table-layout:fixed;
+    }
+    table .recent-files-body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+#progress {
+    padding: 0 0 15px 0
+}
+    #progress h2 {
+        background: url(img/creator-logo-small-white.png) no-repeat;
+        font-size: 15px;
+        padding: 0 0 16px 24px;
+        margin: 18px 0 0 0;
+    }
+    #progress h2 .level {
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+        color: #fff;
+        float: right;
+        font-size: 14px;
+        height: 22px;
+        text-align: center;
+        width: 70px;
+    }
+    #progress table {
+        width: 100%;
+        font-size: 11px;
+    }
+    #progress td {
+        color: #fff;
+        
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 10px;
+    }
+        #progress .credits-column,
+        #progress .predits-column {
+            width: 35%;
+        }
+        #progress .devtokens-column {
+            width: 25%;
+        }
+
+#tools {
+    margin: 6px 0 0 0;
+    padding: 16px 0 20px 0
+}
+    #tools h2 {
+        background: url(img/creator-logo-small-white.png) no-repeat;
+        font-size: 15px;
+        padding: 0 0 14px 24px;
+    }
+    #tools ul {
+        margin: 0 0 0 25px;
+    }
+    #tools li {
+        font-size: 12px;
+        height: 25px;
+        list-style: none;
+    }

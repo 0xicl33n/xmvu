@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+  <script src="../../js/jquery-1.6.js"></script>
+  <script src="../../js/underscore.js"></script>
+  <title>Choose a room to chat in: </title>
+  <link rel="stylesheet" type="text/css" href="../css/dialog.css">
+  <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+  <link rel="stylesheet" type="text/css" href="privateChatRoomSelection.css">
+
+  <script src="../../js/imvu.js"></script>
+  <script src="../../js/eventbus.js"></script>
+  <script src="../../js/Timer.js"></script>
+  <script src="../../widgets/button/imvuButton.js"></script>
+  <script src="privateChatRoomSelection.js"></script>
+</head><body> 
+
+<div id="dialog" class=" privateChatRoomSelectionDialog ">
+   <div class="close close-button"></div>
+  <div>
+    <div class="room-list-active dialog-header">
+      <p class="title"><span><script id="inline_translate">_iT("Choose a room to chat with:", "inline_translate")</script> </span><br><span class="partner-name"></span></p>
+    </div>
+    <div class="ap-warning">
+      <p><script id="inline_translate">_iT("Sorry, please select a GA-appropriate room so that", "inline_translate")</script> <span class="partner-name"></span> <script id="inline_translate">_iT("can join the conversation", "inline_translate")</script></p>
+    </div>
+  </div>
+
+  <div class="room-list-active products-list">
+    <div class="room-list-spinner"></div>
+    <div class="room-list"></div>
+  </div>
+  <div class="upsell-active upsell-active-content">
+    <p class="title"><script id="inline_translate">_iT("You\'re quite the chatterbox!", "inline_translate")</script></p>
+    <p><script id="inline_translate">_iT("You can\'t start another chat because you are using all of your available rooms.", "inline_translate")</script></p>
+    <p><script id="inline_translate">_iT("To start a new private chat, close one of your open chats or go shopping for a new room!", "inline_translate")</script></p>
+  </div>
+
+  <div class="upsell-active footer-separator">
+    <img src="../../img/dialog/dialog_cta_shadow.png" height="18" width="400">
+  </div>
+  <div class="footer">
+    <div class="active-selection room-list-active">
+      <img class="selected-room-image">
+      <div class="selected-room-name-block">
+        <div><script id="inline_translate">_iT("Selected:", "inline_translate")</script></div>
+        <div class="selected-room-name"></div>
+      </div>
+    </div>
+    <div id="button-bar">
+        <button class="cancel imvu-button level2 white-text dark-gray"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+        <button class="go-button room-list-active imvu-button level2"><script id="inline_translate">_iT("Go", "inline_translate")</script></button>
+        <button class="upsell-active buy-button imvu-button level2"><script id="inline_translate">_iT("Buy more Rooms", "inline_translate")</script></button>
+    </div>
+    <div style="clear: both;"></div>
+    
+  </div>
+</div> 
+
+<script>
+if (IMVU.runJS()) {
+    var args = {};
+    if (IMVU.IS_FIREFOX) {
+        args = {inviter_cid:39,extra_args:{invited_cid:349244}};
+    } else {
+        args = imvu.call('getDialogInfo');
+    }
+    
+    
+    args.imvu = imvu;
+    args.eventBus = IMVU.Client.EventBus;
+    IMVU.Client.PrivateChatRoomSelection = new PrivateChatRoomSelection(args);
+    
+}
+</script>
+
+</body></html>

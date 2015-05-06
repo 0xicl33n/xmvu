@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../js/jquery-1.5.js"></script>
+    <script src="../js/jquery-ui-1.8.7.custom.min.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="../js/Timer.js"></script>
+    <script src="../js/Breadcrumbs.js"></script>
+    <script src="../js/Paginator.js"></script>
+    <script src="../js/Dropdown.js"></script>
+
+    <script src="PhotosMode.js"></script>
+    <script src="AlbumThumbnail.js"></script>
+    <script src="PhotoThumbnail.js"></script>
+    <script src="PhotosModeCachingDataSource.js"></script>
+    <script src="PhotosModeNetworkingDataSource.js"></script>
+    <script src="AlbumPaginatorInterface.js"></script>
+    <script src="PhotoPaginatorInterface.js"></script>
+    <script src="AlbumListView.js"></script>
+    <script src="PhotoListView.js"></script>
+    <script src="PhotoDetailView.js"></script>
+    <script src="MovePhotoView.js"></script>
+</head><body>
+    <div id="photos-mode">
+        <div class="scroll-bar">
+            <div id="paginator-head">
+                <div id="paginator">
+                    <li class="info"></li>
+                    <li class="next"></li>
+                    <ul id="numbers"></ul>
+                    <li class="previous"></li>
+                </div>
+                <li class="number-template"></li>
+            </div>
+            <div id="spinner"></div>
+            <div id="lightbox">
+                <div class="buttons">
+                    <div class="lightbox-control back"></div>
+                    <div class="lightbox-control play"></div>
+                    <div class="lightbox-control forward"></div>
+                </div>
+                <div class="close"></div>
+                <img class="lightbox-photo">
+            </div>
+            <div id="top-nav">
+                <div id="breadcrumbs"></div>
+                <div id="album-dropdown">
+                    <select class="album-drop-down-select"></select>
+                </div>
+                <div id="total-albums"></div>
+                <div id="total-photos"></div>
+            </div>
+        
+            <div id="left-nav-album-view">
+                <div class="album-buttons">
+                    <button id="create-album" class="imvu-button level2"><span class="icon"><script id="inline_translate">_iT("Create Album", "inline_translate")</script></span></button>
+                </div>
+                <div class="photos-tip">
+                    <script id="inline_translate">_iT("Tips", "inline_translate")</script>
+                    <div class="tip-text">
+                        <ul>
+                            <li> <script id="inline_translate">_iT("Your first album contains all your recent and unsorted photos.", "inline_translate")</script></li>
+                            <li> <script id="inline_translate">_iT("Select who sees your photos by setting them as Only Me, Friends Only or Everyone.", "inline_translate")</script></li>
+                            <li> <script id="inline_translate">_iT("Find your IMVU friends\' albums on their profile card.", "inline_translate")</script></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="left-nav-photo-view">
+                <div class="action-list">
+                    <span class="download-button left-nav-buttons"><script id="inline_translate">_iT("Download Photo", "inline_translate")</script></span>
+                    <span class="show-in-browser left-nav-buttons"><script id="inline_translate">_iT("Show Photo in Browser", "inline_translate")</script></span>
+                    <span class="album-cover left-nav-buttons"><script id="inline_translate">_iT("Make this Photo the album cover", "inline_translate")</script></span>
+                    <span class="start-slideshow left-nav-buttons"><script id="inline_translate">_iT("Start Slideshow", "inline_translate")</script></span>
+                </div>
+            </div>
+            <div id="left-nav-all-photos-view">
+                <button id="upload-photo" class="imvu-button level2"><span class="icon"><script id="inline_translate">_iT("Upload Photo", "inline_translate")</script></span></button>
+                <div class="album-description-title"><script id="inline_translate">_iT("Album Description", "inline_translate")</script></div>
+                <div class="album-description"></div>
+                <div id="album-privacy-container">
+                    <div class="album-privacy-title"><script id="inline_translate">_iT("Album Privacy", "inline_translate")</script></div>
+                    <select class="album-privacy">
+                        <option value="0"><script id="inline_translate">_iT("Only Me", "inline_translate")</script></option>
+                        <option value="1"><script id="inline_translate">_iT("Friends Only", "inline_translate")</script></option>
+                        <option value="2"><script id="inline_translate">_iT("Everyone", "inline_translate")</script></option>
+                    </select>
+                    <div id="album-privacy-warning"><script id="inline_translate">_iT("All photos in an album shared with \"Everyone\"  or \"Friends Only\" must be General Audience (GA) appropriate as per our", "inline_translate")</script> <a id="link_goods_policy" href="#"><script id="inline_translate">_iT("virtual goods ratings", "inline_translate")</script></a> <script id="inline_translate">_iT("policy. Inappropriate photos will be flagged.", "inline_translate")</script></div>
+                </div>
+                <div id="default-album-privacy-container">
+                    <div class="album-privacy-title"><script id="inline_translate">_iT("Album Privacy", "inline_translate")</script></div>
+                    <div id="album-privacy-default"><script id="inline_translate">_iT("This album can not be shared. Please move desired photos into another album if you wish to share them with your friends or everyone in IMVU.", "inline_translate")</script></div>
+                </div>
+                <div class="action-list">
+                    <div class="edit-album-info left-nav-buttons"><script id="inline_translate">_iT("Edit Album Info", "inline_translate")</script></div>
+                    <div class="add-photos left-nav-buttons"><script id="inline_translate">_iT("Add Photos", "inline_translate")</script></div>
+                    <div class="move-photos left-nav-buttons"><script id="inline_translate">_iT("Move Photos", "inline_translate")</script></div>
+                    <div class="delete-this-album left-nav-buttons"><script id="inline_translate">_iT("Delete This Album", "inline_translate")</script></div>
+                    <div id="flag-album-element-id" class="flag-album left-nav-buttons"><script id="inline_translate">_iT("Flag Album", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div id="photo-display-count">
+                <select class="photo-count-select">
+                    <option value="12"><script id="inline_translate">_iT("Display 12", "inline_translate")</script></option>
+                    <option value="24"><script id="inline_translate">_iT("Display 24", "inline_translate")</script></option>
+                    <option value="36"><script id="inline_translate">_iT("Display 36", "inline_translate")</script></option>
+                </select>
+            </div>
+            <div id="album-view" class="main-div">
+                <div class="album-view-header"></div>
+                <div id="album-display-count">
+                    <select class="album-count-select">
+                        <option value="12"><script id="inline_translate">_iT("Display 12", "inline_translate")</script></option>
+                        <option value="24"><script id="inline_translate">_iT("Display 24", "inline_translate")</script></option>
+                        <option value="36"><script id="inline_translate">_iT("Display 36", "inline_translate")</script></option>
+                    </select>
+                </div>
+                <div id="refresh-album-list"><span class="icon"><script id="inline_translate">_iT("Refresh", "inline_translate")</script></span></div>
+                <div id="album-list"></div>
+            </div>
+            <div id="photo-view" class="main-div">
+                <div id="photo-list"></div>
+            </div>
+        
+            <div id="photo-detail-view" class="main-div">
+                <div class="container">
+                    <table>
+                    <tbody><tr>
+                    <td class="prev-photo">
+                        <div class="nav-container">
+                            <div class="nav">
+                                <img class="nav-thumb">
+                            </div>
+                            <div class="nav-link"><script id="inline_translate">_iT("Back", "inline_translate")</script></div>
+                        </div>
+                    </td>
+                    <td class="current-photo">
+                        <div class="flag-photo-detail"></div>
+                        <img class="hires-photo">
+                    </td>
+                    <td class="next-photo">
+                        <div class="nav-container">
+                            <div class="nav">
+                                <img class="nav-thumb">
+                            </div>
+                            <div class="nav-link"><script id="inline_translate">_iT("Next", "inline_translate")</script></div>
+                        </div>
+                    </td>
+                    </tr>
+                    </tbody></table>
+                    <div class="bottom-container">
+                        <div class="header"></div>
+                        <div class="body">
+                            <div class="title-div">
+                                <span class="title"></span>
+                                <span class="edit-title-button edit-status-button"><script id="inline_translate">_iT("Edit", "inline_translate")</script></span>
+                                <input id="edit-title-input" type="text">
+                            </div>
+                            <div class="description-div">
+                                <span class="description"></span>
+                                <span class="edit-description-button edit-status-button"><script id="inline_translate">_iT("Edit", "inline_translate")</script></span>
+                                <textarea id="edit-description-input"></textarea>
+                            </div>
+                        </div>
+                        <div class="footer"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="move-photos-left-nav">
+                <div id="album-nav-container">
+                    <div class="album-view-header">
+                        <div class="text"></div>
+                        <div class="album-count"></div>
+                    </div>
+                    <div class="album-view-droppable" id="album-nav-edit">
+                        <div id="album-list-edit"></div>
+                    </div>
+                    <div id="button-bar"><button class="imvu-button level2 done-button"><script id="inline_translate">_iT("Done", "inline_translate")</script></button></div>
+                </div>
+            </div>
+            <div id="move-photos-view" class="main-div">
+                <div class="drag-and-drop-hint add-hint">
+                    <div class="contents">
+                        <script id="inline_translate">_iT("Add photos by dragging and dropping them into the destination album on the left panel.", "inline_translate")</script>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="drag-and-drop-hint move-hint">
+                    <div class="contents">
+                        <script id="inline_translate">_iT("Move photos by dragging and dropping them into the desired album on the left panel.", "inline_translate")</script>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="tip-on-hover add-tip-on-hover">
+                    <div class="contents">
+                        <script id="inline_translate">_iT("Add photos tip", "inline_translate")</script>
+                    </div>
+                </div>
+                <div class="tip-on-hover move-tip-on-hover">
+                    <div class="contents">
+                        <script id="inline_translate">_iT("Move photos tip", "inline_translate")</script>
+                    </div>
+                </div>
+                <div id="tip-info-block">
+                    <div class="info-box">
+                        <div class="header">
+                            <div class="icon"></div>
+                            <span class="title"><script id="inline_translate">_iT("Title", "inline_translate")</script></span>
+                            <div class="close"></div>
+                        </div>
+                        <div class="body">
+                            <div class="text"></div>
+                        </div>
+                    </div>
+                    <div class="info-arrow-left"></div>
+                </div>
+                <div class="photo-view-draggable" id="main-content-edit">
+                    <div id="photo-list-edit"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="photo-template horizontal-list">
+        <div class="delete-widget-photo"></div>
+        <div class="flag-photo-list"></div>
+        <div class="thumbnail-widget">
+            <div class="photo-thumbnail">
+                <img class="thumbnail">
+                <div class="photo-selected"></div>
+            </div>
+            <div class="pic-title"></div>
+            <div class="pic-id-hidden"></div>
+        </div>
+    </div>
+    <div class="album-template horizontal-list">
+        <div class="delete-widget-album"></div>
+        <div class="album-widget">
+            <div class="album-selected"></div>
+            <div class="album-thumbnail">
+                <img class="thumbnail">
+            </div>
+            <div class="photo-count"></div> 
+            <div class="album-title"></div>
+            <div class="edit-button"><script id="inline_translate">_iT("Edit", "inline_translate")</script></div>
+            <div class="move-button"><script id="inline_translate">_iT("Move", "inline_translate")</script></div>
+            <div class="album-id-hidden"></div>  
+        </div>
+    </div>
+
+
+    <script>
+        if (IMVU.runJS()) {
+            if (IMVU.IS_FIREFOX) {
+                $('.album-privacy').dropdown('init', {baseClassName: 'test'});
+                $('#left-nav-all-photos-view').show();
+                $('.album-privacy').dropdown('setValue', 2);
+            } else {
+                IMVU.Client.PhotosMode = new PhotosMode({
+                    root: 'body',
+                    network: IMVU.Network,
+                    eventBus: IMVU.Client.EventBus,
+                    imvu: imvu
+                });
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,73 @@
+
+body { 
+    overflow: hidden;
+    font-size:14px;
+    color:#383836;
+    background:#F0F0E8;
+}
+* {
+    -moz-user-select: -moz-none;
+}
+
+.copy {display: none; }
+.regular.copy {display: block; }
+
+.copy { 
+
+}
+
+.close-button {
+    background-image: url("../img/close.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    z-index: 5;
+}
+
+div.container { 
+    background-image: url('VIP.jpg');
+    display: table;
+    width: 100%;
+}
+
+div.column { 
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+}
+
+div.column.text {
+    background-color: black;
+    vertical-align: middle;
+    padding: 58px 35px 77px;
+    -moz-box-sizing: border-box;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+    line-height: 26px;
+}
+div.description {
+    color: white;
+    padding-top: 38px;
+}
+.buttons-holder { 
+    margin-top: 107px;
+    float: right;
+    padding-right: 24px;
+}
+
+button#cancel { 
+    color:white;
+}
+button#learn-more,
+button#cancel { 
+    font-weight: bold;
+    font-size: 11px;
+}

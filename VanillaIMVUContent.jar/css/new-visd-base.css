@@ -1,0 +1,53 @@
+/* Defaults for the new visual language. */
+
+@import url("reset.css");
+@import url("new-visd-buttons.css");
+@import url("font.css");
+
+/* FONTS */
+
+* {  }
+h1, h2, h3 {  }
+
+/* COLORS */
+
+a { color: #4499fe; }
+a:hover { color: #3373be; }
+h1, h2, h3 { color: #fdd400; }
+
+/* TEXT SELECTION */
+
+* { -moz-user-select: -moz-none; }
+input, textarea { -moz-user-select: text; }
+
+/* GENERAL */
+
+* {
+    /* Avoid the text cursor, because it's a visual cue that leads you
+       to believe the text can be selected. Use the default arrow. */
+    cursor: default;
+}
+
+a {
+    cursor: pointer; /* The finger cursor is a visual cue that something is clickable. */
+    text-decoration: none;
+}
+    a:focus { outline: none; } /* The dotted focus doesn't look good. Hide it. */
+    a:hover { text-decoration: underline; }
+
+hr.shadow {
+    background: url(../img/dialog/dialog_cta_shadow.png) center center no-repeat;
+    height: 15px;
+    line-height: 60px;
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+hr.standard {
+    border: 0;
+    border-top: solid 1px rgba(0, 0, 0, 0.3);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.075);
+}
+.gold-credit-icon {
+    background: url(../img/credits_large.png) center left no-repeat;
+    padding-left: 20px;
+}

@@ -1,0 +1,60 @@
+.tab.myrooms { 
+    padding: 6px;
+}
+.myrooms .private-rooms {
+    /* Ensure the private-rooms div full wraps all the contained float:left tiles.
+       Otherwise, "My Public Rooms" floats off to the upper right of the private
+       room tiles. */
+    overflow: hidden; 
+}
+.myrooms .private-rooms .section-header {
+    margin-bottom: -3px;
+}
+    .myrooms .private-rooms .section-header .icon {
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: -6px;
+        margin-right: -4px;
+    }
+
+    .myrooms .private-rooms .section-header .title {
+        vertical-align: baseline;
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .myrooms .private-rooms .section-header .description {
+        vertical-align: baseline;
+        display: inline-block;
+        font-size: 12px;
+    }
+
+.myrooms .public-rooms .section-header {
+    margin-top: 6px;
+    margin-bottom: -2px;
+}
+    .myrooms .public-rooms .section-header .icon {
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: -6px;
+        margin-left: 4px;
+        margin-right: -2px;
+    }
+
+    .myrooms .public-rooms .section-header .title {
+        vertical-align: baseline;
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .myrooms .public-rooms .section-header .description {
+        vertical-align: baseline;
+        display: inline-block;
+        font-size: 12px;
+    }
+
+.myrooms .tile .highlight-font{
+    color: #e00;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #111;
+}

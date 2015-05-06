@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Select Album</title>
+    <script src="../../js/underscore.js"></script>
+    <script src="../../js/jquery-1.6.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/EventLoop.js"></script>
+    <script src="../../js/Promise.js"></script>
+    <script src="../../js/Rest.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="PhotoSelection.js"></script>
+
+</head><body>
+    <div id="dialog">
+        <div class="select-photo bd">
+            <h1 class="header"><script id="inline_translate">_iT("Select a photo to use", "inline_translate")</script></h1>
+            <button class="imvu-button dark-gray level2 white-text interstitial action-close ui-event" data-ui-name="cancel"><script id="inline_translate">_iT("Exit", "inline_translate")</script></button>
+            <div class="photo-button-header">
+                <button class="back-button imvu-button dark-gray level2 ui-event" data-ui-name="back"><script id="inline_translate">_iT("Back", "inline_translate")</script></button>
+                <button class="done-button imvu-button level2 ui-event" data-ui-name="select_photo"><script id="inline_translate">_iT("Done", "inline_translate")</script></button>
+            </div>
+            <div class="container">
+                <div class="breadcrumb"><span class="start"><script id="inline_translate">_iT("My Albums", "inline_translate")</script></span><span class="trail"></span></div>
+                <ul class="album-list"></ul>
+                <ul class="photo-list"></ul>                
+                <li class="album-detail album-template">                    
+                    <div class="thumbnail"></div>                    
+                    <div class="title"><script id="inline_translate">_iT("Title", "inline_translate")</script></div>
+                </li>
+                <li class="photo-detail photo-template">
+                    <div class="photo-thumbnail"></div>
+                    <div class="check-mark"></div>
+                </li>
+            </div>
+            <div id="footer">
+                <div class="disclaimer"><p><script id="inline_translate">_iT("All shared photos must be OK for", "inline_translate")</script> <a id="link_content_policy" href="#"><script id="inline_translate">_iT("general audiences.", "inline_translate")</script></a></p></div>
+            </div>
+        </div>
+        <div class="take-photo bd">
+            <h1><script id="inline_translate">_iT("Looks like you don\'t have any photos!", "inline_translate")</script></h1>
+            <h2><script id="inline_translate">_iT("Take photos in 3D Chat:", "inline_translate")</script></h2>
+            <div class="tricol">
+                <div class="col">
+                    <img src="img/stepone.png" alt="Step 1">
+                    <div class="text"><script id="inline_translate">_iT("1. Click on the camera icon at the bottom of the screen.", "inline_translate")</script></div>
+                </div>
+                <div class="col">
+                    <img src="img/steptwo.png" alt="Step 2">
+                    <div class="text"><script id="inline_translate">_iT("2. Strike a pose and snap a photo.", "inline_translate")</script></div>
+                </div>
+                <div class="col">
+                    <img src="img/stepthree.png" alt="Step 3">
+                    <div class="text"><script id="inline_translate">_iT("3. Come back to Get Matched and add your photo!", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-take ui-event" data-ui-name="get_matched_take_photo_ok"><script id="inline_translate">_iT("Go Take a Photo!", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    if (IMVU.runJS()) {
+        var info = imvu.call('getDialogInfo');
+        var Promise = new IMVU.PromiseFactory(IMVU.EventLoop);
+        var Rest = new IMVU.Rest(Promise, XMLHttpRequest, imvu);
+        IMVU.Client.PhotoSelection = new PhotoSelection({root: 'body', imvu: imvu, rest: Rest, info: info});
+        
+        if (IMVU.IS_FIREFOX) {
+            $('.photo-list').show();
+        }
+    }
+    </script>
+</body></html>

@@ -1,0 +1,1060 @@
+@import url(../css/dialog.css);
+@import url(../css/card.css);
+
+
+body {
+    overflow: hidden;
+    margin: 1px;
+}
+
+/* The button widget was built assuming YUI styles. The outfit card
+   does not use them, so we need to tweak this. */
+#dialog .imvu-button .text {
+    padding-top: 2px;
+}
+/* The /dialogs/css/card.css was built assuming YUI styles. The
+   outfit card does not use them, so we need to tweak this. */
+.card #ft .tab {
+    line-height: 12px;
+}
+
+.card {
+    width: 1356px; /* 452x3 */
+}
+
+* {
+    -moz-user-select: -moz-none;
+}
+
+a {
+    outline: none;
+}
+
+ul {
+    list-style-type:none;
+    padding:0;
+    margin:1px 0 3px 0;
+}
+
+li {
+    font-weight:bold;
+    line-height:150%;
+}
+
+#dialog .hd {
+    font:15px;
+    font-weight: bold;
+    margin:0;
+    height: 17px;
+    letter-spacing: 0;
+    padding-top: 5px;
+    padding-bottom: 8x;
+    cursor: default;
+    background: -moz-linear-gradient(top, #8a8a8a, #464646);
+    text-shadow: #000 0 1px 1px;
+    width: 441px;
+}
+
+#close_button {
+    width:12px;
+    height:12px;
+    display:inline-block;
+    position:absolute;
+    top: 8px;
+    left: 430px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    -moz-transform:rotate(45deg);
+}
+    #close_button .h {
+        background-color: white;
+        position:absolute;
+        width:100%;
+        height:2px;
+        top:5px;
+        left:0;
+        box-shadow: 1px;
+    }
+    #close_button .v {
+        background-color: white;
+        position:absolute;
+        width:2px;
+        height:100%;
+        top:0;
+        left:5px;
+    }
+#close_button_shadow {
+    width:12px;
+    height:12px;
+    display:inline-block;
+    position:absolute;
+    top: 9px;
+    left: 430px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    -moz-transform:rotate(45deg);
+}
+    #close_button_shadow .h {
+        background-color: #000;
+        position:absolute;
+        width:100%;
+        height:2px;
+        top:5px;
+        left:0;
+        box-shadow: 1px;
+    }
+    #close_button_shadow .v {
+        background-color: #000;
+        position:absolute;
+        width:2px;
+        height:100%;
+        top:0;
+        left:5px;
+    }
+
+.alerticon_ap {
+    float:left;
+    margin-top: 7px;
+    margin-left: 7px;
+    opacity:0.85;
+}
+
+.bd {
+    position: relative !important;
+}
+
+#content_info .bd {
+    margin: 1px 0 0 0;
+}
+
+#we_are_sorry_container {
+    margin:4px 0 9px 0;
+    font: 11px;
+}
+
+#we_are_sorry_container .we_are_sorry_message {
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.we_are_sorry_message p {
+    margin:0;
+    line-height: 150%;
+}
+
+#we_are_sorry_container #ap-link {
+    cursor: pointer;
+}
+
+#restore_outfit_snapshot_container {
+    margin:4px 0 9px 0;
+    font: 11px;
+}
+
+#restore_outfit_snapshot_container .thanks_for_purchase_message {
+    margin-left: 53px;
+}
+
+#restore_outfit_snapshot_container .thanks_for_purchase_message p {
+   margin-top: 3px;
+   margin-bottom: 3px;
+}
+
+
+#UFI_or_teenAp_outfit_snapshot_container {
+    margin:4px 0 9px 0;
+    font: 11px;
+}
+
+#UFI_or_teenAp_outfit_snapshot_container .ufi_message {
+    margin-left: 53px;
+    margin-right: 10px;
+}
+
+#UFI_or_teenAp_outfit_snapshot_container p {
+    margin:0;
+    line-height:150%;
+}
+
+#snapshot_panel {
+    float: left;
+    width: 196px;
+    height: 382px;
+    background-color: #3E3E3A;
+    text-align: center;
+    border-right: solid 1px #2B2B2B;
+}
+
+#snapshot_panel .snapshot_container {
+    margin-top: 25px;
+    display: inline-block;
+    background: transparent url(img/purple_outfit_bg.png) repeat-x top left;
+    width: 160px;
+    height: 330px;
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+    border-left: solid 1px #545451;
+    border-bottom: solid 1px #545451;
+}
+
+#snapshot_panel .snapshot_container_shadow {
+    display: inline-block;
+    background: transparent url(img/purple_outfit_shadow.png) no-repeat center 295px;
+    width: 160px;
+    height: 330px;
+}
+
+#snapshot_panel img.snapshot {
+    width: 160px;
+    height: 330px;
+}
+
+#snapshot_panel .snapshot_image_disabled_container {
+    margin-top: 24px;
+    background: transparent url(img/purple_outfit_bg.png) repeat-x top left;
+    width: 160px;
+    height: 330px;
+}
+
+.snapshot_image_disabled_container .image_disabled_message {
+    color: silver;
+    font-size: 11px;
+    margin-top: 130px;
+    text-align: center;
+}
+
+#snapshot_panel .snapshot_spinner_container {
+    margin-top: 24px;
+    display: inline-block;
+    width: 160px;
+    height: 330px;
+}
+
+.snapshot_spinner_container .snapshot_spinner {
+    position: relative;
+    top: 150px;
+    left: 60px;
+    width: 41px;
+    height: 41px;
+    background:transparent url(../../img/spinner_white.apng) no-repeat center center;
+    opacity:0.33;
+}
+
+#outfit_info {
+    margin-left: 197px;
+    height: 382px;
+    width: 254px;
+    background: transparent url(img/outfitcard_bg.png) no-repeat top left;
+    position: relative;
+    background-color:#3e3e3a; /* hack. bg is a graphic and left a gap when i wanted to make it taller */
+}
+
+#outfit_info .outfit_name_container {
+    position: relative;
+}
+
+#outfit_info .outfit_name {
+    display: none;
+    font: 14px;
+    font-weight: bold;
+    color: silver;
+    background:#2b2b2b url(edit_text.png) no-repeat 3px 3px;
+    background-color: #2b2b2b;
+    height: 16px;
+    line-height: 16px;
+    margin: 0 7px 0 9px;
+    position: relative;
+    top: 7px;
+    padding: 2px 0 3px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 212px;
+    border: 0;
+    -moz-user-select: text;
+}
+
+#outfit_info .outfit_name_ap {
+    position: absolute;
+    left: 211px;
+    top: 7px;
+    height: 21px;
+    width: 30px;
+    background: #50504e url(../../img/icon_ap_medium.png) no-repeat right center;
+}
+
+#outfit_info .author .by {
+    font-size: 9px;
+    font-family:sans-serif;
+}
+
+#outfit_info .author {
+    color: silver;
+    font-style: italic;
+    font-size: 11px;
+    position: absolute;
+    top: 35px;
+    margin-left: 9px;
+}
+
+#outfit_info .author a#author_link {
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0 2px 0 7px;
+    text-decoration: underline;
+}
+
+#outfit_info .author img.vip {
+    position: relative;
+    top: 4px;
+}
+
+#outfit_info .author img.ap {
+    position: relative;
+    top: 4px;
+}
+
+#outfit_info .description {
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: 56px;
+    color: #EEF0DB;
+    width: 206px;
+    height: 29px;
+    
+    font-size: 11px;
+    background:#2b2b2b url(edit_text.png) no-repeat 3px 3px;
+    background-color: #2b2b2b;
+    margin-left: 9px;
+    padding: 2px 6px 2px 20px;
+    border: 0;
+    -moz-user-select: text;
+    line-height: 14px;
+}
+
+#product_list {
+    position: absolute;
+    top: 122px;
+    margin-left: 10px;
+    width: 232px;
+    height: 234px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#product_list_footer {
+    position: absolute;
+    top: 362px;
+    margin-left:12px;
+    width: 233px;
+    height: 12px;
+    color:white;
+    font-size: 11px;
+    line-height: 11px;
+    cursor: default;
+}
+
+#product_list_footer .total_items {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+#product_template {
+    display: none;
+}
+
+.product {
+    height: 41px;
+    margin: 0px 4px 1px 0px;
+    padding:3px 4px 2px 4px;
+    clear: both;
+    cursor: default;
+    position: relative;
+}
+
+.product .pulser {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.product img.thumb {
+    float: left;
+    top:-4px;
+    width: 50px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.product .name {
+    font-size: 11px;
+    color: silver;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 14px;
+    line-height: 14px;
+}
+
+.product .name .ap {
+    position:relative;
+    top:1px;
+    float:left;
+    margin-right:3px;
+}
+
+.product .category {
+    font-size: 10px;
+    color: gray;
+    height: 14px;
+    line-height: 14px;
+}
+
+.actions a {
+    position: relative;
+    top: -6px;
+    font-size: 10px;
+    color: #aa80ba;
+    text-decoration: underline;
+    display: none;
+}
+
+.product:hover .actions a {
+    display: inline;
+}
+
+.product:hover a.undo {
+    display:none;
+}
+
+.removed {
+    background-color: #1e1e1b;
+}
+
+.removed .thumb {
+    opacity:0.5;
+}
+
+.removed:before {
+    position:relative;
+    top:-5px;
+    font-size:11px;
+    color:white;
+    content: "Item removed";
+    margin-left:1px;
+}
+
+.removed .name,
+.removed .category,
+.removed .remove,
+.removed .puton {
+    display:none !important;
+}
+
+.removed .actions {
+    position:relative;
+}
+
+.removed .undo {
+    display:block !important;
+    position:absolute !important;
+    top:2px !important;
+    right:4px;
+}
+
+div.share {
+    float: left;
+    font: 11px;
+    margin: 6px 20px 0 6px;
+}
+
+div.share * {
+    vertical-align: bottom;
+    color: #324A88;
+}
+
+div.delete {
+    color: #ccc;
+    cursor: pointer;
+    display: inline-block;
+    font: 11px;
+    height: 54px;
+    line-height: 54px;
+    margin: 0 0 0 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+div.delete img {
+    margin-right: 2px;
+}
+
+div.delete span:hover {
+    text-decoration: underline;
+}
+
+div.delete span {
+    position: relative;
+    top: -2px;
+}
+
+div.default { 
+    color: #ccc;
+    display: inline-block;
+    font: 11px;
+    height: 54px;
+    line-height: 54px;
+    margin: 0 0 0 20px;
+}
+
+div.default .set-as-default span { 
+    cursor: pointer;
+}
+
+div.default .set-as-default img { 
+    margin-right: 2px;
+}
+
+div.default span { 
+    position: relative;
+    top: -2px;
+}
+
+div.default .set-as-default span:hover { 
+   text-decoration: underline;
+}
+
+div.default .is-default {
+   cursor: default;
+   color: #659E2D;
+}
+
+div.default .is-default img { 
+    margin-right: 2px;
+}
+
+div.buttons {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+}
+
+div.buttons div {
+    display: inline-block;
+}
+
+#btn_cancel {
+    margin-right: 1px;
+}
+
+#btn_changePicture {
+    color: #ccc;
+    cursor: pointer;
+    display: inline-block;
+    font-family:sans-serif;
+    font-size: 11px;
+    height: 18px;
+    line-height: 18px;
+    margin-top: -5px;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+    #btn_changePicture span:hover {
+        text-decoration: underline;
+    }
+    #btn_changePicture img {
+        position: relative;
+        top: 4px;
+    }
+    #btn_changePicture span {
+        position: relative;
+        top: -2px;
+    }
+
+.hidden {
+    display: none;
+}
+
+#category_selector {
+    position:absolute;
+    top:98px;
+    margin-left:10px;
+    width:232px;
+    height:17px;
+    background-color:#2b2b2b;
+}
+
+#category_selector .label {
+    color:white;
+    font-size:11px;
+    margin:-2px 17px 0 6px;
+    padding: 0;
+}
+
+#category_selector select {
+    font-size:11px;
+}
+
+#category_selector option {
+    padding:1px 0px 1px 4px;
+    font-family:sans-serif;
+    background-color:#626161;
+}
+
+#category_selector option:nth-child(2n) {
+    background-color:#6a6969;
+}
+
+#product_list_spinner {
+    position: absolute;
+    top: 122px;
+    margin-left: 10px;
+    width: 232px;
+    height: 234px;
+    background: black url(../../img/spinner_white.apng) no-repeat center center;
+    opacity:0.33;
+}
+
+#dialog { 
+    width: 1356px; /* 452x3 */
+    position: relative;
+    overflow: visible;
+}
+
+#bd {
+    width: 1356px; /* 452x3 */
+    height: auto;
+    padding: 0 0 0 0 !important;
+}
+
+#dialog #ft {
+    position: relative;
+    height: 52px;
+    width: 451px;
+    background: -moz-linear-gradient(top, #1c1c1c, #2b2b2b, #2b2b2b, #2b2b2b);
+    padding: 0;
+}
+
+#spinner {
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    background: black url(../../img/spinner_white.apng) no-repeat center center;
+    opacity:0.70;
+    z-index:9000;
+}
+
+#sale-header,
+#sale-panel-header,
+#sale-confirmation-panel-header {
+    height: 43px;
+    width: 452px;
+    border-bottom: solid 1px #797976;
+    background: -moz-linear-gradient(top, #232323, #2b2b2b,  #1e1e1e);
+    position: relative;
+}
+
+#sale-header {
+    width: 451px;
+}
+    #sale-header .qa {
+        line-height:43px;
+        color: red;
+        margin: 0 0 0 15px;
+        cursor: default;
+    }
+    #sale-header .sell,
+    #sale-header .cant-be-sold {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin: -10px 0 0 0;
+    }
+    #sale-panel-header .back,
+    #sale-confirmation-panel-header .back {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin: -10px 0 0 0;
+    }
+    #sale-header .sell .imvu-button .middle,
+    #sale-panel-header .back .imvu-button .middle,
+    #sale-confirmation-panel-header .back .imvu-button .middle {
+        width: 60px;
+        text-align: center;
+    }
+    #sale-header .sell .imvu-button .middle .text,
+    #sale-header .cant-be-sold .imvu-button .middle .text,
+    #sale-panel-header .back .imvu-button .middle .text,
+    #sale-panel-header .submit-to-shop .imvu-button .middle .text,
+    #sale-confirmation-panel-header .back .imvu-button .middle .text {
+        width: 100%;
+        padding-top: 5px;
+    }
+    #sale-panel-header .submit-to-shop {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin: -10px 0 0 0;
+    }
+
+#sell-outfit-panels-container {
+    
+    position: absolute;
+    top: 0;
+    left: 452px;
+    width: 452px;
+    height: 100%;
+    background: -moz-linear-gradient(top, #3E3E3A, #2A2A27);
+    color: white;
+    cursor: default;
+    border-right: solid 1px white;
+}
+    .for-sale-display {
+        color: #F5D000;
+        height: 43px;
+        line-height: 43px;
+        font-size: 12px;
+        cursor: default;
+    }
+        .for-sale-display p {
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        .for-sale-display p a {
+            color: #F5D000;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .for-sale-display .product {
+            margin: 0 0 0 17px;
+        }
+        .for-sale-display .for-sale {
+            float: right;
+            margin: 0 17px 0 0;
+        }
+        .for-sale-display .for-sale img {
+            display: inline-block;
+            position: relative;
+            top: 9px;
+            margin: 0 4px 0 0;
+        }
+    #sell-outfit-panels-container .not-a-creator-panel .inform {
+        font-size: 24px;
+        line-height: 28px;
+        width: 275px;
+        text-align: center;
+        margin: 45px auto 0 auto;
+    }
+    #sell-outfit-panels-container .not-a-creator-panel .upsell {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 20px;
+        background: url(img/creator_logo_reflect.png) no-repeat 24px 24px,
+                    -moz-linear-gradient(top, #196595, #134B70);
+        -moz-border-radius: 10px;
+    }
+    #sell-outfit-panels-container .not-a-creator-panel .upsell h2 {
+        font-size: 26px;
+        color: #FEE3BC;
+        width: 326px;
+        text-align: center;
+        position: relative;
+        left: 50px;
+        top: 12px;
+        padding: 0 0 17px 0;
+    }
+    #sell-outfit-panels-container .not-a-creator-panel .upsell .become {
+        font-size: 18px;
+        width: 175px;
+        text-align: center;
+        margin: 25px auto 30px auto;
+        line-height: 24px;
+    }
+    #sell-outfit-panels-container .not-a-creator-panel .upsell .learn {
+        font-size: 15px;
+        text-align: center;
+        margin: 0 0 5px 0;
+    }
+    #sell-outfit-panels-container .not-a-creator-panel .upsell .learn a {
+        font-weight: bold;
+        color: #FDCC27;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #sell-outfit-panels-container .not-bundleable-panel .error {
+        font-size: 16px;
+        font-weight: bold;
+        height: 31px;
+        line-height: 31px;
+        background: -moz-linear-gradient(top, #b82f00, #942000);
+        text-align: center;
+    }
+    #sell-outfit-panels-container .not-bundleable-panel p {
+        font-size: 15px;
+        margin: 40px 0 20px 25px;
+    }
+
+    #sell-outfit-panels-container .not-bundleable-panel ul {
+        width: 390px;
+        height: 290px;
+        margin: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    #sell-outfit-panels-container .not-bundleable-panel li.template {
+        display: none;
+    }
+    #sell-outfit-panels-container .not-bundleable-panel li {
+        margin: 0 5px 0 0;
+        display: inline-block;
+        font-size: 13px;
+        width: 110px;
+        height: 60px;
+    }
+    #sell-outfit-panels-container .not-bundleable-panel li img {
+        width: 50px;
+        height: 40px;
+    }
+    #sell-outfit-panels-container .not-bundleable-panel li .name {
+        overflow: hidden;
+    }
+
+    #sell-outfit-panels-container .can-be-sold-panel {
+        text-align: center;
+        height: 100%;
+        font-size: 15px;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel .info {
+        font-size: 16px;
+        font-weight: bold;
+        height: 31px;
+        line-height: 31px;
+        background: -moz-linear-gradient(top, #00b936, #009223);
+        text-align: center;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel legend {
+        font-size: 17px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0 0 15px 0;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel fieldset {
+        margin: 80px 0 0 0;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+    }
+        #sell-outfit-panels-container .can-be-sold-panel label {
+            margin: 0 2px 0 0;
+        }
+        #sell-outfit-panels-container .can-be-sold-panel input {
+            position: relative;
+            top: 2px;
+        }
+        #sell-outfit-panels-container .can-be-sold-panel :not(.disabled) > label,
+        #sell-outfit-panels-container .can-be-sold-panel :not(.disabled) > input {
+            cursor: pointer;
+        }
+        #gender-female {
+            margin: 0 20px 0 0;
+        }
+
+    #sell-outfit-panels-container .can-be-sold-panel .profit-row {
+        margin: 70px 0 10px 0;
+        text-align: center;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel .submission-fee-row {
+        text-align: center;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel .profit,
+    #sell-outfit-panels-container .can-be-sold-panel .submission-fee {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    #sell-outfit-panels-container .can-be-sold-panel .profit:after,
+    #sell-outfit-panels-container .can-be-sold-panel .submission-fee:after {
+        content: ' cr.';
+    }
+    #sell-outfit-panels-container .can-be-sold-panel .disabled {
+        opacity: 0.5;
+    }
+
+#sale-confirmation-panel {
+    
+    position: absolute;
+    top: 0;
+    left: 905px;
+    width: 452px;
+    height: 100%;
+    background: -moz-linear-gradient(top, #3E3E3A, #2A2A27);
+    color: white;
+    cursor: default;
+    font-family: Arial;
+}
+    #sale-confirmation-panel .panel {
+        margin: 60px;
+    }
+    #sale-confirmation-panel .panel h2 {
+        position: relative;
+        left: -6px;
+        padding: 0 0 0 36px;
+        font-size: 17px;
+        line-height: 28px;
+        font-weight: bold;
+        background: url(img/sale_confirmation_icon.png) no-repeat;
+        height: 38px;
+        margin: 0 0 20px 0;
+    }
+    #sale-confirmation-panel .panel p {
+        font-size: 16px;
+        color: #D1D1D0;
+        line-height: 30px;
+    }
+    #sale-confirmation-panel .panel .you-will-be-charged,
+    #sale-confirmation-panel .panel .irreversible {
+        font-weight: bold;
+    }
+    #sale-confirmation-panel .panel .submit-to-shop {
+        margin: 40px 0 50px 155px;
+    }
+    #sale-confirmation-panel .panel input {
+        position: relative;
+        top: 2px;
+        cursor: pointer;
+    }
+    #sale-confirmation-panel .panel label {
+        font-size: 13px;
+        color: #D1D1D0;
+        margin: 0 0 0 4px;
+        cursor: pointer;
+    }
+
+    #sale-spinner {
+        display: none;
+        position: absolute;
+        width: 452px;
+        height: 100%;
+        background: black url(../../img/spinner_white.apng) no-repeat center center;
+        opacity: 0.33;
+        z-index: 9000;
+    }
+    #sale-confirmation-panel .success-panel h2,
+    #sale-confirmation-panel .success-panel p {
+        text-align: center;
+    }
+    #sale-confirmation-panel .success-panel h2 {
+        font-size: 32px;
+        margin: 100px 0 14px 0;
+    }
+    #sale-confirmation-panel .success-panel .product {
+        margin: 50px 0 0 0;
+    }
+    #sale-confirmation-panel .success-panel .product a {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        color: #6ECF20;
+        text-decoration: underline;
+        margin: 14px 0 0 0;
+    }
+
+.hint-widget .close-button {
+    display: none;
+}
+.hint-widget .click-sell {
+    font-size: 20px;    
+    font-weight: bold;
+    text-shadow: #FEEE21 0 1px;
+    line-height: 64px;
+}
+.hint-widget {
+    border: none; /* No ghetto white border, please. */
+    -moz-border-radius: 12px;
+    -moz-box-shadow: 0 5px 15px #000;
+    background: -moz-linear-gradient(top, #FCCC19, #FBB00F); /* Yellow gradient. */
+    width: 218px;
+    height: 64px;
+    padding: 0;
+}
+
+/* Gross. Why do we hardcode an image with a white outline? Override it with a
+   new large image that matches the Sell Outfits visual design for now. */
+.nub-up {
+  background: url(../../widgets/hint/img/nub_up_huge.png) no-repeat;
+}
+/* Double gross. Hardcoded images mean hardcoded sizes too. */
+.nub-common { /* Double ugh. */
+  width:32px;
+  height:27px;
+}
+
+.hint-widget.bundleability-help {
+    border: none; /* No ghetto white border, please. */
+    background: white;
+    width: 250px;
+    height: 216px;
+    padding: 0;
+}
+    .bundleability-help .nub-up,
+    .gender-help .nub-up {
+        background: url(../../widgets/hint/img/nub_up_white.png) no-repeat;
+    }
+    .bundleability-help .nub-common,
+    .gender-help .nub-common {
+        width: 27px;
+        height: 16px;
+    }
+    .bundleability-help h2,
+    .gender-help h2 {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 0 4px 17px;
+        padding: 6px 0 0 0;
+    }
+    .bundleability-help hr,
+    .gender-help hr {
+        border-bottom: solid 1px #E5E5E5;
+    }
+    .bundleability-help p,
+    .gender-help p {
+        font-size: 14px;
+        margin: 8px 10px 10px 17px;
+        line-height: 18px;
+    }
+
+.hint-widget.gender-help {
+    border: none; /* No ghetto white border, please. */
+    background: white;
+    width: 250px;
+    height: 200px;
+    padding: 0;
+    font-family: Arial;
+}
+
+.help-icon {
+    position: relative;
+    top: 2px;
+    margin: 0 0 0 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Avatar Card</title>
+    <link rel="stylesheet" href="../../yui/container/assets/container.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="avatarCard.css">
+
+    <script src="../../js/imvu.js"></script>
+</head><body class="card">
+<div id="dialog" class="avatar">
+    <div id="throbber"></div>
+    <div id="close_button" class="close-button"></div>
+    <div id="bd">
+        <div id="content_info" class="content selected">
+            <div class="bd">
+                <div id="avinfo">
+                    <img id="avpic">
+                    <div id="namebar">
+                        <div id="avname-holder">
+                            <a id="buddy-icon" title="Friend" alt="Friend" style="display: none;"></a>
+                            <span id="avname"></span>
+                        </div>
+                        <div id="staff-icon" style="display: none;"></div>
+                        <div id="married-icon" style="display: none;"></div>
+                        <div id="vip-icon" style="display: none;"></div>
+                        <div id="ageverify-icon" style="display: none;"></div>
+                        <div id="ap-icon" style="display: none;"></div>
+                        <div id="welcome-mod-icon" style="display: none;">
+                            <div class="welcome-mod-l"></div>
+                            <div class="welcome-mod-r"></div>
+                        </div>
+                    </div>
+
+                    <div id="otherinfo">
+                        <span id="gender"></span><span id="gender-age-divider"> <script id="inline_translate">_iT("/", "inline_translate")</script> </span>
+                        <label><script id="inline_translate">_iT("Age:", "inline_translate")</script> </label><span id="age"></span>
+                        <div id="location">
+                            <img id="location-flag">
+                            <span id="location-name"></span>
+                            <select id="location-dropdown">
+                            </select>
+                        </div>
+                        <span id="location-name-tip" class="country-hover"></span>
+                        <div id="subinfo">
+                            <div id="tagline" style="visibility: hidden;"><input id="tagline-input" type="text"></div>
+                            <div id="married-to-line" style="visibility: hidden;"><script id="inline_translate">_iT("Married to", "inline_translate")</script> <span id="married-to-link"><script id="inline_translate">_iT("AVATARNAME", "inline_translate")</script></span></div>
+                            <div id="availability" style="visibility: hidden;">
+                                <div id="now-at"><script id="inline_translate">_iT("Now at:", "inline_translate")</script> <span id="now-at-link"></span></div>
+                                <div id="availability-line"><script id="inline_translate">_iT("Availability:", "inline_translate")</script> <span id="avatar-popup-online" class="olstatus-available" style="display: none;"><img src="../../img/available.png"> <script id="inline_translate">_iT("Online", "inline_translate")</script></span>
+                                <span id="avatar-popup-creating" class="olstatus-creating hidden"><img src="../../img/creating.png"> <script id="inline_translate">_iT("Creating", "inline_translate")</script></span>
+                                <span id="avatar-popup-offline" style="display: none;"><script id="inline_translate">_iT("Offline", "inline_translate")</script></span></div>
+                            </div>
+                            <div id="my_shop"><script id="inline_translate">_iT("Visit My Shop", "inline_translate")</script></div>
+                        </div>
+                        <div id="member-info" style="visibility: hidden;">
+                                <div><script id="inline_translate">_iT("Member since:", "inline_translate")</script> <span id="member-since"></span></div>
+                                <div id="last-online-label"><script id="inline_translate">_iT("Last online:", "inline_translate")</script> <span id="last-online"></span></div>
+                        </div>
+                    </div>
+                <div id="years-at-imvu" style="visibility: hidden;">
+                    <div id="years-at"><script id="inline_translate">_iT("1", "inline_translate")</script></div>
+                    <div id="years-at-label"><script id="inline_translate">_iT("Year at IMVU!", "inline_translate")</script></div>
+                </div>
+                <div id="interests" style="visibility: hidden;">
+                    <div class="info">
+                        <div id="interests-label" class="label"><span class="editmode-only"><script id="inline_translate">_iT("my", "inline_translate")</script> </span><script id="inline_translate">_iT("interests", "inline_translate")</script></div>
+                        <div class="editmode-only sublabel"><script id="inline_translate">_iT("256 characters remaining", "inline_translate")</script></div>
+                        <div class="bd">
+                            <div id="interest-tags"></div>
+                            <textarea id="interest-textarea" wrap="hard"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div id="affinity" style="visibility: hidden;">
+                    <div class="info">
+                        <div id="affinity-label" class="label"><span class="editmode-only"><script id="inline_translate">_iT("my", "inline_translate")</script> </span><script id="inline_translate">_iT("affinity", "inline_translate")</script></div>
+                        <div class="bd">
+                            <div class="affinity-item"><label><script id="inline_translate">_iT("Relationship:", "inline_translate")</script></label><div class="text"><select id="relationship-dropdown"></select><span id="relationship"></span></div></div>
+                            <div class="affinity-item"><label><script id="inline_translate">_iT("Orientation:", "inline_translate")</script></label><div class="text"><select id="orientation-dropdown"></select><span id="orientation"></span></div></div>
+                            <div class="affinity-item"><label><script id="inline_translate">_iT("Here for:", "inline_translate")</script></label><div class="text"><select id="looking_for-dropdown"></select><span id="looking_for"></span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="badges" style="visibility: hidden;">
+                    <div class="container">
+                        <div id="badge-display">
+                            <span id="badge-count"></span>
+                            <span id="badge-display-text"><script id="inline_translate">_iT("badges display", "inline_translate")</script></span>
+                        </div>
+                        <div id="badge-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="actions">
+            <div id="links">
+                
+
+                <span id="webprofile" style="left: 0px;" class="links"><img src="icon-webprofile.png"></span>
+                <span id="webprofileTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Profile", "inline_translate")</script></span>
+
+                <span id="photos" style="left: 0px;" class="links"><img src="icon-photo.png"></span>
+                <span id="photosTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("See my albums (0)", "inline_translate")</script></span>
+
+                <span id="shop" style="left: 0px;" class="links"><img src="../img/shop_icon_gray.png"></span>
+                <span id="shopTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Shop Together", "inline_translate")</script></span>
+
+                <span id="message" style="left: 0px;" class="links"><img src="icon-message.png"></span>
+                <span id="messageTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Message", "inline_translate")</script></span>
+
+                <span id="add-friend" style="left: 0px;" class="links"><img src="../../tool/friends/img/icon_add_friend.png"></span>
+                <span id="add-friendTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Add Friend", "inline_translate")</script></span>
+
+                <span id="flag" style="left: 0px;" class="links"><img src="../img/flag_icon_gray.png"></span>
+                <span id="flagTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Flag", "inline_translate")</script></span>
+
+                <span id="safety" style="left: 0px;" class="links"><img src="../img/block_icon_gray.png"></span>
+                <span id="safetyTip" style="left: 0px;" class="links-hover"><script id="inline_translate">_iT("Block", "inline_translate")</script></span>
+            </div>
+        </div>
+        <div id="bottom-buttons">
+            
+            <button id="send-message" class="imvu-button level2"><script id="inline_translate">_iT("Message", "inline_translate")</script></button>
+            <button id="invite-to-chat" class="imvu-button level2"><script id="inline_translate">_iT("Chat", "inline_translate")</script></button>
+            <button id="gift" class="imvu-button level2 light-gray"><script id="inline_translate">_iT("Gift", "inline_translate")</script></button>
+        </div>
+    </div>
+</div>
+
+<script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="../../yui/connection/connection.js"></script>
+<script src="../../yui/json/json.js"></script>
+<script src="../../yui/container/container.js"></script>
+<script src="../../js/card.js"></script>
+<script src="../../js/eventbus.js"></script>
+<script src="../../js/dateFormat.js"></script>
+<script src="avatarCard.js"></script>
+
+<script type="text/javascript">
+    if (IMVU.runJS()) {
+        var dialogInfo = imvu.call('getDialogInfo');
+        if (IMVU.IS_FIREFOX) {
+            dialogInfo = FAKE_DATA; // defined in avatarCard.js
+        }
+        if(dialogInfo) {
+            new IMVU.Client.AvatarCard({rootElement: document.body, dialogInfo: dialogInfo, net: IMVU.Network, imvu: imvu, eventBus: IMVU.Client.EventBus});
+        }
+    }
+</script>
+
+</div></body></html>

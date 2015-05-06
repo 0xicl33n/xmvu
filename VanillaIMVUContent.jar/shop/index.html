@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+    <title>Shop</title>
+
+    <link rel="stylesheet" href="../yui/container/assets/container.css">
+
+    <link rel="stylesheet" type="text/css" href="../widgets/button/imvuButton.css">
+    <link rel="stylesheet" href="../css/tooltip-popup.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../widgets/product/product_base.css">
+    <link rel="stylesheet" href="../shop/style.css">
+    <link rel="stylesheet" href="../search/SearchBox.css">
+    <link rel="stylesheet" href="../shop/ShopCarouselBuyDialog.css">
+    <link rel="stylesheet" href="../css/new-visd-buttons.css">
+
+    <link rel="stylesheet" href="../yui/carousel/assets/carousel-core.css">
+    <link rel="stylesheet" href="OutfitProduct.css">
+    <link rel="stylesheet" href="carousel.css">
+
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/event-mouseenter/event-mouseenter.js"></script>
+    <script src="../yui/animation/animation.js"></script>
+    <script src="../yui/container/container.js"></script>
+    <script src="../yui/connection/connection.js"></script>
+    <script src="../yui/json/json.js"></script>
+    <script src="../yui/animation/animation.js"></script>
+    <script src="../yui/element/element.js"></script>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/carousel/carousel.js"></script>
+    <script src="../yui/json/json.js"></script>
+
+    <script src="../js/imvu.js"></script>
+    <script src="../js/Timer.js"></script>
+    <script src="../js/FakeImvu.js"></script>
+    <script src="../js/FakeNetwork.js"></script>
+    <script src="../js/Preloader.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="../js/synthesizeEvent.js"></script>
+    <script src="../search/SearchBox.js"></script>
+    <script src="../widgets/product/ProductBase.js"></script>
+    <script src="../widgets/button/imvuButton.js"></script>
+    <script src="../shop/PurchaseMixin.js"></script>
+    <script src="../shop/ShopCarouselController.js"></script>
+    <script src="../shop/BaseCartController.js"></script>
+    <script src="../shop/CatalogService.js"></script>
+    <script src="../shop/ProductGridView.js"></script>
+    <script src="../shop/ProductTabBar.js"></script>
+    <script src="../shop/ShopMode.js"></script>
+    <script src="../shop/ShopSearchBox.js"></script>
+    <script src="../shop/WishlistController.js"></script>
+    <script src="../shop/WishlistGridView.js"></script>
+    <script src="../shop/WhitelistedController.js"></script>
+    <script src="../shop/CartController.js"></script>
+    <script src="../shop/cart.js"></script>
+    <script src="../shop/CatalogController.js"></script>
+    <script src="../shop/ShopCarouselBuyController.js"></script>
+    <script src="../shop/product.js"></script>
+    <script src="ShopCarousel.js"></script>
+    <script src="ShopCarouselController.js"></script>
+    <script src="CheckoutDialogController.js"></script>
+</head><body id="shop">
+
+<div id="main_body">
+  <div id="avview-holder">
+    <object type="application/nphwndproxy-plugin" id="avview">
+      <div style="width: 100%; height: 100%; background: none repeat scroll 0% 0% red;"><script id="inline_translate">_iT("no plugin", "inline_translate")</script></div>
+    </object>
+  </div>
+
+  <div id="below_avatar" class="yui-skin-sam">
+    <div id="mask" class="mask"></div>
+    <div id="carousel">
+      <div id="prev" class="ui-event" data-ui-name="Prev"></div>
+      <div id="next" class="ui-event" data-ui-name="Next"></div>
+      <div id="undo" class="ui-event imvu-button level2 light-gray" data-ui-name="Undo"><script id="inline_translate">_iT("Undo", "inline_translate")</script></div>
+    </div>
+
+    <div id="wishlist_outfit_btn"></div>
+    <a id="buy_outfit_btn" href="#" class="ui-event imvu-button level2" data-ui-name="BuyOutfit"><script id="inline_translate">_iT("Buy", "inline_translate")</script></a>
+    <div id="outfit_cost"><label><script id="inline_translate">_iT("Total", "inline_translate")</script></label><span id="outfit_price"></span></div>
+  </div>
+
+  <div id="right_body">
+    <div id="hd">
+      <div id="breadcrumb">
+      </div>
+
+      <div id="mod_tools">
+          <a href="#" id="mcg_skin" class="ui-event" data-ui-name="MCGSkin"></a>
+          <a href="#" id="mcg_mood" class="ui-event" data-ui-name="MCGMood"></a>
+      </div>
+
+      <div id="content_rating">
+        <div class="ga ui-event" data-ui-name="RatingGA"></div>
+        <div class="all ui-event" data-ui-name="RatingAll"></div>
+        <div class="ap ui-event" data-ui-name="RatingAP"></div>
+      </div>
+
+      <div id="cart_icon" class="notranslate ui-event" data-ui-name="Cart"><span>(<span class="cart-count">1,234</span>)</span></div>
+
+      <div id="nav">
+        <div id="search" class="search-container ui-event" data-ui-name="SearchBox">
+            <div class="lt ui-event" data-ui-name="LT"></div>
+            <form>
+                <input name="search" id="f_search" type="text">
+                <select id="search_dropdown" class="search-dropdown ui-event" data-ui-name="SearchDropdown">
+                    <option type="all" value="0" class="ui-event" data-ui-name="AllProducts"><script id="inline_translate">_iT("All Products", "inline_translate")</script></option>
+                    <option id="search_category" type="category" value="" style="display: none;" class="ui-event" data-ui-name="CategoryOnly"><script id="inline_translate">_iT("CATEGORY NAME", "inline_translate")</script></option>
+                    <option type="field" value="creator_name" class="ui-event" data-ui-name="ByCreator"><script id="inline_translate">_iT("Creator", "inline_translate")</script></option>
+                    <option type="field" value="id" class="ui-event" data-ui-name="ProductID"><script id="inline_translate">_iT("Product ID", "inline_translate")</script></option>
+                </select>
+            </form>
+            <div class="cta" id="search_cta"><script id="inline_translate">_iT("Search catalog", "inline_translate")</script></div>
+            <div class="rt" data-ui-name="RT"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bd">
+      <div id="products">
+        <div id="main" class="ui-event" data-ui-name="Main"></div>
+        <div id="wishlist" class="ui-event" data-ui-name="Wishlist"></div>
+      </div>
+      <div class="no_results_c">
+        <div class="no_results_bubble button-bubble-template">
+          <div class="button-bubble-msg-1">
+            <script id="inline_translate">_iT("Sorry, we don\'t have any products matching your search. Please check your filters and try again.", "inline_translate")</script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ap-upsell2">
+    <div class="close-button ui-event" data-ui-name="Close"></div>
+    <div class="upsell-text">
+        <span><script id="inline_translate">_iT("There are", "inline_translate")</script> <span class="ap-product-count"><script id="inline_translate">_iT("15", "inline_translate")</script></span> <script id="inline_translate">_iT("items matching your search for", "inline_translate")</script> <span class="search-terms"><script id="inline_translate">_iT("SEARCHWORD", "inline_translate")</script></span><script id="inline_translate">_iT(".", "inline_translate")</script></span>
+        <br>
+        <span><script id="inline_translate">_iT("Get Access Pass and enjoy the full IMVU experience!", "inline_translate")</script></span>
+    </div>
+    <div class="get-now-button ui-event" data-ui-name="GetAccessPass"></div>
+    <div class="locked-buttons">
+        <div class="locked-ap-image ui-event" data-ui-name="GetAccessPass"></div>
+        <div class="locked-ap-image ui-event" data-ui-name="GetAccessPass"></div>
+        <div class="locked-ap-image ui-event" data-ui-name="GetAccessPass"></div>
+        <div class="locked-ap-image ui-event" data-ui-name="GetAccessPass"></div>
+    </div>
+</div>
+
+
+<script>
+if (IMVU.runJS()) {
+    var catalogService = new IMVU.Client.CatalogService(IMVU.Network, imvu),
+        catalogController = new IMVU.Client.CatalogController({network: IMVU.Network, imvu: imvu, service: catalogService}),
+        timer = new Timer;
+    var shopCarousel = new IMVU.Client.ShopCarousel({
+        imvu: imvu,
+        element: 'carousel',
+        prevElement: 'prev',
+        nextElement: 'next',
+        buyButtonElement: '#buy_outfit_btn',
+        outfitTotalElement: 'outfit_cost',
+        outfitPriceElement: 'outfit_price',
+        undoLinkElement: 'undo'
+    });
+    IMVU.Client.Shop = {
+        mode: new IMVU.Client.ShopMode({
+            imvu: imvu,
+            net: IMVU.Network,
+            timer: timer,
+            eventBus: IMVU.Client.EventBus,
+            dialogInfo: createProductInfoDialog({imvu: imvu, eventBus: IMVU.Client.EventBus}),
+            purchaseMixin: new PurchaseMixin({imvu: imvu, eventBus: IMVU.Client.EventBus, network: IMVU.Network, timer: timer}),
+            tabBar: new IMVU.Client.ProductTabBar(imvu, "nav"),
+            service: catalogService,
+            catalogController: catalogController,
+            searchBox: new IMVU.Client.ShopSearchBox("search", catalogController),
+            shopCarousel: shopCarousel,
+            shopCarouselController: createShopCarouselController({
+                imvu: imvu,
+                eventBus: IMVU.Client.EventBus,
+                timer: timer
+            })
+        })
+    };
+}
+</script>
+
+<div id="_buffer"></div></body></html>

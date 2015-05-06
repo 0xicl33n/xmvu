@@ -1,0 +1,85 @@
+.action-bar {
+    text-align: left;
+    color: #B0B0B0;
+    padding:8px 10px;
+    font-size: 11px;
+}
+
+.action-bar .button {
+    display: inline-block;
+    font-weight: bold;
+    cursor:pointer;
+    margin:1px 0 0 15px;
+    color: #bbb;
+}
+
+.action-bar .button:hover {
+    color: #fff;
+}
+
+.action-bar label {
+    padding-right:5px;
+}
+
+.action-bar #btn_delete {
+    background:transparent url(img/trashcan_dark.png) no-repeat;
+    padding:1px 5px 0 18px;
+}
+
+.action-bar #btn_delete:hover {
+    color: #fff;
+    background-position:0 -85px;
+}
+
+.action-bar #btn_delete {
+    background:transparent url(img/trashcan_dark.png) no-repeat;
+    padding:1px 5px 0 18px;
+}
+
+.action-bar #btn_delete:hover {
+    color: #fff;
+    background-position:0 -85px;
+}
+
+.action-bar #btn_accept, .action-bar #btn_ignore {
+    padding:1px 5px 0 20px;
+}
+
+.action-bar #btn_accept {
+    background:transparent url(img/accept_sp.png) no-repeat 0 1px;
+}
+
+.action-bar #btn_ignore {
+    background:transparent url(img/ignore_sp.png) no-repeat 0 1px;
+}
+
+.action-bar #btn_accept:hover, .action-bar #btn_ignore:hover {
+    background-position:0 -85px;
+}
+
+.action-bar .select-all:hover,
+.action-bar .select-none:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.action-bar .select-all,
+.action-bar .select-none {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* paginatior.css may require some refactoring */
+.yui-pg-current {
+    visibility:collapse;
+}
+
+.paginator {
+    font-size:11px !important;
+    right:0 !important;
+    top:11px !important;
+}
+
+.paginator .yui-pg-page, .paginator a.yui-pg-next, .paginator a.yui-pg-previous {
+    padding:3px 5px;
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>GetMatched Mode Tests</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../js/prologue.js"></script>
+    <script src="../js/backbone.js"></script>
+    <script src="GetMatchedDataModel.js"></script>
+</head>
+<body>
+    <script>
+    runTestsWithIframe('index.html?no_js', {
+        name: "GetMatched Data Model Unit Tests",
+        setUp: function () {
+            this.scratch = this.setUpScratch();
+            this.model = new GetMatchedDataModel;
+        },
+
+        test_has_defaults: function () {
+            var state = this.model.get("progress");
+            ArrayAssert.itemsAreEqual([ 0 ], state);
+        }
+
+    });
+    </script>
+</body>
+</html>

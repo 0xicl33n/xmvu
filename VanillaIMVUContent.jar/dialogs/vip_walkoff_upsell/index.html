@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title></title>
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="../../js/imvu.js" charset="utf-8"></script>
+    <script src="../../js/buttons.js" charset="utf-8"></script>
+    <script src="../alert/Alert.js" charset="utf-8"></script>
+</head><body>
+
+<div id="dialog">
+    <div class="vip-icon"></div>
+    <h1 id="title" class="alert"></h1>
+    <div class="close"></div>
+    <hr class="standard">
+    <div id="content">
+        <div id="text"></div>
+        <div id="upsell">
+            <img src="clubscene.png" id="upsell_avatar">
+            <div class="upsell_body">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="footer">
+        <div id="button-bar"></div>
+    </div>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+    var info = imvu.call('getDialogInfo');
+    if (!info.buttons) {
+        info.title = 'VIPs Play First!';
+        info.text = 'We are excited to introduce our new 3D game, WALK OFF. VIP members are being given an exclusive sneak peek.  Get VIP now and enjoy playing WALK OFF!';
+        info.confirm_text = '';
+        info.buttons = [
+            {name: 'Cancel', grey:true, value: false},
+            {name: 'Get VIP', yellow:true},
+        ];
+    }
+    new Alert({root: '#dialog', imvu: imvu, info: info});
+
+    $("#getvip").click(function() {
+        imvu.call('launchNamedUrl', 'vippass');
+    }.bind(this));
+}
+</script>
+
+</body></html>

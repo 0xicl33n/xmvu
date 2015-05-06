@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+  <script src="../js/jquery-1.6.js"></script>
+  <script src="../js/underscore.js"></script>
+  <title>Avatar Name Label</title>
+  <link rel="stylesheet" href="style.css">
+</head><body>
+  <div id="nameLabel">
+    <div id="thename"></div>
+    <div id="info"></div>
+  </div>
+<script src="../js/imvu.js"></script>
+<script src="../js/eventbus.js"></script>
+<script src="AvatarNameLabel.js"></script>
+<script>
+    if (IMVU.runJS()) {
+        NameLabel = new AvatarNameLabel(imvu, IMVU.Client.EventBus);
+        if(IMVU.IS_FIREFOX) {
+            NameLabel.setInfo(42, 'guest_asdffsdfsdfsdfssdfdsssssssssss', 0xff,0x00,0x00);
+        }
+        setInfo = NameLabel.setInfo.bind(NameLabel);
+    }
+</script>
+</body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Mac client update (uses native OS chrome)</title>
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <link rel="stylesheet" type="text/css" href="../alert/Alert.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/buttons.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="macUpdate.js"></script>
+</head><body>
+<div id="dialog">
+    <div id="header">
+        <h1 id="title"><script id="inline_translate">_iT("Check for a Mac client update", "inline_translate")</script></h1>
+    </div>
+    <hr class="standard">
+    <div id="content">
+        <p id="text">
+            <span><script id="inline_translate">_iT("To check for an update to the Mac client, visit", "inline_translate")</script></span>
+            <span class="notranslate"><a id="link" href="http://www.imvu.com/mac_client_update.php">http://www.imvu.com/mac_client_update.php</a></span>
+        </p>
+    </div>
+    <hr class="shadow">
+    <div id="footer">
+        <div id="button-bar">
+            <button id="ok" class="imvu-button level2 light-gray"><script id="inline_translate">_iT("OK", "inline_translate")</script></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (IMVU.runJS()) {
+        macUpdateDialog = new MacUpdateDialog({root: '#dialog', imvu: imvu});
+    }
+</script>
+
+</body></html>

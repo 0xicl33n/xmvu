@@ -1,0 +1,70 @@
+/*
+.paginator_container
+.paginator_prevbox
+.pagin_numberbox
+.pagin_nextbox
+
+.pagin_current
+*/
+
+div.paginator_container {
+    font:normal 11px sans-serif;
+    white-space:nowrap;
+}
+
+div.paginator_container a {
+    display:inline-block;
+    text-decoration:none;
+    padding:4px 5px;
+    font-weight:bold;
+    background:#333;
+    color:#ccc;
+}
+
+div.paginator_container .paginator_pages {
+    margin:0 0 0 5px;
+}
+
+div.paginator_container .paginator_prevbox,
+div.paginator_container .paginator_nextbox {
+    padding:0px 0px 0px 0px;
+    display:none;
+}
+div.paginator_container img {
+    vertical-align:middle;
+}
+div.paginator_container .pagin_numberbox.pagin_current, 
+div.paginator_container .pagin_numberbox.pagin_current:hover {
+    color:#000;
+    background:#f4d002;
+    cursor:default;
+}
+
+div.paginator_container .pagin_numberbox {
+    cursor:pointer;
+    margin:0 5px 0 0;
+    background:#333;
+    color:#ccc;
+}
+
+div.paginator_container .pagin_numberbox:hover, 
+div.paginator_container .paginator_prevbox:hover, 
+div.paginator_container .paginator_nextbox:hover {
+    background:#555;
+    color:#fff;
+}
+
+div.paginator_container #pagin_blurb {
+    font-size:12px;
+    margin-right:10px;
+    display:inline-block;
+}
+
+/** need this still? **/
+div.paginator_container .paginatorBottom {
+    position: relative;
+    z-index: 0;
+    right: 0px;
+    top: 0px;
+    float:right;
+}

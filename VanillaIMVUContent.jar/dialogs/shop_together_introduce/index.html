@@ -1,0 +1,72 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    
+        <link rel="stylesheet" href="../../css/reset.css">
+        <link rel="stylesheet" href="../../css/new-visd-base.css">
+        <link rel="stylesheet" href="../../css/new-visd-buttons.css">
+        <link rel="stylesheet" href="../css/new-visd-dialog.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="../../js/imvu.js"></script>
+        <script src="../../js/Timer.js"></script>
+        <script src="../../js/jquery-1.6.js"></script>
+        <script src="../../js/underscore.js"></script>
+
+        <script src="ShopTogetherIntroduce.js"></script>
+    </head><body>
+        <div id="dialog">
+            <span class="close ui-event" data-ui-name="Close"></span>
+            <div id="main-content">
+                <div class="body">
+                    <div class="description">
+                        <script id="inline_translate">_iT("Experience a whole new way to shop with someone else. As an exclusive perk, only elite VIP members can invite someone to Shop Together", "inline_translate")</script>
+                    </div>
+                    <div id="slides">
+                        <div class="slide" id="slide-1">
+                            <table>
+                                <tbody><tr class="headers">
+                                    <td><script id="inline_translate">_iT("Shop", "inline_translate")</script></td>
+                                    <td><script id="inline_translate">_iT("Avatar Menu", "inline_translate")</script></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <img src="img/slide1.png">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                        <div class="slide" id="slide-2">
+                            <table>
+                                <tbody><tr class="headers">
+                                    <td><script id="inline_translate">_iT("Profile Card", "inline_translate")</script></td>
+                                    <td><script id="inline_translate">_iT("Friends\' List", "inline_translate")</script></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <img src="img/slide2.png">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <script id="inline_translate">_iT("Invite someone to Shop Together now!", "inline_translate")</script>
+                    </div>
+                    <div class="cta">
+                        <button class="not-now imvu-button level1 dark-gray ui-event" data-ui-name="NotNow"><script id="inline_translate">_iT("Not Now", "inline_translate")</script></button>
+                        <button class="get-vip imvu-button level1 ui-event" data-ui-name="GetVIP"><script id="inline_translate">_iT("Get VIP", "inline_translate")</script></button>
+                        <button class="go imvu-button level1 ui-event" data-ui-name="Go"><script id="inline_translate">_iT("Go", "inline_translate")</script></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+    if(IMVU.runJS()) { 
+        createShopTogetherIntroduce({ 
+            imvu: imvu,
+            timer: new Timer(),
+            $root: $('#dialog')
+        });
+    }
+    </script>
+    </body></html>

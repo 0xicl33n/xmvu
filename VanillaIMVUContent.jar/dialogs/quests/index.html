@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    
+        <link rel="stylesheet" href="../../css/new-visd-buttons.css">
+        <link rel="stylesheet" href="../css/new-visd-dialog.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="../../js/jquery-1.6.js"></script>
+        <script src="../../js/underscore.js"></script>
+        <script src="../../js/imvu.js"></script>
+        <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script src="TranslatedQuestText.js"></script>
+        <script src="QuestsDialog.js"></script>
+    </head><body>
+        <div id="dialog">
+            <span class="close ui-event" data-ui-name="quests_dialog_close"></span>
+            <h1><script id="inline_translate">_iT("Quests", "inline_translate")</script></h1>
+            <div class="quests-border-container">
+                <div class="quests-container loading">
+                    <div class="header">
+                        <span class="left"><script id="inline_translate">_iT("Quests", "inline_translate")</script></span>
+                        <span class="right"><script id="inline_translate">_iT("Complete", "inline_translate")</script></span>
+                    </div>
+                    <ul class="quests-list">
+                        <li class="loading">
+                            <div class="loading-spinner"></div>
+                        </li>
+                        <li class="error">
+                            <div class="error-text"><script id="inline_translate">_iT("Oops. Something went wrong. Please try again.", "inline_translate")</script></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="close-button imvu-button interstitial dark-gray ui-event" data-ui-name="quests_dialog_close"><script id="inline_translate">_iT("Close", "inline_translate")</script></button>
+            </div>
+        </div>
+    <script>
+    if (IMVU.runJS()) {
+        var info = imvu.call('getDialogInfo');
+        IMVU.Client.QuestsDialog = new QuestsDialog({
+                imvu: imvu,
+                network: IMVU.Network,
+                translatedQuestText : IMVU.translatedQuestText,
+                info: info
+            
+        });
+    }
+    </script>
+    </body></html>

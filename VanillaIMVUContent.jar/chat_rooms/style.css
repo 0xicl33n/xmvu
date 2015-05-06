@@ -1,0 +1,432 @@
+@import url(../css/font.css);
+@import url(../css/new-visd-buttons.css);
+
+body {
+    background-color: #303030;
+    overflow-x: hidden;
+}
+
+
+.chat-room-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.average-user-ratings,
+.hearts,
+.bottom-management-half * {
+    display: none;
+}
+
+#moderator_separator {
+    display: none;
+}
+
+.guest-friendly-wrapper {
+    margin-top:0px;
+}
+
+#guest-friendly-rooms {
+    margin-left: 30px;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.welcome-rooms {
+    position: relative;
+    border: solid 3px white;
+    -moz-border-radius: 10px;
+    display: none;
+    color: #aaa;
+    height: 379px;
+    width: 892px;
+    background: url(img/welcome-pattern.jpg) repeat;
+    margin-bottom: 24px;
+    margin-left:-15px;
+}
+
+    .welcome-rooms .welcome-to-imvu {
+        margin-top: 9px;
+        margin-left: 2px;
+        height: 79px;
+        width: 347px;
+        background: url(img/welcome-header.png) no-repeat;
+    }
+
+    .welcome-rooms .welcome_room_image {
+        height: 132px;
+        width: 201px;
+    }
+
+    .welcome-rooms .welcome_room_name {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color:#000000;
+        line-height: 14px;
+        width:181px;
+    }
+
+    .welcome-rooms .welcome_room_description {
+        margin-top: 3px;
+        margin-left: 10px;
+        font-size: 11px;
+        color:#000000;
+        line-height: 12px;
+        width:181px;
+    }
+
+    .welcome-rooms .welcome-rooms-description {
+        margin-left:14px;
+        margin-top:-5px;
+        font-size: 17px;
+        color:#000000;
+        width: 680px;
+    }
+
+    .welcome-rooms .bd {
+        margin-top: 5px;
+        height: 240px;
+        width: 680px;
+        margin-left:13px;
+    }
+
+    .welcome-rooms .room1 .welcome_room_image {
+        background: url(img/welcome-room1.jpg) no-repeat;
+    }
+
+    .welcome-rooms .room2 .welcome_room_image {
+        background: url(img/welcome-room2.jpg) no-repeat;
+    }
+
+    .welcome-rooms .room3 .welcome_room_image {
+        background: url(img/welcome-room3.jpg) no-repeat;
+    }
+
+
+.welcome-avatars {
+    position:absolute;
+    background: url(img/welcome-avatars.png) no-repeat;
+    width:246px;
+    height:358px;
+    top:19px;
+    left:669px;
+    overflow:visible;
+    z-index:10;
+}
+
+.close_button {
+    position:absolute;
+    background: url(../img/icon_16_close_brightnormal_g.png) no-repeat;
+    width:16px;
+    height:16px;
+    top:10px;
+    right:9px;
+    overflow:visible;
+    z-index:10;
+    cursor: pointer;
+}
+
+.close_button:hover {
+    background: url(../img/icon_16_close_brighthover_g.png) no-repeat;
+}
+
+.close_button:active {
+    background: url(../img/icon_16_close_brightactive_g.png) no-repeat;
+}
+
+.dont-show-this-panel {
+    position:absolute;
+    top:7px;
+    left:672px;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration:underline;
+    
+    color:#000000;
+    cursor: pointer;
+    z-index:11;
+}
+
+.welcome_room {
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .75);
+    margin-top:15px;
+    margin-right:18px;
+    border: solid 3px white;
+    -moz-border-radius: 5px;
+    height: 216px;
+    width: 201px;
+    display: relative;
+    float: left;
+    background-color: #ffba00;
+}
+
+.go_button {
+    border-radius: 5px;
+    height: 29px;
+    width: 194px;
+    margin-top: 4px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.search-results {
+    border-top: solid 1px black;
+    padding: 53px 0 0 18px;
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
+    .search-results .hd {
+        background-color: #303030;
+        position: fixed;
+        left: 318px;
+        top: 1px;
+        right: 12px; /* exact width of our custom scrollbar */
+        z-index: 100;
+        padding: 7px 0 0 0;
+        -moz-user-select: none;
+        cursor: default;
+    }
+        .search-results .hd h2 {
+            height: 33px;
+            line-height: 33px;
+            
+            font-size: 18px;
+            margin: 0;
+        }
+        .search-results .hd .paginator {
+            margin-top: 4px;
+            -moz-user-select: none;
+            cursor: default;
+        }
+    .search-results > .bd li {
+        display: inline-block;
+    }
+    .search-results > .bd .room-widget {
+        margin: 0 18px 26px 0;
+    }
+    .search-results > .no_results_bubble {
+        display: none;
+    }
+    .search-results.no_result > .no_results_bubble {
+        display: block;
+    }
+li.template {
+    display: none;
+}
+
+.manage-results {
+    border-top: solid 1px black;
+    padding: 53px 3px 0 18px;
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: none;
+    background: #DDD;
+}
+    .manage-results .hd {
+        position: fixed;
+        left: 300px;
+        top: 1px;
+        right: 12px; /* exact width of our custom scrollbar */
+        z-index: 100;
+        padding: 7px 0 0 18px;
+        -moz-user-select: none;
+        cursor: default;
+        background: #DDD;
+    }
+        .manage-results .hd h2 {
+            height: 30px;
+            line-height: 30px;
+            
+            font-size: 18px;
+            margin: 0;
+            color: #2C2C2C;
+            overflow: hidden;
+        }
+
+    .manage-results .upsell {
+        display: none;
+        width: 734px;
+        height: 145px;
+        background: url(img/chatroom-vip-upsell-banner.png);
+        margin-bottom: 15px;
+        margin-left: -36px;
+        margin-top: -15px;
+        cursor: pointer;
+        position: relative;
+    }
+
+        .manage-results .upsell p {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            position: absolute;
+            top: 45px;
+            left: 145px;
+            line-height: 130%;
+            text-shadow: #000 0px 1px 8px;
+        }
+
+        .manage-results .upsell p em {
+            font-weight: bold;
+            font-style: normal;
+            color: #f00;
+        }
+
+        .manage-results .upsell .upsell-button {
+            background: url(img/chatroom-vip-upsell-button.png);
+            position: absolute;
+            right: 45px;
+            bottom: 25px;
+            padding: 5px;
+            padding-right: 15px;
+            text-align: center;
+            width: 96px;
+            height: 19px;
+            line-height: 16px;
+            font-size: 12px;
+            color: #000;
+        }
+
+ul.bd li {
+    display: inline-block;
+}
+ul.bd .room-widget {
+    margin: 0 18px 26px 0;
+}
+
+
+#loading-mask {
+    z-index: 999;
+    opacity: 0.66;
+    background: black;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 301px;
+}
+    #loading-spinner {
+        display: table-cell;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -25px;
+        background: black url(../img/spinner_white.apng) no-repeat center center;
+        width: 50px;
+        height: 50px;
+        opacity: 0.66;
+    }
+
+.upsell-panel-c {
+    -moz-border-radius: 10px;
+    border: 4px solid #d51c49;
+    padding: 10px 29px;
+    background: #fff url(img/gradient-gray.png) center center repeat-x;
+    background-color: #fff;
+    width: 597px;
+    margin-bottom: 30px;
+    display: none;
+    position: relative;
+
+}
+.upsell-panel-c .content{
+    width: 471px;
+    overflow: hidden;
+}
+.upsell-panel-c h2{
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c91d47;
+
+}
+.upsell-panel-c p{
+    margin: 29px 0;
+
+}
+.upsell-panel-c p.text-line{
+    font-size: 12px;
+    color: #444;
+}
+.upsell-panel-c p.button-line{
+    text-align: left;
+    margin-bottom: 10px;
+}
+.upsell-panel-c  .ap-thumb-c{
+    background: url(img/ap_couple.png) center center no-repeat;
+    width: 81px;
+    height: 175px;
+    margin: 5px 28px 0 0 ;
+}
+.upsell-panel-c .right{
+    float: right;
+}
+.upsell-panel-c .left{
+    float: left;
+}
+.clearafter{
+    clear:both;
+    height: 1px;
+}
+
+button.imvu-button.button-get-ap {
+    width: 190px;
+    height: 41px;
+ }
+.upsell-mini-c {
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 17px;
+  z-index: 200;
+  padding: 7px 31px 0 11px;
+  -moz-box-shadow: inset 0px 0px 1px rgba(255, 255, 255);
+  -moz-border-radius: 10px;
+  border: 3px solid #d51c49;
+  width: 426px;
+  background-image: -moz-linear-gradient(top, #E4E4E4 0%, #EDEDED 100%);
+}
+.upsell-mini-c .ap_icon img {
+    margin: 0;
+ }
+ button.imvu-button span{
+    margin: 0;
+    padding-left: 5px;
+ }
+.upsell-mini-c button.imvu-button {
+    position: absolute;
+    top: 3px;
+    right: 1px;
+}
+.upsell-mini-c p {
+    font-size: 11px;
+    color: #000;
+    background-color: #ededed;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.2em;
+    display: inline-block;
+    width: 300px;
+    position: absolute;
+    top: 7px;
+    left: 52px;
+}
+

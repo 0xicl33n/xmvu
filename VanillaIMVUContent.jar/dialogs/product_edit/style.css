@@ -1,0 +1,101 @@
+@import url(../css/dialog.css);
+
+#insufficientCreditsDialog {
+    position: relative;
+    width: 452px;
+    height: 169px;
+    background-color: rgb(240,240,232);
+}
+    #insufficientCreditsDialog .bd {
+        padding: 14px;
+    }
+    #insufficientCreditsDialog .buttons-container {
+        position: absolute;
+        right: 16px;
+        bottom: 24px;
+        height: 26px;
+    }
+    #insufficientCreditsDialog .buttons-container > div {
+        position: relative;
+        float: right;
+        margin: 0;
+    }
+    #insufficientCreditsDialog .imvu-button .text {
+        padding-top: 2px;
+    }
+
+#debugEditDialog {
+    position: relative;
+    width: 452px;
+    height: 160px;
+    background-color: rgb(240,240,232);
+}
+
+#debugEditDialog .operation {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+}
+
+#debugEditDialog .underClause {
+    font-weight: bold;
+    padding-top: 3px;
+    padding-left: 2px;
+}
+
+#debugEditDialog .bd {
+    background:url(../creator/img/specify-bg.png);
+    text-align:left;
+    height: 90px;
+    margin-top:17px;
+    margin-bottom:5px;
+    margin-left:15px;
+    margin-right:15px;
+    font-size: 13px;
+    -moz-border-radius: 10px;
+    color:#5D5D5D;
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+#debugEditDialog .hd {
+    background: url("../../img/panel_hd.png") repeat-x scroll 0 0;
+    height:25px;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    padding-top:5px;
+    font-weight:bold;
+    text-align:left;
+}
+
+#debugEditDialog input {
+    color: black;
+    width:195px;
+    background-color: white;
+}
+
+#debugEditDialog input.disabled {
+    background-color: lightgray;
+}
+
+#debugEditDialog .ok-button {
+    margin-top: -10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+.close-button {
+    top: 1px;
+    right: 1px;
+}
+
+.ok-button {
+    margin-top: 5px;
+    float: right;
+}
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+<title>Avatar Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../js/jquery.ui.widget.js"></script>
+    <script src="../js/jquery.ui.accordion.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="AvatarMenu.js"></script>
+</head><body>
+    <div id="avatarMenu">
+        <div id="title">
+            <span id="badge"></span>
+            <span id="avatarName"></span>
+            <div id="dismiss"></div>
+        </div>
+        <div class="bd">
+            <div id="context-message"></div>
+            <div id="context-buttons">
+                <span class="context-button info ui-event" data-ui-name="Info"></span>
+                <span class="context-button friend ui-event" data-ui-name="AddFriend"></span>
+                <span class="context-button shop-together ui-event" data-ui-name="ShopTogether"></span>
+                <span class="context-button gift ui-event" data-ui-name="Gift"></span>
+                <span class="context-button invite ui-event" data-ui-name="Invite"></span>
+                <span class="context-button flag ui-event" data-ui-name="Flag"></span>
+                <span class="context-button boot ui-event" data-ui-name="Boot"></span>
+                <span class="context-button block ui-event" data-ui-name="Block"></span>
+            </div>
+            <div id="flag-menu">
+                <div id="flag-menu-tick"></div>
+                <div class="flag-menu-item ui-event" data-ui-name="FlagOutfit" id="flag-outfit"><script id="inline_translate">_iT("Flag Outfit", "inline_translate")</script></div>
+                <div class="flag-menu-item ui-event" data-ui-name="FlagChat" id="flag-chat"><script id="inline_translate">_iT("Flag Chat", "inline_translate")</script></div>
+            </div>
+            <div class="accordion">
+                <div id="actions-section-title" class="section-title ui-event" data-ui-name="Actions"><span class="section-icon"></span><script id="inline_translate">_iT("Actions", "inline_translate")</script></div>
+                <div id="actions"></div>
+                <div id="triggers-section-title" class="section-title ui-event" data-ui-name="Triggers"><span class="section-icon"></span><script id="inline_translate">_iT("Triggers", "inline_translate")</script></div>
+                <div id="triggers"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    if (IMVU.runJS()) {
+        if(IMVU.IS_FIREFOX) {
+            $('body').css('background-color', '#111111');
+            IMVU.Client.AvatarMenu = new AvatarMenu({
+                elt:'#avatarMenu',
+                document:document,
+                imvu: {'call': function(arg1, arg2, arg3) {
+                    if (arg1 == 'isFriend') {
+                        return false;   // true: already friend
+                    } else if (arg1 == 'isBlocked') {
+                        return true;   // true: already blocked
+                    } else if (arg1 == 'showFlaggingOutfit') {
+                        return false;  // config var client.rollout.flagging_3d_exp
+                    } else if (arg1 == 'showInvite') {
+                        return true;
+                    } else {
+                        console.log('imvu call: ' + arg1 + ", " + arg2);
+                    }
+                }},
+                network:IMVU.Network,
+                eventBus:IMVU.Client.EventBus
+            });
+            IMVU.Client.AvatarMenu.populateActionList(
+                [{"category":"cat 1", 
+                     "actionList":[{"action":"a","name":"action 1"},{"action":"a","name":"action 2"}]},
+                 {"category":"cat 2", 
+                     "actionList":[{"action":"a","name":"action 10"},{"action":"a","name":"action 11"}]},
+                 {"category":"cat 3", 
+                     "actionList":[{"action":"a","name":"action 20"},{"action":"a","name":"action 21"}]},
+                 {"category":"cat 4", 
+                     "actionList":[{"action":"a","name":"action 30"},{"action":"a","name":"action 21"}]},
+                 {"category":"cat 5", 
+                     "actionList":[{"action":"a","name":"action 40"},{"action":"a","name":"action 21"}]},
+                 {"category":"cat 6", 
+                     "actionList":[{"action":"a","name":"action 50"},{"action":"a","name":"action 21"}]},
+                 {"category":"cat 7", 
+                     "actionList":[{"action":"a","name":"action 60"},{"action":"a","name":"action 21"}]},
+                ],
+                [{"category":"two party cat 1",
+                     "actionList":[{"action":"a","name":"two party action 1"},{"action":"a","name":"two party action 2"}]},
+                 {"category":"two party cat 2",
+                     "actionList":[{"action":"a","name":"two party action 10"},{"action":"a","name":"two party action 11"}]},
+                ]);
+            var name = "[User name up to 26 c...]"; // max length designed to show
+            name = "[User name up to 26 c...] 1 2 3 4 5 6 7"; // more than max length designed to show
+            var isTargetMyself = false;
+            var showOwnerBadge = false;
+            var isLieutenant = false;
+            var showBoot = false;
+            IMVU.Client.AvatarMenu.show(isTargetMyself, 42, name, showOwnerBadge, isLieutenant, showBoot, [200, 50, 30]);
+            if (isTargetMyself) {
+                IMVU.Client.AvatarMenu.updateTriggers(
+                    [{'name': 'pid1', 'children':
+                        [{'name': 'pose1'}, {'name': 'pose2'}, {'name':'pose3'},
+                         {'name': 'pose21'}, {'name': 'pose12'}, {'name':'pose13'},
+                         {'name': 'pose21'}, {'name': 'pose22'}, {'name':'pose23'}]
+                    },
+                    {'name': 'pid2', 'children':
+                        [{'name': 'pose3'}, {'name': 'pose4'}]}]);
+            }
+        } else {
+            IMVU.Client.AvatarMenu = new AvatarMenu({
+                elt:'#avatarMenu',
+                document:document,
+                imvu:imvu,
+                network:IMVU.Network,
+                eventBus:IMVU.Client.EventBus
+            });
+        }
+    }
+</script>
+
+</body></html>

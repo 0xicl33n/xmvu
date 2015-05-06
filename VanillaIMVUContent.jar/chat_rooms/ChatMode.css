@@ -1,0 +1,169 @@
+@import url(../css/font.css);
+#bg, .header > div:not(.search), .tab, .view-widget {
+    -moz-user-select: none;
+}
+
+body {
+    background: #2f2f2f;
+    overflow: hidden;
+}
+#chatrooms-mode {
+    font-size: 14px;
+    color: #d1d1d1;
+    min-width: 390px;
+
+    /* So absolutely positioned Filters menu sticks to min. width container, rather than the window. */
+    position: relative;
+}
+#bg {
+    position: fixed;
+    z-index: -1;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+.scrollable {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.header {
+    padding: 12px 12px 6px 12px;
+}
+.header .all,
+.header .themes,
+.header .myrooms,
+.header .favorites,
+.header .visited,
+.header .view {
+    cursor: pointer;
+}
+    .header>.imvu-button {
+        font: bold 11px Arial;
+        height: 28px;
+        line-height: 28px;
+        color: #202020;
+        text-shadow: none;
+        -moz-border-radius: 2px;
+        background: #828282;
+        -moz-box-shadow: inset -1px -1px 1px 0 rgba(0,0,0,0.5), inset 1px 1px 1px 0 rgba(255,255,255,0.3);
+        display: inline-block;
+        width: 94px;
+    }
+        .header>.imvu-button:not([disabled]):not(.active-tab):not(.view):hover { background: #666666; }
+        .header>.imvu-button:not([disabled]):not(.active-tab):not(.view):active { background: #515151; }
+        .header>.imvu-button.active-tab {
+            -moz-border-radius: 3px;
+            background: -moz-linear-gradient(top, #333333 0%, #333333 100%); /* firefox */
+            -moz-box-shadow: inset 0 0 0 1px #959595, inset 1px 1px 5px #000, inset -1px -1px 1px #000;
+            -moz-border-image: none;
+            color: #fff;
+            cursor: default;
+        }
+    .header>div:not(:last-child) {
+        margin: 0 5px 0 0;
+    }
+    .header div.view {
+        float: right;
+        margin-right: 5px;
+        margin-left: 5px;
+        width: auto;
+        text-align: left;
+        padding-left: 16px;
+        padding-right: 32px;
+        
+        -moz-border-radius: 3px;
+        background: #333333;
+        -moz-box-shadow: inset 0 0 0 1px #959595, inset 1px 1px 5px #000, inset -1px -1px 1px #000;
+        -moz-border-image: none;
+        color: #fff;
+    }
+
+    #chatrooms-mode.all-active .header div.view {
+        margin-right: 21px;
+    }
+    /* .header div.search -- defined in search css file */
+
+.favorites-active .check-filters,
+.visited-active .check-filters {
+    display: none;
+}
+.sorry-msg.favorites {
+    color: #111111;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+    .sorry-msg.favorites img {
+        display: block;
+        margin: 30px auto 10px;
+    }
+    .sorry-msg.favorites .hint {
+        text-align: center;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0 10px;
+    }
+
+
+div.tab { display: none;}
+div.tab.active { display: block;}
+
+div.revert-toaster { 
+    display: none;
+    position: fixed;
+    width:300px;
+    bottom:0;
+    right: 330px;
+    padding: 12px;
+    padding-right: 85px;
+    -moz-box-sizing:border-box;
+    margin: 12px;
+    background-color: white;
+    color: #f0f0f0;
+}
+    div.revert-toaster h2 { 
+        font-weight: bold;
+        font-size: 18px;
+        padding-bottom: 7px;
+    }
+
+    div.revert-toaster h3 { 
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    div.revert-toaster p { 
+        font-size: 12px;
+        line-height: 15px;
+    }
+        div.revert-toaster p i { 
+            font-weight: bold;
+        }
+
+    div.revert-toaster button.okay { 
+        position:absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+
+div.bubble { 
+    -moz-border-radius: 5px;
+    background-color: rgba(69, 69, 69, .9);
+    border: 2px solid #F0BF00;
+}
+
+.templates {
+    display: none;
+}

@@ -1,0 +1,17 @@
+@import url('../../css/new-visd-base.css');
+@import url(../css/interstitial.css);
+
+#dialog.ap { background: url(img/d-ap.jpg); }
+#dialog.ap .ap { 
+    display:block;
+    padding: 21px 34px 76px 65px
+}
+
+#dialog h1 {
+    font-weight: bold;
+}
+
+#dialog h1, #dialog p {
+    color: #fff;
+    font-family: Arial, "HelveticaNeue", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;
+}

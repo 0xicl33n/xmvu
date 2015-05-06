@@ -1,0 +1,34 @@
+@import url(../../css/new-visd-buttons.css);
+@import url(../css/dialog.css);
+body {
+    overflow: hidden;
+    font-size:14px;
+    color:#383836;
+    background:#F0F0E8;
+}
+* {
+    -moz-user-select: -moz-none;
+}
+
+.regular {
+    margin: 20px;
+}
+
+h2 {
+    font-size:18px;
+    color: #383836;
+}
+
+#button-bar {
+    position:absolute;
+    bottom:13px;
+    right:18px;
+}
+#button-bar div {
+    float:right;
+}
+
+#learn-more {
+    margin-left:1px;
+}
+

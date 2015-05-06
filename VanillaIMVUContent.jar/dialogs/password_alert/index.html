@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Password alert</title>
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link href="Alert.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js" charset="utf-8"></script>
+    <script src="../../js/imvu.js" charset="utf-8"></script>
+    <script src="../../js/buttons.js" charset="utf-8"></script>
+    <script src="Alert.js" charset="utf-8"></script>
+</head><body>
+
+<div id="dialog" class="alert">
+    <header>
+        <h1 id="title"><script id="inline_translate">_iT("Safety Warning!", "inline_translate")</script></h1>
+        <div class="close"></div>
+    </header>
+    <hr class="standard">
+    <div id="content">
+        <p><strong><script id="inline_translate">_iT("For your safety, we will NOT transmit your password in chat conversations.", "inline_translate")</script></strong></p>
+        <p><script id="inline_translate">_iT("Please NEVER share your password with anybody. IMVU staff will NEVER ask you for your password.", "inline_translate")</script></p>
+        <p><script id="inline_translate">_iT("People who ask for your password usually want to steal your credits. Beware!", "inline_translate")</script></p>
+        <p><script id="inline_translate">_iT("If you are using a common word as your password (e.g., &#8216;dog&#8217;), we recommend that you change it.", "inline_translate")</script></p>
+        <p><script id="inline_translate">_iT("Please click here to", "inline_translate")</script> <a id="link" href="https://secure.imvu.com/account/change_password/"><script id="inline_translate">_iT("change your password", "inline_translate")</script></a><script id="inline_translate">_iT(".", "inline_translate")</script></p>
+    </div>
+    <hr class="shadow">
+    <footer>
+        <div id="button-bar"></div>
+    </footer>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+    var info = imvu.call('getDialogInfo');
+    if (!info.buttons) {
+        info.buttons = [
+            {name:'Cancel', grey:true, value: false},
+            {name: 'Sign out'},
+        ];
+    }
+    new Alert({root: '#dialog', imvu: imvu, info: info});
+}
+</script>
+
+</body></html>

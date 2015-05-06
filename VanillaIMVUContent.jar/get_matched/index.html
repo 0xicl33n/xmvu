@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    
+        <title>Get Matched</title>
+        <link rel="stylesheet" href="../css/new-visd-base.css">
+        <link rel="stylesheet" href="../css/new-visd-buttons.css">
+        <link rel="stylesheet" href="../css/jquery-ui.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="../js/underscore.js"></script>
+        <script src="../js/jquery-1.6.js"></script>
+        <script src="../js/jquery-ui-1.8.7.custom.min.js"></script>
+        <script src="../js/imvu.js"></script>
+        <script src="../js/eventbus.js"></script>
+        <script src="../js/EventLoop.js"></script>
+        <script src="../js/Promise.js"></script>
+        <script src="../js/Rest.js"></script>
+        <script src="../js/backbone.js"></script>
+        <script src="GetMatchedMode.js"></script>
+        <script src="GetMatchedDataModel.js"></script>
+    </head><body>
+        <div class="preview-mode">
+            <span class="text"><script id="inline_translate">_iT("You are viewing your profile in Preview Mode. This is how others will see it.", "inline_translate")</script></span>
+            <div class="close"></div>
+        </div>
+        <div class="container">
+            <div class="header loading">
+                <div class="loading-spinner"></div>
+                <div class="pane-collection">
+                    <div class="pane layer1">
+                        <div class="avatar-pic-container">
+                            <div class="avatar-pic ui-event select-photo empty" id="photo_id0" data-ui-name="profile_picture"></div>
+                            <div class="remove ui-event" id="remove0" data-ui-name="remove_profile_picture"></div>
+                            <div class="feature-photo-text"><script id="inline_translate">_iT("My Featured Photo", "inline_translate")</script></div>
+                        </div>
+                        <div class="user-info">
+                            <div class="my-profile-text"><script id="inline_translate">_iT("MY PROFILE", "inline_translate")</script></div>
+                            <div class="user-details">
+                                <span class="avatarname"></span>
+                                <span class="age"></span>
+                                <span class="profile-gender"></span>
+                                <ul class="enhancements">
+                                    <li class="ap"></li>
+                                    <li class="vip"></li>
+                                </ul>
+                            </div>
+                            <div class="story-container">
+                                <div class="my-story-text"><script id="inline_translate">_iT("My Story", "inline_translate")</script></div><span class="edit-button ui-event" data-ui-name="edit_story"><script id="inline_translate">_iT("edit", "inline_translate")</script></span>
+                                <textarea class="edit-story"></textarea>
+                                <div class="story"></div>
+                                <div class="edit-story-footer">
+                                    <span class="char-remaining"><span class="count"><script id="inline_translate">_iT("175", "inline_translate")</script></span><span class="text"> <script id="inline_translate">_iT("characters remaining.", "inline_translate")</script></span></span>
+                                    <div class="edit-story-button-footer">
+                                        <button class="cancel-button imvu-button ui-event level2 dark-gray" data-ui-name="cancel_story"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                                        <button class="save-button imvu-button ui-event level2" data-ui-name="save_story"><script id="inline_translate">_iT("Save", "inline_translate")</script></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-container">
+                                <div class="my-photos-text"><script id="inline_translate">_iT("My Photos", "inline_translate")</script> 
+                                    <span class="re-order-photos ui-event" data-ui-name="reorder_dialog"><script id="inline_translate">_iT("Re-order photos", "inline_translate")</script></span>
+                                </div>
+                                <ul class="photos">
+                                    <li>
+                                        <div id="photo_id1" class="ui-event select-photo empty" data-ui-name="smaller_profile_picture_1"></div>
+                                        <div class="remove ui-event" data-ui-name="remove_smaller_profile_picture_1" id="remove1"></div>
+                                    </li>
+                                    <li>
+                                        <div id="photo_id2" class="ui-event select-photo empty" data-ui-name="smaller_profile_picture_2"></div>
+                                        <div class="remove ui-event" data-ui-name="remove_smaller_profile_picture_2" id="remove2"></div>
+                                    </li>
+                                    <li>
+                                        <div id="photo_id3" class="ui-event select-photo empty" data-ui-name="smaller_profile_picture_3"></div>
+                                        <div class="remove ui-event" data-ui-name="remove_smaller_profile_picture_3" id="remove3"></div>
+                                    </li>
+                                    <li>
+                                        <div id="photo_id4" class="ui-event select-photo empty" data-ui-name="smaller_profile_picture_4"></div>
+                                        <div class="remove ui-event" data-ui-name="remove_smaller_profile_picture_4" id="remove4"></div>
+                                    </li>
+                                </ul>
+                                <div class="ap-only active"><span class="box"></span><script id="inline_translate">_iT("Only show to AP users", "inline_translate")</script> <span class="ap"></span> <span class="faux-link"><script id="inline_translate">_iT("only", "inline_translate")</script></span></div>
+                                <div class="flag-button ui-event" data-ui-name="flag_profile"><script id="inline_translate">_iT("FLAG", "inline_translate")</script></div>
+                                <div class="button-footer">
+                                    <div class="links">
+                                        <div class="deactivate ui-event" data-ui-name="deactivate"><script id="inline_translate">_iT("Opt-out of Get Matched", "inline_translate")</script></div>
+                                        <div class="activate ui-event" data-ui-name="activate"><script id="inline_translate">_iT("Opt-in to Get Matched", "inline_translate")</script></div>
+                                    </div>
+                                    <button class="preview-button imvu-button level2 dark-gray ui-event" data-ui-name="preview_mode"><script id="inline_translate">_iT("Preview", "inline_translate")</script></button>
+                                    <button class="done imvu-button level2 ui-event" data-ui-name="my_profile_done"><script id="inline_translate">_iT("Done", "inline_translate")</script></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ap-profile"></div>
+                    </div>
+                </div>
+                <div class="vote-button-footer">
+                    <div class="ex ui-event" data-ui-name="vote_ex"></div>
+                    <div class="heart ui-event" data-ui-name="vote_heart"></div>
+                </div>
+            </div>
+            <div class="end-of-internet-container">
+                <div class="end-of-internet">
+                    <h2><script id="inline_translate">_iT("No more matches", "inline_translate")</script></h2>
+                    <img src="img/nomorematches240x190.png" alt="No More Matches">
+                    <p class="content"><script id="inline_translate">_iT("Sorry, no more matches for now...", "inline_translate")</script> 
+                    <br>
+                    <script id="inline_translate">_iT("Looks like you have browsed all available profiles.", "inline_translate")</script>
+                    <br>
+                    <script id="inline_translate">_iT("Update your own profile or change your search preferences to find more matches now!", "inline_translate")</script>
+                    </p>
+                </div>
+            </div>
+            <div class="side-bar loading">
+                <div class="progress ui-event" data-ui-name="progress">
+                    <div class="profile-complete"></div>
+                    <div class="progress-bar">
+                        <div class="percent-done"></div>
+                    </div>
+                    <div class="progress-text"><script id="inline_translate">_iT("Your profile is", "inline_translate")</script> <span class="percent"></span> <script id="inline_translate">_iT("completed", "inline_translate")</script></div>
+                </div>
+                <div class="my-profile">
+                    <ul class="options">
+                        <li class="show-profile ui-event" data-ui-name="update_profile"><img src="img/profiledropdown_icn_update_profile.png"><script id="inline_translate">_iT("Update profile", "inline_translate")</script></li>
+                        <li class="search-prefs ui-event" data-ui-name="search_prefs"><img src="img/profiledropdown_icn_change_prefs.png"><script id="inline_translate">_iT("Change match preferences", "inline_translate")</script></li>
+                        <li class="see-matches ui-event" data-ui-name="see_matches"><img src="img/profiledropdown_icn_see_matches.png"><script id="inline_translate">_iT("See matches", "inline_translate")</script></li>
+                        <li class="how-to-play ui-event" data-ui-name="how_to_play"><img src="img/profiledropdown_icn_how_to_play.png"><script id="inline_translate">_iT("How to play", "inline_translate")</script></li>
+                    </ul>
+                </div>
+                <div class="survey"><script id="inline_translate">_iT("Help us improve Get Matched.", "inline_translate")</script> <a><script id="inline_translate">_iT("Give us your feedback!", "inline_translate")</script></a></div>
+            </div>
+            <div class="search-preferences">
+                <div class="spinner"></div>
+                <div class="search-desc-container">
+                    <div class="heading"><script id="inline_translate">_iT("Choose Who I Match With", "inline_translate")</script></div>
+                    <div class="subheading"><script id="inline_translate">_iT("Who do you want to meet?", "inline_translate")</script></div>
+                    <div class="description"><script id="inline_translate">_iT("We will use your preferences and profile information so YOU Get Matched with just the right people for YOU!", "inline_translate")</script></div>
+                    <img src="img/happymatched_175x104.png">
+                </div>
+                <div class="search-options-container">
+                    <div class="heading"><script id="inline_translate">_iT("My Preferences", "inline_translate")</script></div>
+                    <hr>
+                    <div class="item"><script id="inline_translate">_iT("Show me:", "inline_translate")</script></div>
+                    <div class="gender">
+                        <span class="female ui-event" data-ui-name="female"><script id="inline_translate">_iT("Women", "inline_translate")</script></span>
+                        <span class="male ui-event" data-ui-name="male"><script id="inline_translate">_iT("Men", "inline_translate")</script></span>
+                        <div class="instruction"><script id="inline_translate">_iT("Click to select", "inline_translate")</script></div>
+                    </div>
+                    <div class="item"><script id="inline_translate">_iT("Access Pass status:", "inline_translate")</script></div>
+                    <div class="types">
+                        <div class="ap_ga">
+                            <div class="radio">
+                                <span class="all active ui-event" data-ui-name="all"><script id="inline_translate">_iT("all", "inline_translate")</script></span>
+                                <span class="ga ui-event" data-ui-name="ga"><script id="inline_translate">_iT("ga", "inline_translate")</script></span>
+                                <span class="ap ui-event" data-ui-name="ap"><script id="inline_translate">_iT("ap", "inline_translate")</script></span>
+                                <div class="ap-upsell-text hint ui-event" data-ui-name="ap-upsell"><script id="inline_translate">_iT("What is AP?", "inline_translate")</script></div>
+                            </div>
+                        </div>
+                        <div class="vip_col">
+                            <div>
+                                <span class="vip ui-event" data-ui-name="vip"><script id="inline_translate">_iT("VIP", "inline_translate")</script></span>
+                                <div class="vip-match-text"><script id="inline_translate">_iT("Match with VIP\'s only", "inline_translate")</script></div>
+                            </div>
+                            <div class="vip-upsell-text hint ui-event" data-ui-name="vip-upsell"><script id="inline_translate">_iT("What is VIP?", "inline_translate")</script></div>
+                        </div>
+                    </div>
+                    <div class="item age-d"><script id="inline_translate">_iT("Age range:", "inline_translate")</script> <span class="range"><span class="lower ui-event" data-ui-name="age_range_lower"><script id="inline_translate">_iT("18", "inline_translate")</script></span><script id="inline_translate">_iT("-", "inline_translate")</script><span class="upper ui-event" data-ui-name="age_range_upper"><script id="inline_translate">_iT("100", "inline_translate")</script></span></span></div>
+                    <div class="age-range"></div>
+                    <div class="item"><script id="inline_translate">_iT("Language:", "inline_translate")</script></div>
+                    <div>
+                        <select class="langOpt">
+                            <option value="all"><script id="inline_translate">_iT("Any", "inline_translate")</script></option>
+                        </select>
+                   </div>
+                    <div class="search-preferences-button-footer">
+                        <button class="cancel-prefs-button imvu-button ui-event level2 dark-gray" data-ui-name="cancel_search_preferences"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                        <button class="save-prefs-button imvu-button ui-event level2" data-ui-name="save_search_preferences"><script id="inline_translate">_iT("Save", "inline_translate")</script></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-bg">
+            <div class="dialog-bg-inner">
+                <ul>
+                    <li><img class="enlarged-img"></li>
+                    <li><img class="enlarged-img"></li>
+                    <li><img class="enlarged-img"></li>
+                    <li><img class="enlarged-img"></li>
+                    <li><img class="enlarged-img"></li>
+                </ul>
+                <div class="close-btn"></div>
+            </div>
+        </div>
+        <script>
+            if (IMVU.runJS()) {
+                var Promise = new IMVU.PromiseFactory(IMVU.EventLoop, {exposeErrors: true});
+                var Rest = new IMVU.Rest(Promise, XMLHttpRequest, imvu);
+                IMVU.Client.GetMatchedMode = new GetMatchedMode({root: 'body', imvu: imvu, rest: Rest, eventBus: IMVU.Client.EventBus, Promise: Promise});
+
+                if (IMVU.IS_FIREFOX) {
+                    $('.search-preferences').toggle(false);
+                    $('.header').toggle(true);
+                    $('.end-of-internet-container').toggle(false);
+                    
+                    $('.header').toggleClass('profile', false);
+                    $('.header').toggleClass('loading', false);
+                    $('.side-bar').toggleClass('loading', false);
+                    $('.story-container').toggleClass('edit-mode', false);
+
+                    $('.layer1 .avatarname').text('slezakattack');
+                    $('.layer1 .age').text(', 25');
+                    $('.layer1 .user-details').addClass('has-ap').addClass('has-vip');
+
+                    $('.layer1 .story').text('All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.');
+                }
+            }
+        </script>
+    </body></html>

@@ -1,0 +1,21 @@
+body {
+    background-color: #131313;    
+    color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+    -moz-user-select: -moz-none;
+}
+
+#avview-holder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#avview {     
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

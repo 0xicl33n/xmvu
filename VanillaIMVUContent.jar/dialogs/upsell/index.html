@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Info Dialog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../js/imvu.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="Upsell.js"></script>
+
+</head><body>
+    <div id="dialog">
+        <div id="closeButton" class="action-close"></div>
+
+        <div class="ap bd">
+            <h1><script id="inline_translate">_iT("Connect with other adults on IMVU!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Looking for adult chats, romantic interactions and mature entertainment? Get the Access Pass and meet other 18+ people in exclusive AP chat rooms and groups.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button dark-gray interstitial action-close white-text ui-event" data-ui-name="APCancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="imvu-button interstitial action-ap-link action-close ui-event" data-ui-name="APLearnMode"><script id="inline_translate">_iT("Learn more", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    if (IMVU.runJS()) {
+        var info = imvu.call('getDialogInfo');
+        args = {
+            el:document.querySelector('#dialog'),
+            imvuCall:imvu.call,
+            info: {mode:info.mode},
+        };
+        new Upsell(args);
+    }
+    </script>
+</body></html>

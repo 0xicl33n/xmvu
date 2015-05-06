@@ -1,0 +1,21 @@
+
+#scratch, #scratch-iframe {
+    position: absolute;
+    left: -999em;
+    top: -999em;
+}
+
+#scratch.onscreen {
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
+#testLogger * {
+    -moz-user-select: text;
+    white-space: normal;
+}
+
+.disable {
+    background-color: yellow;
+}

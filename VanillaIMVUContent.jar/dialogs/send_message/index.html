@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Send Message</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="../../yui/container/assets/container.css">
+    <link type="text/css" rel="stylesheet" href="../../yui/autocomplete/assets/skins/sam/autocomplete.css">
+    <link rel="stylesheet" type="text/css" href="../css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <link rel="stylesheet" type="text/css" href="sendMessage.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/pillbox/PillBox.css">
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/connection/connection.js"></script>
+    <script src="../../yui/animation/animation.js"></script>
+    <script src="../../yui/json/json.js"></script>
+    <script src="../../yui/datasource/datasource.js"></script>
+    <script src="../../yui/autocomplete/autocomplete.js"></script>
+    <script src="../../yui/container/container.js"></script>
+
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="../../js/Timer.js"></script>
+
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="../../widgets/pillbox/PillBox.js"></script>
+    <script src="../../widgets/BuddyAutocomplete.js"></script>
+
+    <script src="sendMessage.js"></script>
+
+</head><body style="overflow: hidden;"> 
+
+<div id="dialog" class="sendMessage">
+    <div id="hd">
+        <p id="title"><script id="inline_translate">_iT("Send Message", "inline_translate")</script></p>
+        <div id="close-button"></div>
+    </div>
+    <div id="bd">
+        <div id="select_gift">
+            <div class="hd"><span><script id="inline_translate">_iT("Select a gift for", "inline_translate")</script> <span class="notranslate"><span class="avatarname">Mintoctopus</span></span></span></div>
+            <div class="bd">
+               <div id="tabs" style="visibility: hidden;">
+                <div class="tab selected" id="tab_wishlist" content="wishlist"><div class="lt"></div><script id="inline_translate">_iT("Wishlist", "inline_translate")</script><div class="rt"></div></div>
+                <div class="tab" id="tab_music_wishlist" content="music_wishlist"><div class="lt"></div><script id="inline_translate">_iT("Music", "inline_translate")</script><div class="rt"></div></div>
+                <div class="tab" id="tab_giftlist" content="giftlist"><div class="lt"></div><script id="inline_translate">_iT("My Giftlist", "inline_translate")</script><div class="rt"></div></div>
+                
+               </div>
+               <div class="throbber"></div>
+               <div class="search-line">
+                   <div class="search-container">
+                    <input class="search" hint="Search for a gift">
+                    <a class="search-action search-cancel hidden"><script id="inline_translate">_iT("x", "inline_translate")</script></a>
+                    <a class="search-action search-submit"></a>
+                   </div>
+                   <div class="categories-container">
+                       <span class="label"><script id="inline_translate">_iT("Categories:", "inline_translate")</script></span> 
+                       <a rel="all" class="selected"><script id="inline_translate">_iT("All", "inline_translate")</script></a>
+                   </div>
+               </div>
+               <ul class="product-list selected" id="wishlist">
+                   <li style="display: none;" class="category-template">
+                        <p class="category-name"><script id="inline_translate">_iT("Women", "inline_translate")</script></p>
+                    </li>
+                    <li style="display: none;" class="template">
+                        <img src="" class="product-image" height="40" width="50">
+                        <p class="product-name"><script id="inline_translate">_iT("Product Name", "inline_translate")</script></p>
+                        <p class="product-sub"></p>
+                        <p class="price"><span class="notranslate"><span class="price-amount">300</span></span></p>
+                    </li>
+                    
+               </ul>
+               <ul class="product-list" id="music_wishlist">
+                    <li style="display: none;" class="template">
+                        <img src="" class="product-image" height="30" width="30">
+                        <p class="product-name"><script id="inline_translate">_iT("Product Name", "inline_translate")</script></p>
+                        <p class="product-sub"></p>
+                        <p class="price"><span class="price-amount"><script id="inline_translate">_iT("300", "inline_translate")</script></span></p>
+                    </li>
+               </ul>
+               <ul class="product-list" id="giftlist">
+                    <li style="display: none;" class="template">
+                        <img src="" class="product-image" height="40" width="50">
+                        <p class="product-name"><script id="inline_translate">_iT("Product Name", "inline_translate")</script></p>
+                        <p class="product-sub"></p>
+                        <p class="price"><span class="price-amount"><script id="inline_translate">_iT("300", "inline_translate")</script></span></p>
+                    </li>
+               </ul>
+            </div>
+            <div id="ft">
+                <div id="gift_selector_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></div>
+            </div>
+        </div>
+
+        <div class="label-field" id="avname_wrapper">
+            <label for="avname"><script id="inline_translate">_iT("Send to:", "inline_translate")</script></label>
+            <div id="avname_field_wrapper"></div>
+            <div id="avname_container"></div>
+        </div>
+        <div class="label-field">
+            <label for="message_text"><script id="inline_translate">_iT("Message:", "inline_translate")</script></label>
+            <div class="field">
+                <div class="message">
+                    <textarea id="message_text"></textarea>
+                </div>
+                <div class="field-shadow">
+                    <span class="bl"></span>
+                    <span class="br"></span>
+                </div>
+                <div id="message_info">
+                    <span class="msg-chars-st">
+                        <span id="charcount"><script id="inline_translate">_iT("0", "inline_translate")</script></span> <script id="inline_translate">_iT("/", "inline_translate")</script> <span id="max_charcount"><script id="inline_translate">_iT("1024", "inline_translate")</script></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-stuff" style="display: none;">
+            <div id="gift" style="display: none;">
+                <div class="label-field" id="gift_label">
+                    <label><script id="inline_translate">_iT("Gift:", "inline_translate")</script></label>
+                    <div id="gift_box">
+                        <span id="product_name"></span>
+                        <a href="#" id="choose_product"><script id="inline_translate">_iT("Choose again", "inline_translate")</script></a>
+                    </div>
+                    <input id="gift_product_id" value="0" type="hidden">
+                    <input id="gift_track_id" value="0" type="hidden">
+                </div>
+
+                <div class="label-field" id="mw-gift-display">
+                    <label for="gift_wrap_id"><script id="inline_translate">_iT("Gift wrap:", "inline_translate")</script></label>
+                    <div class="message-gift">
+                        <input id="gift_wrap_id" name="gift_wrap_id_selector" disabled="1" type="hidden">
+                        <div id="vip-wrapper">
+                            <div id="giftwrap">
+                                <div id="image-holder">
+                                    <a id="mw-gift-image-link">
+                                        <img id="mw-gift-image" src="#" class="">
+                                    </a>
+                                </div>
+                                <div id="sidetext_wrapper">
+                                    <div id="mw-gift-sidetext" class="sidestuff">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="giftwrap_label"></div>
+                    </div>
+                    <div id="giftwrap_selector">
+                        <div id="arrow_up"></div>
+                        <div id="giftwrap_selector_inner">
+                            <div id="giftwrap_selector_scroll_area"></div>
+                        </div>
+                        <div id="arrow_down"></div>
+                    </div>
+                </div>
+
+                <div class="label-field" id="gift_total">
+                    <label><script id="inline_translate">_iT("Total:", "inline_translate")</script></label>
+                    <div id="total_price"><script id="inline_translate">_iT("5,000,000", "inline_translate")</script></div>
+                </div>
+
+                <div class="label-field" id="delivery_date">
+                    <label><script id="inline_translate">_iT("Deliver:", "inline_translate")</script></label>
+                    <div id="delivery_date_inner">
+                        <div>
+                            <input value="0" name="date_available_r" id="r_immediately" checked="checked" type="radio">
+                            <label style="cursor: pointer;" for="r_immediately"><script id="inline_translate">_iT("Immediately", "inline_translate")</script></label>
+                        </div>
+
+                        <div>
+                            <input value="1" name="date_available_r" id="r_later" type="radio">
+                            <label style="cursor: pointer;" for="r_later"><script id="inline_translate">_iT("On special day:", "inline_translate")</script></label>
+                            <select name="date_available" id="s_date_available" disabled="disabled">
+                                <option value="0"><script id="inline_translate">_iT("- Select a date -", "inline_translate")</script></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <div id="addgift-button"><script id="inline_translate">_iT("Add Gift", "inline_translate")</script></div>
+                <div id="send-button"><script id="inline_translate">_iT("Send", "inline_translate")</script></div>
+                <div id="cancel-button"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></div>
+            </div>
+        </div>
+        <div id="throbber">
+            <div id="throbber-inner">
+                <img src="../../img/throbber.gif">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+    var args = {};
+    if (IMVU.IS_FIREFOX) {
+        args = {viewer_cid:349244,cid:39,extra_args:{recipient_name:'IMVU inc.'}};
+    } else {
+        args = imvu.call('getDialogInfo');
+    }
+    
+    
+    args.imvu = imvu;
+    args.network = IMVU.Network;
+    args.timer = new Timer;
+    args.animSpeed = 0.1;
+    YAHOO.util.Event.onDOMReady(function() {
+        IMVU.Client.SendMessage = new SendMessage(args);
+    });
+    
+}
+</script>
+
+</body></html>

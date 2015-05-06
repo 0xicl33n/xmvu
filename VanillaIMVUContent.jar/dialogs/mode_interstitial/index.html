@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Mode Interstitial</title>
+    <link rel="stylesheet" type="text/css" href="../css/dialog.css">
+    <link rel="stylesheet" href="../../css/new-visd-base.css">
+    <link rel="stylesheet" href="../../css/new-visd-buttons.css">
+    <link rel="stylesheet" type="text/css" href="input.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../js/imvu.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="ModeInterstitial.js"></script>
+    <script src="DialogSwitcher.js"></script>
+
+</head><body>
+    <span id="switch-controls"></span>
+    <div id="dialog">
+        <div id="closeButton"></div>
+
+        <div class="shop bd">
+            <h1><script id="inline_translate">_iT("Shop &#8216;til you drop!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Grab the latest clothes, accessories and furniture from millions of items available. You will never run out of things to buy.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Shop Now", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="dressup bd">
+            <h1><script id="inline_translate">_iT("Dress up &amp; stand out!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Customize your avatar\'s look in your own perfect style, mix and match outfits and accessorize.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Start Dressing Up", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="chatrooms bd">
+            <h1><script id="inline_translate">_iT("Explore and chat!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Browse through thousands of chat rooms and join in the conversations about topics that interest you and meet people! Find the perfect room that suits your mood or make your own.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Start Chatting", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="myroom bd">
+            <h1><script id="inline_translate">_iT("Set up your Chat Room!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Express your unique, creative style and set up the room just the way you like it. Then invite your friends and family for a chat.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Start Decorating!", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="ourroom bd">
+            <h1><script id="inline_translate">_iT("Welcome to your shared room!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("As part of the Marriage Package, you get to own and decorate a room together with your partner. Use this room for setting up your new shared home or choose any room and furniture items from both your collections.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Set Up Your Home", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="chatnow bd">
+            <h1><script id="inline_translate">_iT("Make Friends from all over the World.", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Find people who share the same interests &amp;", "inline_translate")</script> <b><script id="inline_translate">_iT("make new friends", "inline_translate")</script></b> <script id="inline_translate">_iT("or chat with current friends!", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Meet People Now", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="credits2 bd">
+            <h1><script id="inline_translate">_iT("More Credits, more fun!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("IMVU is free to play, however, Credits can make it a more fun experience. Credits offer you endless possibilities to customize your avatar and chat rooms.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Get Credits", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="discoverImvu bd">
+            <h1><script id="inline_translate">_iT("DISCOVER THE REST OF IMVU", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Now that you got the basics,", "inline_translate")</script> <b><script id="inline_translate">_iT("experience all", "inline_translate")</script></b> <script id="inline_translate">_iT("that IMVU has to offer!", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Let\'s Go!", "inline_translate")</script></button>
+            </div>
+        </div>
+
+        <div class="roomOwnerFilter bd">
+            <h1><script id="inline_translate">_iT("New exclusive VIP perk:", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Do you know that our VIPs now have \"Room Access Controls\"? Join the VIP club today and enjoy this and many more perks. You can have 10 chat rooms AND choose to make them available only for your friends, other VIPs or non-guests.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button dark-gray interstitial action-close white-text"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="imvu-button interstitial action-vip-link action-close"><script id="inline_translate">_iT("Learn more", "inline_translate")</script></button>
+            </div>
+        </div>
+        <div class="roomOwnerFilterVIP bd">
+            <h1><script id="inline_translate">_iT("VIPs can now control who enters their chat rooms!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("Enjoy a brand-new VIP perk that lets you hang out with your friends uninterrupted. As a VIP you can set your chat rooms so that only your friends or non-guests can find and join them.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Explore", "inline_translate")</script></button>
+            </div>
+        </div>
+        
+        <div class="quests bd">
+            <h1><script id="inline_translate">_iT("Congratulations for starting your quests journey!", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("You have completed a quest by unlocking all the features of IMVU and earned your Credit reward.", "inline_translate")</script></p>
+            <div class="button-bar">
+                <button class="imvu-button interstitial action-close"><script id="inline_translate">_iT("Okay", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    if (IMVU.runJS()) {
+        var info = imvu.call('getDialogInfo');
+        args = {
+            el:document.querySelector('#dialog'),
+            imvuCall:imvu.call,
+            info: info,
+        };
+        if (IMVU.IS_FIREFOX || info.isQA) {
+            var types = [
+                "chatnow",
+                "shop",
+                "dressup",
+                "chatrooms",
+                "myroom", 
+                "ourroom",
+                "credits2",
+                "discoverImvu",
+                "roomOwnerFilter",
+                "roomOwnerFilterVIP",
+                "quests"
+            ];
+            info.mode = types[0];
+            new DialogSwitcher({
+                root: $('#switch-controls'),
+                types: types,
+                curType: info.mode,
+                reloadArgs: args
+            })
+        }
+        new ModeInterstitial(args);
+    }
+    </script>
+</body></html>

@@ -1,0 +1,220 @@
+#particleSystemSelect {
+    height: 27px;
+    width: 100%;
+}
+
+#addParticleSystem {
+    width: 49px;
+    margin-left: 1px;
+    margin-top: 7px;
+    float: left;
+    background: #dddddd;
+    background: -moz-linear-gradient(top, #dddddd, #A1A1A1);
+    color: #242424;
+}
+#addParticleSystem .plus {
+    left: -3px;
+}
+#addParticleSystem .plus > * {
+    background: #606060;
+}
+
+#particleSystemChooser {
+    width: 443px;
+    height: 27px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+#particleSystemChooser li.selected {
+    background:url(img/Particles_ParticleTitle_SelectedBG.png) -1px -1px;
+}
+
+#particleSystemChooser li.selected label {
+    position:relative;
+    top:4px;
+    font-weight:bold;
+    color:black;
+    text-shadow:0 1px 0 #c48080;
+}
+
+#particlesInfo {
+    border: 1px solid #500606;
+    background: #B15555;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    right: 0;
+    bottom: 0;
+}
+
+#particlesInfo h1 {
+    font-family:;
+    font-weight: bold;
+    color: black;
+    font-size: 17px;
+    margin-left: 5px;
+    margin-top: 11px;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 372px;
+}
+
+#removeParticleSystem {
+    width: 106px;
+    float: right;
+    margin-right: 5px;
+    margin-top: -2px;
+    background: -moz-linear-gradient(top, #782424, #480000);
+    color: #bcd0ff;
+}
+
+#removeParticleSystem .plus > * {
+    background: #601212;
+}
+
+#particlesInfo .collapsiblePanel {
+    background:  #e9f0ff;
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+}
+
+#particlesInfo .collapsiblePanel .bd {
+    padding-left: 12px;
+    padding-bottom: 5px;
+}
+
+#particlesInfo .collapsiblePanel .hd {
+    background: -moz-linear-gradient(top, #782424, #480000);
+    color: #e9f0ff;
+}
+#particlesInfo .collapsiblePanel.disabled .hd {
+    background: -moz-linear-gradient(top, #986a6a, #986a6a);
+    color: #B15555;
+}
+#particlesInfo .label {
+    display: inline-block;
+    padding-top: 10px;
+    width: 85px;
+}
+#particlesInfo select {
+    margin-left: -2px;
+    width: 70px;
+}
+
+#particlesInfo .coordinate {
+    width: 30px;
+    margin-left: 5px;
+}
+
+#particlesInitialRate {
+    width: 69px;
+}
+
+#particlesLifetime {
+    width: 69px;
+}
+
+#particleEvolution .left {
+    display: inline-block;
+    width: 300px;
+}
+
+#particleEvolution .right {
+    display: inline-block;
+    float: right;
+}
+
+#particlesColor .label {
+    position: absolute;
+}
+
+#particlesColor table {
+    display: inline-block;
+    margin-left: 84px;
+    -moz-border-radius: 3px;
+    
+    font-size: 12px;
+}
+#particlesColor table h2 {
+    color: #CED0D0;
+    cursor: default;
+    margin: 0 0 15px 0;
+}
+#particlesColor table th {
+    font-weight: normal;
+    text-transform: capitalize;
+}
+#particlesColor th.time {
+    width: 40px;
+}
+#particlesColor th.color {
+    width: 60px;
+}
+#particlesColor th.alpha {
+    width: 40px;
+}
+#particlesColor tr input {
+    background: #a4c0ff;
+    color: black;
+    cursor: pointer;
+    height: 16px;
+}
+#particlesColor tr:nth-child(odd) input {
+    background: white;
+}
+
+#particlesColor tr.selected input {
+    background: #efde92;
+}
+
+#particlesColor td {
+    font-weight: normal;
+    font-size: 13px;
+    height: 16px;
+}
+
+#particlesColor .time {
+    width: 50px;
+}
+#particlesColor .color {
+    width: 75px;
+}
+#particlesColor .alpha {
+    width: 50px;
+}
+
+#addParticlesColor {
+    background: -moz-linear-gradient(top, #ffffff, #e0e0e0);
+    display: block;
+    width: 100px;
+    left: -72px;
+    top: 22px;
+}
+#addParticlesColor .plus {
+    left: -3px;
+}
+#addParticlesColor .plus > * {
+    background: #606060;
+}
+
+#delParticlesColor {
+    background: -moz-linear-gradient(top, #ffffff, #e0e0e0);
+    width: 100px;
+    display: block;
+    left: -72px;
+    top: 26px;
+}
+#delParticlesColor .minus {
+    left: -3px;
+}
+#delParticlesColor .minus > * {
+    background: #606060;
+}
+
+

@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="Tile.css">
+    <link rel="stylesheet" href="ChatRoom.css">
+    <link rel="stylesheet" href="../dialogs/css/themed_room_dialog.css">
+    <link rel="stylesheet" href="../css/new-visd-buttons.css">
+    <link rel="stylesheet" href="ChatMode.css">
+    <link rel="stylesheet" href="ChatModeThemes.css">
+    <link rel="stylesheet" href="ChatModeSearch.css">
+    <link rel="stylesheet" href="ChatModeViewWidget.css">
+    <link rel="stylesheet" href="ChatModeAllRooms.css">
+    <link rel="stylesheet" href="ChatModeMyRooms.css">
+    <script src="../js/imvu.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="../js/Timer.js"></script>
+    <script src="../js/time.js"></script>
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/jquery.mousewheel.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/connection/connection.js"></script>
+    <script src="../yui/datasource/datasource.js"></script>
+    <script src="../js/DataSource.js"></script>
+    <script src="../js/FakeImvu.js"></script>
+    <script src="../widgets/arrow/Arrow.js"></script>
+    <script src="../widgets/dropdown/DropDown.js"></script>
+    <script src="TranslatedThemeNames.js"></script>
+    <script src="Tile.js"></script>
+    <script src="ChatRoom.js"></script>
+    <script src="ChatRoomsDataSource.js"></script>
+    <script src="ChatRoomPublic.js"></script>
+    <script src="ChatRoomManage.js"></script>
+    <script src="ChatRoomMyRoom.js"></script>
+    <script src="ChatRoomOurRoom.js"></script>
+    <script src="ChatRoomSharedRoom.js"></script>
+    <script src="ChatRoomThemed.js"></script>
+    <script src="ChatRoomWelcome.js"></script>
+    <script src="ChatMode.js"></script>
+    <script src="ChatRoomsSliderHelper.js"></script>
+    <script src="InfiniteScrolling.js"></script>
+    <script src="ProcessQueue.js"></script>
+    <script src="Placeholder.js"></script>
+    <script src="TemplateGenerator.js"></script>
+    <script src="SearchWidget.js"></script>
+    <script src="AnimationQueueFactory.js"></script>
+    <script src="AnimationQueue.js"></script>
+    <script src="ChatModeThemes.js"></script>
+    <script src="ChatModeAllRooms.js"></script>
+    <script src="ChatModeMyRooms.js"></script>
+    <script src="ChatModeViewWidget.js"></script>
+</head><body id="chatrooms-mode">
+    <div id="bg">
+        <img class="background">
+    </div>
+    <div class="header row">
+        <div class="search ui-event" data-ui-name="SearchAllRooms"><input class="default-text ui-event" data-ui-name="KeywordsField" value="Search all rooms..." type="text"><button class="search-button ui-event" data-ui-name="SearchButton"></button></div><div class="imvu-button light-gray view ui-event" data-ui-name="Filters"><script id="inline_translate">_iT("Filters", "inline_translate")</script></div><div class="imvu-button light-gray all ui-event" data-ui-name="AllRooms"><script id="inline_translate">_iT("All Rooms", "inline_translate")</script></div><div class="imvu-button light-gray themes ui-event" data-ui-name="Themes"><script id="inline_translate">_iT("Themes", "inline_translate")</script></div><div class="imvu-button light-gray myrooms ui-event" data-ui-name="MyRooms"><script id="inline_translate">_iT("My Rooms", "inline_translate")</script></div><div class="imvu-button light-gray favorites ui-event" data-ui-name="Favorites"><script id="inline_translate">_iT("Favorites", "inline_translate")</script></div><div class="imvu-button light-gray visited ui-event" data-ui-name="Visited"><script id="inline_translate">_iT("Visited", "inline_translate")</script></div>
+    </div>
+    <div class="tab all">
+        <div class="all-wrapper">
+            <div class="column rooms">
+                <div class="scrollable">
+                    <div class="all-rooms-list chatrooms-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab themes">
+        <div class="themes-wrapper">
+            <div class="themes-list-wrapper">
+                <div class="column themes-list">
+                </div>
+                <div class="scroll-buttons-container">
+                    <div class="button up-button ui-event" data-ui-name="UpButton">
+                        <div class="wrapper"></div>
+                    </div><div class="button down-button ui-event" data-ui-name="DownButton">
+                        <div class="wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column rooms">
+                <div class="room-scrollarea-holder">
+                    <div class="scrollable">
+                        <div class="themed-rooms-list chatrooms-list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab myrooms">
+        <div class="scrollable">
+            <div class="private-rooms">
+                <div class="section-header">
+                    <img class="icon" src="img/room_lister_icon_myroom_sm.png">
+                    <div class="title"><script id="inline_translate">_iT("My Private Rooms", "inline_translate")</script></div>
+                    <div class="description"><script id="inline_translate">_iT("- Create your own space to hang out or share with friends", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div class="public-rooms">
+                <div class="section-header">
+                    <img class="icon" src="img/room_lister_icon_chatroom_sm.png">
+                    <div class="title"><script id="inline_translate">_iT("My Public Rooms", "inline_translate")</script></div>
+                    <div class="description"><script id="inline_translate">_iT("- Design a Public room everyone can visit by picking your space and decorating with furniture", "inline_translate")</script></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab favorites">
+        <script id="inline_translate">_iT("This is the Favorites Tab", "inline_translate")</script>
+    </div>
+    <div class="tab visited">
+        <script id="inline_translate">_iT("This is the Visited Tab", "inline_translate")</script>
+    </div>
+    <div class="view-widget">
+        <div class="row language">
+            <div class="name language ui-event" data-ui-name="LanguageFilter"><script id="inline_translate">_iT("Language", "inline_translate")</script></div>
+            <div class="selector language"></div>
+        </div>
+        <div class="row vip">
+            <div class="name vip ui-event" data-ui-name="VIPFilter"><script id="inline_translate">_iT("VIP Rooms", "inline_translate")</script></div>
+            <div class="selector vip"></div>
+        </div>
+        <div class="row roomtype">
+            <div class="name roomtype ui-event" data-ui-name="RoomTypeFilter"><script id="inline_translate">_iT("Room Type", "inline_translate")</script></div>
+            <div class="selector roomtype"></div>
+        </div>
+        <div class="row occupancy">
+            <div class="name occupancy ui-event" data-ui-name="OccupancyFilter"><script id="inline_translate">_iT("Occupancy", "inline_translate")</script></div>
+            <div class="selector occupancy"></div>
+        </div>
+    </div>
+    <div id="avview-holder">
+    </div>
+    <div class="revert-toaster bubble">
+        <h2><script id="inline_translate">_iT("Love the new look for this feature?", "inline_translate")</script></h2>
+        <h3><script id="inline_translate">_iT("We hope you like the change!", "inline_translate")</script></h3>
+        <p><script id="inline_translate">_iT("Hint: You can always get the old look back in", "inline_translate")</script> <i><script id="inline_translate">_iT("Settings &gt; New Looks &gt; Use new Chat Rooms Interface", "inline_translate")</script></i></p>
+        <button class="okay imvu-button level2 enabled visible ui-event" data-ui-name="RevertToasterOk"><script id="inline_translate">_iT("OK", "inline_translate")</script></button>
+    </div>
+    <div class="templates">
+        <div id="welcome-room-bubble" class="bubble">
+            <img id="triangle" src="img/room_lister_bubble_triangle.png">
+            <h1><script id="inline_translate">_iT("Welcome To IMVU", "inline_translate")</script></h1>
+            <p><script id="inline_translate">_iT("These rooms are designed especially for guests and new users to get the hang of the IMVU 3D chat! So come on in and talk to new people around the world", "inline_translate")</script></p>
+            <img id="avatars" src="img/welcome-avatars-small.png">
+        </div>
+        <div class="theme-option">
+            <div class="image ui-event" data-ui-name="ThemeImage"></div>
+            <div class="name ui-event" data-ui-name="ThemeName"><script id="inline_translate">_iT("Fantasy", "inline_translate")</script></div>
+        </div>
+        <div id="chatroom-template" class="chatroom">
+            <img class="room-image ui-event" data-ui-name="RoomImage" src="img/throbber_black_bg.gif">
+            <div class="occupants"><div class="occupant"></div></div>
+            <div class="occupancy-bubble">
+                <div class="occupancy-c">
+                    <div class="actual-occupancy"><script id="inline_translate">_iT("0", "inline_translate")</script></div>
+                    <div class="max-occupancy"></div>
+                    <img src="img/room_lister_occupancy_icon_slash.png">
+                </div>
+                <div class="full" style="display: none;"><script id="inline_translate">_iT("Full", "inline_translate")</script></div>
+            </div>
+            <div class="pool">
+                <div class="pool-cover"></div>
+                <div class="room-name"></div>
+                <div class="subtitle">
+                    <span class="language"></span>
+                    <img class="ap icon ui-event" data-ui-name="APIcon" src="../img/icon_ap_medium.png">
+                    <img class="av icon ui-event" data-ui-name="AVIcon" src="../img/icon_av_medium.png">
+                    <img class="vip icon ui-event" data-ui-name="VIPIcon" src="../img/icon_vip_medium.png">
+                    <div class="creator"><script id="inline_translate">_iT("By", "inline_translate")</script> <a class="av-name ui-event" data-ui-name="CreatorName"></a></div>
+                </div>
+                <div class="star-rating">
+                    <div class="dimmed-stars"></div>
+                    <div class="stars ui-event" data-ui-name="Stars" rating="4.5"></div>
+                </div>
+                <div class="visitors"><script id="inline_translate">_iT("Visitors:", "inline_translate")</script> <span class="count"><script id="inline_translate">_iT("0", "inline_translate")</script></span></div>
+                <div class="description"></div>
+                <div class="room-info ui-event" data-ui-name="RoomInfo"></div>
+                <div class="flag-room ui-event" data-ui-name="FlagRoom"></div>
+                <div class="buttons">
+                    <button class="delete warning imvu-button level2 dark-gray enabled visible ui-event" data-ui-name="DeleteButton">
+                        <img src="img/delete-x.png">
+                        <span><script id="inline_translate">_iT("Delete", "inline_translate")</script></span>
+                    </button>
+                    <button class="clone imvu-button level2 enabled dark-gray visible ui-event" data-ui-name="CloneButton"><script id="inline_translate">_iT("Clone", "inline_translate")</script></button>
+                    <button class="edit imvu-button level2 enabled dark-gray visible ui-event" data-ui-name="EditButton">
+                        <img src="img/edit-pencil.png">
+                        <span><script id="inline_translate">_iT("Edit", "inline_translate")</script></span>
+                    </button>
+                    <button class="go imvu-button level2 enabled visible ui-event" data-ui-name="GoButton">
+                        <span><script id="inline_translate">_iT("Go", "inline_translate")</script></span>
+                        <img src="img/go-arrow.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="ad-template" class="ad-tile">
+            <div class="ad-header">
+                <div class="sponsored">
+                    <script id="inline_translate">_iT("Sponsored", "inline_translate")</script>
+                    <div class="vip-upsell">
+                        <div class="upsell-head"><script id="inline_translate">_iT("Hide Ads?", "inline_translate")</script></div>
+                        <a href="http://vip_pass/" class="upsell-link ui-event" data-ui-name="GetVIP"><script id="inline_translate">_iT("Get VIP!", "inline_translate")</script></a>
+                    </div>
+                </div>
+            </div>
+            <iframe class="adframe" marginheight="0" marginwidth="0" allowtransparency="true" src="" frameborder="0" height="250" scrolling="no" width="300"></iframe>
+        </div>
+        <div id="tile-template" class="tile">
+            <div class="wrapper">
+                <div class="no-results">
+                    <span class="sorry-msg all"><script id="inline_translate">_iT("Sorry, we don\'t have any Chat Rooms matching your search.", "inline_translate")</script> </span>
+                    <span class="sorry-msg visited"><script id="inline_translate">_iT("You have not visited any rooms lately. Explore the chat rooms and make friends. Rooms you visit will be shown here.", "inline_translate")</script> </span>
+                    <span class="sorry-msg favorites">
+                        <script id="inline_translate">_iT("Keep track of rooms you like so you can come back to them quickly by marking them as Favorites.", "inline_translate")</script>
+                        <div class="hint">
+                            <img src="img/add_favorite_hint.png">
+                            <span><script id="inline_translate">_iT("Click on \"Add to favorites\" in the top left corner of a Chat Room to mark it as a favorite.", "inline_translate")</script></span>
+                        </div>
+                    </span>
+                    <span class="check-filters"><script id="inline_translate">_iT("Please check your View preferences and try again.", "inline_translate")</script></span>
+                    <button class="remove-all-filters imvu-button level2 enabled visible ui-event" data-ui-name="RemoveAllFilters"><script id="inline_translate">_iT("Remove All Filters", "inline_translate")</script></button>
+                    <img class="arrow" src="img/nullsearch_bubble_arrow.jpg">
+                </div>
+            </div>
+            <div class="border">
+                <button class="create-room imvu-button level2 enabled visible ui-event" data-ui-name="CreateRoom">
+                    <img src="img/plus_icon.png">
+                    <script id="inline_translate">_iT("Create a room", "inline_translate")</script>
+                </button>
+                <div class="our-room-upsell">
+                    <img src="img/room_lister_icon_ourroom_for_upsell.png">
+                    <button class="buy-our-room imvu-button level2 enabled visible ui-event" data-ui-name="OurRoomUpsell">
+                        <img src="img/plus_icon.png">
+                        <span><script id="inline_translate">_iT("Buy Marriage Package Now", "inline_translate")</script></span>
+                    </button>
+                    <div><script id="inline_translate">_iT("Share a room together as married partners.", "inline_translate")</script></div>
+                </div>
+                <div class="shared-room-upsell">
+                    <img src="img/room_lister_icon_shareroom_for_upsell.png">
+                    <button class="buy-shared-room imvu-button level2 enabled visible ui-event" data-ui-name="SharedRoomUpsell">
+                        <img src="img/plus_icon.png">
+                        <span><script id="inline_translate">_iT("Buy Shared Room Now!", "inline_translate")</script></span>
+                    </button>
+                    <div><script id="inline_translate">_iT("Share a room with a friend", "inline_translate")</script></div>
+                </div>
+                <div class="chat-room-slots-upsell">
+                    <img src="img/room_lister_icon_roomslot_for_upsell.png">
+                    <button class="buy-chat-room-slots imvu-button level2 enabled visible ui-event" data-ui-name="ChatRoomSlotsUpsell">
+                        <img src="img/plus_icon.png">
+                        <span class="chat-room-slots-buy"><script id="inline_translate">_iT("Buy Additional Chat Room Slot", "inline_translate")</script></span>
+                    </button>
+                </div>
+                <div class="vip-room-upsell">
+                    <img src="img/icon_chat_room.png">
+                    <button class="buy-vip imvu-button level2 enabled visible ui-event" data-ui-name="VIPRoomUpsell">
+                        <span class="room-slots-no-rollout"><script id="inline_translate">_iT("Get", "inline_translate")</script> <img src="img/vip.png"> <script id="inline_translate">_iT("Now!", "inline_translate")</script></span>
+                        <span class="room-slots-rollout"><script id="inline_translate">_iT("Get 10 Chat Room Slots with", "inline_translate")</script> <img src="img/vip.png"></span>
+                    </button>
+                    <div><span class="room-slots-no-rollout"><script id="inline_translate">_iT("and unlock more Chat Rooms!", "inline_translate")</script></span></div>
+                    <div><span class="room-slots-rollout"><script id="inline_translate">_iT("(a $300 value!)", "inline_translate")</script></span></div>
+                </div>
+                <div class="available-text"><script id="inline_translate">_iT("Available Space for New Chat Room", "inline_translate")</script></div>
+            </div>
+            <div class="ap-upsell">
+                <div class="upsell-head"><script id="inline_translate">_iT("Looking for something?", "inline_translate")</script></div>
+                <div class="upsell-description"><script id="inline_translate">_iT("There are", "inline_translate")</script> <span class="room-numbers"><script id="inline_translate">_iT("2", "inline_translate")</script></span> <script id="inline_translate">_iT("Chat Rooms matching your search for", "inline_translate")</script> <span class="keywords-text"><script id="inline_translate">_iT("SEARCHWORD", "inline_translate")</script></span><script id="inline_translate">_iT(". Get Access Pass and enjoy the full IMVU experience by joining the adult community within the community", "inline_translate")</script></div>
+                <button class="get-ap imvu-button level2 enabled visible ui-event" data-ui-name="ApUpsell"><script id="inline_translate">_iT("Get Access Pass", "inline_translate")</script></button>
+            </div>
+            <div class="welcome-room-moderator">
+                <button class="moderator-needed imvu-button level2 enabled visible ui-event" data-ui-name="ModeratorGoButton">
+                    <script id="inline_translate">_iT("Moderator Needed! Go", "inline_translate")</script>
+                    <img src="img/carrot.png">
+                </button>
+                <div class="title"><script id="inline_translate">_iT("Welcome Rooms", "inline_translate")</script></div>
+            </div>
+        </div>
+    </div>
+    <script>
+    if (IMVU.runJS()) {
+        var chatMode = new ChatMode({
+            root: $('body'),
+            imvu: imvu,
+            eventBus: IMVU.Client.EventBus,
+            network:IMVU.Network,
+            translatedThemeNames: IMVU.translatedThemeNames,
+            timer: new Timer()
+        });
+        function updateRoomOccupancy(room_id, occupancy) {
+            chatMode.updateRoomOccupancy(room_id, occupancy);
+        }
+        function modeActivate() {
+        }
+    }
+    </script>
+</body></html>

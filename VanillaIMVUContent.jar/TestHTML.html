@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+    <script src="js/jquery-1.6.js"></script>
+    <script src="js/underscore.js"></script>
+<title>TestHTML</title>
+        <script src="js/prologue.js"></script>
+        <script src="js/FakeImvu.js"></script>
+    </head>
+    <body>
+        <script>
+            runTests({
+                name: 'HTMLTestReportingTests',
+
+                setUp: function() {
+                },
+
+                test_success: function() {
+                },
+
+                test_disabled: function() {
+                    this.disable_test();
+                },
+
+                test_failure: function() {
+                    Assert.isTrue(false, 'this is supposed to fail');
+                },
+
+                test_another_failure: function() {
+                    Assert.isTrue(false, 'this is also supposed to fail');
+                },
+
+                test_success_again: function() {
+                },
+
+                test_also_disabled: function() {
+                    this.disable_test();
+                },
+            });
+        </script>
+    </body>
+</html>

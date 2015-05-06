@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Dialog Content</title>
+    <link rel="stylesheet" href="FlagDialogContent.css">
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <script src="../../js/imvu.js"></script>
+    <script src="FlagDialogContent.js"></script>
+    <script src="../../js/Dropdown.js"></script>
+
+</head><body>
+    <div id="dialog" class="dialog-content">
+        <header>
+            <h1 id="title"></h1>
+            <div class="close"></div>
+        </header>
+        <hr class="standard">
+        <div id="content">
+            <p class="dialog-message-text"></p>
+            
+            <p class="dialog-message-text-get-failed">
+                <script id="inline_translate">_iT("This content will be submitted to IMVU customer service for review.", "inline_translate")</script>
+            </p>
+            
+            <div class="dialog-dropdown-container">
+                <div class="dialog-dropdown-text"><script id="inline_translate">_iT("Reason for flagging:", "inline_translate")</script></div>
+                <div class="dialog-dropdown-select">
+                    <select class="dialog-dropdown"></select>
+                </div>
+            </div>
+            <div class="dialog-result-container">
+                <img src="../img/check_green.png">
+                <script id="inline_translate">_iT("Flag report sent!", "inline_translate")</script>
+            </div>
+        </div>
+        <hr class="shadow">
+        <footer>
+            <div id="button-bar">
+                <button class="cancel-button imvu-button level2 white-text dark-gray ui-event" data-ui-name="Cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+                <button class="submit-button imvu-button level2 light-gray ui-event" data-ui-name="Flag"><script id="inline_translate">_iT("Flag", "inline_translate")</script></button>
+                <button class="close-button imvu-button level2 white-text dark-gray hidden ui-event" data-ui-name="Close"><script id="inline_translate">_iT("Close", "inline_translate")</script></button>
+            </div>
+        </footer>
+    </div>
+    <div class="dialog-content-spinner"></div>
+
+    <script>
+    if (IMVU.runJS()) {
+        var dialogInfo = imvu.call('getDialogInfo');
+        if (IMVU.IS_FIREFOX) {
+            dialogInfo = {
+                'title': 'Flag "fake title testing testing testing"', 
+                'service_url': '/api/flag_content/flag_publicroom.php',
+                'message': 'Fake message long long long long long long long long long long long long long long long long long long more and more',
+                'id_field_name': 'avatar_id',
+                'post_data': { 'content_id': '1398234',
+                               //'flag_type': 'some_flag_type'  /* set this if not using 'reasons from server' */
+                              },
+                // omit this to hide reason dropdown
+                'get_reasons_from_server': {'content_type': 'some_content_type','content_id': 1234}    
+            };
+            serviceRequest = function(args) {
+                console.log('service request:');
+                console.log(args);
+                if (args.uri == "/api/flag_content/flag_reasons.php?content_type=some_content_type&content_id=1234") {
+                    // success
+                    args.callback({'reasons': [{'key': 'key1', 'text': 'reason1'}, {'key': 'key2', 'text': 'reason2'}]}, null);
+                    
+                    // failure
+                    //args.callback({'error' : 'error_in_request' }, null);
+                } else if (args.uri == "/api/flag_content/flag_publicroom.php") {
+                    args.callback({'result': 'success'}, null);
+                }
+            };
+        }
+
+        new FlagDialogContent({
+            root: '.dialog-content',
+            imvu: imvu,
+            network: IMVU.Network,
+            dialogInfo: dialogInfo});
+    }
+    </script>
+</body></html>

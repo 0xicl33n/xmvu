@@ -1,0 +1,36 @@
+@import url(../css/new-visd-buttons.css);
+#themedroomPanel {
+    max-width:320px;
+}
+#themedroomPanel .eligibleRoom,
+#themedroomPanel .reviewingRoom,
+#themedroomPanel .canceledSubmission,
+#themedroomPanel .featuredRoom,
+#themedroomPanel .removedRoom,
+#themedroomPanel .notEligibleRoom,
+#themedroomPanel .rateLimitSubmission {
+    display: none;
+
+    background:rgba(0,0,0,0.7);
+    padding:7px 10px 5px;
+    margin-bottom: 5px;
+    color:white;
+    font-size: 14px;
+    border-top:2px solid rgba(0,0,0,0.3);
+    -moz-border-radius:0 0 12.5px 12.5px;
+}
+.eligibleRoom button {
+    cursor: pointer;
+}
+
+#themedroomPanel a{ 
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+#themedroomPanel .button-bar {
+    height: 1.75em;
+}
+#themedroomPanel button {
+    float: right;
+}

@@ -1,0 +1,58 @@
+html, body {
+    font-family: Arial, "HelveticaNeue", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;
+}
+
+
+/*
+
+Preserved for historical reasons. Layouts mays be broken because 
+of the change to HelveticaNeue/Arial and people will wonder why...
+
+@font-face {
+    font-family: "Cabin";
+    src: url("../fonts/Cabin-Regular.otf");
+    font-weight: 400;
+}
+    @font-face {
+        font-family: "Cabin";
+        font-style: italic;
+        src: url("../fonts/Cabin-Italic.otf");
+        font-weight: 400;
+    }
+
+@font-face {
+    font-family: "Cabin";
+    src: url("../fonts/Cabin-Medium.otf");
+    font-weight: 500;
+}
+    @font-face {
+        font-family: "Cabin";
+        font-style: italic;
+        src: url("../fonts/Cabin-MediumItalic.otf");
+        font-weight: 500;
+    }
+
+@font-face {
+    font-family: "Cabin";
+    src: url("../fonts/Cabin-SemiBold.otf");
+    font-weight: 600;
+}
+    @font-face {
+        font-family: "Cabin";
+        font-style: italic;
+        src: url("../fonts/Cabin-SemiBoldItalic.otf");
+        font-weight: 600;
+    }
+
+@font-face {
+    font-family: "Cabin";
+    src: url("../fonts/Cabin-Bold.otf");
+    font-weight: 700;
+}
+    @font-face {
+        font-family: "Cabin";
+        font-style: italic;
+        src: url("../fonts/Cabin-BoldItalic.otf");
+        font-weight: 700;
+    }
+*/

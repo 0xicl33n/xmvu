@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+        <link rel="stylesheet" type="text/css" href="../yui/reset-fonts-grids-base-min.css">
+        <link rel="stylesheet" href="../yui/container/assets/container.css">
+        <link rel="stylesheet" type="text/css" href="../css/YUIPaginator.css">
+        <link rel="stylesheet" type="text/css" href="../widgets/button/imvuButton.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="InboxTabBar.css">
+        <link rel="stylesheet" type="text/css" href="ActionBar.css">
+        <link rel="stylesheet" type="text/css" href="MessageList.css">
+        <link rel="stylesheet" type="text/css" href="MessageView.css">
+        <link rel="stylesheet" type="text/css" href="FriendList.css">
+        <link rel="stylesheet" type="text/css" href="MissedChatList.css">
+        <link rel="stylesheet" type="text/css" href="GetMatchedList.css">
+
+        <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script src="../yui/element/element-beta.js"></script>
+        <script src="../yui/datasource/datasource.js"></script>
+
+        <script src="../yui/json/json.js"></script>
+        <script src="../yui/connection/connection.js"></script>
+        <script src="../yui/paginator/paginator.js"></script>
+        <script src="../yui/datatable/datatable.js"></script>
+        <script src="../yui/animation/animation.js"></script>
+        <script src="../yui/container/container.js"></script>
+        <script src="../widgets/button/imvuButton.js"></script>
+
+        <script src="../js/imvu.js"></script>
+        <script src="../js/Timer.js"></script>
+        <script src="../js/time.js"></script>
+        <script src="../js/eventbus.js"></script>
+        <script src="../js/DataSource.js"></script>
+        <script src="../js/YUIPaginator.js"></script>
+        <script src="../js/dialog.js"></script>
+        <script src="../js/dateFormat.js"></script>
+        <script src="ActionBar.js"></script>
+        <script src="MessageDataSource.js"></script>
+        <script src="FriendsDataSource.js"></script>
+        <script src="FriendList.js"></script>
+        <script src="MessageList.js"></script>
+        <script src="MessageView.js"></script>
+        <script src="InboxTabBar.js"></script>
+        <script src="MissedChatList.js"></script>
+        <script src="MissedChatDataSource.js"></script>
+        <script src="GetMatchedList.js"></script>
+        <script src="GetMatchedDataSource.js"></script>
+    </head><body class="yui-skin-sam">
+        <div id="tabBar">
+            <div id="tabs">
+                <div id="buttons">
+                    <div id="new-message-button"><script id="inline_translate">_iT("New message", "inline_translate")</script></div>
+                    <div id="play-get-matched-button"><script id="inline_translate">_iT("Play Get Matched", "inline_translate")</script></div>
+                    <div id="refresh-button"><script id="inline_translate">_iT("Refresh", "inline_translate")</script></div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div id="backToTab"><script id="inline_translate">_iT("Back", "inline_translate")</script></div>
+            </div>
+            <div class="tab-contents" id="messages-pane">
+                <div class="action-bar">
+                    <div class="row-controls">
+                        <script id="inline_translate">_iT("Select:", "inline_translate")</script> <span class="select-all"><script id="inline_translate">_iT("All", "inline_translate")</script></span><script id="inline_translate">_iT(",", "inline_translate")</script> <span class="select-none"><script id="inline_translate">_iT("None", "inline_translate")</script></span>
+                        <span class="buttons"></span>
+                    </div>
+                    <div id="messages-paginator" class="yui-skin-sam paginator"></div>
+                </div>
+                <div class="tab-dynamic-contents">
+                    <div id="messageList" class="inbox-list-view"></div>
+                </div>
+            </div>
+            <div class="tab-contents message-view" id="messageView">
+                <div id="messageViewContents">
+                    <div id="messageViewShadowOuter">
+                        <div id="messageViewShadowInner">
+                            <div class="hd">
+                                <div id="msgAvatarInfo">
+                                    <img id="senderPic">
+                                    <div id="msgAvatarDetails">
+                                        <h3>
+                                            <span id="senderAvatarName"></span>
+                                            <span class="ap-icon" id="msgSenderAp"></span>
+                                            <span class="vip-icon" id="msgSenderVip"></span>
+                                        </h3>
+                                        <span id="senderOnline" title="Online now"></span>
+                                    </div>
+                                </div>
+                                <p id="msgTimestamp"></p>
+                            </div>
+                            <div class="bd">
+                                <iframe id="msgTxtIframe" src="data:text/html,%3Ch1%3EHello%20World%21%3C/h1%3E" align="top" frameborder="0">
+                                </iframe>
+                                <div id="msgGiftContainer">
+                                    <span id="msgGiftSenderAvatarName"></span>
+                                    <span id="msgGiftAlso"><script id="inline_translate">_iT("also", "inline_translate")</script></span>
+                                    <span><script id="inline_translate">_iT("sent you a gift.", "inline_translate")</script></span>
+                                    <span id="msgGiftWrap">
+                                        <img id="msgGiftImage">
+                                        <span id="msgGiftDescription">
+                                            <span id="msgGiftProductDescription">
+                                                <span id="msgGiftProductName"></span>
+                                                <span id="msgGiftProductPutOn"> </span>
+                                            </span>
+                                            <span id="msgGiftMusicDescription">
+                                                <span id="msgGiftMusicTrackName"></span> <script id="inline_translate">_iT("by", "inline_translate")</script>
+                                                <span id="msgGiftMusicArtistName"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pageShadow">
+                        <span class="bl"></span>
+                        <span class="br"></span>
+                    </div>
+                    <div id="msgControls">
+                        <span id="msgSafety"><script id="inline_translate">_iT("safety", "inline_translate")</script></span>
+                        <div id="msgActionButtons">
+                            <div id="msgReply"><script id="inline_translate">_iT("Reply", "inline_translate")</script></div>
+                            <div id="msgDelete"><script id="inline_translate">_iT("Delete", "inline_translate")</script></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-contents" id="friend-requests-pane">
+                <div class="action-bar">
+                    <div class="row-controls">
+                        <script id="inline_translate">_iT("Select:", "inline_translate")</script> <span class="select-all"><script id="inline_translate">_iT("All", "inline_translate")</script></span><script id="inline_translate">_iT(",", "inline_translate")</script> <span class="select-none"><script id="inline_translate">_iT("None", "inline_translate")</script></span>
+                        <span class="buttons"></span>
+                    </div>
+                    <div id="friends-paginator" class="yui-skin-sam paginator"></div>
+                </div>
+                <div class="tab-dynamic-contents">
+                    <div id="friendList" class="inbox-list-view"></div>
+                </div>
+            </div>
+
+            <div class="tab-contents" id="missed-chat-pane">
+                <div class="action-bar">
+                    <div class="row-controls">
+                        <script id="inline_translate">_iT("Select:", "inline_translate")</script> <span class="select-all"><script id="inline_translate">_iT("All", "inline_translate")</script></span><script id="inline_translate">_iT(",", "inline_translate")</script> <span class="select-none"><script id="inline_translate">_iT("None", "inline_translate")</script></span>
+                        <span class="buttons"></span>
+                    </div>
+                    <div id="missed-chat-paginator" class="yui-skin-sam paginator"></div>
+                </div>
+                <div class="tab-dynamic-contents">
+                    <div id="missedChat" class="inbox-list-view"></div>
+                </div>
+            </div>
+
+            <div class="tab-contents" id="get-matched-pane">
+                <div class="action-bar">
+                    <div class="row-controls">
+                        <script id="inline_translate">_iT("Select:", "inline_translate")</script> <span class="select-all"><script id="inline_translate">_iT("All", "inline_translate")</script></span><script id="inline_translate">_iT(",", "inline_translate")</script> <span class="select-none"><script id="inline_translate">_iT("None", "inline_translate")</script></span>
+                        <span class="buttons"></span>
+                    </div>
+                    <div id="get-matched-paginator" class="yui-skin-sam paginator"></div>
+                </div>
+                <div class="tab-dynamic-contents">
+                    <div id="getMatched" class="inbox-list-view"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            if (IMVU.runJS()) {
+                var messagesDataSource;
+                if (IMVU.IS_FIREFOX) {
+                    imvu.callAsync = function(name) {
+                        IMVU.CALLS.push(arguments);
+                    };
+                    messagesDataSource = new IMVU.DataSource([
+                        {avpic_url:'http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg',
+                         avatarname:'MoreThan20CharsWraps',
+                         sender_id:42,
+                         messageId: 52,
+                         date: '2009-06-12 01:18:45',
+                         has_gift: true,
+                         message_text:'Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.',
+                         is_vip:true,
+                         is_ap:true,
+                         online:true},
+
+                        {avpic_url:'http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg',
+                         avatarname:'Guy with an inordinately long name',
+                         sender_id:42,
+                         messageId: 53,
+                         date: '2009-06-12 01:18:45',
+                         has_gift: true,
+                         message_text:'Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.Adults: Pack your bags, grab your sweetheart, and fly away to an Island Lovers\' Eruption! Set in the South Pacific, this island has a dazzling waterfall, sandy beaches, and... a live, erupting volcano! This bundle includes 16 items and 25,000 credits - learn more now.',
+                         is_vip:true,
+                         is_ap:true,
+                         online:true},
+                    ], {}, IMVU.Network, imvu);
+                } else {
+                    messagesDataSource = IMVU.MessageDataSource(IMVU.SERVICE_DOMAIN + '/api/messages.php', {}, IMVU.Network, imvu);
+                }
+
+                var messagesPaginator = new IMVU.YUIPaginator(['messages-paginator'], messagesDataSource, {totalRecords: 50});
+                var inboxTabBar = new InboxTabBar(document.getElementById('tabBar'), imvu);
+                var messageList = new MessageList({
+                    el: document.getElementById('messages-pane'),
+                    dataSource: messagesDataSource,
+                    paginator: null,
+                    messageView: (new MessageView(
+                        'messageView',
+                        {
+                            onDeleteCallback: function() {
+                                inboxTabBar.setActiveTab('messages');
+                            },
+                            messagesDataSource: messagesDataSource,
+                            net: IMVU.Network,
+                            imvu: imvu
+                        }
+                    )),
+                    tabBar: inboxTabBar,
+                    net: IMVU.Network,
+                    imvu: imvu,
+                });
+
+                //friends
+                var friendsDataSource = IMVU.FriendsDataSource(null, imvu);
+                var friendsList = new FriendList({
+                    element:'friend-requests-pane',
+                    dataSource:friendsDataSource,
+                    paginator:new IMVU.YUIPaginator(['friends-paginator'], friendsDataSource, {totalRecords: 50}),
+                    tabBar:inboxTabBar,
+                    imvu: imvu
+                });
+
+                // missed chat
+                var missedChatDataSource;
+                if (IMVU.IS_FIREFOX) {
+                    missedChatDataSource = IMVU.MissedChatDataSource(
+                        {
+                            result: [{
+                                inviter_cid: 42,
+                                avpic_url: 'http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg',
+                                avatarname: 'ThisNameIsLooooong',
+                                online: 1,
+                                is_vip: 1,
+                                is_ap: 1,
+                                date: '2009-06-12 01:18:45'
+                            }]
+                        },
+                        {},
+                        IMVU.Network,
+                        imvu
+                    );
+                } else {
+                    missedChatDataSource = IMVU.MissedChatDataSource(
+                        IMVU.SERVICE_DOMAIN + '/api/missedchat.php',
+                        {},
+                        IMVU.Network,
+                        imvu
+                    );
+                }
+                var missedChat = new MissedChatList(
+                    'missed-chat-pane',
+                    {
+                        dataSource: missedChatDataSource,
+                        paginator: new IMVU.YUIPaginator(['missed-chat-paginator'], missedChatDataSource, {totalRecords: 50}),
+                        tabBar: inboxTabBar,
+                        imvu: imvu,
+                        net: IMVU.Network
+                    }
+                );
+
+                inboxTabBar.addTab('messages', _T("messages"), 'messages-pane', messageList.refreshView.bind(messageList));
+                inboxTabBar.addTab('friend-requests', _T("friend requests"), 'friend-requests-pane', friendsList.refreshView.bind(friendsList));
+                inboxTabBar.addTab('missed-chat', _T("missed chat invites"), 'missed-chat-pane', missedChat.refreshView.bind(missedChat));
+                if (imvu.call('shouldSeeGetMatched') || IMVU.IS_FIREFOX) {
+                    // Get Matched Notifications
+                    var getMatchedDataSource;
+                    if (IMVU.IS_FIREFOX) {
+                        getMatchedDataSource = IMVU.GetMatchedDataSource(
+                            {
+                                "data": {"items": [
+                                   "/get_matched/get_matched-41/matches/get_matched-42",
+                                   "/get_matched/get_matched-41/matches/get_matched-43",
+                                   "/get_matched/get_matched-41/matches/get_matched-44",
+                                   "/get_matched/get_matched-41/matches/get_matched-45",
+                                ]},
+                                "status": "success",
+                                "id": "/get_matched/get_matched-41/matches",
+                                "denormalized": {
+                                    "/get_matched/get_matched-41/matches/get_matched-42": {
+                                        "data": {
+                                            "customers_id": "41",
+                                            "matched_customers_id": "42",
+                                            "status": "1",
+                                            "match_date": "2014-12-19 16:43:29",
+                                            "last_modified": "2014-12-19 16:43:29"
+                                        },
+                                        "relations": {
+                                            "ref": "/get_matched/get_matched-42"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-41/matches/get_matched-43": {
+                                        "data": {
+                                            "customers_id": "41",
+                                            "matched_customers_id": "43",
+                                            "status": "0",
+                                            "match_date": "2015-01-19 16:43:29",
+                                            "last_modified": "2014-12-19 16:43:29"
+                                        },
+                                        "relations": {
+                                            "ref": "/get_matched/get_matched-43"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-41/matches/get_matched-44": {
+                                        "data": {
+                                            "customers_id": "41",
+                                            "matched_customers_id": "44",
+                                            "status": "1",
+                                            "match_date": "2015-01-19 16:44:29",
+                                            "last_modified": "2014-12-19 16:44:29"
+                                        },
+                                        "relations": {
+                                            "ref": "/get_matched/get_matched-44"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-41/matches/get_matched-45": {
+                                        "data": {
+                                            "customers_id": "41",
+                                            "matched_customers_id": "45",
+                                            "status": "0",
+                                            "match_date": "2015-01-19 16:45:29",
+                                            "last_modified": "2014-12-19 16:45:29"
+                                        },
+                                        "relations": {
+                                            "ref": "/get_matched/get_matched-45"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-42": {
+                                        "data": {
+                                            "avatarname": "Moeko",
+                                            "gender": "f",
+                                        },
+                                        "relations": {
+                                            "user": "/user/user-42",
+                                            "matches": "/get_matched/get_matched-42/matches"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-43": {
+                                        "data": {
+                                            "avatarname": "Rosco",
+                                            "gender": "f",
+                                        },
+                                        "relations": {
+                                            "user": "/user/user-43",
+                                            "matches": "/get_matched/get_matched-43/matches"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-44": {
+                                        "data": {
+                                            "avatarname": "Noah",
+                                            "gender": "f",
+                                        },
+                                        "relations": {
+                                            "user": "/user/user-44",
+                                            "matches": "/get_matched/get_matched-44/matches"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/get_matched/get_matched-45": {
+                                        "data": {
+                                            "avatarname": "Pirolyne",
+                                            "gender": "f",
+                                        },
+                                        "relations": {
+                                            "user": "/user/user-45",
+                                            "matches": "/get_matched/get_matched-45/matches"
+                                        },
+                                        "updates": null
+                                    },
+                                    "/user/user-42": {
+                                        "data": {
+                                            "thumbnail_url": "http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg",
+                                            "online": true,
+                                            "is_vip": true,
+                                            "is_ap": true
+                                        },
+                                    },
+                                    "/user/user-43": {
+                                        "data": {
+                                            "thumbnail_url": "http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg",
+                                            "online": false,
+                                            "is_vip": false,
+                                            "is_ap": false
+                                        },
+                                    },
+                                    "/user/user-44": {
+                                        "data": {
+                                            "thumbnail_url": "http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg",
+                                            "online": true,
+                                            "is_vip": false,
+                                            "is_ap": true
+                                        },
+                                    },
+                                    "/user/user-45": {
+                                        "data": {
+                                            "thumbnail_url": "http://userimages.imvu.com/catalog/includes/modules/phpbb2/images/avatars/349244_76727636147e027add9408.jpg",
+                                            "online": false,
+                                            "is_vip": true,
+                                            "is_ap": false
+                                        },
+                                    }
+                                }
+                            },
+                            {},
+                            IMVU.Network,
+                            imvu
+                        );
+                    } else {
+                        var getMatchedMatchesUri = imvu.call('getMatchedMatchesUri');                    
+                        getMatchedDataSource = IMVU.GetMatchedDataSource(
+                            getMatchedMatchesUri,
+                            {},
+                            IMVU.Network,
+                            imvu
+                        );
+                    }
+                    var getMatched = new GetMatchedList(
+                        'get-matched-pane',
+                        {
+                            dataSource: getMatchedDataSource,
+                            paginator: new IMVU.YUIPaginator(['get-matched-paginator'], getMatchedDataSource, {totalRecords: 50}),
+                            tabBar: inboxTabBar,
+                            imvu: imvu,
+                            net: IMVU.Network
+                        }
+                    );
+                    inboxTabBar.addTab('get-matched', _T("matches"), 'get-matched-pane', getMatched.refreshView.bind(getMatched));
+                } else {
+                    $('#get-matched-pane').hide();
+                }
+
+                friendsList.refreshView(); //updates friend request count in tab
+                if (!inboxTabBar.activeTabId){
+                    inboxTabBar.setActiveTab('messages');
+                }
+
+                function setActiveTab(id) {
+                    if (id in inboxTabBar.panes) {
+                        inboxTabBar.setActiveTab(id);
+                    }
+                }
+            }
+        </script>
+    </body></html>

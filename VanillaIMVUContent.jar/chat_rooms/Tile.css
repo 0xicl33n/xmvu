@@ -1,0 +1,257 @@
+.tile {
+    position: relative;
+    display: inline-block;
+    height: 281px;
+    width:332px;
+    background-color: #7B7B7B;
+    color: #e2e2e2;
+    margin: 6px;
+    float: left;
+}
+
+.tile.welcome-room-moderator { 
+    background-color: #7B7B7B;
+}
+.tile.chat-room .border {
+    display: none;
+}
+
+.tile.loading { 
+    width: 97%;
+    height:75px;
+    -moz-box-sizing:border-box;
+}
+    .tile .loading { 
+        text-align: center;
+        line-height:70px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .tile .loading img { 
+        vertical-align: middle;
+        padding-right: 10px;
+    }
+.tile.show-ap-upsell {
+    width: 678px;
+    background-image: url('img/ap_upsell_hero_bg.jpg');
+    padding: 0px;
+    margin: 0px 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px; 
+}
+    .tile.show-ap-upsell .border {
+        display: none;
+    }
+    .tile .ap-upsell {
+        padding: 0 25px 0 30px;
+        width: 333px;
+        -moz-box-sizing:border-box;
+        position: absolute;
+        margin-top: 36px;
+    }
+    .tile .ap-upsell .upsell-head {
+        font-size: 24px;
+        font-weight: bold;
+        color: #c0003f;
+        text-shadow: 0px 1px 5px #000000;
+    }
+
+    .tile .ap-upsell .upsell-description {
+        font-size: 14px;
+        padding: 18px 0 ;
+
+    }
+    .tile .ap-upsell button {
+        color: black;
+        margin-top: 10px;
+    }
+
+.tile .border {
+    margin: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px dashed #d1d1d1;
+}
+
+.tile button.moderator-needed,
+.tile button.create-room {
+    position:absolute;
+    margin: -50%;
+    top: 100%;
+    left: 75%;
+    color: black;
+}
+    .tile button.moderator-needed { 
+        left: 68%;
+    }
+    .tile button.create-room img { 
+        margin: -5px 3px -5px -2px;
+    }
+    .tile button.moderator-needed img {
+        margin: -5px -8px -3px 2px;
+    }
+
+.tile .welcome-room-moderator .title { 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background-color: rgba(0,0,0,.7);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tile .available-text {
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    margin: -50%;
+    top: 100%;
+    left: 75%;
+    text-align: center;
+}
+
+.tile.ad{
+    background: none;
+}
+    .tile.ad .ad-tile {
+        position: absolute;
+        height: 281px;
+        background-color: rgba(0,0,0,.5);
+        overflow: hidden;
+        -moz-box-size: border-box;
+        padding: 0px 16px;
+    }
+
+    .tile.ad .ad-header {
+        font-size : 14px;
+        color: #cacaca;
+    }
+        .tile.ad .ad-header .vip-upsell {
+            /*float: right;*/
+            position: absolute;
+            right: 15px;
+            top: 0px;
+        }
+            .tile.ad .ad-header .vip-upsell .upsell-head {
+                display: inline-block;
+            }
+            .tile.ad .ad-header .vip-upsell .upsell-link {
+                display: inline-block;
+                color: #4499fe;
+            }
+.tile.show-no-results div.wrapper {
+    display:table;
+    height:100%;
+}
+    .tile.show-no-results div.no-results {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 30px;
+        display:table-cell;
+        vertical-align: middle;
+    }
+    .tile.show-no-results div.no-results button {
+        margin-top: 60px;
+    }
+
+.tile .vip-room-upsell,
+.tile .our-room-upsell,
+.tile .shared-room-upsell,
+.tile .chat-room-slots-upsell {
+    display: none;
+    padding-top: 60px;
+    text-align: center;
+}
+    .tile .vip-room-upsell div,
+    .tile .our-room-upsell .buy-our-room,
+    .tile .our-room-upsell div,
+    .tile .shared-room-upsell .buy-shared-room,
+    .tile .shared-room-upsell div,
+    .tile .chat-room-slots-upsell .buy-chat-room-slots,
+    .tile .chat-room-slots-upsell div {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .tile .our-room-upsell img {
+        vertical-align: bottom;
+    }
+    .tile .shared-room-upsell img,
+    .tile .chat-room-slots-upsell img {
+        vertical-align: top;
+    }
+    .tile .our-room-upsell .buy-our-room,
+    .tile .shared-room-upsell .buy-shared-room,
+    .tile .chat-room-slots-upsell .buy-chat-room-slots {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+    }
+    .tile .our-room-upsell .buy-our-room img,
+    .tile .shared-room-upsell .buy-shared-room img,
+    .tile .chat-room-slots-upsell .buy-chat-room-slots img {
+        vertical-align: top;
+        margin-top: -3px;
+    }
+    .tile .our-room-upsell .buy-our-room span,
+    .tile .shared-room-upsell .buy-shared-room span,
+    .tile .chat-room-slots-upsell .buy-chat-room-slots span {
+        vertical-align: top;
+    }
+.tile.show-our-room-upsell .our-room-upsell,
+.tile.show-shared-room-upsell .shared-room-upsell,
+.tile.show-chat-room-slots-upsell .chat-room-slots-upsell {
+    display: block;
+}
+
+.tile.show-vip-upsell .vip-room-upsell {
+    display: block;
+}
+    .tile .vip-room-upsell .buy-vip {
+        display: block;
+        margin: 10px auto 5px auto;
+        vertical-align: top;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        height: auto;
+    }
+        .tile .vip-room-upsell>img {
+            margin-right: -18px;
+        }
+    .tile .vip-room-upsell img {
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    /* Chat room rollout for VIP upsell text */
+    .tile .vip-room-upsell .room-slots-rollout{
+        display: none;
+    }
+    .tile.room-slots-rollout-enabled .vip-room-upsell .room-slots-rollout{
+        display: inline-block;
+    }
+    .tile.room-slots-rollout-enabled .vip-room-upsell .room-slots-no-rollout{
+        display: none;
+    }
+
+
+.tile button.create-room { display: none; }
+.tile.create-room button.create-room { display: inline-block; }
+.tile .available-text { display: none; }
+.tile.available .available-text { display: inline-block; }
+.tile .ap-upsell { display: none; }
+.tile.show-ap-upsell .ap-upsell { display: inline-block; }
+.tile .welcome-room-moderator { display: none;}
+.tile.welcome-room-moderator .welcome-room-moderator { display: inline-block;}
+.tile .no-results { display: none;}
+.tile.show-no-results .no-results { display: inline-block;}
+

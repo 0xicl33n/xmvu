@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta charset="UTF-8">
+
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+<title>Tab Bar</title>
+    <link rel="stylesheet" type="text/css" href="../yui/reset-fonts-grids-base-min.css">
+    <link rel="stylesheet" type="text/css" href="../yui/container/assets/container.css">
+    <link rel="stylesheet" type="text/css" href="TabBar.css">
+    <link rel="stylesheet" type="text/css" href="../widgets/hint/HintWidget.css">
+
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../js/FakeImvu.js"></script>
+    <script src="../js/homeScreenTheme.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="../yui/event-mouseenter/event-mouseenter.js"></script>    
+    <script src="../widgets/hint/HintWidget.js"></script>
+</head><body class="yui-skin-sam">
+    <div id="tabBar">
+        <script src="../js/processing.js"></script>
+        <div id="logo"></div>
+        <div id="online">
+            <b><span id="online_now_count" class="notranslate">0</span></b> <script id="inline_translate">_iT("people online now from", "inline_translate")</script> <span id="online_now_country_count" class="notranslate">0</span> <script id="inline_translate">_iT("countries", "inline_translate")</script>
+        </div>
+        <div id="rightside">
+            <div id="avname-holder">
+                <a id="avname"><script id="inline_translate">_iT("Avatar Name", "inline_translate")</script></a>
+            </div>            
+            <img id="avpic">
+            <div id="av_shadow"></div>
+            <div id="credits-button">
+                <div id="credits-button-left"></div>
+                <div id="credits-button-center">
+                    <span id="credits-label" class="visible"><script id="inline_translate">_iT("credits", "inline_translate")</script></span>
+                    <span id="credits-amount" class="notranslate">0</span>
+                </div>
+                <div id="credits-button-right"></div>
+            </div>
+            <div id="credits-button-shadow"></div>
+
+            <div id="control-section">
+                <div id="links">
+                    <span class="link" id="settings-link"><script id="inline_translate">_iT("Settings", "inline_translate")</script></span><span class="notranslate">  |  </span><span class="link" id="help"><script id="inline_translate">_iT("Help", "inline_translate")</script></span><span class="notranslate">  |  </span><span class="link" id="sign-out-link"><script id="inline_translate">_iT("Sign Out", "inline_translate")</script></span>
+                </div>
+
+                <div id="availability"><div id="availability-logo" class="Available"></div>
+                    <div id="availability-text"><script id="inline_translate">_iT("Available", "inline_translate")</script></div>
+                    <select id="availability-dropdown" onchange="IMVU.Client.TabBar.userChangedAvailability();">
+                        <option id="available-option" value="Available" selected="selected"><script id="inline_translate">_iT("Available", "inline_translate")</script></option>
+                        <option id="buddies-option" value="BuddiesOnly"><script id="inline_translate">_iT("Friends Only", "inline_translate")</script></option>
+                        <option id="adults-option" value="AdultsOnly" style="display: none;" disabled="disabled"><script id="inline_translate">_iT("Adults Only", "inline_translate")</script></option>
+                        <option id="teens-option" value="TeensOnly" style="display: none;" disabled="disabled"><script id="inline_translate">_iT("Teens Only", "inline_translate")</script></option>
+                        <option id="away-option" value="Away"><script id="inline_translate">_iT("Away", "inline_translate")</script></option>
+                        <option id="dnd-option" value="DoNotDisturb"><script id="inline_translate">_iT("Do Not Disturb", "inline_translate")</script></option>
+                        <option id="creating-option" value="Creating" class="hidden"><script id="inline_translate">_iT("Creating", "inline_translate")</script></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="button-bubble-template">
+            <div class="button-bubble-msg-1"><script id="inline_translate">_iT("You won", "inline_translate")</script></div>
+            <div class="button-bubble-tail"></div>
+        </div>
+        <div id="tabsholder">            
+            <ul id="tabs">
+                
+            </ul>            
+        </div>   
+        <div id="tab-arrows" class="hidden">
+            <ul id="tab-arrow-list">
+                <li id="arrow-left"></li>
+                <li id="arrow-right"></li>
+            </ul>
+        </div>        
+    </div>    
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/json/json.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="../yui/container/container.js"></script>
+    <script src="../yui/animation/animation.js"></script>
+    <script src="../widgets/CircleDial.js"></script>
+    <script src="TabBar.js"></script>
+
+    <script>
+    if (IMVU.runJS()) {
+        var imvuCall = (typeof imvu != 'undefined' ? imvu.call : new Function());
+        if (IMVU.IS_FIREFOX) {
+            imvuCall = new FakeImvu().imvuCall;
+        }
+
+        IMVU.Client.TabBar = new TabBar({
+            rootElement:Dom.get('tabBar'),
+            imvu: imvu,
+            eventBus: IMVU.Client.EventBus
+        });                               
+        
+        homeScreenTheme = new HomeScreenTheme("TabBar", imvuCall, IMVU.Client.EventBus, new Date());
+        IMVU.log("returning from TabBar/index.html");              
+    }
+
+    </script>
+</body></html>

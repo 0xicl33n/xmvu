@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+<script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/connection/connection.js"></script>
+
+    <!-- without this, if run from dist or installer, no text is shown -->
+    <script src="../js/imvu.js"></script>
+
+    <script src="PulseCounter.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head><body>
+    <div class="pulse-promo">
+        <div id="title"><script id="inline_translate">_iT("Pulse", "inline_translate")</script></div>
+        <div id="message">
+        <script id="inline_translate">_iT("Use Pulse to meet new people who are as funny, flirty, or silly as you - all the time, anytime.", "inline_translate")</script>
+        <div id="updates-made-box">
+            <div id="updates-mode-label"><script id="inline_translate">_iT("Updates made in the last", "inline_translate")</script> <span class="notranslate">24</span> <script id="inline_translate">_iT("hours", "inline_translate")</script>
+            </div>
+            <div id="updates-made">
+                <div id="update-count">
+                    <span id="update-count-5" class="digit"></span>
+                    <span id="update-count-4" class="digit"></span>
+                    <span id="update-count-3" class="digit"></span>
+                    <span class="spacer"></span>
+                    <span id="update-count-2" class="digit"></span>
+                    <span id="update-count-1" class="digit"></span>
+                    <span id="update-count-0" class="digit"></span>
+                </div>
+                <div id="update-spinner-container">
+                    <div id="update-spinner-tint"></div>
+                    <div id="update-spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (IMVU.runJS()) {
+            var network = null;
+            if (IMVU.IS_FIREFOX) {
+                network = {
+                    asyncRequest: function(method, url, callback, postdata) {
+                        callback['success']({responseText:'{"success":1,"count":013579}'});
+                    }
+                };
+            }
+            var counter = new PulseCounter({
+                rootElement: document.getElementById('update-count'),
+                imvu: imvu,
+                network: network
+            });
+            document.addEventListener('DOMContentLoaded', counter.start.bind(counter), true);
+        }
+    </script>
+</div></body></html>

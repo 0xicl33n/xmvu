@@ -1,0 +1,126 @@
+* {
+    -moz-user-select: -moz-none;
+}
+
+body {
+    overflow: hidden;
+}
+
+#report-body, #block-body, #boot-body, #mute-body { 
+    background: #E4E4D8;
+    width: 430px;
+}
+
+#boot-body {
+    margin-top: 15px;
+}
+
+#report-body {
+    background: #E4E4D8 url(../img/safety_bg01.gif) no-repeat top right;
+}
+
+#title { 
+    font-size:17px;
+    letter-spacing:0px;
+}
+
+#close-button { 
+    position:absolute;
+    right:5px;
+    top:2px;
+    cursor:pointer;
+}
+
+#report-body p, #block-body p, #boot-body p, #mute-body p {
+    position:relative;
+    left:17px;
+    width:410px;
+}
+
+#header { 
+    font-weight:bold;
+    font-size:14px;
+    margin-top:0;
+}
+
+#header-info { 
+    color:black;
+}
+
+#rules { 
+    font-size:11px;
+    color:black;
+    margin-bottom:0px;
+}
+.button-area {
+    position:relative;
+    width:430px;
+    height:27px;
+    top:-12px;
+    margin-bottom:0;
+}
+.safety-button { 
+    position:absolute;
+    right:0px;
+    display:-moz-box;
+}
+#report-button-old {
+    position:absolute;
+    right:100px;
+    }
+
+#error-text {  
+    top:330px;
+    left:30px;
+    color:red;
+    font-size:12px;
+}
+
+#title-avatar-name {
+    overflow:hidden;
+    width:270px;
+}
+
+li { 
+    position:relative;
+    font-size:11px;
+    color:black;
+    margin-bottom:5px;
+}
+
+ul {
+    margin-top:10px;
+    padding-left:30px;
+    width:390px;
+}
+
+#further-info { 
+    color:black;
+    position:relative;
+    bottom:5px;
+    font-size:11px;
+    margin-left:20px;
+}
+
+#learn-more-link { 
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+#loading-mask {
+    display: none;
+    z-index: 999;
+    background: black url(../../img/spinner_white.apng) no-repeat center center;
+    opacity: 0.66;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+#loading-mask.visible {
+    display: block;
+}

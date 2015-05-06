@@ -1,0 +1,26 @@
+@import url(../css/new-visd-dialog.css);
+
+body {
+    width: 460px;
+}
+
+#text { 
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+footer {
+    font-size: 12px;
+}
+    footer #box,
+    footer label[for=box] {
+        color: #ccc;
+        display: none;
+    }
+    footer label[for=box].warning {
+        color: #fe6b5d;
+    }
+    footer.with-checkbox #box,
+    footer.with-checkbox label[for=box] {
+        display: inline;
+    }

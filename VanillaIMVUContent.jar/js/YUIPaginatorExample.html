@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../yui/paginator/assets/paginator-core.css">
+    <link rel="stylesheet" type="text/css" href="../yui/paginator/assets/skins/sam/paginator.css">
+    <link rel="stylesheet" type="text/css" href="../css/pagin.css">
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../widgets/button/imvuButton.js"></script>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/datasource/datasource.js"></script>
+    <script src="../yui/element/element-beta.js"></script>
+    <script src="../yui/paginator/paginator.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="YUIPaginator.js"></script>
+</head><body bgcolor="black">
+    <div id="scratch"></div>
+    <script>
+if (IMVU.runJS()) {
+    this.scratch = document.getElementById('scratch');
+    this.scratch.innerHTML = '';
+    this._we_heard = null;
+    this.pagin = new Paginator(this.scratch, 3, 5);
+}
+    </script>
+</body></html>

@@ -1,0 +1,25 @@
+@import url(../../css/new-visd-buttons.css);
+@import url(../css/interstitial.css);
+
+#dialog.shop { background:url(img/d-shop.jpg); }
+#dialog.dressup { background:url(img/d-dressup.jpg); }
+#dialog.chatrooms { background:url(img/d-chatrooms.jpg); }
+#dialog.myroom { background:url(img/d-myroom.jpg); }
+#dialog.ourroom { background:url(img/d-ourroom.jpg); }
+#dialog.chatnow { background:url(img/d-chatnow.jpg); }
+#dialog.credits2 { background:url(img/d-buyCredits.jpg); }
+#dialog.discoverImvu { background:url(img/d-discoverImvu.jpg); }
+#dialog.roomOwnerFilter,#dialog.roomOwnerFilterVIP { background:url(img/d-roomOwnerFilter.jpg); }
+#dialog.quests { background:url(img/quests.png); }
+
+#dialog.shop .shop { display:block; }
+#dialog.dressup .dressup { display:block; }
+#dialog.chatrooms .chatrooms { display:block; }
+#dialog.myroom .myroom { display:block; }
+#dialog.ourroom .ourroom { display:block; }
+#dialog.chatnow .chatnow { display:block; }
+#dialog.credits2 .credits2 { display:block; }
+#dialog.discoverImvu .discoverImvu { display:block; }
+#dialog.roomOwnerFilterVIP .roomOwnerFilterVIP { display:block; }
+#dialog.roomOwnerFilter .roomOwnerFilter { display:block; }
+#dialog.quests .quests { display:block; }

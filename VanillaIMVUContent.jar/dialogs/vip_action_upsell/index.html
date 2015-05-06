@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <script type="text/javascript" src="../../js/imvu.js"></script>
+    <script type="text/javascript" src="../../js/jquery-1.6.js"></script>
+    <script type="text/javascript" src="../../widgets/button/imvuButton.js"></script>
+    <script type="text/javascript" src="VipActionUpsellDialog.js"></script>
+</head><body>
+    <div class="root">
+        <div class="heading"><div class="vip-icon"></div><div class="close-button"></div></div>
+        <div class="dialog-body">
+             <div class="subheading"><script id="inline_translate">_iT("More animations and more fun!", "inline_translate")</script></div>
+             <div class="main-heading"><script id="inline_translate">_iT("A VIP Exclusive", "inline_translate")</script></div>
+             <div class="details"><script id="inline_translate">_iT("Enjoy a more powerful experience with special interaction animations for VIP members only!", "inline_translate")</script></div>
+             <div class="caption one"><script id="inline_translate">_iT("More animations", "inline_translate")</script></div>
+             <div class="caption two"><script id="inline_translate">_iT("More fun!", "inline_translate")</script></div>
+             <div class="caption three"><script id="inline_translate">_iT("More moods", "inline_translate")</script></div>
+             <div class="big-button cta-button"><script id="inline_translate">_iT("Become a VIP!", "inline_translate")</script></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        if (IMVU.runJS()) {
+            setupVipActionUpsellDialog($('.root'), imvu.call);
+        }
+    </script>
+</body></html>

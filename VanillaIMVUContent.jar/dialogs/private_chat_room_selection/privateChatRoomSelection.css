@@ -1,0 +1,162 @@
+@import url(../css/new-visd-dialog.css);
+
+
+* {
+    -moz-user-select: -moz-none;
+}
+
+body {
+    overflow: hidden; /* TODO: should be able to kill this */
+}
+
+#dialog {
+    margin-top: 0;
+}
+
+
+.dialog-header {
+    background: url(images/chat_icon.png) left center no-repeat;
+    margin-bottom: 5px;
+}
+
+.dialog-header .title {
+    color: #ffcc00;
+    padding-left: 50px;    
+}
+    .dialog-header .title span:first-child {
+        font-weight: bold;
+    }
+
+    .dialog-header .title .partner-name{
+        font-style: italic;   
+    }
+
+.products-list {
+    background-color: #000;
+    border: 1px solid grey;
+    padding-left: 7px;
+}
+
+.products-list .room-record-title {
+    overflow: hidden;
+    height: 25px;
+    line-height: 25px;
+    color: #b1abb1;
+}
+
+#close-button {
+    position:absolute;
+    background:url(../../img/panel_x_inner.png);
+    top:1px;
+    right:3px;
+    cursor:pointer;
+    width:30px;
+    height:32px;
+    z-index: 10;
+}
+
+#select_room .room-list-spinner {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: white url(../../img/spinner_black.apng) no-repeat center center;
+    opacity:0.4;
+    z-index: 1000;
+}
+
+.room-list {
+    overflow-y: auto;
+    height: 330px;
+    margin-bottom: 10px;
+}
+
+.room-record {
+    margin: 7px;
+    width: 100px;
+    display: inline-block;
+    border: 3px solid #000;
+}
+
+.room-record.selected {
+    border: 3px solid #0076b0;
+}
+
+#button-bar {
+    padding-right: 0px;
+    float: right;
+}
+
+.imvu-button {
+    display: inline-block;
+}
+
+.selected-room-name-block {
+    display: inline-block;
+    color: #b1abb1;
+    margin-left: 10px;
+    font-size: 12px;
+    width: 140px;
+}
+    .selected-room-name-block .selected-room-name {
+        font-style: italic;
+    }
+    .selected-room-name-block > div {
+        height: 17px;
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+
+.footer-separator  {
+    margin-top: 30px;
+}
+
+.footer {
+    margin-top: 10px;
+}
+.active-selection {
+    display: none;
+    float:left;
+}
+
+.selected-room-image {
+    width: 34px;
+    height: 34px;
+}
+
+.upsell-active {
+    display: none;
+}
+
+.upsell-active-content {
+    margin: 30px 0 10px 0;
+    background: url(images/chatter_icon.png) top left no-repeat;
+    padding-left: 170px;
+}
+.upsell-active-content p {
+    color: #fff;
+    margin: 10px;
+}
+.upsell-active-content p.title {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.ap-warning {
+    display: none;
+    background: #dadada;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin: 5px 0;
+}
+.ap-warning p {
+    background: url(images/error.png) left center no-repeat;
+    font-size: 11px;
+    color: #fc0d1b;
+    margin-left:25px;
+    padding: 0 15px 0 42px;
+    height: 32px;
+    line-height: 15px;
+}

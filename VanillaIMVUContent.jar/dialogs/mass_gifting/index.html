@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html><head>
+
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Send Message</title>
+
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="../../widgets/pillbox/PillBox.css">
+        <link rel="stylesheet" type="text/css" href="../../js/jquery.selectbox/jquery.selectBox.css">
+        <link rel="stylesheet" type="text/css" href="../css/imvu_jquery_dialog.css">
+        <link rel="stylesheet" type="text/css" href="mass_gifting.css">
+        <link rel="stylesheet" href="../../tool/outfits/rcarousel-1.1.3/rcarousel.css">
+
+        <script src="../../js/jquery-1.5.js"></script>
+        <script src="../../js/jquery-ui-1.8.7.custom.min.js"></script>
+        <script src="../../js/underscore.js"></script>
+        <script src="../../js/imvu.js"></script>
+
+        <script src="../../js/jquery.selectbox/jquery.selectBox.js"></script>
+        <script src="../../tool/outfits/rcarousel-1.1.3/jquery.ui.rcarousel.min.js"></script>
+        <script src="../../widgets/pillbox/PillBox.js"></script>
+        <script src="mass_gifting.js"></script>
+    </head><body style="overflow: hidden; margin: 0pt; padding: 0pt;">
+        <div class="im-dialog ui-dialog mass-gifting-dialog">
+            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                <span id="ui-dialog-title-mgifting-dialog" class="ui-dialog-title"><script id="inline_translate">_iT("Send Gift", "inline_translate")</script></span>
+                <a class="ui-dialog-titlebar-close ui-corner-all" href="#" role="button">
+                    <span class="ui-icon ui-icon-closethick"><script id="inline_translate">_iT("close", "inline_translate")</script></span>
+                </a>
+            </div>
+
+            <div id="mgifting-dialog">
+                <div class="submit-failure-container hidden">
+                    <div class="info-line"></div>
+                </div>
+
+                <div class="container" style="">
+                    <p class="loading"></p>
+
+                </div>
+            </div>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <div class="ui-dialog-buttonset">
+                    <button class="mg-main-cancel mg-button-cancel button-css-cancel dialog-button-round button-shadow" type="button" role="button" aria-disabled="false">
+                        <span class="ui-button-text"><script id="inline_translate">_iT("Cancel", "inline_translate")</script> </span>
+                    </button>
+                    <button class="mg-button-send button-css-cta dialog-button-round disabled  button-shadow" type="button" role="button" aria-disabled="false" disabled="disabled">
+                        <span class="ui-button-text"><script id="inline_translate">_iT("Send", "inline_translate")</script></span>
+                    </button>
+                    <button class="mg-button-ok button-css-cta dialog-button-round hidden button-shadow" type="button" role="button" aria-disabled="false">
+                        <span class="ui-button-text"><script id="inline_translate">_iT("Ok", "inline_translate")</script></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="mg-add-message-dialog">
+            <div class="add-message-container">
+                <label for="message_textarea" class="hidden"><script id="inline_translate">_iT("Add a personal message (500 characters limit)", "inline_translate")</script></label>
+                <textarea id="message_textarea" class="mg-message" data-max_count="500"></textarea>
+                <p class="footer-divider"></p>
+            </div>
+        </div>
+
+        <div class="template_div mass-gifting-template">
+            <div class="mg-header ui-helper-clearfix">
+                <img class="prod-image" src="">
+                <div class="prod-info">
+                    <p class="info notranslate">{{ gift_product.name }} (<span class="number credit">{{ gift_product.discount_price }}</span>)</p>
+                    <p class="creator-line"><script id="inline_translate">_iT("Creator:", "inline_translate")</script> <span class="creator-name notranslate">{{ gift_product.creator_name }}</span></p>
+                </div>
+            </div>
+
+            <div id="mg-friends-tabs">
+                <ul>
+                    <li class="friends-selected-tab"><a class="tab-selected" href="#mg-friends-list"><script id="inline_translate">_iT("Selected (", "inline_translate")</script><span class="selected-count"><script id="inline_translate">_iT("0", "inline_translate")</script></span><script id="inline_translate">_iT(")", "inline_translate")</script></a></li>
+                    <li class="friends-tab"><a class="tab-friends" href="#mg-friends-list"><script id="inline_translate">_iT("Friends", "inline_translate")</script></a></li>
+                </ul>
+                <div id="mg-friends-list" class="mg-friends-list">
+                    <div class="search-line ui-helper-clearfix">
+                        <div class="search-line-for-friends-list">
+                            <div class="mg-search-container ui-helper-clearfix">
+                                <div class="left">
+                                    <label for="search_text" class="hidden"><script id="inline_translate">_iT("Search for an avatar", "inline_translate")</script></label>
+                                    <input id="search_text" class="mg-search" maxlength="30" hint="Search for an avatar" type="text">
+                                </div>
+                                <div class="right">
+                                    <a class="mg-search-cancel hidden"></a>
+                                    <a class="mg-search-submit"></a>
+                                </div>
+                            </div>
+                            <div class="select-actions-container">
+                                <input class="select-all" type="checkbox"> <span class="label"><script id="inline_translate">_iT("All", "inline_translate")</script></span>
+                            </div>
+                            <p class="mg-error has-gift-msg"><script id="inline_translate">_iT("None of the selected recipients are eligible to receive the gift", "inline_translate")</script></p>
+                        </div>
+                    </div>
+                    <div class="mg-friends  ui-helper-clearfix">
+                        <div class="not-friend-msg hidden"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="deliver-line">
+                <p class="label-line"><script id="inline_translate">_iT("Deliver:", "inline_translate")</script></p>
+                <div class="select-line">
+                    <select class="deliver-select">
+                        <option value="0"><script id="inline_translate">_iT("Immediately", "inline_translate")</script></option>
+                    </select>
+                </div>
+            </div>
+            <div class="gift-wraps">
+                <a class="show-gift-wraps" data-wrap_id="{{firstWrap}}"><script id="inline_translate">_iT("Gift wrap:", "inline_translate")</script> <span class="optional-text notranslate">{{wrap_optional_text}}</span></a>
+
+                <div class="gift-wraps-container">
+                    <div class="wrap-select-container ui-helper-clearfix">
+                        <p class="wrap-text"></p>
+                        <div class="gift-wrap-preview">
+                            <div class="wrap-prod-image"><img src="%7B%7Bgift_product.image%7D%7D"></div>
+                            <div class="wrap-title-wrap"><p class="wrap-title"></p></div>
+                        </div>
+                        <div class="mg-carousel-container ui-helper-clearfix">
+                            <div class="mg-wraps-carousel "></div>
+                            <a href="#" class="ui-carousel-next"></a>
+                            <a href="#" class="ui-carousel-prev"></a>
+                        </div>
+                    </div>
+                    <p class="footer-divider"></p>
+                </div>
+            </div>
+
+            <div class="add-message">
+                <a class="show-add-message"><script id="inline_translate">_iT("Add message:", "inline_translate")</script> <span class="optional-text notranslate">{{ message_optional_text }}</span></a>
+                <input class="full-message" value="" type="hidden">
+            </div>
+
+            <div class="total-container">
+                <p class="total-gifts">
+                    <label><script id="inline_translate">_iT("Gift:", "inline_translate")</script></label>
+                    <span class="credit notranslate">{{ gift_product.discount_price }}</span>
+                </p>
+                <p class="selected-recipients">
+                    <label><script id="inline_translate">_iT("Selected Recipients:", "inline_translate")</script></label>
+                    <span class="selected-count"><script id="inline_translate">_iT("0", "inline_translate")</script></span>
+                </p>
+                <p class="total-credits">
+                    <label><script id="inline_translate">_iT("Total Credits:", "inline_translate")</script></label>
+                    <span class="credit big-credit-icon"><script id="inline_translate">_iT("0", "inline_translate")</script></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="template_div mg-gift-wrap-template">
+            <a class="wrap" id="mg-wrap-{{id}}" data-wrap_id="{{id}}" data-page="{{page}}"><img src=""></a>
+        </div>
+
+        <div class="template_div mg-friend-template">
+            <a class="friend mg-friend-{{cid}} {{additional_class}}" data-cid="{{cid}}" title="{{ name }}">
+                <img class="friend-img" src="">
+                <span class="info">
+                    <span class="scroll_container"><span class="avname notranslate">{{ shortName }}</span></span>
+                    <span class="ap-icon {{ ap_class }}">
+                </span>
+                <span class="selected-remove"></span>
+            </span></a>
+        </div>
+
+        <div class="template_div mg-not-friend-msg-template">
+            <p class="mg-error-line"><span class="mg-error"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("is not on your friends list", "inline_translate")</script></span></p>
+        </div>
+        <div class="template_div mg-invalid-avatarname-msg-template">
+            <div class="mg-alert-msg-container">
+                <p class="mg-error-line invalid-msg"><span class="alert-msg alert-icon"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("is not a valid user name, please try again", "inline_translate")</script></span></p>
+            </div>
+        </div>
+        <div class="template_div mg-submit-success-template">
+            <div class="submit-success">
+                <p class="info-line"><script id="inline_translate">_iT("Your gift was successfully sent. Thank you for your purchase!", "inline_translate")</script></p>
+                <p class="paid-line"> <script id="inline_translate">_iT("You paid:", "inline_translate")</script> <strong class="credit gold-credit-icon notranslate">{{ total_cost }}</strong></p>
+                <p class="balance-line"> <script id="inline_translate">_iT("Your remaining balance is:", "inline_translate")</script> <strong class="credit gold-credit-icon notranslate">{{ balance }}</strong></p>
+            </div>
+        </div>
+
+        <div class="template_div mg-submit-success-with-errors-template">
+            <div class="submit-success">
+                <p class="info-line"><script id="inline_translate">_iT("Your gift was successfully sent. Thank you for your purchase!", "inline_translate")</script></p>
+                <p class="error-line notranslate">{{ recipient_msg }}</p>
+                <p class="paid-line"> <script id="inline_translate">_iT("You paid:", "inline_translate")</script> <strong class="credit gold-credit-icon notranslate">{{ total_cost }}</strong></p>
+                <p class="balance-line"> <script id="inline_translate">_iT("Your remaining balance is:", "inline_translate")</script> <strong class="credit gold-credit-icon notranslate">{{ balance }}</strong></p>
+            </div>
+        </div>
+
+        <div class="template_div mg-submit-failure-template">
+            <div class="submit-success">
+                <p class="error-line notranslate">{{ error_msg }}</p>
+            </div>
+        </div>
+
+        <div class="mg-template-div mg-nonfriend-section-template">
+            <div class="non-friend-sector" style="display: block;">
+                <h3><script id="inline_translate">_iT("Not on your friends list", "inline_translate")</script></h3>
+                <div class="non-friend-list"></div>
+            </div>
+        </div>
+
+        <div class="mg-template-div mg-nonfriend-not-on-list-template" style="display: none;">
+            <div class="mg-alert-msg-container">
+                <p>
+                    <span class="alert-msg sub-alert"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("is not on your friends list", "inline_translate")</script></span>
+                </p>
+                <p>
+                    <button class="add-as-gift button-css-cancel dialog-button-round button-shadow"><script id="inline_translate">_iT("Select to Gift", "inline_translate")</script></button>
+                </p>
+                <p>
+                    <span class="alert-msg sub-alert alert-msg-small"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("will not be added to your friends list", "inline_translate")</script></span>
+                </p>
+
+            </div>
+        </div>
+        
+        <div class="mg-template-div mg-nonfriend-success-template" style="display: none;">
+            <div class="mg-alert-msg-container success-msg" data-cid="{{ cid }}">
+                <p>
+                    <span><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("has been selected to gift", "inline_translate")</script></span>
+                </p>
+                <p>
+                    <button class="to-friend-list button-css-cancel dialog-button-round button-shadow"><script id="inline_translate">_iT("Return to friends list", "inline_translate")</script></button>
+                </p>
+            </div>
+        </div>
+
+        <div class="mg-template-div mg-nonfriend-invalid-template" style="display: none;">
+            <div class="mg-alert-msg-container" data-cid="{{ cid }}">
+                <p>
+                    <span class="alert-msg"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("is ineligible to receive this gift", "inline_translate")</script></span>
+                </p>
+                <p>
+                    <button class="to-friend-list button-css-cancel dialog-button-round button-shadow"><script id="inline_translate">_iT("Return to friends list", "inline_translate")</script></button>
+                </p>
+            </div>
+        </div>
+
+        <div class="mg-template-div mg-avatarname-loaded-template" style="display: none;">
+            <div class="mg-alert-msg-container avatarname-loaded">
+                <p>
+                    <span class="alert-msg"><span class="notranslate">"{{ name }}"</span> <script id="inline_translate">_iT("is already selected", "inline_translate")</script></span>
+                </p>
+            </div>
+        </div>        
+        
+
+<div class="translation_feedback_block" style="display: none;">
+    <div class="translation_feedback_str_SERVER_ERROR"><script id="inline_translate">_iT("There was an error communicating with the IMVU server.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_GENERAL_ERROR"><script id="inline_translate">_iT("Sorry, there was an error handling your request.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MESSAGING_UNAVAILABLE"><script id="inline_translate">_iT("We are sorry.  Messaging is temporarily unavailable.  Please visit again later.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NEEDS_CLIENT_LOGIN"><script id="inline_translate">_iT("Sorry, to send a message, you need to sign into IMVU 3D Chat at least once.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_UNKNOWN_RECIPIENT"><script id="inline_translate">_iT("The avatar you\'ve selected does not exist.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_UNKNOWN_RECIPIENT_MULTI"><script id="inline_translate">_iT("These following avatars do not exist", "inline_translate")</script> <span class="notranslate">avatar_names</span></div>
+    <div class="translation_feedback_str_RATE_LIMITED"><script id="inline_translate">_iT("You are sending messages too quickly. Slow down and try again later.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NEED_FINGERPRINT"><script id="inline_translate">_iT("Before you can comment in Pulse, you must login to the IMVU 3D Chat App at least once.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NON_FRIENDS"><script id="inline_translate">_iT("You can only message up to one non-friend.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NO_RECIPIENT"><script id="inline_translate">_iT("Please select a recipient.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_CANT_SEND_HIDDEN"><script id="inline_translate">_iT("You can\'t send hidden products that you haven\'t created.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NOT_PERMITTED_TO_BUY"><script id="inline_translate">_iT("You are not permitted to purchase this product", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NOT_PERMITTED_TO_USE"><script id="inline_translate">_iT("Your recipient (cid", "inline_translate")</script> <span class="notranslate">recipient_cid</span><script id="inline_translate">_iT(") is not permitted to use this product (pid", "inline_translate")</script> <span class="notranslate">product_id</span><script id="inline_translate">_iT(")", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NOT_DERIVED"><script id="inline_translate">_iT("The product", "inline_translate")</script> <span class="notranslate">product_id</span> <script id="inline_translate">_iT("is not properly derived from an IMVU base product, and thus cannot be manufactured", "inline_translate")</script></div>
+    <div class="translation_feedback_str_DERIVED_FROM_SELF"><script id="inline_translate">_iT("Product derived from itself cannot be bought", "inline_translate")</script></div>
+    <div class="translation_feedback_str_SOLD_AT_LOSS"><script id="inline_translate">_iT("Product sold at a loss cannot be bought", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NOT_ENOUGH_CREDITS"><script id="inline_translate">_iT("You don\'t have enough credits for this gift. Click", "inline_translate")</script> <a href="http://www.imvu.com/store"><script id="inline_translate">_iT("here", "inline_translate")</script></a> <script id="inline_translate">_iT("to buy credits.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_DELAYED_GIFT"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("will receive your message immediately, but won\'t be able to open this surprise gift until", "inline_translate")</script> <span class="notranslate">date</span></div>
+    <div class="translation_feedback_str_IMMEDIATE_MESSAGE"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("will see this message immediately", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MULTI_DELAYED_GIFT"><script id="inline_translate">_iT("The recipients will receive your message immediately, but won\'t be able to open this surprise gift until", "inline_translate")</script> <span class="notranslate">date</span></div>
+    <div class="translation_feedback_str_MULTI_IMMEDIATE_MESSAGE"><script id="inline_translate">_iT("The recipients will see this message immediately", "inline_translate")</script></div>
+    <div class="translation_feedback_str_PAID_CREDITS"><script id="inline_translate">_iT("Paid", "inline_translate")</script> <span class="notranslate">cost</span> <script id="inline_translate">_iT("credits for gift.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MULTI_USER_NO_HTML"><script id="inline_translate">_iT("Some users have chosen not to receive HTML in messages. Please send a text-only message instead", "inline_translate")</script></div>
+    <div class="translation_feedback_str_SINGLE_USER_NO_HTML"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("has chosen not to receive HTML in messages. Please send a text-only message instead", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MAX_LENGTH_ERROR"><script id="inline_translate">_iT("Max message length is", "inline_translate")</script> <span class="notranslate">max_length</span> <script id="inline_translate">_iT("characters. Your message was", "inline_translate")</script> <span class="notranslate">message_length</span> <script id="inline_translate">_iT("characters.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_BLOCKED_BY"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("has blocked you.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_BUDDY_ONLY"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("only allows messages from his or her buddies", "inline_translate")</script></div>
+    <div class="translation_feedback_str_AP_ONLY"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("only allows messages from people who have an access pass", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NO_MESSAGES"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("does not allow anyone to send him/her messages", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ADULT_ONLY"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("only allows messages from other users over 18 years old", "inline_translate")</script></div>
+    <div class="translation_feedback_str_KID_ONLY"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("only allows messages from other users under 18 years old", "inline_translate")</script></div>
+    <div class="translation_feedback_str_INVALID_PERMISSION_CONTROLS"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("has invalid message permission settings. This should never happen", "inline_translate")</script></div>
+    <div class="translation_feedback_str_INVALID_PERMISSION_STATE"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("has valid permission settings but we are somehow not handling them correctly. This should never happen", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALREADY_HAS_GIFT"><b><span class="notranslate">recipient_name</span></b> <script id="inline_translate">_iT("already has received this gift.", "inline_translate")</script><br><script id="inline_translate">_iT("Please select another gift.", "inline_translate")</script><br><br><br><script id="inline_translate">_iT("Your account has", "inline_translate")</script> <b><script id="inline_translate">_iT("not", "inline_translate")</script></b> <script id="inline_translate">_iT("been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_PRODUCT_NEEDS_AP"><script id="inline_translate">_iT("You can\'t buy this product for", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT(", because he/she doesn\'t have an access pass.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALREADY_OWNS_PRODUCT"><b><span class="notranslate">recipient_name</span></b> <script id="inline_translate">_iT("already owns this product.", "inline_translate")</script><br><script id="inline_translate">_iT("Please select another gift.", "inline_translate")</script><br><br><br><script id="inline_translate">_iT("Your account has", "inline_translate")</script> <b><script id="inline_translate">_iT("not", "inline_translate")</script></b> <script id="inline_translate">_iT("been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_EXPLICIT_ALBUM"><script id="inline_translate">_iT("You can\'t buy this album for", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT(". It has explicit lyrics and", "inline_translate")</script> <span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("doesn\'t have access to explicit music.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_EXPLICIT_ALBUM_PARTLY_OWNED"><script id="inline_translate">_iT("You can\'t buy this album for", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT(".", "inline_translate")</script> <span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("already owns the non-explicit tracks and doesn\'t have access to explicit music.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALBUM_INVALID_COUNTRY"><script id="inline_translate">_iT("The album contains a track that cannot be used in", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT("\'s country.", "inline_translate")</script><br><b><script id="inline_translate">_iT("\"", "inline_translate")</script><span class="notranslate">track_name</span> <script id="inline_translate">_iT("by", "inline_translate")</script> <span class="notranslate">artist_name</span><script id="inline_translate">_iT("\"", "inline_translate")</script></b><br><br><script id="inline_translate">_iT("Please select another gift.", "inline_translate")</script><br><br><br><script id="inline_translate">_iT("Your account has", "inline_translate")</script> <b><script id="inline_translate">_iT("not", "inline_translate")</script></b> <script id="inline_translate">_iT("been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_EXPLICIT_TRACK"><script id="inline_translate">_iT("You can\'t buy this track for", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT(".  It has explicit lyrics and", "inline_translate")</script> <span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("doesn\'t have access to explicit music.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALREADY_OWNS_TRACK"><b><span class="notranslate">recipient_name</span></b> <script id="inline_translate">_iT("already owns this music track.", "inline_translate")</script><br><b><script id="inline_translate">_iT("\"", "inline_translate")</script><span class="notranslate">track_name</span> <script id="inline_translate">_iT("by", "inline_translate")</script> <span class="notranslate">artist_name</span><script id="inline_translate">_iT("\"", "inline_translate")</script></b><br><br><script id="inline_translate">_iT("Please select another gift.", "inline_translate")</script><br><br><br><script id="inline_translate">_iT("Your account has", "inline_translate")</script> <b><script id="inline_translate">_iT("not", "inline_translate")</script></b> <script id="inline_translate">_iT("been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALREADY_OWNS_ALBUM"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("already owns this album.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_TRACK_INVALID_COUNTRY"><script id="inline_translate">_iT("The track cannot be used in", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT("\'s country.", "inline_translate")</script><br><b><script id="inline_translate">_iT("\"", "inline_translate")</script><span class="notranslate">track_name</span> <script id="inline_translate">_iT("by", "inline_translate")</script> <span class="notranslate">artist_name</span><script id="inline_translate">_iT("\"", "inline_translate")</script></b><br><br><script id="inline_translate">_iT("Please select another gift.", "inline_translate")</script><br><br><br><script id="inline_translate">_iT("Your account has", "inline_translate")</script> <b><script id="inline_translate">_iT("not", "inline_translate")</script></b> <script id="inline_translate">_iT("been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALBUM_SOME_INVALID"><script id="inline_translate">_iT("Because some tracks are already owned or require an Access Pass, you couldn\'t give all", "inline_translate")</script> <span class="notranslate">track_count</span> <script id="inline_translate">_iT("tracks to", "inline_translate")</script> <span class="notranslate">recipient_name</span><script id="inline_translate">_iT(". You have only been charged for the", "inline_translate")</script> <span class="notranslate">purchased_count</span> <script id="inline_translate">_iT("track(s) you actually sent.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NO_VALID_RECIPIENTS"><script id="inline_translate">_iT("None of the selected recipients were eligible to recieve your gift", "inline_translate")</script></div>
+    <div class="translation_feedback_str_INVALID_GIFTWRAP"><script id="inline_translate">_iT("Invalid giftwrap.", "inline_translate")</script> <span class="notranslate">giftwrap_id</span></div>
+    <div class="translation_feedback_str_AVATAR_IS_ALREADY_FRIEND"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("is already in your friends list, please sleect from above", "inline_translate")</script></div>
+    <div class="translation_feedback_str_AVATAR_DOES_NOT_EXIST"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("does not exist", "inline_translate")</script></div>
+    <div class="translation_feedback_str_PURE_PERSONA_BLOCK"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("is a pure user and cannot receive emails from personas.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ALL_HAVE_GIFT"><script id="inline_translate">_iT("The selected recipients already have the gift", "inline_translate")</script></div>
+    <div class="translation_feedback_str_NO_FRIENDS"><script id="inline_translate">_iT("You have no friends at this time", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ERROR_TITLE"><script id="inline_translate">_iT("There was an error sending your gift", "inline_translate")</script></div>
+    <div class="translation_feedback_str_SUCCESS_TITLE"><script id="inline_translate">_iT("Congratulations!", "inline_translate")</script></div>
+    <div class="translation_feedback_str_PARTIAL_SUCCESS_MULTIPLE"><span class="notranslate">num_recipients</span> <script id="inline_translate">_iT("recipients were ineligible for your gift. You have not been charged for these recipients.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_PARTIAL_SUCCESS_SINGLE"><span class="notranslate">recipient_name</span> <script id="inline_translate">_iT("was ineligible for your gift. You have not been charged for that gift.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MUSIC_GENERAL_ERROR"><script id="inline_translate">_iT("There was a problem with your purchase. You have not been charged.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MUSIC_NOT_ENOUGH_CREDITS"><script id="inline_translate">_iT("Not enough credits", "inline_translate")</script></div>
+    <div class="translation_feedback_str_MUSIC_MIXED_TYPE_ERROR"><script id="inline_translate">_iT("You cannot buy both streaming and download at the same time.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_ATTACKED_BLOCK"><script id="inline_translate">_iT("We have put a temporary hold on your account activity for your own safety. Please make sure you have changed your password to a secure one. If you need immediate assistance, please contact our Customer Support team by filing a help ticket.", "inline_translate")</script></div>
+    <div class="translation_feedback_str_IN_PROCESS"><script id="inline_translate">_iT("Looks like you have already bought this product. You will have it in your inventory soon.", "inline_translate")</script></div>
+</div>
+
+        <script>
+            if (IMVU.runJS()) {
+                if(IMVU.IS_FIREFOX) {
+                    $(function(){
+                        fakeImvu = {'call': function(arg1, arg2, arg3) {
+                            if (arg1 == 'shouldSeeFeature') {
+                                return true;
+                            } else if (arg1 == 'endDialog') {
+                                return {};
+                            } else if (arg1 == 'cancelDialog') {
+                                return {};
+                            } else {
+                                console.log('imvu call: ' + arg1 + ", " + arg2);
+                            }
+                        }};
+
+                        $('.ui-dialog-titlebar-close').bind('click', function() {
+                            imvu.call('endDialog', {});
+                        });
+                        var args = {
+                            'imvu': fakeImvu,
+                            'network': IMVU.Network,
+                            'extra_args': {
+                                'gift': {
+                                    'id': 80
+                                }
+                            }
+                        };
+                        createMassGiftingSystem(args);
+                        IMVU.massGiftingSystem.getMessageInfoRequest();
+                    });
+                } else {
+                    $(function(){
+                        $('.ui-dialog-titlebar-close').bind('click', function() {
+                            imvu.call('endDialog', {});
+                        });
+                        var args = imvu.call('getDialogInfo');
+                        args.network = IMVU.Network;
+                        args.imvu = imvu;
+                        createMassGiftingSystem(args);
+                        IMVU.massGiftingSystem.getMessageInfoRequest();
+                    });
+                }
+            }
+        </script>
+    </body></html>

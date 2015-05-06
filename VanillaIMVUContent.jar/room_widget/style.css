@@ -1,0 +1,309 @@
+/* This should mirror /css/font.css. It's manually added here because using import crashes the client on room load */
+html, body {
+    font-family: Arial, "HelveticaNeue", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;
+}
+
+* {
+    -moz-user-select: -moz-none;
+    -moz-user-focus:ignore;
+}
+
+body {
+    background:transparent;
+    overflow:hidden;
+    margin:10px;
+    padding:0;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+#roomWidget {
+    float:left;
+    position:relative;
+    font: 15px;
+    color:#f1e9bb;
+}
+
+#labelSausage, #loadingSausage {
+    float:left;
+    background:rgba(0,0,0,0.5);
+    -moz-border-radius:12.5px;
+    height:23px;
+}
+#loadingSausage {
+    font: bold 13px;
+    margin-left: 4px;
+}
+#loadingText {
+    position:relative;
+    top:-2px;
+    padding-right:13px;
+}
+
+.nominateRoom {
+    float:left;
+    position:relative;
+    top:1px;
+    cursor:default;
+    -moz-border-radius:10.5px;
+    padding-left:11px;
+    margin-right:2px;
+    cursor: pointer;
+}
+
+#thename, #toggleHolder {
+    text-shadow:
+        -1px -1px 1px rgba(0,0,0,0.8),
+        -1px 1px 1px rgba(0,0,0,0.8),
+        1px -1px 1px rgba(0,0,0,0.8),
+        1px 1px 1px rgba(0,0,0,0.8);
+}
+
+#tabsHolder {
+    float:left;
+    height:23px;
+}
+
+#roomWidgetRest {
+    float:left;
+    position:relative;
+}
+
+#infoicon {
+    position:relative;
+    margin-left:4px;
+    display:none;
+}
+
+#toggleHolder {
+    display:inline-block;
+    float:left;
+    height:23px;
+    padding-top:0px;
+    padding-left:9px;
+    padding-right:6px;
+    cursor:pointer;
+}
+
+#toggleHolder:hover {
+    text-shadow:
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white,
+        0px 0px 12px white
+        ;
+}
+
+#nameHolder {
+    float:left;
+    position:relative;
+    top:1px;
+    cursor:default;
+    -moz-border-radius:10.5px;
+    padding-left:11px;
+    height:21px;
+    margin-right:2px;
+}
+
+.hasRoomInstanceId #addFavorite {
+    cursor:pointer;
+    background:rgba(0,0,0,0.5)
+}
+.hasRoomInstanceId #addFavorite:hover {
+    color:#FFC700;
+}
+
+.removeFeaturedRoom {
+    display:none;
+}
+
+#addFavorite {
+    display:none;
+    float:left;
+    position:relative;
+    top:1px;
+    cursor:default;
+    -moz-border-radius:10.5px;
+    padding-left:11px;
+    height:21px;
+    margin-right:2px;
+}
+
+#add {
+    display:inline-block;
+    height:21px;
+    overflow:hidden;
+    position:relative;
+    white-space:nowrap;
+    top:1px;
+    max-width:300px;
+}
+
+#addHolder {
+    position:relative;
+    font-size:11px;
+    display:inline-block;
+    min-width:10.5px;
+    height:21px;
+    top:-5px;
+    padding-right:8px;
+}
+#addRoomIcon {
+    position:relative;
+    left:-2px;
+}
+#nominateRoomIcon,
+#addFavIcon{
+    display:inline-block;
+    width: 21px;
+    height: 11px;
+    margin-left:-2px;
+    background: url(img/icon_add_room.png) no-repeat;
+    background-position:center; 
+}
+
+#nominateRoomIcon.fav,
+#addFavIcon.fav{
+    background: url(img/icon_remove_room.png) no-repeat;
+}
+
+#circleDialHolder {
+    display:inline-block;
+    min-width:10.5px;
+    height:21px;
+    padding-left:1px;
+    margin-right:4px;
+}
+#thename {
+    display:inline-block;
+    height:21px;
+    overflow:hidden;
+    position:relative;
+    white-space:nowrap;
+    top:1px;
+    max-width:300px;
+}
+#infoHolder {
+    display:inline-block;
+    min-width:10.5px;
+    height:21px;
+    padding-right:1px;
+}
+
+.hasRoomInstanceId #nameHolder {
+    cursor:pointer;
+    background:rgba(0,0,0,0.5);
+}
+.hasRoomInstanceId #nameHolder:hover {
+    color:white;
+}
+.hasRoomInstanceId #nameHolder:hover #infoicon {
+    display:inline;
+}
+
+#toggle {
+    font-size:12px;
+    position:relative;
+    left:-2px;
+}
+.open #toggle {
+    left:-1px;
+}
+
+.tab {
+    float:left;
+    width:21px;
+    height:21px;
+    background: rgba(0,0,0,0.5);
+    -moz-border-radius:10.5px;
+    margin-top:1px;
+    margin-right:2px;
+    cursor:pointer;
+}
+.tab.disabled {
+    cursor:default;
+}
+.tab.disabled .tabImage {
+    opacity:0.4;
+}
+
+.tabImage {
+    float:left;
+    width:21px;
+    height:21px;
+    position:relative;
+    top:-1px;
+    left:1px;
+}
+
+.tab.active {
+    height:25px;
+    background:url(img/active_tab.png);
+    -moz-border-radius:0;
+    margin-top:0;
+}
+.tab.active .tabImage {
+    top:1px;
+}
+.tab.active .tabImage:hover {
+    top:1px;/*2px;*/
+}
+
+#activePanelHolder {
+    clear:both;
+    margin-right:14px;
+}
+.tabPanel {
+    color:black;
+    font: 11px;
+    cursor: default;
+}
+.hd {
+    height:21px;
+    background:#b2a873 url(room_widget_panel_hd.png) repeat-x;
+}
+.panelName {
+    font-weight: bold;
+    font-size: 12px;
+    position:relative;
+    line-height: 1.5em;
+    left:11px;
+}
+.rightText {
+    float:right;
+    margin-right:8px;
+    margin-top:4px;
+}
+
+#decoratePanel { /* width will be set in js */ }
+
+.bd {
+    background:rgba(0,0,0,0.7);
+    border-top:2px solid rgba(0,0,0,0.3);
+    min-height:20px;
+    -moz-border-radius:0 0 12.5px 12.5px;
+    color:white;
+    padding:10px;
+    font-weight: 500;
+}
+
+svg.circleDial {
+    position:relative;
+    top:2px;
+    margin-left:1px;
+    width:19px;
+    height:19px;
+}
+svg {
+    stroke: #f1e9bb;
+    fill: #f1e9bb;
+}
+svg circle.backdrop {
+    fill:rgba(0,0,0,0.4);
+}

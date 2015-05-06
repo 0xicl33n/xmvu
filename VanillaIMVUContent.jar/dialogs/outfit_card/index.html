@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/jquery.easing.1.3.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Outfit Card</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/hint/HintWidget.css">
+    <link rel="stylesheet" type="text/css" href="OutfitCard.css">
+
+    <script src="../../js/imvu.js"></script>
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/animation/animation.js"></script>
+    <script src="../../yui/connection/connection.js"></script>
+    <script src="../../yui/json/json.js"></script>
+    <script src="../../yui/container/container.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="../../widgets/hint/HintWidget.js"></script>
+    <script src="../../widgets/arrow/Arrow.js"></script>
+    <script src="../../widgets/dropdown/DropDown.js"></script>
+    <script src="../../js/card.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="../../js/outfits.js"></script>
+    <script src="OutfitCard.js"></script>
+</head><body>
+<div class="card">
+<div id="dialog" class="titlebar">
+    <div id="close_button_shadow"><div class="v"></div><div class="h"></div></div>
+    <div id="close_button"><div class="v"></div><div class="h"></div></div>
+    <div id="bd">
+        <div id="content_info" class="content selected">
+            <div id="sale-spinner"></div>
+            <div class="hd"><script id="inline_translate">_iT("Outfit information", "inline_translate")</script></div>
+            <div class="bd slide-this">
+                <div id="we_are_sorry_container" style="display: none;">
+                    
+                    <img class="alerticon_ap" src="../../img/icon_24_warning.png">
+                    <div class="we_are_sorry_message">
+                        <p><b><script id="inline_translate">_iT("We are sorry", "inline_translate")</script></b></p>
+                        <p><script id="inline_translate">_iT("Product(s) saved in this outfit were incorrectly rated and were re-rated by\n                        IMVU customer service. Click the", "inline_translate")</script> <b><script id="inline_translate">_iT("save button", "inline_translate")</script></b> <script id="inline_translate">_iT("to re-enable this outfit.", "inline_translate")</script></p>
+                        <p class="rerated_categories_messaging">
+                            <script id="inline_translate">_iT("Products will be removed from the following categories:", "inline_translate")</script>
+                            </p><ul class="category_list_1"></ul>
+                        
+                        <p><script id="inline_translate">_iT("For access to", "inline_translate")</script> <b><span class="notranslate">18+</span></b> <script id="inline_translate">_iT("rated products get the IMVU Access pass.", "inline_translate")</script>
+                        <u id="ap-link"><script id="inline_translate">_iT("Learn more", "inline_translate")</script></u></p>
+                    </div>
+                </div>
+                <div id="restore_outfit_snapshot_container" style="display: none;">
+                    
+                    <img class="alerticon_ap" src="../../img/icon_24_warning.png">
+                    <div class="thanks_for_purchase_message">
+                        <p><b><script id="inline_translate">_iT("Restore outfit snapshot", "inline_translate")</script></b></p>
+                        <p><script id="inline_translate">_iT("Thanks for your purchase of the IMVU Access pass.", "inline_translate")</script></p>
+                        <p><script id="inline_translate">_iT("This re-rated AP outfit is once again available for use.", "inline_translate")</script></p>
+                        <p><script id="inline_translate">_iT("Click the", "inline_translate")</script> <b><script id="inline_translate">_iT("save button", "inline_translate")</script></b> <script id="inline_translate">_iT("to re-enable this outfit and\n                        restore its snapshot.", "inline_translate")</script></p>
+                    </div>
+                </div>
+                <div id="UFI_or_teenAp_outfit_snapshot_container" style="display: none;">
+                    
+                    <img class="alerticon_ap" src="../../img/icon_24_warning.png">
+                    <div class="ufi_message">
+                        <p><b><script id="inline_translate">_iT("We are sorry", "inline_translate")</script></b></p>
+                        <p><script id="inline_translate">_iT("Product(s) saved in this outfit were incorrectly rated and were re-rated by\n                        IMVU customer service. Click the", "inline_translate")</script> <b><script id="inline_translate">_iT("save button", "inline_translate")</script></b> <script id="inline_translate">_iT("to re-enable this outfit.", "inline_translate")</script></p>
+                        <p class="rerated_categories_messaging">
+                            <script id="inline_translate">_iT("Products will be removed from the following categories:", "inline_translate")</script>
+                            </p><ul class="category_list_3"></ul>
+                        
+                    </div>
+                </div>
+                <div id="sale-header">
+                    <div class="sell-display">
+                        <div class="sell"><script id="inline_translate">_iT("Sell", "inline_translate")</script></div>
+                        <div class="cant-be-sold"><script id="inline_translate">_iT("Can not be sold", "inline_translate")</script></div>
+                    </div>
+                    <div class="for-sale-display">
+                        <p class="product"><script id="inline_translate">_iT("Product ID #:", "inline_translate")</script> <a href="#" id="product-id"><script id="inline_translate">_iT("99999999", "inline_translate")</script></a></p>
+                        <p class="for-sale"><img src="img/credits_placeholder.png"> <script id="inline_translate">_iT("For Sale", "inline_translate")</script></p>
+                    </div>
+                </div>
+                <div id="sell-outfit-panels-container">
+                    <div id="sale-panel-header">
+                        <div class="back"><script id="inline_translate">_iT("Back", "inline_translate")</script></div>
+                        <div class="submit-to-shop"><script id="inline_translate">_iT("Submit to Shop", "inline_translate")</script></div>
+                    </div>
+                    <div class="not-a-creator-panel">
+                        <p class="inform"><script id="inline_translate">_iT("You can not sell Outfits yet because you are not a Creator.", "inline_translate")</script></p>
+                        <div class="upsell">
+                            <h2><script id="inline_translate">_iT("THE CREATOR PROGRAM", "inline_translate")</script></h2>
+                            <p class="become"><script id="inline_translate">_iT("Become a Creator! Earn Credits making your own products.", "inline_translate")</script></p>
+                            <p class="learn"><script id="inline_translate">_iT("Learn more about the", "inline_translate")</script> <a class="creator-program" href="/creators/"><script id="inline_translate">_iT("Creator Program &gt;&gt;", "inline_translate")</script></a></p>
+                        </div>
+                    </div>
+                    <div class="not-bundleable-panel">
+                        <div class="error"><script id="inline_translate">_iT("This Outfit can NOT be sold.", "inline_translate")</script> <img class="help-icon" src="img/bundleability_help_red.png"></div>
+                        <p><script id="inline_translate">_iT("The following items are NOT bundleable:", "inline_translate")</script></p>
+                        <ul>
+                            <li class="product template">
+                                <img src="img/sample_product0.png">
+                                <div class="name notranslate">[ProductName]</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="can-be-sold-panel">
+                        <div class="info"><script id="inline_translate">_iT("This Outfit can be sold.", "inline_translate")</script>  <img class="help-icon" src="img/bundleability_help_green.png"></div>
+                        <fieldset>
+                            <legend><script id="inline_translate">_iT("Choose Outfit Gender", "inline_translate")</script> <img class="gender help-icon" src="img/gender_help_icon.png"></legend>
+                            <span class="female-label-and-radio"><label for="gender-female"><script id="inline_translate">_iT("Female", "inline_translate")</script></label> <input name="gender" value="f" id="gender-female" type="radio"></span>
+                            <span class="male-label-and-radio"><label for="gender-male"><script id="inline_translate">_iT("Male", "inline_translate")</script></label> <input name="gender" value="m" id="gender-male" type="radio"></span>
+                        </fieldset>
+                        <div class="profit-row"><script id="inline_translate">_iT("Profit:", "inline_translate")</script> <span class="profit"><script id="inline_translate">_iT("100", "inline_translate")</script></span></div>
+                        <div class="submission-fee-row"><script id="inline_translate">_iT("Submission Fee:", "inline_translate")</script> <span class="submission-fee"><script id="inline_translate">_iT("500", "inline_translate")</script></span></div>
+                    </div>
+                </div>
+                <div id="sale-confirmation-panel">
+                    <div id="sale-confirmation-panel-header">
+                        <div class="back"><script id="inline_translate">_iT("Back", "inline_translate")</script></div>
+                    </div>
+                    <div class="panel">
+                        <h2><script id="inline_translate">_iT("Confirmation", "inline_translate")</script></h2>
+                        <p><script id="inline_translate">_iT("Are you sure you want to submit this Outfit?", "inline_translate")</script></p>
+                        <p class="you-will-be-charged"><script id="inline_translate">_iT("You will be charged 500 cr.", "inline_translate")</script></p>
+                        <p class="irreversible"><script id="inline_translate">_iT("This action can not be reversed.", "inline_translate")</script></p>
+                        <div class="submit-to-shop"><script id="inline_translate">_iT("Submit to Shop", "inline_translate")</script></div>
+                        <div class="do-not-show-again-container">
+                            <input id="do-not-show-again" type="checkbox"> <label for="do-not-show-again"><script id="inline_translate">_iT("Do not show this message again.", "inline_translate")</script></label>
+                        </div>
+                    </div>
+                    <div class="success-panel">
+                        <h2><script id="inline_translate">_iT("Success!", "inline_translate")</script></h2>
+                        <p><script id="inline_translate">_iT("You submitted this Outfit to the Shop.", "inline_translate")</script></p>
+                        <p class="product"><script id="inline_translate">_iT("The product ID for this Outfit Bundle is:", "inline_translate")</script> <a href="#"><script id="inline_translate">_iT("9999999", "inline_translate")</script></a></p><p>
+                    </p></div>
+                </div>
+
+                <div id="snapshot_panel">
+                    <div class="snapshot_container">
+                        <div class="snapshot_container_shadow">
+                        <img id="snapshot" class="snapshot" src="">
+                        </div>
+                    </div>
+                    <div id="btn_changePicture"><img src="img/snapshot_icon.png"> <span><script id="inline_translate">_iT("change picture", "inline_translate")</script></span></div>
+                    <div class="snapshot_image_disabled_container" style="display: none;">
+                        <div class="image_disabled_message">
+                            <p><img src="../../img/icon_24_warning.png"></p>
+                            <p><script id="inline_translate">_iT("Image disabled", "inline_translate")</script></p>
+                        </div>
+                    </div>
+                    <div class="snapshot_spinner_container" style="display: none;">
+                        <div class="snapshot_spinner"></div>
+                    </div>
+                </div>
+                <div id="outfit_info">
+                    <div class="outfit_name_container">
+                        <input id="outfit_name" class="outfit_name" value=""><div id="outfit_name_ap" class="outfit_name_ap"></div>
+                    </div>
+                    <div class="author">
+                        <span class="by"><script id="inline_translate">_iT("By", "inline_translate")</script></span><a id="author_link" href="#"></a>
+                        <img class="vip" src="../../img/icon_vip_small.png">
+                        <img class="ap" src="../../img/icon_ap_small.png">
+                    </div>
+                    <textarea class="description">&gt;&lt;script 
+id="inline_translate"&gt;_iT("&lt;script 
+id=\"inline_translate\"&gt;_iT(\"Type to add an outfit description 
+...\", \"inline_translate\")&lt;/script&gt;", 
+"inline_translate")&lt;/script&gt;</textarea>
+                    <div id="category_selector">
+                        <div class="label"></div>
+                    </div>
+                    <div id="product_list" class="hidden">
+                        <div id="product_template" class="product">
+                            <div class="pulser"></div>
+                            <img class="thumb">
+                            <div class="name"><img class="ap" src="../../img/icon_ap_small.png"><span class="text"><script id="inline_translate">_iT("Ash Blonde Wavy", "inline_translate")</script></span></div>
+                            <div class="category"></div>
+                            <div class="actions">
+                                <a class="remove" href="#"><script id="inline_translate">_iT("Remove", "inline_translate")</script></a>
+                                <a class="undo" href="#"><script id="inline_translate">_iT("Undo", "inline_translate")</script></a>
+                                <a class="puton" href="#"><script id="inline_translate">_iT("Put on", "inline_translate")</script></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product_list_spinner"></div>
+                    <div id="product_list_footer" class="hidden"><span class="total_items"><script id="inline_translate">_iT("?", "inline_translate")</script></span> <script id="inline_translate">_iT("items", "inline_translate")</script></div>
+                </div>
+                
+                <div id="ft">
+                    <div class="delete"><img src="img/delete_icon.png"> <span><script id="inline_translate">_iT("delete outfit", "inline_translate")</script></span></div>
+                    <div class="default">
+                         <div class="set-as-default"><img src="img/default_icon_unset.png"> <span><script id="inline_translate">_iT("set as default", "inline_translate")</script></span></div>
+                         <div class="is-default"><img src="img/default_icon.png"> <span><script id="inline_translate">_iT("default outfit", "inline_translate")</script></span></div>
+                    </div>
+                    <div class="buttons"><div id="btn_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></div><div id="btn_save"><script id="inline_translate">_iT("Save", "inline_translate")</script></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="spinner" style="display: none;">
+</div>
+</div>
+
+<script type="text/javascript">
+    if (IMVU.runJS()) {
+        var info = imvu.call('getDialogInfo');
+        var card = new OutfitCard({
+            rootElement: '#dialog',
+            info: info,
+            imvu: imvu,
+            network: IMVU.Network
+        });
+        card.loadProducts(info.id);
+    }
+</script>
+
+</div></body></html>

@@ -1,0 +1,228 @@
+@import url(../css/new-visd-dialog.css);
+
+body {
+  overflow: hidden;
+  margin: 0;
+  color: #FFF;
+}
+
+.title h1 {
+    padding:2px 0 0 31px;
+    background: url(inviteChat_icon.png) no-repeat scroll 0 0 transparent;
+}
+
+.dialog-content {
+    padding:15px 0;
+    border: 1px solid #000;
+    -moz-border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    display: block;
+    margin-bottom: 15px;
+}
+
+#dialog .title h1 {
+    margin-top: 5px;
+}
+
+.dialog-content > * {
+    padding: 0px 15px;
+}
+
+.invite-data-block {
+    width: 242px;
+    display:inline-block;
+    vertical-align: top;
+    background: url(border.png) repeat-y scroll top left transparent;
+}
+
+.invite-data-block.first {
+    background: none;
+}
+
+.name {
+    display:block;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+    .name .extra {
+        font-weight: normal;
+    }
+
+.image-wrapper {
+    clip: rect(20px, 0px, 220px, 100px);
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    display:inline-block;
+    margin: 0 15px 10px 0;
+    text-align:center;
+}
+
+#location .image-wrapper { 
+    clip: auto;
+    width: 118px;
+    height: 100px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    -moz-background-size: contain;
+    background-image: url('');
+}
+
+.image {
+    height:100px;
+    width: 136px;
+}
+
+#picture-img {
+    height:137px;
+    width:100px;
+}
+
+.text {
+    overflow: hidden;
+    display: inline-block;
+    height: 100px;
+    width: 115px;
+    vertical-align:top;
+}
+
+    .text ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .text li {
+        display: block;
+    }
+
+    .text #age, .text #gender {
+        display: inline;
+    }
+
+        .text #age:after {
+            content:',';
+        }
+
+#tagline {
+    font-style: italic;
+}
+    #tagline:before, #tagline:after {
+        content: '"';
+    }
+
+.footer {
+    clear: both;
+    overflow: hidden;
+}
+
+#location { 
+    width: 260px;
+}
+#location .occupancy {
+    position:absolute;
+    top: 184px;
+    color: #fd0;
+    padding: 0 0 0 16px;
+    background: url(../../img/peep.png) no-repeat scroll left bottom transparent;
+    line-height: 12px;
+}
+
+#dialog #footer {
+    height:inherit;
+}
+
+#dialog .button-container {
+    height:30px;
+}
+
+#decline-container.dialog-content {
+    position: inherit;
+    margin-top: 15px;
+    padding: 0 15px;
+}
+
+#decline-container {
+    display:none;
+    text-align:right;
+    height: 30px;
+    margin-bottom: 15px;
+    cursor: text;
+    position: relative;
+}
+
+    #decline-container #decline-reason-container {
+        cursor: inherit;
+        display: inline-block;
+        width: 100%;
+        display:inherit;
+        margin: 0 0 15px;
+        background: #ccc;
+    }
+
+
+    #decline-reason-container * {
+        vertical-align:middle;
+        height:30px;
+    }
+
+    #decline-reason-container input {
+        display: absolute;
+        top: 0px;
+        font-size: 14px;
+        padding:0 10px;
+    }
+
+    #decline-reason-container label.hasfocus { 
+        opacity: 0.6;
+    }
+
+    #decline-reason-container label.hasreason { 
+        display: none;
+    }
+
+    #decline-reason-container label {
+        position: absolute;
+        padding: 0 12px;
+        color: #333333;
+        height: 30px;
+        line-height:30px;
+        cursor: inherit;
+        z-index: 10;
+    }
+
+        #decline-reason-container.labelover label {
+            display: inline-block;
+            position: absolute;
+            cursor: inherit;
+            z-index: 1;
+            color:black;
+            left:30px;
+            margin-top:3px;
+        }
+
+#decline-btn {
+    cursor: pointer;
+    vertical-align: center;
+    display: inline-block;
+    float:left;
+    padding-left: 25px;
+    background: url(decline_icon.png) no-repeat scroll 0 center transparent;
+}
+
+#decline-reason {
+    width:100%;
+}
+
+#decline-reason-sent {
+    color:green;
+    display:block;
+    margin:0 0 15px;
+    padding: 0 0 0 20px;
+    background: url(green_check.png) no-repeat scroll 0 center transparent;
+    display: inline;
+}
+
+#button-bar2 {
+    display:none;
+    float:right;
+}

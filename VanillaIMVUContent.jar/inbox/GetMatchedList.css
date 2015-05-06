@@ -1,0 +1,29 @@
+#get-matched-pane .inbox-list-view .yui-dt-data tr.unread .yui-dt-liner {
+    font-weight: 700;
+    color: #FFF
+}
+
+#get-matched-pane .yui-dt-col-avatarname .avatarname {
+    font-weight: 400;
+}
+    #get-matched-pane tr.unread .yui-dt-col-avatarname .avatarname {
+        font-weight: 900;
+    }
+
+    #get-matched-pane .yui-dt-data .yui-dt3-col-match_date.yui-dt-col-match_date {
+        text-align: right;
+    }
+
+    #get-matched-pane .yui-dt-data .yui-dt3-col-buttons.yui-dt-col-buttons .add-friend {
+        margin-right: 25px;
+    }
+
+#getMatched .buttons div {
+    text-align: left;
+}
+#getMatched .buttons .add-friend  {
+    width: 90px;
+}
+#getMatched .buttons .invite, #getMatched .buttons .send-message {
+    width: 100px;
+}

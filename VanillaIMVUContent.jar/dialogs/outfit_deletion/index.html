@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Outfit deletion</title>
+    <link rel="stylesheet" type="text/css" href="../../yui/container/assets/container.css">
+    <link rel="stylesheet" type="text/css" href="OutfitDeletionDialog.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+
+    <script src="../../js/imvu.js"></script>
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/connection/connection.js"></script>
+    <script src="../../yui/json/json.js"></script>
+    <script src="../../yui/container/container.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="../../widgets/arrow/Arrow.js"></script>
+    <script src="../../widgets/dropdown/DropDown.js"></script>
+    <script src="../../js/card.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="OutfitDeletionDialog.js"></script>
+</head><body>
+
+<div id="dialog" class="titlebar">
+    <div id="deleting"></div>
+    <div id="bd">
+        <div class="hd"><script id="inline_translate">_iT("Delete this outfit", "inline_translate")</script></div>
+        <div class="bd">
+            <p><script id="inline_translate">_iT("Are you sure you want to delete this outfit?", "inline_translate")</script></p>
+            <div class="buttons">
+                <div id="btn_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></div>
+                <div id="btn_ok"><script id="inline_translate">_iT("OK", "inline_translate")</script></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (IMVU.runJS()) {
+        createOutfitDeletionDialog({
+            rootElement: Dom.get('dialog'),
+            info: imvu.call('getDialogInfo'),
+            imvu: imvu,
+            network:IMVU.Network
+        });
+    }
+</script>
+
+</body></html>

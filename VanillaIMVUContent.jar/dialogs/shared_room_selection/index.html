@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+  <script src="../../js/jquery-1.6.js"></script>
+  <script src="../../js/underscore.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="../css/dialog.css">
+  <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="../../js/imvu.js"></script>
+  <script src="../../js/eventbus.js"></script>
+  <script src="../../widgets/button/imvuButton.js"></script>
+  <script src="SharedRoomSelection.js"></script>
+</head><body>
+
+<div id="dialog">
+  <div class="close close-button"></div>
+    <div class="dialog-header">
+      <p class="title"><script id="inline_translate">_iT("Choose a shared room to join:", "inline_translate")</script></p>
+    </div>
+
+  <div class="room-list"></div>
+
+  <div class="footer">
+    <div class="active-selection">
+      <img class="selected-room-image">
+      <div class="selected-room-name-block">
+        <div><script id="inline_translate">_iT("Selected:", "inline_translate")</script></div>
+        <div class="selected-room-name"></div>
+      </div>
+    </div>
+    <div id="button-bar">
+        <button class="cancel imvu-button level2 white-text dark-gray"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></button>
+        <button class="go-button imvu-button level2"><script id="inline_translate">_iT("Go", "inline_translate")</script></button>
+    </div>
+    <div style="clear: both;"></div>
+
+  </div>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+
+    IMVU.Client.SharedRoomSelection = new SharedRoomSelection({
+        imvu: imvu,
+        eventBus: IMVU.Client.EventBus
+    });
+}
+</script>
+
+</body></html>

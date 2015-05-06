@@ -1,0 +1,60 @@
+.outfit.product.template {
+    display: none;
+}
+.outfit.product {
+    width: 134px;
+    margin: 0 auto 16px;
+    position: relative;
+    height: auto;
+}
+    .outfit.product .bd {
+        border: 1px solid #4d4d4d;
+        height: auto;
+        position: relative;
+        background-color: black;
+    }
+        /* We can restore the 5px top margin if we ever display outfit names.
+           Right now we're hiding them to avoid peer review work.
+           The full widget height will  need to be increased by 5px too. */
+        .outfit.product .name {
+            visibility: hidden;
+            margin-top: 0;
+        }
+        .outfit.product .thumb {
+            overflow: visible;
+            width: 80px;
+            margin: 0 auto;
+            background: #222;
+            position: relative;
+        }
+            .outfit.product .thumb img {
+                width: 80px;
+                height: auto;
+            }
+        .outfit.product .info {
+            position: relative;
+            height: 221px;
+            overflow: hidden;
+        }
+        .outfit.product .price {
+            bottom: 20px;
+            vertical-align: bottom;
+            background-position: 0px 5px;
+            cursor: default;
+        }
+            .outfit.product:hover .price {
+                background-position: 0px 3px;
+            }
+        .outfit.product .creator * {
+            line-height: 10px;
+        }
+        .outfit.product .creator {
+            cursor: default;
+        }
+    .outfit.product .ft {
+        height: 20px;
+    }
+        .outfit.product .buttons .try {
+            display: block;
+        }
+

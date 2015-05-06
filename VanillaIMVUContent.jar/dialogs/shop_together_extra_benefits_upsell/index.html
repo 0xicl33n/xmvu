@@ -1,0 +1,51 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    
+        <link rel="stylesheet" href="../../css/reset.css">
+        <link rel="stylesheet" href="../../css/new-visd-base.css">
+        <link rel="stylesheet" href="../../css/new-visd-buttons.css">
+        <link rel="stylesheet" href="../css/new-visd-dialog.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="../../js/imvu.js"></script>
+        <script src="../../js/jquery-1.6.js"></script>
+        <script src="../../js/underscore.js"></script>
+
+        <script src="ShopTogetherUpsell.js"></script>
+    </head><body>
+        <div id="dialog">        
+            <div id="main-content">
+                <div class="subtitle">
+                    <script id="inline_translate">_iT("Premium Shop Together Experience!", "inline_translate")</script>
+                </div>
+                <div class="benefits-panel">
+                    <ul class="benefits">
+                        <li>
+                            <img src="../../img/icon_checkmark_green.png">
+                            <script id="inline_translate">_iT("Access clothes, rooms, furniture &amp; poses", "inline_translate")</script>
+                        </li>
+                        <li>
+                            <img src="../../img/icon_checkmark_green.png">
+                            <script id="inline_translate">_iT("Invite more people for more fun", "inline_translate")</script>
+                        </li>
+                        <li>
+                            <img src="../../img/icon_checkmark_green.png">
+                            <script id="inline_translate">_iT("Set a room of your choice as the backdrop", "inline_translate")</script>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cta">
+                    <button class="not-now imvu-button interstitial dark-gray ui-event" data-ui-name="NotNow"><script id="inline_translate">_iT("Not Now", "inline_translate")</script></button>
+                    <button class="get-vip imvu-button interstitial ui-event" data-ui-name="GetVIP"><script id="inline_translate">_iT("Join VIP Now", "inline_translate")</script></button>
+                </div>
+            </div>
+        </div>
+    <script>
+    if(IMVU.runJS()) { 
+        createShopTogetherUpsell({ 
+            imvu: imvu,
+            $root: $('#dialog')
+        });
+    }
+    </script>
+    </body></html>

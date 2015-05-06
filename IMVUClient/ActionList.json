@@ -1,0 +1,1864 @@
+{
+    "blocks": {
+        "/tackle": {
+            "pitcherActionUrl": "product://1410/index.xml",
+            "pitcherAction": "/counter_tackle",
+            "catcherActionUrl": "product://1409/index.xml",
+            "catcherAction": "TackleCatcher"
+        },
+        "/bow": {
+            "pitcherActionUrl": "product://1531/index.xml",
+            "pitcherAction": "/counter_bow",
+            "catcherActionUrl": "product://1532/index.xml",
+            "catcherAction": "Counter_BowCatcher"
+        },
+        "/endlessspring": {
+            "pitcherActionUrl": "product://1555/index.xml",
+            "pitcherAction": "/counter_endlessspring",
+            "catcherActionUrl": "product://1556/index.xml",
+            "catcherAction": "Counter_EndlessSpringCatcher"
+        },
+        "/sunsethands": {
+            "pitcherActionUrl": "product://1557/index.xml",
+            "pitcherAction": "/counter_sunsethands",
+            "catcherActionUrl": "product://1558/index.xml",
+            "catcherAction": "Counter_SunsetHandsCatcher"
+        },
+        "/caress": {
+            "pitcherActionUrl": "product://1549/index.xml",
+            "pitcherAction": "/counter_caress",
+            "catcherActionUrl": "product://1550/index.xml",
+            "catcherAction": "CounterCaressCatcher"
+        },
+        "/kissanova": {
+            "pitcherActionUrl": "product://1451/index.xml",
+            "pitcherAction": "/counter_kissanova",
+            "catcherActionUrl": "product://1452/index.xml",
+            "catcherAction": "KissDipCatcher"
+        },
+        "/beckon": {
+            "pitcherActionUrl": "product://1491/index.xml",
+            "pitcherAction": "/counter_beckon",
+            "catcherActionUrl": "product://1492/index.xml",
+            "catcherAction": "Counter_BeckonCatcher"
+        },
+        "/goose": {
+            "pitcherActionUrl": "product://1481/index.xml",
+            "pitcherAction": "/counter_goose",
+            "catcherActionUrl": "product://1482/index.xml",
+            "catcherAction": "CounterGooseButtCatcher"
+        },
+        "/hummingbird": {
+            "pitcherActionUrl": "product://1501/index.xml",
+            "pitcherAction": "/counter_hummingbird",
+            "catcherActionUrl": "product://1502/index.xml",
+            "catcherAction": "CounterWorshipCatcher"
+        },
+        "/deadarm": {
+            "pitcherActionUrl": "product://1417/index.xml",
+            "pitcherAction": "/counter_deadarm",
+            "catcherActionUrl": "product://1418/index.xml",
+            "catcherAction": "DeadArmCatcher"
+        },
+        "/matrixmyfinger": {
+            "pitcherActionUrl": "product://1581/index.xml",
+            "pitcherAction": "/counter_matrixmyfinger",
+            "catcherActionUrl": "product://1582/index.xml",
+            "catcherAction": "Counter_MatrixmyfingerCatcher"
+        },
+        "/topdog": {
+            "pitcherActionUrl": "product://1591/index.xml",
+            "pitcherAction": "/counter_topdog",
+            "catcherActionUrl": "product://1592/index.xml",
+            "catcherAction": "Counter_TopDogCatcher"
+        },
+        "/mackin": {
+            "pitcherActionUrl": "product://1465/index.xml",
+            "pitcherAction": "/counter_mackin",
+            "catcherActionUrl": "product://1466/index.xml",
+            "catcherAction": "CounterKissMakeOutCatcher"
+        },
+        "/romeo": {
+            "pitcherActionUrl": "product://1445/index.xml",
+            "pitcherAction": "/counter_romeo",
+            "catcherActionUrl": "product://1446/index.xml",
+            "catcherAction": "KissGrabFaceCatcher"
+        },
+        "/gangstaz": {
+            "pitcherActionUrl": "product://1613/index.xml",
+            "pitcherAction": "/counter_gangstaz",
+            "catcherActionUrl": "product://1614/index.xml",
+            "catcherAction": "Counter_GangstazCatcher"
+        },
+        "/courtesan": {
+            "pitcherActionUrl": "product://1447/index.xml",
+            "pitcherAction": "/counter_courtesan",
+            "catcherActionUrl": "product://1448/index.xml",
+            "catcherAction": "KissHandCatcher"
+        },
+        "/yankmyfinger": {
+            "pitcherActionUrl": "product://1575/index.xml",
+            "pitcherAction": "/counter_yankmyfinger",
+            "catcherActionUrl": "product://1576/index.xml",
+            "catcherAction": "Counter_YankMyFingerCatcher"
+        },
+        "/bodyslam": {
+            "pitcherActionUrl": "product://1437/index.xml",
+            "pitcherAction": "/counter_bodyslam",
+            "catcherActionUrl": "product://1438/index.xml",
+            "catcherAction": "BodySlamCatcher"
+        },
+        "/mayday": {
+            "pitcherActionUrl": "product://1587/index.xml",
+            "pitcherAction": "/counter_mayday",
+            "catcherActionUrl": "product://1588/index.xml",
+            "catcherAction": "CounterMaydayCatcher"
+        },
+        "/comforthug": {
+            "pitcherActionUrl": "product://1565/index.xml",
+            "pitcherAction": "/counter_comforthug",
+            "catcherActionUrl": "product://1566/index.xml",
+            "catcherAction": "Counter_ComfortHugCatcher"
+        },
+        "/auntiehug": {
+            "pitcherActionUrl": "product://1541/index.xml",
+            "pitcherAction": "/counter_auntiehug",
+            "catcherActionUrl": "product://1542/index.xml",
+            "catcherAction": "Counter_AuntieHugCatcher"
+        },
+        "/rootcanal": {
+            "pitcherActionUrl": "product://1423/index.xml",
+            "pitcherAction": "/counter_rootcanal",
+            "catcherActionUrl": "product://1424/index.xml",
+            "catcherAction": "RootCanalCatcher"
+        },
+        "/euro": {
+            "pitcherActionUrl": "product://1455/index.xml",
+            "pitcherAction": "/counter_euro",
+            "catcherActionUrl": "product://1456/index.xml",
+            "catcherAction": "CounterKissBothCheeksCatcher"
+        },
+        "/slowdance": {
+            "pitcherActionUrl": "product://1545/index.xml",
+            "pitcherAction": "/counter_slowdance",
+            "catcherActionUrl": "product://1546/index.xml",
+            "catcherAction": "Counter_SlowDanceCatcher"
+        },
+        "/wetwillie": {
+            "pitcherActionUrl": "product://1573/index.xml",
+            "pitcherAction": "/counter_wetwillie",
+            "catcherActionUrl": "product://1574/index.xml",
+            "catcherAction": "Counter_WetWillieCatcher"
+        },
+        "/numnumnum": {
+            "pitcherActionUrl": "product://1471/index.xml",
+            "pitcherAction": "/counter_numnumnum",
+            "catcherActionUrl": "product://1472/index.xml",
+            "catcherAction": "Counter_KissNuzzleCleavageCatcher"
+        },
+        "/clifftop": {
+            "pitcherActionUrl": "product://1561/index.xml",
+            "pitcherAction": "/counter_clifftop",
+            "catcherActionUrl": "product://1562/index.xml",
+            "catcherAction": "Counter_ClifftopCatcher"
+        },
+        "/cheeky": {
+            "pitcherActionUrl": "product://1585/index.xml",
+            "pitcherAction": "/counter_cheeky",
+            "catcherActionUrl": "product://1586/index.xml",
+            "catcherAction": "Counter_CheekyCatcher"
+        },
+        "/cradlekiss": {
+            "pitcherActionUrl": "product://1567/index.xml",
+            "pitcherAction": "/counter_cradlekiss",
+            "catcherActionUrl": "product://1568/index.xml",
+            "catcherAction": "CounterCradleKissCatcher"
+        },
+        "/lovehug": {
+            "pitcherActionUrl": "product://1543/index.xml",
+            "pitcherAction": "/counter_lovehug",
+            "catcherActionUrl": "product://1544/index.xml",
+            "catcherAction": "Counter_LoveHugCatcher"
+        },
+        "/buddyyay": {
+            "pitcherActionUrl": "product://1603/index.xml",
+            "pitcherAction": "/counter_buddyyay",
+            "catcherActionUrl": "product://1604/index.xml",
+            "catcherAction": "Counter_BuddyYayCatcher"
+        },
+        "/tickle": {
+            "pitcherActionUrl": "product://1497/index.xml",
+            "pitcherAction": "/counter_tickle",
+            "catcherActionUrl": "product://1498/index.xml",
+            "catcherAction": "Counter_TickleCatcher"
+        },
+        "/kissbutt": {
+            "pitcherActionUrl": "product://1457/index.xml",
+            "pitcherAction": "/counter_kissbutt",
+            "catcherActionUrl": "product://1458/index.xml",
+            "catcherAction": "CounterKissAssCatcher"
+        },
+        "/mush": {
+            "pitcherActionUrl": "product://1589/index.xml",
+            "pitcherAction": "/counter_mush",
+            "catcherActionUrl": "product://1590/index.xml",
+            "catcherAction": "CounterMushCatcher"
+        },
+        "/serenade": {
+            "pitcherActionUrl": "product://1477/index.xml",
+            "pitcherAction": "/counter_serenade",
+            "catcherActionUrl": "product://1478/index.xml",
+            "catcherAction": "CounterSerenadeCatcher"
+        },
+        "/bowroque": {
+            "pitcherActionUrl": "product://1533/index.xml",
+            "pitcherAction": "/counter_bowroque",
+            "catcherActionUrl": "product://1534/index.xml",
+            "catcherAction": "Counter_BowroqueCatcher"
+        },
+        "/roshambo": {
+            "pitcherActionUrl": "product://1579/index.xml",
+            "pitcherAction": "/counter_roshambo",
+            "catcherActionUrl": "product://1580/index.xml",
+            "catcherAction": "Counter_RoShamBoCatcher"
+        },
+        "/curtsey": {
+            "pitcherActionUrl": "product://1523/index.xml",
+            "pitcherAction": "/counter_curtsey",
+            "catcherActionUrl": "product://1524/index.xml",
+            "catcherAction": "Counter_CurtseyCatcher"
+        },
+        "/squeezykiss": {
+            "pitcherActionUrl": "product://1445/index.xml",
+            "pitcherAction": "/counter_squeezykiss",
+            "catcherActionUrl": "product://1446/index.xml",
+            "catcherAction": "CounterKissGrabFaceCatcher"
+        },
+        "/fist2fist": {
+            "pitcherActionUrl": "product://1537/index.xml",
+            "pitcherAction": "/counter_fist2fist",
+            "catcherActionUrl": "product://1538/index.xml",
+            "catcherAction": "Counter_Fist2FistCatcher"
+        },
+        "/bootydance": {
+            "pitcherActionUrl": "product://1507/index.xml",
+            "pitcherAction": "/counter_bootydance",
+            "catcherActionUrl": "product://1508/index.xml",
+            "catcherAction": "CounterBootyDanceCatcher"
+        },
+        "/massage": {
+            "pitcherActionUrl": "product://1449/index.xml",
+            "pitcherAction": "/counter_massage",
+            "catcherActionUrl": "product://1450/index.xml",
+            "catcherAction": "MassageCatcher"
+        },
+        "/sbd": {
+            "pitcherActionUrl": "product://1583/index.xml",
+            "pitcherAction": "/counter_sbd",
+            "catcherActionUrl": "product://1584/index.xml",
+            "catcherAction": "Counter_SBDCatcher"
+        },
+        "/salsa": {
+            "pitcherActionUrl": "product://1511/index.xml",
+            "pitcherAction": "/counter_salsa",
+            "catcherActionUrl": "product://1512/index.xml",
+            "catcherAction": "CounterSalsaCatcher"
+        },
+        "/spies": {
+            "pitcherActionUrl": "product://1611/index.xml",
+            "pitcherAction": "/counter_spies",
+            "catcherActionUrl": "product://1612/index.xml",
+            "catcherAction": "Counter_SpiesCatcher"
+        },
+        "/2ndbase": {
+            "pitcherActionUrl": "product://1593/index.xml",
+            "pitcherAction": "/counter_2ndbase",
+            "catcherActionUrl": "product://1594/index.xml",
+            "catcherAction": "Counter_2ndBaseCatcher"
+        },
+        "/magda": {
+            "pitcherActionUrl": "product://1467/index.xml",
+            "pitcherAction": "/counter_magda",
+            "catcherActionUrl": "product://1468/index.xml",
+            "catcherAction": "CounterKissFeetCatcher"
+        },
+        "/jewels": {
+            "pitcherActionUrl": "product://1577/index.xml",
+            "pitcherAction": "/counter_jewels",
+            "catcherActionUrl": "product://1578/index.xml",
+            "catcherAction": "Counter_JewelsCatcher"
+        },
+        "/nuts": {
+            "pitcherActionUrl": "product://1173/index.xml",
+            "pitcherAction": "/counter_nuts",
+            "catcherActionUrl": "product://1174/index.xml",
+            "catcherAction": "PunchFaceCatcher"
+        },
+        "/legsweep": {
+            "pitcherActionUrl": "product://1425/index.xml",
+            "pitcherAction": "/counter_legsweep",
+            "catcherActionUrl": "product://1426/index.xml",
+            "catcherAction": "LegSweepCatcher"
+        },
+        "/stomp": {
+            "pitcherActionUrl": "product://1419/index.xml",
+            "pitcherAction": "/counter_stomp",
+            "catcherActionUrl": "product://1420/index.xml",
+            "catcherAction": "StompCatcher"
+        },
+        "/neener": {
+            "pitcherActionUrl": "product://1571/index.xml",
+            "pitcherAction": "/counter_neener",
+            "catcherActionUrl": "product://1572/index.xml",
+            "catcherAction": "Counter_NeenerCatcher"
+        },
+        "/piggyback": {
+            "pitcherActionUrl": "product://1605/index.xml",
+            "pitcherAction": "/counter_piggyback",
+            "catcherActionUrl": "product://1606/index.xml",
+            "catcherAction": "Counter_PiggybackCatcher"
+        },
+        "/bearhug": {
+            "pitcherActionUrl": "product://1529/index.xml",
+            "pitcherAction": "/counter_bearhug",
+            "catcherActionUrl": "product://1530/index.xml",
+            "catcherAction": "CounterBearHugCatcher"
+        },
+        "/worship": {
+            "pitcherActionUrl": "product://1483/index.xml",
+            "pitcherAction": "/counter_worship",
+            "catcherActionUrl": "product://1484/index.xml",
+            "catcherAction": "CounterWorshipCatcher"
+        },
+        "/stooge": {
+            "pitcherActionUrl": "product://1433/index.xml",
+            "pitcherAction": "/counter_stooge",
+            "catcherActionUrl": "product://1434/index.xml",
+            "catcherAction": "StoogeCatcher"
+        },
+        "/punch": {
+            "pitcherActionUrl": "product://1407/index.xml",
+            "pitcherAction": "/counter_punch",
+            "catcherActionUrl": "product://1408/index.xml",
+            "catcherAction": "PunchFaceCatcher"
+        },
+        "/suckerpunch": {
+            "pitcherActionUrl": "product://1415/index.xml",
+            "pitcherAction": "/counter_suckerpunch",
+            "catcherActionUrl": "product://1416/index.xml",
+            "catcherAction": "SuckerPunchCatcher"
+        },
+        "/footstomp": {
+            "pitcherActionUrl": "product://1435/index.xml",
+            "pitcherAction": "/counter_footstomp",
+            "catcherActionUrl": "product://1436/index.xml",
+            "catcherAction": "FootStompCatcher"
+        },
+        "/poke": {
+            "pitcherActionUrl": "product://1569/index.xml",
+            "pitcherAction": "/counter_poke",
+            "catcherActionUrl": "product://1570/index.xml",
+            "catcherAction": "CounterPokeCatcher"
+        },
+        "/noogy": {
+            "pitcherActionUrl": "product://1441/index.xml",
+            "pitcherAction": "/counter_noogy",
+            "catcherActionUrl": "product://1442/index.xml",
+            "catcherAction": "NoogyCatcher"
+        },
+        "/neckin": {
+            "pitcherActionUrl": "product://1503/index.xml",
+            "pitcherAction": "/counter_neckin",
+            "catcherActionUrl": "product://1504/index.xml",
+            "catcherAction": "CounteriNeckinCatcher"
+        },
+        "/hottie": {
+            "pitcherActionUrl": "product://1489/index.xml",
+            "pitcherAction": "/counter_hottie",
+            "catcherActionUrl": "product://1490/index.xml",
+            "catcherAction": "CounterHottieCatcher"
+        },
+        "/lambada": {
+            "pitcherActionUrl": "product://1469/index.xml",
+            "pitcherAction": "/counter_lambada",
+            "catcherActionUrl": "product://1470/index.xml",
+            "catcherAction": "CounterKissHookLegCatcher"
+        },
+        "/selfhug": {
+            "pitcherActionUrl": "product://1499/index.xml",
+            "pitcherAction": "/counter_selfhug",
+            "catcherActionUrl": "product://1500/index.xml",
+            "catcherAction": "CounterSelfHugCatcher"
+        },
+        "/french": {
+            "pitcherActionUrl": "product://1459/index.xml",
+            "pitcherAction": "/counter_french",
+            "catcherActionUrl": "product://1460/index.xml",
+            "catcherAction": "CounterKissFrenchCatcher"
+        },
+        "/snakecharmer": {
+            "pitcherActionUrl": "product://1479/index.xml",
+            "pitcherAction": "/counter_snakecharmer",
+            "catcherActionUrl": "product://1480/index.xml",
+            "catcherAction": "Counter_SnakeCharmerCatcher"
+        },
+        "/bunnyears": {
+            "pitcherActionUrl": "product://1519/index.xml",
+            "pitcherAction": "/counter_bunnyears",
+            "catcherActionUrl": "product://1520/index.xml",
+            "catcherAction": "Counter_BunnyEarsCatcher"
+        },
+        "/azimuth": {
+            "pitcherActionUrl": "product://1539/index.xml",
+            "pitcherAction": "/counter_azimuth",
+            "catcherActionUrl": "product://1540/index.xml",
+            "catcherAction": "Counter_AzimuthCatcher"
+        },
+        "/blowkiss": {
+            "pitcherActionUrl": "product://1487/index.xml",
+            "pitcherAction": "/counter_blowkiss",
+            "catcherActionUrl": "product://1488/index.xml",
+            "catcherAction": "CounterBlowKissCatcher"
+        },
+        "/backtoback": {
+            "pitcherActionUrl": "product://1609/index.xml",
+            "pitcherAction": "/counter_backtoback",
+            "catcherActionUrl": "product://1610/index.xml",
+            "catcherAction": "CounterBackToBackCatcher"
+        },
+        "/handsolo": {
+            "pitcherActionUrl": "product://1475/index.xml",
+            "pitcherAction": "/counter_handsolo",
+            "catcherActionUrl": "product://1476/index.xml",
+            "catcherAction": "CounterHoldHandRubCatcher"
+        },
+        "/zipper": {
+            "pitcherActionUrl": "product://1509/index.xml",
+            "pitcherAction": "/counter_zipper",
+            "catcherActionUrl": "product://1510/index.xml",
+            "catcherAction": "Counter_ZipperCatcher"
+        },
+        "/stroke": {
+            "pitcherActionUrl": "product://1473/index.xml",
+            "pitcherAction": "/counter_stroke",
+            "catcherActionUrl": "product://1474/index.xml",
+            "catcherAction": "Counter_GentleBackHandCatcher"
+        },
+        "/yell": {
+            "pitcherActionUrl": "product://1597/index.xml",
+            "pitcherAction": "/counter_yell",
+            "catcherActionUrl": "product://1598/index.xml",
+            "catcherAction": "Counter_YellCatcher"
+        },
+        "/gomez": {
+            "pitcherActionUrl": "product://1453/index.xml",
+            "pitcherAction": "/counter_gomez",
+            "catcherActionUrl": "product://1454/index.xml",
+            "catcherAction": "CounterKissUpArmCatcher"
+        },
+        "/homeygrip": {
+            "pitcherActionUrl": "product://1535/index.xml",
+            "pitcherAction": "/counter_homeygrip",
+            "catcherActionUrl": "product://1536/index.xml",
+            "catcherAction": "Counter_HomeyGripCatcher"
+        },
+        "/pony": {
+            "pitcherActionUrl": "product://1495/index.xml",
+            "pitcherAction": "/counter_pony",
+            "catcherActionUrl": "product://1496/index.xml",
+            "catcherAction": "CounterPonyCatcher"
+        },
+        "/buttbongo": {
+            "pitcherActionUrl": "product://1505/index.xml",
+            "pitcherAction": "/counter_buttbongo",
+            "catcherActionUrl": "product://1506/index.xml",
+            "catcherAction": "CounterButtBongoCatcher"
+        },
+        "/cradle": {
+            "pitcherActionUrl": "product://1547/index.xml",
+            "pitcherAction": "/counter_cradle",
+            "catcherActionUrl": "product://1548/index.xml",
+            "catcherAction": "CounterCradleCatcher"
+        },
+        "/buddyhug": {
+            "pitcherActionUrl": "product://1603/index.xml",
+            "pitcherAction": "/counter_buddyhug",
+            "catcherActionUrl": "product://1604/index.xml",
+            "catcherAction": "Counter_BuddyHugCatcher"
+        },
+        "/beg": {
+            "pitcherActionUrl": "product://1493/index.xml",
+            "pitcherAction": "/counter_beg",
+            "catcherActionUrl": "product://1494/index.xml",
+            "catcherAction": "Counter_BegCatcher"
+        },
+        "/slap": {
+            "pitcherActionUrl": "product://1173/index.xml",
+            "pitcherAction": "/counter_slap",
+            "catcherActionUrl": "product://1174/index.xml",
+            "catcherAction": "PunchFaceCatcher"
+        },
+        "/highfive": {
+            "pitcherActionUrl": "product://1521/index.xml",
+            "pitcherAction": "/counter_highfive",
+            "catcherActionUrl": "product://1522/index.xml",
+            "catcherAction": "Counter_HighFiveCatcher"
+        },
+        "/vampirekiss": {
+            "pitcherActionUrl": "product://1463/index.xml",
+            "pitcherAction": "/counter_vampirekiss",
+            "catcherActionUrl": "product://1464/index.xml",
+            "catcherAction": "CounterVampireKissCatcher"
+        },
+        "/thumbwrestle": {
+            "pitcherActionUrl": "product://1413/index.xml",
+            "pitcherAction": "/counter_thumbwrestle",
+            "catcherActionUrl": "product://1414/index.xml",
+            "catcherAction": "ThumbWrestleCatcher"
+        },
+        "/endlesssummer": {
+            "pitcherActionUrl": "product://1551/index.xml",
+            "pitcherAction": "/counter_endlesssummer",
+            "catcherActionUrl": "product://1552/index.xml",
+            "catcherAction": "Counter_EndlessSummerCatcher"
+        },
+        "/wizardchoke": {
+            "pitcherActionUrl": "product://1431/index.xml",
+            "pitcherAction": "/counter_wizardchoke",
+            "catcherActionUrl": "product://1432/index.xml",
+            "catcherAction": "WizardChokeCatcher"
+        },
+        "/millivanilli": {
+            "pitcherActionUrl": "product://1527/index.xml",
+            "pitcherAction": "/counter_millivanilli",
+            "catcherActionUrl": "product://1528/index.xml",
+            "catcherAction": "CounterMilliVanilliCatcher"
+        },
+        "/shakehands": {
+            "pitcherActionUrl": "product://1513/index.xml",
+            "pitcherAction": "/counter_shakehands",
+            "catcherActionUrl": "product://1514/index.xml",
+            "catcherAction": "Counter_ShakeHandsCatcher"
+        },
+        "/sidekick": {
+            "pitcherActionUrl": "product://1421/index.xml",
+            "pitcherAction": "/counter_sidekick",
+            "catcherActionUrl": "product://1422/index.xml",
+            "catcherAction": "SideKickCatcher"
+        },
+        "/backhand": {
+            "pitcherActionUrl": "product://1427/index.xml",
+            "pitcherAction": "/counter_backhand",
+            "catcherActionUrl": "product://1428/index.xml",
+            "catcherAction": "BackHandCatcher"
+        },
+        "/homeyhug": {
+            "pitcherActionUrl": "product://1525/index.xml",
+            "pitcherAction": "/counter_homeyhug",
+            "catcherActionUrl": "product://1526/index.xml",
+            "catcherAction": "Counter_HomeyHugCatcher"
+        },
+        "/peck": {
+            "pitcherActionUrl": "product://1443/index.xml",
+            "pitcherAction": "/counter_peck",
+            "catcherActionUrl": "product://1444/index.xml",
+            "catcherAction": "PeckCatcher"
+        },
+        "/sexy": {
+            "pitcherActionUrl": "product://1461/index.xml",
+            "pitcherAction": "/counter_sexy",
+            "catcherActionUrl": "product://1462/index.xml",
+            "catcherAction": "CounterSexyCatcher"
+        },
+        "/earshake": {
+            "pitcherActionUrl": "product://1595/index.xml",
+            "pitcherAction": "/counter_earshake",
+            "catcherActionUrl": "product://1596/index.xml",
+            "catcherAction": "Counter_EarShakeCatcher"
+        },
+        "/gotnose": {
+            "pitcherActionUrl": "product://1515/index.xml",
+            "pitcherAction": "/counter_gotnose",
+            "catcherActionUrl": "product://1516/index.xml",
+            "catcherAction": "Counter_GotNoseCatcher"
+        },
+        "/pullmyfinger": {
+            "pitcherActionUrl": "product://1599/index.xml",
+            "pitcherAction": "/counter_pullmyfinger",
+            "catcherActionUrl": "product://1600/index.xml",
+            "catcherAction": "Counter_PullMyFingerCatcher"
+        },
+        "/lunchbox": {
+            "pitcherActionUrl": "product://1411/index.xml",
+            "pitcherAction": "/counter_lunchbox",
+            "catcherActionUrl": "product://1412/index.xml",
+            "catcherAction": "LunchBoxCatcher"
+        },
+        "/puppetthumbs": {
+            "pitcherActionUrl": "product://1607/index.xml",
+            "pitcherAction": "/counter_puppetthumbs",
+            "catcherActionUrl": "product://1608/index.xml",
+            "catcherAction": "CounterPuppetThumbsCatcher"
+        },
+        "/hug": {
+            "pitcherActionUrl": "product://1517/index.xml",
+            "pitcherAction": "/counter_hug",
+            "catcherActionUrl": "product://1518/index.xml",
+            "catcherAction": "Counter_HugCatcher"
+        },
+        "/ispank": {
+            "pitcherActionUrl": "product://1485/index.xml",
+            "pitcherAction": "/counter_ispank",
+            "catcherActionUrl": "product://1486/index.xml",
+            "catcherAction": "CounteriSpankCatcher"
+        },
+        "/EndlessAutumn": {
+            "pitcherActionUrl": "product://1559/index.xml",
+            "pitcherAction": "/counter_EndlessAutumn",
+            "catcherActionUrl": "product://1560/index.xml",
+            "catcherAction": "Counter_EndlessAutumnCatcher"
+        },
+        "/buddy": {
+            "pitcherActionUrl": "product://1601/index.xml",
+            "pitcherAction": "/counter_buddy",
+            "catcherActionUrl": "product://1602/index.xml",
+            "catcherAction": "Counter_BuddyCatcher"
+        },
+        "/dryhug": {
+            "pitcherActionUrl": "product://1553/index.xml",
+            "pitcherAction": "/counter_dryhug",
+            "catcherActionUrl": "product://1554/index.xml",
+            "catcherAction": "Counter_DryHugCatcher"
+        },
+        "/shiatsuhug": {
+            "pitcherActionUrl": "product://1563/index.xml",
+            "pitcherAction": "/counter_shiatsuhug",
+            "catcherActionUrl": "product://1564/index.xml",
+            "catcherAction": "Counter_ShiatsuHugCatcher"
+        }
+    },
+    "soloActions": [
+        {
+            "category": "Yes",
+            "actionList": [
+                {
+                    "oldAction": "/Clap",
+                    "pitcherAction": "*use 2080",
+                    "id":"action.clap",
+                    "name": "Clap"
+                },
+                {
+                    "oldAction": "/nod",
+                    "pitcherAction": "*use 2092",
+                    "id":"action.nod",
+                    "name": "Nod"
+                },
+                {
+                    "oldAction": "/Oooh",
+                    "pitcherAction": "*use 2050",
+                    "id":"action.oooh",
+                    "name": "Oooh"
+                },
+                {
+                    "oldAction": "/Score",
+                    "pitcherAction": "*use 2088",
+                    "id":"action.score",
+                    "name": "Score"
+                },
+                {
+                    "oldAction": "/thumbsup",
+                    "pitcherAction": "*use 2093",
+                    "id":"action.thumbsup",
+                    "name": "ThumbsUp"
+                },
+                {
+                    "oldAction": "/Wink",
+                    "pitcherAction": "*use 2090",
+                    "id":"action.wink",
+                    "name": "Wink"
+                },
+                {
+                    "oldAction": "/Yay",
+                    "pitcherAction": "*use 2064",
+                    "id":"action.yay",
+                    "name": "Yay"
+                }
+            ]
+        },
+        {
+            "category": "Laugh",
+            "actionList": [
+                {
+                    "oldAction": "/Ha",
+                    "pitcherAction": "*use 2045",
+                    "id":"action.ha",
+                    "name": "Ha"
+                },
+                {
+                    "oldAction": "/LOL",
+                    "pitcherAction": "*use 2083",
+                    "id":"action.lol",
+                    "name": "LOL"
+                },
+                {
+                    "oldAction": "/Smile",
+                    "pitcherAction": "*use 2087",
+                    "id":"action.smile",
+                    "name": "Smile"
+                }
+            ]
+        },
+        {
+            "category": "No",
+            "actionList": [
+                {
+                    "oldAction": "/Cry",
+                    "pitcherAction": "*use 2044",
+                    "id":"action.cry",
+                    "name": "Cry"
+                },
+                {
+                    "oldAction": "/Gag",
+                    "pitcherAction": "*use 2079",
+                    "id":"action.gag",
+                    "name": "Gag"
+                },
+                {
+                    "oldAction": "/Loser",
+                    "pitcherAction": "*use 2066",
+                    "id":"action.loser",
+                    "name": "Loser"
+                },
+                {
+                    "oldAction": "/HeadShake",
+                    "pitcherAction": "*use 2091",
+                    "id":"action.nope",
+                    "name": "Nope"
+                },
+                {
+                    "oldAction": "/Puke",
+                    "pitcherAction": "*use 2053",
+                    "id":"action.puke",
+                    "name": "Puke"
+                },
+                {
+                    "oldAction": "/Tantrum",
+                    "pitcherAction": "*use 2110",
+                    "id":"action.tantrum",
+                    "name": "Tantrum",
+                    "requiresVIP": true
+                },
+                {
+                    "oldAction": "/Tongue",
+                    "pitcherAction": "*use 2058",
+                    "id":"action.tongue",
+                    "name": "Tongue"
+                }
+            ]
+        },
+        {
+            "category": "What",
+            "actionList": [
+                {
+                    "oldAction": "/ComeAgain",
+                    "pitcherAction": "*use 2060",
+                    "id":"action.comeagain",
+                    "name": "ComeAgain?"
+                },
+                {
+                    "oldAction": "/Crazy",
+                    "pitcherAction": "*use 2078",
+                    "id":"action.crazy",
+                    "name": "Crazy"
+                },
+                {
+                    "oldAction": "/Hmm",
+                    "pitcherAction": "*use 2097",
+                    "id":"action.hmm",
+                    "name": "Hmm"
+                },
+                {
+                    "oldAction": "/Huh?",
+                    "pitcherAction": "*use 2061",
+                    "id":"action.huh",
+                    "name": "Huh?"
+                },
+                {
+                    "oldAction": "/Shocked",
+                    "pitcherAction": "*use 2067",
+                    "id":"action.shocked",
+                    "name": "Shocked"
+                },
+                {
+                    "oldAction": "/WhatMad",
+                    "pitcherAction": "*use 2063",
+                    "id":"action.wassamatta",
+                    "name": "Wassamatta"
+                },
+                {
+                    "oldAction": "/What",
+                    "pitcherAction": "*use 2062",
+                    "id":"action.what",
+                    "name": "What?"
+                }
+            ]
+        },
+        {
+            "category": "Moves",
+            "actionList": [
+                {
+                    "oldAction": "/AirGuitar",
+                    "pitcherAction": "*use 2073",
+                    "id":"action.airguitar",
+                    "name": "AirGuitar"
+                },
+                {
+                    "oldAction": "/bigyawn",
+                    "pitcherAction": "*use 2082",
+                    "id":"action.bigyawn",
+                    "name": "BigYawn"
+                },
+                {
+                    "oldAction": "/Breakdance",
+                    "pitcherAction": "*use 2071",
+                    "id":"action.breakdance",
+                    "name": "Breakdance"
+                },
+                {
+                    "oldAction": "/Burp",
+                    "pitcherAction": "*use 2076",
+                    "id":"action.burp",
+                    "name": "Burp"
+                },
+                {
+                    "oldAction": "/Candlestick",
+                    "pitcherAction": "*use 2098",
+                    "id":"action.candlestick",
+                    "name": "Candlestick"
+                },
+                {
+                    "oldAction": "/FartArm",
+                    "pitcherAction": "*use 2108",
+                    "id":"action.fartarm",
+                    "name": "FartArm",
+                    "requiresVIP": true
+                },
+                {
+                    "oldAction": "/Flip",
+                    "pitcherAction": "*use 2072",
+                    "id":"action.flip",
+                    "name": "Flip"
+                },
+                {
+                    "oldAction": "/Kick",
+                    "pitcherAction": "*use 2069",
+                    "id":"action.kick",
+                    "name": "Kick"
+                },
+                {
+                    "oldAction": "/mcg",
+                    "pitcherAction": "*use 2111",
+                    "id":"action.mcgpose",
+                    "name": "MCG Pose"
+                },
+                {
+                    "oldAction": "/peace",
+                    "pitcherAction": "*use 2107",
+                    "id":"action.peace",
+                    "name": "Peace"
+                },
+                {
+                    "oldAction": "/Rocker",
+                    "pitcherAction": "*use 2068",
+                    "id":"action.rocker",
+                    "name": "Rocker"
+                },
+                {
+                    "oldAction": "/BigSleep",
+                    "pitcherAction": "*use 2096",
+                    "id":"action.sleep",
+                    "name": "Sleep"
+                },
+                {
+                    "oldAction": "/Sleep",
+                    "pitcherAction": "*use 2095",
+                    "id":"action.tired",
+                    "name": "Tired"
+                },
+                {
+                    "oldAction": "/yawn",
+                    "pitcherAction": "*use 2075",
+                    "id":"action.yawn",
+                    "name": "Yawn"
+                }
+            ]
+        },
+        {
+            "category": "Moods",
+            "actionList": [
+                {
+                    "pitcherAction": "*use 2105",
+                    "id":"action.bashfulmood",
+                    "name": "Bashful mood"
+                },
+                {
+                    "pitcherAction": "*removeMood",
+                    "id":"action.defaultmood",
+                    "name": "Default mood"
+                },
+                {
+                    "pitcherAction": "*use 2104",
+                    "id":"action.flirtymood",
+                    "name": "Flirty mood"
+                },
+                {
+                    "pitcherAction": "*use 2106",
+                    "id":"action.groovinmood",
+                    "name": "Groovin mood"
+                },
+                {
+                    "pitcherAction": "*use 2102",
+                    "id":"action.impatientmood",
+                    "name": "Impatient mood"
+                },
+                {
+                    "pitcherAction": "*use 2101",
+                    "id":"action.madmood",
+                    "name": "Mad mood"
+                },
+                {
+                    "pitcherAction": "*use 2103",
+                    "id":"action.oldmood",
+                    "name": "Old mood"
+                },
+                {
+                    "pitcherAction": "*use 2100",
+                    "id":"action.sadmood",
+                    "name": "Sad mood"
+                },
+                {
+                    "pitcherAction": "*use 2109",
+                    "id":"action.terrifiedmood",
+                    "name": "Terrified mood",
+                    "requiresVIP": true
+                }
+            ]
+        }
+    ],
+    "coopActions": [
+        {
+            "category": "Greet",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1166/index.xml",
+                    "pitcherAction": "/azimuth",
+                    "pitcherActionUrl": "product://1165/index.xml",
+                    "id":"action.azimuth",
+                    "name": "Azimuth",
+                    "catcherAction": "/azimuthCatch"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1003/index.xml",
+                    "catcherAction": "BearHugCatcher",
+                    "pitcherActionUrl": "product://1002/index.xml",
+                    "pitcherAction": "/bearhug",
+                    "id":"action.bearhug",
+                    "name": "BearHug"
+                },
+                {
+                    "catcherActionUrl": "product://1150/index.xml",
+                    "pitcherAction": "/bow",
+                    "pitcherActionUrl": "product://1149/index.xml",
+                    "name": "Bow",
+                    "id":"action.bow",
+                    "catcherAction": "/BowCatch"
+                },
+                {
+                    "catcherActionUrl": "product://1160/index.xml",
+                    "pitcherAction": "/bowroque",
+                    "pitcherActionUrl": "product://1159/index.xml",
+                    "id":"action.bowroque",
+                    "name": "Bowroque",
+                    "catcherAction": "/ElizabethanBowCatch"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/curtsey",
+                    "pitcherActionUrl": "product://1000/index.xml",
+                    "id":"action.curtsey",
+                    "name": "Curtsey",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1164/index.xml",
+                    "pitcherAction": "/fist2fist",
+                    "pitcherActionUrl": "product://1163/index.xml",
+                    "id":"action.fist2fist",
+                    "name": "Fist2Fist",
+                    "catcherAction": "/fist2fistCatch"
+                },
+                {
+                    "catcherActionUrl": "product://1027/index.xml",
+                    "pitcherAction": "/highfive",
+                    "pitcherActionUrl": "product://1028/index.xml",
+                    "id":"action.highfive",
+                    "name": "HighFive",
+                    "catcherAction": "HighFiveCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1162/index.xml",
+                    "pitcherAction": "/homeygrip",
+                    "pitcherActionUrl": "product://1161/index.xml",
+                    "id":"action.homeygrip",
+                    "name": "HomeyGrip",
+                    "catcherAction": "/HomeyGripCatch"
+                },
+                {
+                    "catcherActionUrl": "product://1012/index.xml",
+                    "pitcherAction": "/homeyhug",
+                    "pitcherActionUrl": "product://1013/index.xml",
+                    "id":"action.homeyhug",
+                    "name": "HomeyHug",
+                    "catcherAction": "HomeyHugCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1025/index.xml",
+                    "pitcherAction": "/millivanilli",
+                    "pitcherActionUrl": "product://1026/index.xml",
+                    "id":"action.millivanilli",
+                    "name": "MilliVanilli",
+                    "catcherAction": "ChestBumpCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1029/index.xml",
+                    "pitcherAction": "/shakehands",
+                    "pitcherActionUrl": "product://1030/index.xml",
+                    "id":"action.shakehands",
+                    "name": "ShakeHands",
+                    "catcherAction": "ShakeHandsCatcher"
+                }
+            ]
+        },
+        {
+            "category": "Hug",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1033/index.xml",
+                    "pitcherAction": "/auntiehug",
+                    "pitcherActionUrl": "product://1034/index.xml",
+                    "id":"action.auntiehug",
+                    "name": "Auntie hug",
+                    "catcherAction": "HugFriendlyCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1129/index.xml",
+                    "pitcherAction": "/endlessautumn",
+                    "pitcherActionUrl": "product://1130/index.xml",
+                    "id":"action.endlessautumn",
+                    "name": "EndlessAutumn",
+                    "catcherAction": "HoldHandsCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1132/index.xml",
+                    "pitcherAction": "/endlessspring",
+                    "pitcherActionUrl": "product://1131/index.xml",
+                    "id":"action.endlessspring",
+                    "name": "EndlessSpring",
+                    "catcherAction": "HoldOneHandSwayCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1035/index.xml",
+                    "pitcherAction": "/endlesssummer",
+                    "pitcherActionUrl": "product://1036/index.xml",
+                    "id":"action.endlesssummer",
+                    "name": "EndlessSummer",
+                    "catcherAction": "HoldHandsSwayCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1031/index.xml",
+                    "pitcherAction": "/hug",
+                    "pitcherActionUrl": "product://1032/index.xml",
+                    "id":"action.hug",
+                    "name": "Hug",
+                    "catcherAction": "HugNormalCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1133/index.xml",
+                    "pitcherAction": "/sunsethands",
+                    "pitcherActionUrl": "product://1134/index.xml",
+                    "id":"action.sunsethands",
+                    "name": "SunsetHands",
+                    "catcherAction": "HoldHandSideBySideSwayCatcher"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1135/index.xml",
+                    "catcherAction": "HugFromBehindCatcher",
+                    "pitcherActionUrl": "product://1136/index.xml",
+                    "pitcherAction": "/clifftop",
+                    "id":"action.clifftop",
+                    "name": "Clifftop"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1038/index.xml",
+                    "catcherAction": "LeapCradleCatcher",
+                    "pitcherActionUrl": "product://1037/index.xml",
+                    "pitcherAction": "/cradle",
+                    "id":"action.cradle",
+                    "name": "Cradle"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1198/index.xml",
+                    "catcherAction": "HugMassageButtCatcher",
+                    "pitcherActionUrl": "product://1197/index.xml",
+                    "pitcherAction": "/shiatsuhug",
+                    "id":"action.shiatsuhug",
+                    "name": "ShiatsuHug"
+                },
+                {
+                    "catcherActionUrl": "product://1223/index.xml",
+                    "catcherAction": "ComfortHugCatcher",
+                    "pitcherActionUrl": "product://1224/index.xml",
+                    "pitcherAction": "/comforthug",
+                    "requiresVIP": true,
+                    "id":"action.comforthug",
+                    "name": "ComfortHug"
+                },
+                {
+                    "catcherActionUrl": "product://1226/index.xml",
+                    "catcherAction": "CradleKissCatcher",
+                    "pitcherActionUrl": "product://1225/index.xml",
+                    "pitcherAction": "/cradlekiss",
+                    "requiresVIP": true,
+                    "id":"action.cradlekiss",
+                    "name": "CradleKiss"
+                },
+                {
+                    "catcherActionUrl": "product://1127/index.xml",
+                    "catcherAction": "HugGrindCatcher",
+                    "pitcherActionUrl": "product://1128/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/dryhug",
+                    "id":"action.dryhug",
+                    "name": "DryHug"
+                },
+                {
+                    "catcherActionUrl": "product://1121/index.xml",
+                    "catcherAction": "HugBackRubCatcher",
+                    "pitcherActionUrl": "product://1122/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/lovehug",
+                    "id":"action.lovehug",
+                    "name": "Love hug"
+                }
+            ]
+        },
+        {
+            "category": "Flirt",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1116/index.xml",
+                    "pitcherAction": "/beckon",
+                    "pitcherActionUrl": "product://1077/index.xml",
+                    "id":"action.beckon",
+                    "name": "Beckon",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/beg",
+                    "pitcherActionUrl": "product://1075/index.xml",
+                    "id":"action.beg",
+                    "name": "Beg",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/blowkiss",
+                    "pitcherActionUrl": "product://1076/index.xml",
+                    "id":"action.blowkiss",
+                    "name": "BlowKiss",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1047/index.xml",
+                    "pitcherAction": "/courtesan",
+                    "pitcherActionUrl": "product://1048/index.xml",
+                    "id":"action.courtesan",
+                    "name": "Courtesan",
+                    "catcherAction": "KissHandCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1080/index.xml",
+                    "pitcherAction": "/handsolo",
+                    "pitcherActionUrl": "product://1081/index.xml",
+                    "id":"action.handsolo",
+                    "name": "HandSolo",
+                    "catcherAction": "HoldHandRubCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/ispank",
+                    "pitcherActionUrl": "product://1092/index.xml",
+                    "id":"action.ispank",
+                    "name": "iSpank",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1057/index.xml",
+                    "pitcherAction": "/magda",
+                    "pitcherActionUrl": "product://1058/index.xml",
+                    "id":"action.magda",
+                    "name": "Magda",
+                    "catcherAction": "KissFeetCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/hottie",
+                    "pitcherActionUrl": "product://1082/index.xml",
+                    "id":"action.hottie",
+                    "name": "Hottie",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1069/index.xml",
+                    "pitcherAction": "/peck",
+                    "pitcherActionUrl": "product://1070/index.xml",
+                    "id":"action.peck",
+                    "name": "Peck",
+                    "catcherAction": "KissPeckCheekCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/pony",
+                    "pitcherActionUrl": "product://1084/index.xml",
+                    "id":"action.pony",
+                    "name": "Pony",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/selfhug",
+                    "pitcherActionUrl": "product://1083/index.xml",
+                    "id":"action.selfhug",
+                    "name": "SelfHug",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1089/index.xml",
+                    "pitcherAction": "/serenade",
+                    "pitcherActionUrl": "product://1090/index.xml",
+                    "id":"action.serenade",
+                    "name": "Serenade",
+                    "catcherAction": "SerenadeCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/sexy",
+                    "pitcherActionUrl": "product://1091/index.xml",
+                    "id":"action.sexy",
+                    "name": "Sexy",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1093/index.xml",
+                    "pitcherAction": "/snakecharmer",
+                    "pitcherActionUrl": "product://1094/index.xml",
+                    "id":"action.snakecharmer",
+                    "name": "SnakeCharmer",
+                    "catcherAction": "SnakeCharmerCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1073/index.xml",
+                    "pitcherAction": "/stroke",
+                    "pitcherActionUrl": "product://1074/index.xml",
+                    "id":"action.stroke",
+                    "name": "Stroke",
+                    "catcherAction": "GentleBackHandCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1186/index.xml",
+                    "pitcherAction": "/vampirekiss",
+                    "pitcherActionUrl": "product://1185/index.xml",
+                    "id":"action.vampirekiss",
+                    "name": "Vampire Kiss",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/worship",
+                    "pitcherActionUrl": "product://1097/index.xml",
+                    "id":"action.worship",
+                    "name": "Worship",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1123/index.xml",
+                    "catcherAction": "CaressFaceCatcher",
+                    "pitcherActionUrl": "product://1124/index.xml",
+                    "pitcherAction": "/caress",
+                    "id":"action.caress",
+                    "name": "Caress"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1067/index.xml",
+                    "catcherAction": "KissBothCheeksCatcher",
+                    "pitcherActionUrl": "product://1068/index.xml",
+                    "pitcherAction": "/euro",
+                    "id":"action.euro",
+                    "name": "Euro"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1045/index.xml",
+                    "catcherAction": "KissFrenchCatcher",
+                    "pitcherActionUrl": "product://1046/index.xml",
+                    "pitcherAction": "/french",
+                    "id":"action.french",
+                    "name": "French"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1071/index.xml",
+                    "catcherAction": "KissUpArmCatcher",
+                    "pitcherActionUrl": "product://1072/index.xml",
+                    "pitcherAction": "/gomez",
+                    "id":"action.gomez",
+                    "name": "Gomez"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1078/index.xml",
+                    "catcherAction": "GooseButtCatcher",
+                    "pitcherActionUrl": "product://1079/index.xml",
+                    "pitcherAction": "/goose",
+                    "id":"action.goose",
+                    "name": "Goose"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1207/index.xml",
+                    "catcherAction": "HummingBirdCatcher",
+                    "pitcherActionUrl": "product://1208/index.xml",
+                    "pitcherAction": "/hummingbird",
+                    "id":"action.hummingbird",
+                    "name": "Hummingbird"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1041/index.xml",
+                    "catcherAction": "KissDipCatcher",
+                    "pitcherActionUrl": "product://1042/index.xml",
+                    "pitcherAction": "/kissanova",
+                    "id":"action.kissanova",
+                    "name": "Kissanova"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1055/index.xml",
+                    "catcherAction": "KissAssCatcher",
+                    "pitcherActionUrl": "product://1056/index.xml",
+                    "pitcherAction": "/kissbutt",
+                    "id":"action.kissbutt",
+                    "name": "KissButt"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1043/index.xml",
+                    "catcherAction": "KissGrabFaceCatcher",
+                    "pitcherActionUrl": "product://1044/index.xml",
+                    "pitcherAction": "/romeo",
+                    "id":"action.romeo",
+                    "name": "Romeo"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1087/index.xml",
+                    "catcherAction": "SalsaPoseCatcher",
+                    "pitcherActionUrl": "product://1088/index.xml",
+                    "pitcherAction": "/salsa",
+                    "id":"action.salsa",
+                    "name": "Salsa"
+                },
+                {
+                    "requiresFriend": true,
+                    "catcherActionUrl": "product://1095/index.xml",
+                    "catcherAction": "TickleCatcher",
+                    "pitcherActionUrl": "product://1096/index.xml",
+                    "pitcherAction": "/tickle",
+                    "id":"action.tickle",
+                    "name": "Tickle"
+                },
+                {
+                    "catcherActionUrl": "product://1197/index.xml",
+                    "catcherAction": "MassageCatcher",
+                    "pitcherActionUrl": "product://1198/index.xml",
+                    "pitcherAction": "/massage",
+                    "requiresVIP": true,
+                    "id":"action.massage",
+                    "name": "Massage"
+                },
+                {
+                    "catcherActionUrl": "product://1059/index.xml",
+                    "catcherAction": "KissMakeOutCatcher",
+                    "pitcherActionUrl": "product://1060/index.xml",
+                    "pitcherAction": "/mackin",
+                    "requiresVIP": true,
+                    "id":"action.mackin",
+                    "name": "Mackin"
+                },
+                {
+                    "catcherActionUrl": "product://1214/index.xml",
+                    "catcherAction": "BootyDanceCatcher",
+                    "pitcherActionUrl": "product://1213/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/bootydance",
+                    "id":"action.bootydance",
+                    "name": "Booty Dance"
+                },
+                {
+                    "catcherActionUrl": "product://1216/index.xml",
+                    "catcherAction": "ButtBongoCatcher",
+                    "pitcherActionUrl": "product://1215/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/buttbongo",
+                    "id":"action.buttbongo",
+                    "name": "Butt Bongo"
+                },
+                {
+                    "catcherActionUrl": "product://1061/index.xml",
+                    "catcherAction": "KissHookLegCatcher",
+                    "pitcherActionUrl": "product://1062/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/lambada",
+                    "id":"action.lambada",
+                    "name": "Lambada"
+                },
+                {
+                    "catcherActionUrl": "product://1210/index.xml",
+                    "catcherAction": "KissNeckCatcher",
+                    "pitcherActionUrl": "product://1209/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/neckin",
+                    "id":"action.neckin",
+                    "name": "Neckin"
+                },
+                {
+                    "catcherActionUrl": "product://1065/index.xml",
+                    "catcherAction": "KissNuzzleCleavageCatcher",
+                    "pitcherActionUrl": "product://1066/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/numnumnum",
+                    "id":"action.numnumnum",
+                    "name": "NumNumNum"
+                },
+                {
+                    "catcherActionUrl": "product://1053/index.xml",
+                    "catcherAction": "KissGrabButtCatcher",
+                    "pitcherActionUrl": "product://1054/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/squeezykiss",
+                    "id":"action.squeezykiss",
+                    "name": "SqueezyKiss"
+                },
+                {
+                    "catcherActionUrl": "product://1085/index.xml",
+                    "catcherAction": "RunFingerDownChestCatcher",
+                    "pitcherActionUrl": "product://1086/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/zipper",
+                    "id":"action.zipper",
+                    "name": "Zipper"
+                },
+                {
+                    "catcherActionUrl": "product://1190/index.xml",
+                    "catcherAction": "SlowDanceCatcher",
+                    "pitcherActionUrl": "product://1189/index.xml",
+                    "pitcherAction": "/slowdance",
+                    "requiresVIP": true,
+                    "id":"action.slowdance",
+                    "name": "Slow dance"
+                }
+            ]
+        },
+        {
+            "category": "Say Cheese",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1178/index.xml",
+                    "pitcherAction": "/backtoback",
+                    "pitcherActionUrl": "product://1177/index.xml",
+                    "id":"action.backtoback",
+                    "name": "Back to back",
+                    "catcherAction": "BackToBackCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1168/index.xml",
+                    "pitcherAction": "/buddy",
+                    "pitcherActionUrl": "product://1167/index.xml",
+                    "id":"action.buddy",
+                    "name": "Buddy",
+                    "catcherAction": "BuddyCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1174/index.xml",
+                    "pitcherAction": "/buddyhug",
+                    "pitcherActionUrl": "product://1173/index.xml",
+                    "id":"action.buddyhug",
+                    "name": "Buddy hug",
+                    "catcherAction": "HandInFaceCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1170/index.xml",
+                    "pitcherAction": "/buddyyay",
+                    "pitcherActionUrl": "product://1169/index.xml",
+                    "id":"action.buddyyay",
+                    "name": "Buddy yay",
+                    "catcherAction": "BuddyYayCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1172/index.xml",
+                    "pitcherAction": "/bunnyears",
+                    "pitcherActionUrl": "product://1171/index.xml",
+                    "id":"action.bunnyears",
+                    "name": "Bunny ears",
+                    "catcherAction": "BunnyEarsCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1182/index.xml",
+                    "pitcherAction": "/gangstaz",
+                    "pitcherActionUrl": "product://1181/index.xml",
+                    "id":"action.gangstaz",
+                    "name": "Gangstaz",
+                    "catcherAction": "GangstazCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1184/index.xml",
+                    "pitcherAction": "/piggyback",
+                    "pitcherActionUrl": "product://1183/index.xml",
+                    "id":"action.piggyback",
+                    "name": "Piggyback",
+                    "catcherAction": "PiggybackCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1176/index.xml",
+                    "pitcherAction": "/puppetthumbs",
+                    "pitcherActionUrl": "product://1175/index.xml",
+                    "id":"action.puppetthumbs",
+                    "name": "Puppet thumbs",
+                    "catcherAction": "PuppetThumbsCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1180/index.xml",
+                    "pitcherAction": "/spies",
+                    "pitcherActionUrl": "product://1179/index.xml",
+                    "id":"action.spies",
+                    "name": "Spies",
+                    "catcherAction": "SpiesCatcher"
+                }
+            ]
+        },
+        {
+            "category": "Taunt",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1109/index.xml",
+                    "pitcherAction": "/cheeky",
+                    "pitcherActionUrl": "product://1110/index.xml",
+                    "id":"action.cheeky",
+                    "name": "Cheeky",
+                    "catcherAction": "PinchCheekCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1006/index.xml",
+                    "pitcherAction": "/earshake",
+                    "pitcherActionUrl": "product://1007/index.xml",
+                    "id":"action.earshake",
+                    "name": "EarShake",
+                    "catcherAction": "EarGrabCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1098/index.xml",
+                    "pitcherAction": "/gotnose",
+                    "pitcherActionUrl": "product://1099/index.xml",
+                    "id":"action.gotnose",
+                    "name": "GotNose",
+                    "catcherAction": "GotNoseCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "pitcherAction": "/mayday",
+                    "pitcherActionUrl": "product://1115/index.xml",
+                    "id":"action.mayday",
+                    "name": "Mayday",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1101/index.xml",
+                    "pitcherAction": "/mush",
+                    "pitcherActionUrl": "product://1102/index.xml",
+                    "id":"action.mush",
+                    "name": "Mush",
+                    "catcherAction": "HandInFaceCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1105/index.xml",
+                    "pitcherAction": "/neener",
+                    "pitcherActionUrl": "product://1106/index.xml",
+                    "id":"action.neener",
+                    "name": "Neener",
+                    "catcherAction": "NyahNyahCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1107/index.xml",
+                    "pitcherAction": "/sbd",
+                    "pitcherActionUrl": "product://1108/index.xml",
+                    "id":"action.sbd",
+                    "name": "SBD",
+                    "catcherAction": "PeeYewCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1113/index.xml",
+                    "pitcherAction": "/topdog",
+                    "pitcherActionUrl": "product://1114/index.xml",
+                    "id":"action.topdog",
+                    "name": "TopDog",
+                    "catcherAction": "StupidDanceCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1117/index.xml",
+                    "pitcherAction": "/wetwillie",
+                    "pitcherActionUrl": "product://1118/index.xml",
+                    "id":"action.wetwillie",
+                    "name": "WetWillie",
+                    "catcherAction": "WetWillieCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1119/index.xml",
+                    "pitcherAction": "/yell",
+                    "pitcherActionUrl": "product://1120/index.xml",
+                    "id":"action.yell",
+                    "name": "Yell",
+                    "catcherAction": "YellAtCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1194/index.xml",
+                    "pitcherAction": "/yankmyfinger",
+                    "pitcherActionUrl": "product://1193/index.xml",
+                    "id":"action.yankmyfinger",
+                    "name": "Yank My Finger",
+                    "catcherAction": "YankMyFingerCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1196/index.xml",
+                    "catcherAction": "MatrixMyFingerCatcher",
+                    "pitcherActionUrl": "product://1195/index.xml",
+                    "pitcherAction": "/matrixmyfinger",
+                    "requiresVIP": true,
+                    "id":"action.matrixmyfinger",
+                    "name": "Matrix my finger"
+                },
+                {
+                    "catcherActionUrl": "product://1228/index.xml",
+                    "catcherAction": "PokeCatcher",
+                    "pitcherActionUrl": "product://1227/index.xml",
+                    "pitcherAction": "/poke",
+                    "requiresVIP": true,
+                    "id":"action.poke",
+                    "name": "Poke"
+                },
+                {
+                    "catcherActionUrl": "product://1192/index.xml",
+                    "catcherAction": "PullMyFingerCatcher",
+                    "pitcherActionUrl": "product://1191/index.xml",
+                    "pitcherAction": "/pullmyfinger",
+                    "requiresVIP": true,
+                    "id":"action.pullmyfinger",
+                    "name": "Pull my finger"
+                },
+                {
+                    "catcherActionUrl": "product://1218/index.xml",
+                    "catcherAction": "YellAtCatcher",
+                    "pitcherActionUrl": "product://1217/index.xml",
+                    "pitcherAction": "/roshambo",
+                    "requiresVIP": true,
+                    "id":"action.roshambo",
+                    "name": "RoShamBo"
+                },
+                {
+                    "catcherActionUrl": "product://1001/index.xml",
+                    "catcherAction": "SimpleStanding",
+                    "pitcherActionUrl": "product://1100/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/jewels",
+                    "id":"action.jewels",
+                    "name": "Jewels"
+                },
+                {
+                    "catcherActionUrl": "product://1005/index.xml",
+                    "catcherAction": "BoobGrabCatcher",
+                    "pitcherActionUrl": "product://1004/index.xml",
+                    "requiresAP": true,
+                    "pitcherAction": "/2ndbase",
+                    "id":"action.2ndbase",
+                    "name": "2ndBase"
+                }
+            ]
+        },
+        {
+            "category": "Attack",
+            "actionList": [
+                {
+                    "catcherActionUrl": "product://1010/index.xml",
+                    "pitcherAction": "/backhand",
+                    "pitcherActionUrl": "product://1011/index.xml",
+                    "id":"action.backhand",
+                    "name": "BackHand",
+                    "catcherAction": "BitchSlapCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1019/index.xml",
+                    "pitcherAction": "/bodyslam",
+                    "pitcherActionUrl": "product://1020/index.xml",
+                    "id":"action.bodyslam",
+                    "name": "BodySlam",
+                    "catcherAction": "BodySlamCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1111/index.xml",
+                    "pitcherAction": "/deadarm",
+                    "pitcherActionUrl": "product://1112/index.xml",
+                    "id":"action.deadarm",
+                    "name": "DeadArm",
+                    "catcherAction": "PunchShoulderCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1155/index.xml",
+                    "pitcherAction": "/footstomp",
+                    "pitcherActionUrl": "product://1156/index.xml",
+                    "id":"action.footstomp",
+                    "name": "Foot Stomp",
+                    "catcherAction": "StompFootCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1021/index.xml",
+                    "pitcherAction": "/legsweep",
+                    "pitcherActionUrl": "product://1022/index.xml",
+                    "id":"action.legsweep",
+                    "name": "LegSweep",
+                    "catcherAction": "LegSweepCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1147/index.xml",
+                    "pitcherAction": "/lunchbox",
+                    "pitcherActionUrl": "product://1148/index.xml",
+                    "id":"action.lunchbox",
+                    "name": "LunchBox",
+                    "catcherAction": "PunchStomachCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1014/index.xml",
+                    "pitcherAction": "/noogy",
+                    "pitcherActionUrl": "product://1015/index.xml",
+                    "id":"action.noogy",
+                    "name": "Noogy",
+                    "catcherAction": "HeadLockNoogyCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1152/index.xml",
+                    "pitcherAction": "/nuts",
+                    "pitcherActionUrl": "product://1151/index.xml",
+                    "id":"action.nuts",
+                    "name": "Nuts",
+                    "catcherAction": "KickInNutsCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1145/index.xml",
+                    "pitcherAction": "/punch",
+                    "pitcherActionUrl": "product://1146/index.xml",
+                    "id":"action.punch",
+                    "name": "Punch",
+                    "catcherAction": "PunchFaceCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1139/index.xml",
+                    "pitcherAction": "/rootcanal",
+                    "pitcherActionUrl": "product://1140/index.xml",
+                    "id":"action.rootcanal",
+                    "name": "Root canal",
+                    "catcherAction": "KickFaceQuickCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1141/index.xml",
+                    "pitcherAction": "/sidekick",
+                    "pitcherActionUrl": "product://1142/index.xml",
+                    "id":"action.sidekick",
+                    "name": "SideKick",
+                    "catcherAction": "SideKickToFaceCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1154/index.xml",
+                    "pitcherAction": "/slap",
+                    "pitcherActionUrl": "product://1153/index.xml",
+                    "id":"action.slap",
+                    "name": "Slap",
+                    "catcherAction": "SlapCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1143/index.xml",
+                    "pitcherAction": "/stooge",
+                    "pitcherActionUrl": "product://1144/index.xml",
+                    "id":"action.stooge",
+                    "name": "Stooge",
+                    "catcherAction": "PokeEyesCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1137/index.xml",
+                    "pitcherAction": "/suckerpunch",
+                    "pitcherActionUrl": "product://1138/index.xml",
+                    "id":"action.suckerpunch",
+                    "name": "SuckerPunch",
+                    "catcherAction": "HeyOverThereCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1023/index.xml",
+                    "pitcherAction": "/tackle",
+                    "pitcherActionUrl": "product://1024/index.xml",
+                    "id":"action.tackle",
+                    "name": "Tackle",
+                    "catcherAction": "TackleCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1158/index.xml",
+                    "pitcherAction": "/thumbwrestle",
+                    "pitcherActionUrl": "product://1157/index.xml",
+                    "id":"action.thumbwrestle",
+                    "name": "ThumbWrestle",
+                    "catcherAction": "ThumbWrestleCatcher"
+                },
+                {
+                    "catcherActionUrl": "product://1188/index.xml",
+                    "pitcherAction": "/wizardchoke",
+                    "pitcherActionUrl": "product://1187/index.xml",
+                    "id":"action.wizardchoke",
+                    "name": "Wizard Choke",
+                    "catcherAction": "SimpleStanding"
+                },
+                {
+                    "catcherActionUrl": "product://1222/index.xml",
+                    "catcherAction": "StompCatcher",
+                    "pitcherActionUrl": "product://1221/index.xml",
+                    "pitcherAction": "/stomp",
+                    "requiresVIP": true,
+                    "id":"action.stomp",
+                    "name": "Stomp"
+                }
+            ]
+        }
+    ]
+}

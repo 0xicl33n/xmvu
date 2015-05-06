@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+</head><body>
+  <style>
+      body { margin: 0; padding: 0; }
+      img { cursor: pointer; }
+  </style>
+  <script src="../js/jquery-1.6.js"></script>
+  <script src="../js/imvu.js"></script>
+  <script type="text/javascript">
+if (IMVU.runJS()) {
+    var searchArgs = getSearchArgs();
+
+    var slotId = 0;
+    var buttonName = "";
+
+    var url = searchArgs.image_url;
+    if (url) {
+        var i = document.createElement('img');
+        i.src = url;
+        i.addEventListener('click', clickHandler, false);
+        document.body.appendChild(i);
+    }
+
+    function getSearchArgs() {
+        var u = window.location.search.substr(1);
+
+        var result = {};
+        var pairs = u.split('&');
+        for (var i = 0; i < pairs.length; ++i) {
+            var m = /([^=]+)=(.*)/.exec(pairs[i]);
+            if (m) {
+                result[m[1]] = m[2];
+            }
+        }
+
+        return result;
+    }
+
+    function clickHandler() {
+        imvu.call('click');
+    }
+}
+  </script>
+</body></html>

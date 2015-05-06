@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../js/imvu.js"></script>
+    <script src="VipTrialIntroBootDialog.js"></script> 
+</head><body>
+<div class="container vip-trial-catalog-purchase">
+    <div class="content">
+        <div class="close-button ui-event" data-ui-name="CloseButton"></div>
+        <div class="header">
+            <div class="top-header"><script id="inline_translate">_iT("Congratulations! We\'ve selected you for a", "inline_translate")</script></div>
+            <div class="bottom-header"><script id="inline_translate">_iT("24-Hour", "inline_translate")</script> <span class="highlight"><script id="inline_translate">_iT("FREE TRIAL", "inline_translate")</script></span></div>
+        </div>
+        <div class="section social-benefits">
+            <div class="title"><script id="inline_translate">_iT("SOCIAL BENEFITS!", "inline_translate")</script></div>
+            <div class="message"><script id="inline_translate">_iT("VIPs can invite anyone to shop with them.", "inline_translate")</script></div>
+        </div>
+        <div class="section wealth">
+            <div class="title"><script id="inline_translate">_iT("WEALTH!", "inline_translate")</script></div>
+            <div class="message"><script id="inline_translate">_iT("VIPs get monthly Credit gifts.", "inline_translate")</script></div>
+        </div>
+        <div class="section savings">
+            <div class="title"><script id="inline_translate">_iT("SAVINGS!", "inline_translate")</script></div>
+            <div class="message"><script id="inline_translate">_iT("Enjoy 5% off when shopping!", "inline_translate")</script></div>
+        </div>
+        <div class="sale-label">
+            <span class="percent-num"><script id="inline_translate">_iT("5", "inline_translate")</script></span><span class="percent"><script id="inline_translate">_iT("%", "inline_translate")</script></span><span class="off"> <script id="inline_translate">_iT("OFF", "inline_translate")</script></span> <span class="catalog"><script id="inline_translate">_iT("CATALOG", "inline_translate")</script></span>
+        </div>
+    </div>
+</div>
+
+<script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="../../yui/container/container.js"></script>
+<script>
+if (IMVU.runJS()) {
+    new VipTrialIntroBootDialog({imvu: imvu});
+}
+</script>
+
+</body></html>

@@ -1,0 +1,162 @@
+
+.thumbnail-view {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    max-width: 700px;
+    padding-right: 1em;
+    margin: auto;
+}
+
+.thumbnail-view .cell {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 130px;
+    padding: 18px 3px 10px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 1px;
+}
+
+.thumbnail-view .mouseover.cell {
+    border: solid 1px #505050;
+    margin: 9px;
+    margin-bottom: 0px;
+}
+
+.thumbnail-view .avatar-pic-background {
+    display: inline-block;
+    height: 110px;
+    background: black;
+}
+
+.thumbnail-view .avatar-pic {
+    width: 80px;
+    height: 110px;
+    opacity: 0.9;
+}
+
+.thumbnail-view .mouseover .avatar-pic {
+    opacity: 1;
+}
+
+.thumbnail-view .avatar-name {
+    text-align: center;
+    color: #6b6b6b;
+    font-weight: bold;
+    width: 110px;
+    overflow: hidden;
+}
+
+.thumbnail-view .avatar-name .guest-prefix {
+    font-size: 7pt;
+    font-weight: normal;
+}
+
+.thumbnail-view .mouseover .avatar-name {
+    color: #898989;
+    text-decoration: underline;
+}
+
+.thumbnail-view .online-user .avatar-name {
+    color: #00CC00;
+}
+
+.thumbnail-view .online-user.mouseover .avatar-name {
+    color: #00FF00;
+}
+
+.thumbnail-view .avatar-age {
+    font-size: 10px;
+    color: black;
+    background: transparent url(img/age-background-male.png) no-repeat 0px 1px;
+    width: 17px;
+    height: 13px;
+    margin-left: 2px;
+    margin-bottom: 4px;
+}
+
+.thumbnail-view .female .avatar-age {
+    background: transparent url(img/age-background-female.png) no-repeat 0px 1px;
+}
+
+.thumbnail-view .icons {
+    position: absolute;
+    left: 90px;
+    top: 23px;
+    height: 110px;
+    width: 32px;
+}
+
+.thumbnail-view .info-icon {
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    width: 19px;
+    height: 20px;
+}
+
+.thumbnail-view .mouseover .info-icon {
+    background: transparent url(../img/icon_16_info.png) no-repeat;
+}
+
+.thumbnail-view .has-ap .ap-icon {
+    width: 18px;
+    height: 14px;
+    background: transparent url(../img/icon_ap_small.png) no-repeat;
+}
+
+.thumbnail-view .has-mp .mp-icon {
+    position: relative;
+    width: 18px;
+    height: 14px;
+    top: 3px;
+    background: transparent url(../img/marriage_badge_18x16.png) no-repeat;
+}
+
+.thumbnail-view .has-vip .vip-icon {
+    position: relative;
+    left: -1px;
+    top: 2px;
+    width: 20px;
+    height: 14px;
+    background: transparent url(/content/img/icon_vip_small.png) no-repeat;
+}
+
+.thumbnail-view .online-user .online-icon {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    width: 19px;
+    height: 20px;
+    background: transparent url(../img/available.png) no-repeat;
+}
+
+#loading-mask {
+    z-index: 999;
+    opacity: 0.66;
+    background: black;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 301px;
+}
+
+#loading-spinner { 
+    display:table-cell;
+    position:absolute;
+    top:50%;
+    left:50%;
+    background: black url(../img/spinner_white.apng) no-repeat center center;
+    width: 50px;
+    height: 50px;
+    opacity: 0.66;
+}

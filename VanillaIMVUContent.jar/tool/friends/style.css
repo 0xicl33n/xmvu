@@ -1,0 +1,210 @@
+html, body {
+    background:#191919 url(img/bg_friend_body.png) repeat-x 0 9px;
+    text-align:left;
+    -moz-user-select: -moz-none;
+}
+
+* {
+    -moz-user-select: -moz-none;
+    -moz-user-focus:ignore;
+    cursor:default;
+}
+
+a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.no-people {
+    color: white;
+    display: none;
+}
+
+#hd {
+    border-top:1px solid #333330;
+    background:url(img/bg_friend_hd.png) repeat-x;
+    position:relative;
+}
+
+#hd ul {
+    margin:16px 0 0 8px;
+    padding:0;
+    overflow:hidden;
+}
+
+#hd li {
+    list-style:none;
+    padding:0;
+    float:left;
+    margin:0 10px 0 0;
+    padding:1px 0 0 19px;
+    cursor:pointer;
+    font:10px;
+}
+
+#hd li b { color:#878784; }
+#hd li:hover b { color:#e5e5e5; }
+#hd li.disabled {
+    opacity:0.3;
+    cursor:default;
+}
+#hd li.disabled b {
+    color:#878784;
+}
+
+#btn_add {
+    background:url(img/icon_add_friend.png) no-repeat;
+}
+
+#btn_view_friends {
+    background:url(img/icon_view_friends.png) no-repeat;
+}
+
+#hd #invite-friend {
+    margin-left:14px;
+    background:url(img/icon_invite_friendslist.png) no-repeat 0px 2px;
+}
+
+#birthdays_container { 
+    display:none;
+}
+
+#btn_close {
+    background:url(img/icon_close.png) no-repeat 6px 3px;
+    display:block;
+    width:12px;
+    height:12px;
+    position:absolute;
+    top:15px;
+    right:2px;
+    padding:3px;
+    cursor:pointer;
+    opacity:0.7;
+}
+
+#btn_close:hover {
+    opacity:1.0;
+}
+
+#btn_close b {
+    display:none;
+}
+
+#bd {
+    margin:0;
+    padding:0 5px 0 5px;
+    position: fixed;
+    top:46px;
+    right:0px;
+    bottom:33px;
+    left:0px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.pane h3 {
+    color:#fff;
+    font:normal 11px;
+    background:#404040 url(img/header_bar.png) repeat-x;
+    padding:3px 5px 4px;
+    margin:0;
+    cursor:default;
+}
+
+.pane h3 b {
+    font-weight:bold;
+}
+
+.pane .list-count i {
+    font-style:normal;
+}
+
+.pane .people-list {
+    background:url(img/bg_people_list.png) repeat-x 0 0;
+    padding-top:5px;
+}
+
+#ft {
+    border-top:1px solid #333330;
+    background:url(img/bg_friend_ft.png) repeat-x;
+    height:8px;
+    width:100%;
+    position:absolute;
+    bottom:26px;
+    left:0;
+}
+
+#friend_list .title .number-total {
+    display: none;
+}
+
+#bottombar {
+    background:black;
+    height:26px;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:#f0f0f0;
+}
+
+#btn_friend_tool {
+    background:url(img/icon_friend_off.png) no-repeat;
+    width:27px;
+    height:26px;
+    float:right;
+    cursor:pointer;
+    opacity:0.7;
+}
+.open #btn_friend_tool {
+    background:url(img/icon_friend_on.png) no-repeat;
+    opacity:1.0;
+}
+
+#btn_friend_tool:hover {
+    opacity: 1.0;
+}
+
+.message_tray { 
+    font:11px;
+    color: #d6d6d6;
+    background:url(img/message_tray_bg.jpg);
+    height: 21px;
+    padding-top: 5px;
+    padding-left: 10px;
+    overflow: hidden;
+    text-align: left;
+    width:10px;
+    position: absolute;
+    bottom:0;
+}
+
+.message_tray.overlay { 
+    background-image:url(img/message_tray_bg_alert.jpg);
+}
+
+.message_tray span{ 
+    font-weight:bold;
+}
+
+#online_friend_count {
+    font:12px;
+    font-weight:bold;
+    height:23px;
+    float:right;
+    padding-top:3px;
+    padding-left:3px;
+    cursor:pointer;
+}
+
+.open #online_friend_count {
+    background:url(img/friend_count_on.png);
+}
+
+#popup {
+    display:none;
+}
+.open #popup {
+    display:inherit;
+}

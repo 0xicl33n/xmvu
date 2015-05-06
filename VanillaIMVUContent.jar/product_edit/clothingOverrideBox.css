@@ -1,0 +1,19 @@
+.clothingOverrideBox {
+    display:inline-block;
+    margin-right:1px;
+    margin-bottom:1px;
+    font-family:  Arial, sans-serif;
+    text-align:center;
+    font-size:300%;
+    width:47px;
+}
+
+.clothingOverrideBox .label {
+    height:22px;
+    margin-bottom:0px;
+}
+
+.clothingOverrideBox input {
+    margin-top:0px;
+}
+

@@ -1,0 +1,115 @@
+#musicPanel {
+    /*width:261px;*/
+    max-width:300px;
+}
+
+#musicPanel .bd {
+    height:60px;
+    padding:0;
+    margin:0;
+    text-align: left /*center*/;
+}
+
+#musicPanel .volume {
+    /*height:25px;/*21px;*/
+    width: 100%;
+    /*margin: 4px 8px 2px 8px;*/
+    display: inline-block;
+    /*background: rgba(0,0,0,0.7);*/
+}
+
+#musicPanel .volumeBackground {
+    height:25px;
+    background: rgba(0,0,0,0.7);
+    margin: 4px 8px 2px 8px;
+}
+
+#musicPanel .volume span {
+    /*float: left;*/
+    display: inline-block;
+}
+
+#musicPanel .volume .is-muted {
+    width:19px;
+    height:21px;
+
+    background:transparent url(music/room_label_music_mute.png) no-repeat;
+    /*margin-right:5px;*/
+    margin: 2px 5px 2px 4px;
+    cursor:pointer;
+}
+
+#musicPanel .volume .is-muted.active {
+    background-image:url(music/room_label_music_mute_active.png);
+}
+
+#musicPanel .volume .quiet {
+    width:6px;
+    height:21px;
+    background:transparent url(music/room_label_music_speaker.png) no-repeat;
+    /*margin-right:3px;*/
+    margin: 2px 3px 2px 0px;
+}
+
+#musicPanel .volume .slider {
+    width:111px;
+    height:21px;
+    background:transparent url(music/room_label_music_line.png) repeat-x;
+    /*margin-right:3px;*/
+    margin: 2px 3px 2px 0px;
+    cursor:pointer;
+    position:relative;
+}
+
+#musicPanel .volume .slider .knob {
+    position:absolute;
+    top:0;
+    left:0;
+    width:11px;
+    height:21px;
+    background:transparent url(music/room_label_music_knob.png) no-repeat center center;
+}
+
+#musicPanel .volume .loud {
+    width:13px;
+    height:21px;
+    background:transparent url(music/room_label_music_speaker_loud.png) no-repeat;
+    cursor:pointer;
+    margin: 2px 8px 2px 0px;
+}
+
+#musicPanel .currently-playing {
+    display: none;
+    font-family:sans-serif;
+    font-size:11px;
+    color:#fee77d;
+    overflow:hidden;
+    margin:5px 8px 10px 10px;
+    padding:0;
+}
+
+#musicPanel .currently-playing .inner {
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+}
+
+#musicPanel .currently-playing .artist {
+    font-weight:bold;
+}
+
+#musicPanel .currently-playing .title {
+    font-weight:normal;
+}
+
+#musicPanel .spinner {
+    display: none;
+    opacity: 0.6;
+    background: transparent url(../img/spinner_white.apng) no-repeat center center;
+    width: 100%;
+    height: 48px;
+}
+
+#musicPanel .visible {
+    display: block;
+}

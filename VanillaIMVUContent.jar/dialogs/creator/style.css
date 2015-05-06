@@ -1,0 +1,1101 @@
+@import url(../../css/new-visd-base.css);
+@import url(../css/dialog.css);
+@import url(../../product_edit/pillButton.css);
+
+* {
+    text-align:left;
+}
+
+body {
+    overflow:hidden;
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+#dialog .title img {
+    height: 24px;
+    width: 24px;
+}
+
+h2 {
+    
+    color: #000;
+}
+
+#dialog{ 
+    background:#f0f0e8;
+    height:570px;
+    color: #272727;
+    font-size: 11px;
+    position:relative;
+    border:1px solid #fff;
+    width:450px;
+}
+
+#dialog.meshId {
+    height:160px;
+}
+
+.close-button {
+    top:1px;
+    right:1px;
+}
+
+#hd {
+    color:#dcdcdc;
+    width:100%;
+    height:29px;
+    font-weight:bold;
+    
+    font-size:15px;
+    background:url(../../img/panel_hd.png) repeat-x;
+    border-bottom:1px solid #fff;
+}
+
+#hd p {
+    margin:0;
+    padding:0;
+    background:transparent;
+    padding:5px 0 0 8px;
+}
+
+table {
+    margin:10px 0 0 15px;
+    width:422px;
+}
+
+tr, th, td {
+    padding:0;
+    border:none;
+    font-size: 13px;
+}
+
+th {
+    background:#D0D0C6;
+    height:26px;
+}
+td {
+    background:#E0E0D6;
+    height:19px;
+}
+th, td {
+    width:209px;
+}
+#avatar-pids th:nth-child(2), #avatar-pids td:nth-child(2) {
+    border-left:1px solid #B8B8AE;
+}
+tr#empty {
+    border-top:1px solid #B8B8AE;
+}
+tr#empty td:nth-child(2) {
+    border:none;
+}
+tbody tr:first-child td {
+    padding-top: 9px;
+}
+#avatar-pids tbody tr:nth-last-child(2) td {
+    padding-bottom: 5px;
+}
+#avatar-pids tbody tr:nth-last-child(1) td {
+    padding-top: 5px;
+}
+tbody tr:nth-last-child(1) td {
+    padding-bottom: 5px;
+}
+
+.label { color:#595856; float:left; margin-left: 27px; }
+.id { color:#898981; float: right; margin-right: 10px; }
+
+th .label { margin-left: 20px; }
+th .id { margin-right: 20px; }
+
+.entry {
+    cursor: pointer;
+    width:90%;
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+}
+.entry:hover {
+    background:#D0D0C6;
+}
+.entry .label {
+    text-decoration: underline;
+}
+
+.swatch {
+    width: 22px;
+    height: 22px;
+    position:absolute;
+    left:4px;
+    top:-2px;
+}
+
+#specify {
+    background:url(img/specify-bg.png);
+    width:422px;
+    height:200px;
+    margin-top:10px;
+    margin-left:15px;
+    font-size: 13px;
+    -moz-border-radius: 10px;
+    color:#5D5D5D;
+}
+#specify.meshId {
+    height:110px;
+}
+
+#specify .title {
+    padding-left: 20px;
+    padding-top:5px;
+    font-weight:bold;
+}
+#pid-text, #meshId-text, #particleSystemName-text {
+    border:1px solid #8D8D8D;
+    width:357px;
+    height:17px;
+    padding-top:2px;
+    text-align:center;
+    -moz-user-select: text;
+    color:#818181;
+}
+
+.specify-pid, .specify-meshId, .specify-particleSystemName {
+    position:relative;
+    margin-top: 8px;
+    margin-left: 29px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+#pid-info, #meshId-info, #particleSystemName-info {
+    width:359px;
+    height:105px;
+    background:url(img/pidinfo-bg.png);
+    color:#ECEAEA;
+}
+
+#meshId-info, #particleSystemName-info {
+    height:25px;
+}
+
+#pid-icon {
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:10px;
+    height:82px;
+    float:left;
+}
+
+#pid-details {
+    padding-top:10px;
+    padding-left:4px;
+    line-height:1.5em;
+}
+#pid-details b, .fees {
+    font-size: 11px;
+    line-height:1.25em;
+}
+.fees, .derivation {
+    padding-top:3px;
+    padding-bottom:1px;
+}
+#pid-derivation-fee {
+    margin-right: 13px;
+}
+
+#go-button {
+    position:absolute;
+    right:34px;
+    z-index:1;
+}
+#derivable-no, #derivable-yes {
+    color:#23D124;
+    font-weight:bold;
+    text-shadow: 0px 1px 0 #3f3f3f;
+    padding-left:4px;
+    float:right;
+    margin-right:150px;
+}
+#derivable-no {
+    margin-right:153px;
+    color:#CC3030;
+}
+#pid-spinner {
+    margin-left:159px;
+    margin-top:48px;
+}
+#pid-creator {
+    cursor:pointer;
+}
+#pid-creator:hover {
+    text-decoration:underline;
+}
+
+.error-text {
+    font-weight:bold;
+    color:#F1AFB1;
+    line-height:20px;
+    padding-left:4px;
+}
+
+
+.eggregious-warning {
+    width:349px;
+    height:auto;    
+    padding:10px 10px 10px 0;
+    margin-top:3px;
+    color:White;
+    background-color:Red;
+    font-weight:bolder;
+    font-size:large;
+    text-align:center;
+}
+
+#didnt-create {
+    top:75px;
+    left:120px;
+}
+
+#file-info {
+    font-weight:bold;
+    padding-left:8px;
+    padding-top:5px;
+    position:relative;
+}
+#file-info span {
+}
+#file-info .bg {
+    width:213px;
+    height:25px;
+    border:1px solid #aaa;
+    border-top:0;
+    background:white;
+    position:absolute;
+    top:0;
+    right:111px;
+    z-index:0;
+}
+#filename {
+    width:219px;
+    margin-top:5px;
+    margin-left:4px;
+    border:0;
+    background:transparent;
+}
+
+.display_only {
+    visibility: hidden;
+}
+
+#submission-card {
+    -moz-user-select: -moz-none;
+
+    position: relative;
+
+    cursor: default;
+    width: 792px;
+    height: 530px;
+    outline: solid 1px black;
+    overflow: hidden;
+    border-left: solid 1px #F7F7F5;
+    border-top: solid 1px #F7F7F5;
+}
+
+    #spinner {
+        position:absolute;
+        right:1px;
+        top:29px;
+        width:100%;
+        height:100%;
+        background: black url(../../img/spinner_white.apng) no-repeat center center;
+        opacity:0.75;
+        z-index:9000;
+        display: none;
+    }
+    
+    
+
+    #submission-card * {
+        -moz-box-sizing: border-box;
+    }
+    #submission-card textarea {
+        -moz-user-select: text;
+    }
+    /* The traditional box model interferes with the reusable button widget styles a little bit. */
+    #submission-card .imvu-button .text {
+        padding-top: 2px;
+    }
+    /* The traditional box model interferes with the reusable pill button widget styles a little bit. */
+    #submission-card .pillButton {
+        background: url(img/pillbutton_bg.png) repeat-x;
+    }
+    #submission-card .pillButton .fade {
+        top: -1px;
+        padding-top: 0;
+        padding-left: 9px;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 20px;
+    }
+    #submission-card .pillButton .plus {
+        left: -3px;
+    }
+    #submission-card .pillButton .v,
+    #submission-card .pillButton .h {
+        background-color: #4E4E4E;
+    }
+    #submission-card input[type=text] {
+        border: 0;
+        -moz-border-radius: 5px;
+        -moz-box-shadow: inset 0 1px 1px #999999;
+        background-color: white;
+        height: 21px;
+        padding: 0 6px 0 6px;
+        line-height: 21px;
+        position: relative;
+        
+        font-size: 13px;
+    }
+    #submission-card strong {
+        font-weight: bold;
+    }
+    #submission-card .hinted-field {
+        display: inline-block;
+        position: relative;
+        
+        font-size: 13px;
+    }
+    #submission-card label {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #submission-card .hinted-field label {
+        display: none;
+        height: 21px;
+        line-height: 21px;
+        color: gray;
+        font-weight: normal;
+    }
+    #submission-card .hinted-field.labelover label {
+        display: inline;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 6px 0 6px;
+        cursor: text;
+    }
+    #submission-card .title {
+        font-size: 16px;
+        font-weight: bold;
+        height: 29px;
+        width: 100%;
+        line-height: 29px;
+    }
+    #submission-card .section h2 {
+        cursor: pointer;
+        color: #272727;
+    }
+    /* The submission header graphic is part of the background image so that the
+       "Product Submission" title text receives the same left-hand padding as
+       the rest of the panel without having to style it individually. If we change
+       the overall padding of the panel, it will still automatically line up with
+       the left edge of the other content. */
+    #submission-card .product {
+        position: relative;
+        float: left;
+        width: 512px;
+        padding: 0 10px 0 10px;
+        height: 100%;
+        border-right: solid 1px #F7F7F5;
+        background: #EFF0E8 url(img/submission_header_bg.png) repeat-x;
+    }
+        #submission-card .product .title {
+            color: black;
+        }
+        #submission-card .product .close-button {
+            right: -15px; /* 30px wide button. This overlaps the bridge between panels. */
+        }
+        #submission-card .product .breadcrumb {
+            height: 22px;
+            line-height: 22px;
+            margin: 10px 0 4px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+            #submission-card .product .breadcrumb .top-cats,
+            #submission-card .product .breadcrumb .mid-cats,
+            #submission-card .product .breadcrumb .low-cats {
+                width: 156px;
+                margin: 0 10px 0 0;
+            }
+            #submission-card .product .full-cat:after {
+                content: ' > ';
+            }
+            #submission-card .product .breadcrumb select {
+                border: 0;
+                padding: 2px;
+                -moz-border-radius: 5px;
+                -moz-box-shadow: inset 0 1px 1px #999999;
+                margin: 0 0 6px 0;
+            }
+            #submission-card .product .breadcrumb ul {
+                margin: 0;
+                padding: 0;
+            }
+            #submission-card .product .breadcrumb li {
+                position: relative;
+                font-size: 13px;
+                list-style-type: none;
+                float: left;
+                padding-right: 4px;
+            }
+            #categories {
+                display: none;
+            }
+            /* The ">" in between breadcrumbs could be anything. It's a superficial
+               style and not useful data that should exist in the markup. This style
+               allows us to trivially replace these with different or snazzier
+               separators. */
+            #submission-card .product .breadcrumb li:not(:last-child):after {
+                padding-right: 2px;
+                content: ' > ';
+            }
+            #submission-card .product .breadcrumb option.rank0 {
+                text-indent: 0;
+                background-color: #808080;
+                font-weight: bold;
+            }
+            #submission-card .product .breadcrumb option.rank1 {
+                text-indent: 1ex;
+                background-color: #D0D0D0;
+                font-weight: bold;
+            }
+            #submission-card .product .breadcrumb option.rank2 {
+                text-indent: 2ex;
+            }
+        #submission-card .product .info {
+            width: 490px;
+            height: 120px;
+            background-color: silver;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+            #submission-card .product-image-container {
+                position: relative;
+                width: 140px;
+                height: 120px;
+                float: left;
+                background-color: black;
+                cursor: pointer;
+            }
+                #submission-card .product-image-container img {
+                    display: inline-block;
+                    width: 100px;
+                    height:80px;
+                    max-width: 100px;
+                    max-height: 80px;
+                    margin: 20px;
+                    background-color: #787878;
+                    outline: 0;
+                }
+                #submission-card .product-image-container img[src]:hover + .pillButton {
+                    display: none;
+                }
+                #submission-card #add-image {
+                    position: absolute;
+                    width: 80px;
+                    top: 51px;
+                    left: 30px;
+                    white-space: nowrap;
+                }
+            #submission-card .product .details {
+                background: url(img/product_details_bg.png) repeat-x;
+                position: relative;
+                width: 350px;
+                height: 120px;
+                padding: 4px 6px 4px 6px;
+                float: left;
+                color: #CCC;
+                font-size: 13px;
+            }
+                #submission-card .product .details .row {
+                    position: relative;
+                    width: 188px;
+                }
+                    #submission-card .product .details .row label {
+                        font-weight: normal;
+                        margin-right: 4px;
+                        padding: 0;
+                    }
+                #submission-card .product .details .rating,
+                #submission-card .product .details .profit {
+                    height: 21px;
+                }
+                #submission-card .product .details .rating {
+                    margin: 0 0 6px 0;
+                }
+                #submission-card .product .details .profit {
+                    margin: 0 0 3px 0;
+                }
+                #submission-card .product .details .rating select {
+                    border: 0;
+                    padding: 2px;
+                    -moz-border-radius: 5px;
+                    -moz-box-shadow: inset 0 1px 1px #999999;
+                    width: 143px;
+                    height: 21px;
+                    margin: 0 0 6px 0;
+                    position: absolute;
+                    right: 0;
+                }
+                #submission-card .product .details .profit input {
+                    
+                    text-align: right;
+                    font-weight: bold;
+                    width: 120px;
+                    font-size: 13px;
+                    padding-right: 16px;
+                    position: absolute;
+                    right: 0;
+                }
+                #submission-card .product .details .derivation-fee,
+                #submission-card .product .details .markup {
+                    height: 16px;
+                    line-height: 16px;
+                }
+                #submission-card .product .details .derivation-fee .credits,
+                #submission-card .product .details .markup .credits {
+                    position: absolute;
+                    right: 0;
+                }
+                #submission-card .product .details .total {
+                    display: inline-block;
+                    position: absolute;
+                    right: 6px;
+                    bottom: 3px;
+                    
+                    font-size: 12px;
+                    vertical-align: bottom;
+                }
+                .credits {
+                    font-weight: bold;
+                    color: white;
+                }
+                #submission-card .product .details .total .credits {
+                    font-weight: normal;
+                    font-size: 20px;
+                }
+                #submission-card .product .details .total .credits:after {
+                    font-size: 12px;
+                }
+                .credits:after {
+                    content: ' cr';
+                }
+                #submission-card .product .details .name {
+                    white-space: nowrap;
+                }
+                #submission-card .product .details .name input {
+                    width: 275px;
+                    margin: 0 0 6px 0;
+                }
+                #submission-card .product .details .chars {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 11px;
+                    color: white;
+                    margin: 0 0 0 3px;
+                    padding: 0;
+                    cursor: pointer;
+                }
+        #submission-card .product .product-notes {
+            border-top: solid 5px #F9F9F7;
+            position: relative;
+            height: 59px;
+            background-color: #FFFFFD;
+            margin: 38px 0 0 0;
+        }
+            #submission-card .product .product-notes.highlighted h2 {
+                background-color: #6BE294;
+            }
+            #submission-card .product .product-notes h2 {
+                height: 20px;
+                line-height: 20px;
+                position: absolute;
+                top: -26px;
+                
+                font-size: 13px;
+                background-color: #FAF9F4;
+                padding: 0 9px 0 9px;
+            }
+            #submission-card .product .product-notes textarea {
+                
+                font-size: 13px;
+                padding: 0 8px 8px 8px;
+                width: 100%;
+                height: 100%;
+            }
+        #submission-card .product #search-keywords-container {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #submission-card .product .search-keywords {
+            border-top: solid 5px #F9F9F7;
+            position: relative;
+            height: 44px;
+            background-color: #FFFFFD;
+            margin: 38px 0 0 0;
+        }
+            #submission-card .product .search-keywords h2 {
+                height: 20px;
+                line-height: 20px;
+                position: absolute;
+                top: -26px;
+                
+                font-size: 13px;
+                background-color: #FAFBF6;
+                padding: 0 9px 0 9px;
+            }
+            #submission-card .product .search-keywords .words {
+                position: absolute;
+                top: -26px;
+                padding: 0;
+                text-align: right;
+                height: 20px;
+                line-height: 20px;
+                font-size: 11px;
+                right: 0;
+                font-weight: normal;
+                
+                color: #4F4F4D;
+            }
+            #submission-card .product .search-keywords textarea,
+            #submission-card .product .search-keywords label {
+                
+                font-size: 13px;
+                padding: 0 8px 8px 8px;
+                width: 100%;
+                height: 100%;
+            }
+        #submission-card .product .controls {
+            border-top: solid 5px #F9F9F7;
+            position: relative;
+            height: 51px;
+            background-color: #FFFFFD;
+            margin: 38px 0 0 0;
+        }
+            #admin-controls {
+                font-size: 12px;
+                height: 22px;
+                line-height: 22px;
+                display: none;
+                position: absolute;
+                top: -29px;
+                width: 100%;
+            }
+                #admin-controls .locked,
+                #admin-controls .force-derivation {
+                    height: 22px;
+                    line-height: 22px;
+                    vertical-align: bottom;
+                }
+                #submission-card #admin-controls .locked > label,
+                #submission-card #admin-controls .force-derivation > label {
+                    color: #CE0202;
+                }
+                #admin-controls .locked * {
+                    display: inline-block;
+                    line-height: 22px;
+                    height: 22px;
+                }
+                #admin-controls .locked #admin_locked {
+                    padding: 0;
+                    margin: 0;
+                    vertical-align: text-bottom;
+                }
+                #admin-controls .locked {
+                    position: absolute;
+                    left: 75px;
+                }
+                #admin-controls .force-derivation {
+                    position: absolute;
+                    right: 0;
+                }
+                    #submission-card #admin-controls #force-derivation-container label {
+                        color: gray;
+                    }
+                    #admin-controls .force-derivation input {
+                        width: 127px;
+                    }
+                    #submission-card #admin-controls #admin-controls input.highlighted {
+                        background-color: #6BE294;
+                    }
+                    #submission-card .highlighted #admin-controls #force-derivation-container label {
+                        color: black;
+                    }
+            #submission-card .product .controls h2 {
+                height: 20px;
+                line-height: 20px;
+                position: absolute;
+                top: -26px;
+                
+                font-size: 13px;
+                background-color: #FBFBF9;
+                padding: 0 9px 0 9px;
+            }
+            #submission-card .product .controls label {
+                font-weight: normal;
+                color: black;
+                margin: 0 0 0 3px;
+            }
+            #submission-card .product .controls ul {
+                
+                font-size: 13px;
+                padding: 0 8px 8px 8px;
+                width: 100%;
+                height: 100%;
+                margin: 3px 0 0 0;
+            }
+            #submission-card .product .controls input[type=checkbox] {
+                height: 11px;
+            }
+            #submission-card .product .controls .control {
+                float: left;
+                width: 50%;
+                height: 19px;
+                white-space: nowrap;
+            }
+            #submission-card .product .controls .control label {
+                line-height: 12px;
+                display: inline-block;
+                vertical-align: text-top;
+            }
+        #submission-card .buttons {
+            float: right;
+            margin: 6px 0 0 0;
+        }
+            #submission-card .buttons .submit {
+                padding: 0 10px 1px 10px;
+            }
+            #submission-card .buttons .submit.missing-required-fields {
+                opacity: 0.5;
+            }
+        #submission-card .product .required-fields {
+            background-color: #D70707;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            
+            font-size: 13px;
+            padding: 0;
+            height: 51px;
+        }
+            #submission-card .required-fields .satisfied {
+                color: #E55151;
+            }
+            #submission-card .product .required-fields h2 {
+                font-weight: normal;
+                background-color: #D70707;
+                color: white;
+                position: absolute;
+                height: 20px;
+                line-height: 20px;
+                top: -21px;
+                left: 0;
+                margin: 0;
+                padding: 0 9px 0 9px;
+                display: block;
+                
+                font-size: 13px;
+            }
+            #submission-card .product .required-fields ul {
+                width: 280px;
+                padding: 8px 0 0 10px;
+                margin: 0;
+            }
+            #submission-card .product .required-fields li {
+                display: block;
+                float: left;
+                width: 130px;
+                line-height: 17px;
+            }
+            #submission-card .product .required-fields li:before {
+                content: '* ';
+            }
+            #submission-card .product .required-fields li.rating {
+                clear: right;
+            }
+        #submission-card .product .fees {
+            margin-top: 76px;
+            font-size: 13px;
+            color: black;
+            text-align: center;
+        }
+            #submission-card .product .fees.missing-required-fields {
+                display: none;
+            }
+            #submission-card .product .fees h2 {
+                font-weight: bold;
+                font-size: 13px;
+                display: inline;
+                color: #000;
+            }
+            #submission-card .product .fees dl,
+            #submission-card .product .fees dl * {
+                display: inline;
+            }
+            #submission-card .product .fees dd {
+                font-weight: bold;
+            }
+            #submission-card .product .fees dd:not(:last-child):after {
+                font-weight: normal;
+                content: ' + ';
+            }
+
+    /* We can't use the BG image header "trick" for the help panel title because
+       it already has a BG image -- the flourish. It's also anchored to the
+       bottom of the panel, which may grow as the card is used, so we can't
+       include the header bar as part of that image. */
+    #submission-card .help {
+        background: url(img/submission_help_bg.png) repeat-x;
+        position: relative;
+        float: left;
+        width: 280px;
+        height: 100%;
+        border-left: solid 1px black;
+        
+        color: white;
+        z-index: 0; /* .flourish blocks clicks unless .help is above it */
+    }
+        .promotional-product-help {
+            display: none;
+        }
+        /* We can remove these two styles once we implement product notes. The
+           list of help steps will automatically update and be numbered
+           appropriately. */
+        #submission-card .help-add-product-notes {
+            display: none;
+        }
+        #submission-card .product-notes {
+            display: none;
+        }
+        #submission-card input.highlighted,
+        #submission-card select.highlighted,
+        #submission-card textarea.highlighted,
+        #submission-card .product .highlighted h2,
+        #submission-card .product .highlighted {
+            background-color: #6BE294;
+        }
+        #submission-card .product .highlighted {
+            border-color: #6BE294;
+        }
+        #submission-card input.highlighted,
+        #submission-card select.highlighted {
+            -moz-box-shadow: inset 0 1px 1px #4CA16A;
+        }
+        #submission-card .hinted-field .highlighted + label {
+            color: black;
+        }
+        #submission-card .help a {
+            color: white;
+            text-decoration: underline;
+        }
+        #submission-card .help p {
+            margin-bottom: 15px;
+        }
+        /* Re: above, the help title must be indented individually. */
+        #submission-card .help .title {
+            padding-left: 34px;
+            background-color: #001C31;
+            color: white;
+        }
+        #submission-card .help .flourish {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* .flourish blocks clicks unless .help is above it */
+        }
+        #submission-card .help .flourish {
+            background: url(img/submission_help_bg_flourish.png) no-repeat right bottom;
+        }
+        #submission-card .help .faded-white-stripe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: url(img/submission_rightmost_faded_white_stripe.png) no-repeat;
+        }
+        #submission-card .help-steps {
+            counter-reset: term;
+            font-size: 13px;
+            margin: 14px 0 0 0;
+        }
+            #submission-card .help-steps dt {
+                text-transform: uppercase;
+                height: 24px;
+                line-height: 24px;
+                cursor: pointer;
+            }
+            /* A dictionary list seemed more semantically correct for the help steps. Also,
+               it provides convenient hooks for styling (dt vs. dd). CSS supports automatic
+               numbering of elements as in <ol> and <ul> ala counter-reset, -increment, and
+               counter(). */
+            #submission-card .help-steps dt:before {
+                counter-increment: term;
+                content: counter(term);
+                display: inline-block;
+                width: 28px;
+                text-align: right;
+                padding: 0 6px 0 0;
+            }
+            #submission-card .help-steps dd {
+                
+                font-size: 12px;
+                padding: 13px 10px 0 34px;
+                margin: 0;
+            }
+            #submission-card .help-steps .required:after {
+                content: ' *';
+            }
+            #submission-card .help-steps .current {
+                color: black;
+                background-color: #5BC088;
+                font-weight: bold;
+            }
+            #submission-card .help-steps .current + dd {
+                height: 280px;
+            }
+            /* Hide all non-current step instructions. */
+            #submission-card .help .help-steps :not(.current) + dd {
+                display: none;
+            }
+            /* Preface the instructions in required steps with "* Required" on its own line. */
+            #submission-card .help-steps .required + dd:before {
+                content: '* Required';
+                display: block;
+                font-weight: bold;
+            }
+            #submission-card .help-steps .hint {
+                color: silver;
+            }
+            #submission-card .help-steps .file-types {
+                margin-left: 29px;
+            }
+        #submission-card #product-override-input {
+            text-align: center;
+            width: 100%;
+        }
+        #submission-card #product-override-input.inactive {
+            text-align: center;
+            color: #808080;
+        }
+        #submission-card .product-override {
+            font-size: 13px;
+            background: url(img/submission_help_bg.png) repeat-x;
+        }
+        #submission-card .product-override .info {
+            font-size: 11px;
+            text-align: left;
+            background: -moz-linear-gradient(top, #244f6b, #173345);
+        }
+        #submission-card .product-override .info .creator,
+        #submission-card .product-override .info .total {
+            font-weight: bold;
+        }
+        #submission-card .product-override .info .credits,
+        #submission-card .product-override .info .creator .name {
+            font-weight: normal;
+        }
+        #submission-card .product-override .info .image {
+            margin: 1ex;
+            float: left;
+            background-color: black;
+            width: 80px;
+            height:64px;
+        }
+        #submission-card .product-override .error {
+            text-align: center;
+            font-weight: bold;
+        }
+        #submission-card .overlay {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #submission-card .overlay .click-block {
+            z-index: 2;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: black;
+            opacity: 0.5;
+        }
+        #submission-card .overlay .dialog {
+            z-index: 3;
+
+            position: absolute;
+
+            left: 170px;
+            top: 106px;
+
+            width: 452px;
+            height: 317px;
+
+            border: 1px solid black;
+
+            background-color: rgb(240, 240, 232);
+        }
+        #submission-card .overlay .dialog .title {
+            background: url(../../img/panel_hd.png) repeat-x;
+            color: white;
+
+            
+            font-size: 18px;
+            padding-left: 20px;
+
+            line-height: 32px;
+        }
+        #submission-card .overlay .dialog .body {
+            background: transparent url(../../img/icon_24_warning.png) no-repeat top left;
+            margin: 14px;
+            padding-left: 42px;
+        }
+        #submission-card .dialog .product-override {
+            width: 100%;
+            height: 120px;
+            background: url(img/bg_product_info.png) repeat-x;
+            color: white;
+            padding: 20px;
+        }
+        #submission-card .dialog .body .desc {
+            line-height: 32px;
+            margin-bottom: 16px;
+        }
+        #submission-card .dialog .product-override .info .image {
+            float: left;
+            background-color: black;
+
+            width: 100px;
+            height: 80px;
+
+            margin: 0 20px 0 0;
+        }
+        #submission-card .dialog .buttons {
+            margin-top: 16px;
+        }

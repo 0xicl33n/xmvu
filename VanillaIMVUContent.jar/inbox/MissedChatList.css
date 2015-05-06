@@ -1,0 +1,18 @@
+#missed-chat-pane {
+    -moz-user-select:-moz-none;
+}
+
+.yui-dt-col-missedChatStaticText .yui-dt-liner {
+    background:url(img/inbox_invite_old.png) no-repeat 0 3px;
+    padding:0 0 0 20px;
+}
+
+.inbox-list-view .yui-dt-col-date .yui-dt-liner {
+    text-align:right;
+    margin-right:5px;
+    color: #FFF;
+}
+
+#msgTimestamp {
+    cursor:default;
+}

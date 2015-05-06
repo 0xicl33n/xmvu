@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="error.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="../../js/imvu.js"></script>
+    <script src="DecorateRoomInfoDialog.js"></script>
+</head><body>
+<div style="display: table; width: 100%; height: 100%;">
+        <div><div class="main-title"><script id="inline_translate">_iT("Decorating your room", "inline_translate")</script></div><div id="close-button"></div></div>
+        <div class="dialog-body">
+            <div class="sub-header"><script id="inline_translate">_iT("FURNITURE TOOLS", "inline_translate")</script></div>
+            <div class="main-text">
+                <p><script id="inline_translate">_iT("Use the Furniture Tools tab to edit and arrange furniture products in your room. Access the tool via its keyboard shortcut", "inline_translate")</script> <b class="notranslate">[Ctrl-F]</b> <script id="inline_translate">_iT("or by clicking the hammer in the upper left corner of the screen.", "inline_translate")</script></p>
+                <p><script id="inline_translate">_iT("To edit and arrange furniture, select a tool from the Furniture Tools tab and hover your mouse over the product you wish to edit. Learn about each tool below:", "inline_translate")</script></p>
+        </div>
+        <div id="info-panel">
+            <div class="info-section" id="section-explore">
+                <div class="info-title"><img src="./img/explore.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Explore", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Move avatar to seats and locations in room. Hover your mouse to see yellow dots that indicate available locations.", "inline_translate")</script> <b class="notranslate">[Ctrl+E]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-move">
+                <div class="info-title"><img src="./img/move.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Move", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click-drag a furniture item to move it around the room. The yellow dots you see while dragging are where you can place furniture.", "inline_translate")</script> <b class="notranslate">[Ctrl+M]</b></p>
+                    <div>
+                        <span class="tip-title"><b><script id="inline_translate">_iT("Tips:", "inline_translate")</script></b></span>
+                        <img src="./img/vertical_adjust.png" align="middle"><span class="tip-text"><script id="inline_translate">_iT("Hold Shift to adjust", "inline_translate")</script> <b><script id="inline_translate">_iT("vertically", "inline_translate")</script></b><script id="inline_translate">_iT(".", "inline_translate")</script></span><br>
+                        <img src="./img/horizontal_adjust.png" align="middle"><span class="tip-text"><script id="inline_translate">_iT("Hold Ctrl to adjust", "inline_translate")</script> <b><script id="inline_translate">_iT("horizontally", "inline_translate")</script></b><script id="inline_translate">_iT(".", "inline_translate")</script></span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="info-section" id="section-rotate">
+                <div class="info-title"><img src="./img/rotate.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Rotate", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click-drag a furniture item to rotate it. Rotating furniture will snap at 90 degrees to help keep items on a square layout grid.", "inline_translate")</script> <b class="notranslate">[Ctrl+R]</b></p>
+                    <div>
+                        <span class="tip-title"><b><script id="inline_translate">_iT("Tips:", "inline_translate")</script></b></span>
+                        <img src="./img/pitch_adjust.png" align="middle"><span class="tip-text"><script id="inline_translate">_iT("Hold Shift to adjust", "inline_translate")</script> <b><script id="inline_translate">_iT("pitch", "inline_translate")</script></b><script id="inline_translate">_iT(".", "inline_translate")</script></span><br>
+                        <img src="./img/roll_adjust.png" align="middle"><span class="tip-text"><script id="inline_translate">_iT("Hold Ctrl to adjust", "inline_translate")</script> <b><script id="inline_translate">_iT("roll", "inline_translate")</script></b><script id="inline_translate">_iT(".", "inline_translate")</script></span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="info-section" id="section-scale">
+                <div class="info-title"><img src="./img/scale.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Scale", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click-drag on a furniture item to resize it. The min and max warning icons will appear at the limits of scaling.", "inline_translate")</script> <b class="notranslate">[Ctrl+S]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-duplicate">
+                <div class="info-title"><img src="./img/duplicate.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Duplicate", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click on a furniture item to copy it nearby. Clicking multiple times will create multiple copies in free spots.", "inline_translate")</script> <b class="notranslate">[Ctrl+P]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-reset">
+                <div class="info-title"><img src="./img/reset.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Reset", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click on a furniture item to reset its scale, rotation, and offset to the same values as when it was added to the room.", "inline_translate")</script> <b class="notranslate">[Ctrl+T]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-lock">
+                <div class="info-title"><img src="./img/lock.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Lock", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click on a furniture item to lock it. Locking protects the item from accidental deletion, etc. Click a locked furniture item to unlock it.", "inline_translate")</script> <b class="notranslate">[Ctrl+L]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-delete">
+                <div class="info-title"><img src="./img/delete.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Delete", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("Click on a furniture item to delete it from you room. Deleted furniture is still in your inventory and can be used again.", "inline_translate")</script> <b class="notranslate">[Ctrl+D]</b></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-undo">
+                <div class="info-title"><img src="./img/undo.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Undo", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("If you have edited a furniture item, you will be able to click on the item using this tool to undo the change.", "inline_translate")</script> <b class="notranslate">[Ctrl+U]</b> <script id="inline_translate">_iT("You can also use", "inline_translate")</script> <b class="notranslate">[Ctrl+Z]</b> <script id="inline_translate">_iT("to undo whichever change was most recent, including retrieving an item which was deleted.", "inline_translate")</script></p>
+                </div>
+            </div>
+            <div class="info-section" id="section-redo">
+                <div class="info-title"><img src="./img/redo.png" align="middle"><span class="info-title-text"><script id="inline_translate">_iT("Redo", "inline_translate")</script></span></div>
+                <div class="info-text">
+                    <p><script id="inline_translate">_iT("If you have undone a change to a furniture item, you will be able to click on the item using this tool to redo the change", "inline_translate")</script> <b class="notranslate">[Ctrl+O]</b> <script id="inline_translate">_iT("You can also use", "inline_translate")</script> <b class="notranslate">[Ctrl+Y]</b> <script id="inline_translate">_iT("to redo whichever undo was most recent.", "inline_translate")</script></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+    decorateroominfodialog = new DecorateRoomInfoDialog(imvu, imvu.call('getDialogInfo'));
+}
+</script>
+</body></html>

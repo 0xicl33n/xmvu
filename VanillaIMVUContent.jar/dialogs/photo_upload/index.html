@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+    <script src="../../js/imvu.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="PhotoUpload.js" charset="utf-8"></script>
+</head><body>
+    <div id="dialog">
+        <h1 class="title"><script id="inline_translate">_iT("Save Photo", "inline_translate")</script></h1>
+        <div class="close"></div>
+        <div class="dialog-content">
+            <div class="photo-container">
+                <img id="photo" src="../outfit_card/img/aen.png" width="160">
+            </div><div class="photo-options-container">
+                <div class="profile-option photo-option"><input id="replace-profile" checked="checked" type="checkbox"><label for="replace-profile"> <script id="inline_translate">_iT("Replace my profile picture", "inline_translate")</script></label></div>
+                <div class="room-option photo-option"><input id="replace-room" checked="checked" type="checkbox"><label for="replace-room"> <script id="inline_translate">_iT("Replace my room picture", "inline_translate")</script></label></div>
+                <div class="share-option photo-option"><input id="share-photo" checked="checked" type="checkbox"><label for="share-photo"> <script id="inline_translate">_iT("Share to my stream", "inline_translate")</script></label></div>
+                <div class="disclaimer"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="disclaimer"><p><script id="inline_translate">_iT("All shared photos must be OK for", "inline_translate")</script> <a id="link_content_policy" href="#"><script id="inline_translate">_iT("general audiences.", "inline_translate")</script></a></p></div>
+            <div id="button-bar">
+                <button id="cancel" class="imvu-button level2 white-text dark-gray"><script id="inline_translate">_iT("Try Again", "inline_translate")</script></button><button id="save" class="imvu-button level2"><script id="inline_translate">_iT("Save", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+<script>
+if (IMVU.runJS()) {
+    new PhotoUploadDialog({root: '#dialog', imvu: imvu});
+}
+</script>
+
+</body></html>

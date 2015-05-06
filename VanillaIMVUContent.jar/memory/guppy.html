@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+<script src="../js/imvu.js"></script>
+    <title>Guppy</title>
+  </head>
+
+<style>
+#output {
+    width: 100%;
+}
+#input {
+    width: 100%;
+}
+</style>
+
+  <body>
+    <h1>Guppy</h1>
+    <div>
+      <input onclick="onResetBaseline()" type="submit" value="Set Current Heap as Baseline"></input>
+      <input onclick="onStartOver()" type="submit" value="Start Over"></input>
+      <input onclick="onClear()" type="submit" value="Release Held References"></input>
+      <pre id='output'></pre>
+      <form onsubmit="return passInput()">
+      <input type='text' id='input'></input>
+      </form>
+    </div>
+  </body>
+
+<script>
+if (IMVU.runJS()) {
+    if (typeof(imvu) !== 'undefined') {
+
+        function getOutput() {
+            return imvu.call('getOutput');
+        }
+
+        function acceptInput(input) {
+            return imvu.call('acceptInput', input);
+        }
+
+        function startOver() {
+            return imvu.call('startOver');
+        }
+
+        function resetBaseline() {
+            return imvu.call('resetBaseline');
+        }
+
+        function clear() {
+            return imvu.call('clear');
+        }
+
+    } else {
+
+        var _output = 'initial output\n';
+
+        function getOutput() {
+            return _output;
+        }
+
+        function acceptInput(input) {
+            _output += '> ' + input + '\n';
+            _output += 'command output\n';
+        }
+
+        function startOver() {
+            _output = 'started over\n';
+        }
+
+        function resetBaseline() {
+            _output = 'reset baseline\n';
+        }
+
+        function clear() {
+            _output = 'Nothing here\n';
+        }
+    }
+
+
+    function onload() {
+        updateOutput();
+    }
+
+    function updateOutput() {
+        document.getElementById('output').innerHTML = getOutput();
+        document.getElementById("input").focus();
+    }
+
+    function onStartOver() {
+        startOver();
+        updateOutput();
+    }
+
+    function onResetBaseline() {
+        resetBaseline();
+        updateOutput();
+    }
+
+    function onClear() {
+        clear();
+        updateOutput();
+    }
+
+    function passInput() {
+        var input = document.getElementById('input');
+        acceptInput(input.value);
+        document.getElementById('input').value = '';
+        updateOutput();
+        return false;
+    }
+}
+</script>
+</html>

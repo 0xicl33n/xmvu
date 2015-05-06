@@ -1,0 +1,1052 @@
+@import url(../../css/font.css);
+/*
+    Document   : mass_gifting css
+
+*/
+
+/*-------------- common use css --------------------*/
+input.hint, textArea.hint {
+    color: #7F7F7F;
+    font-size: 12px;
+    font-style: italic;
+}
+a:active, a:focus, input {
+    outline: 0;
+    outline-style:none;
+    outline-width:0;
+}
+p {
+    margin: 0;
+}
+
+.mass-gifting-dialog {
+    padding: 0 ;
+}
+
+.mg-default-font {
+    
+    font-size: 12px;
+    color: #525252 ;
+    }
+.mg-error{
+    color: #8d261d;
+    background: url(../../img/icon_errors.png) -13px -37px  no-repeat;
+    heigth: 12px;
+    padding-left: 17px;
+
+}
+
+/* for main dialog , add & remove someone else */
+.mg-shadow{
+    -webkit-box-shadow: 0px 1px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 1px 4px rgba(50, 50, 50, 0.75);
+}
+
+.mg-error-text{
+    color: #8d261d;
+}
+
+
+/*--------------end  common use css --------------------*/
+
+/*--------------dialog --------------------*/
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-right:13px solid #ebebeb;
+    position: absolute;
+}
+.arrow-left-stroke {
+    position: absolute;
+    z-index: -2;
+    top: -2px;
+    left: -2px;
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+}
+
+body {
+    background: #383838;
+}
+
+
+.mg-add-msg-dialog .ui-widget-header .ui-icon, .mg-wraps-dialog .ui-widget-header .ui-icon{
+    background: url(../../img/icon_16_close_brightnormal_g.png) center center no-repeat;
+}
+.mg-add-msg-dialog .ui-widget-header.ui-state-hover .ui-icon, .mg-wraps-dialog .ui-widget-header.ui-state-hover .ui-icon{
+    background: url(../../img/icon_16_close_brightnormal_g.png) center center no-repeat;
+}
+
+.im-dialog.ui-dialog .ui-dialog-titlebar .ui-dialog-title{
+    padding: 0px 0 0px 29px;
+    font-size: 20px;
+    color: #ffcc00;
+    font-family:;
+    margin: 0px;
+    background: url(images/gift_icon.png) center left no-repeat;
+    font-weight: 400;
+}
+
+.mass-gifting-dialog .credit {
+    background: url(../../img/icon_errors.png) -13px -62px  no-repeat;
+    padding-left: 15px;
+    margin-left: 3px;
+}
+.mass-gifting-dialog .gold-credit-icon {
+    background: url(../../img/credits_large.png) center left no-repeat;
+    padding-left: 20px;
+}
+.mass-gifting-dialog .credit.big-credit-icon {
+    background: url(../../img/icon_errors.png) -13px -86px  no-repeat;
+}
+.mg-button {
+    background: #ffcc00 ;
+}
+#mgifting-dialog {
+    text-align: left;
+    padding: 0;
+    margin: 0px 20px 0px;
+    position: relative;
+    
+    font-size: 12px;
+    color: #fff;
+}
+#mgifting-dialog .container{
+    position: relative;
+    overflow: hidden;
+}
+#mgifting-dialog a{
+    cursor: pointer;
+}
+
+#mgifting-dialog .mg-header{
+    margin: 8px 0 0px 0;
+    width: 350px;
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    z-index: 100;
+}
+
+#mgifting-dialog .prod-image {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #acacac;
+}
+#mgifting-dialog .prod-info {
+    float: left;
+    padding: 3px 0 0 6px;
+}
+#mgifting-dialog .prod-info p{
+    padding: 0;
+    margin: 0;
+}
+
+#mgifting-dialog .search-line{
+    height: 40px;
+    margin: 0px 0 0px;
+    border-bottom: 1px solid #ccc;
+    background-color: #d1d0d0;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d0d0', endColorstr='#a6a5a5');*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d1d0d0), to(#a6a5a5));
+    background: -moz-linear-gradient(top,  #d1d0d0,     #a6a5a5);
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+#mgifting-dialog .mg-friends-list.show-error .search-line{
+    height: 62px;
+}
+#mgifting-dialog .mg-friends-list.show-error .mg-friends{
+    height: 145px;
+}
+#mgifting-dialog .mg-friends-list .has-gift-msg{
+    position: absolute;
+    bottom: 7px;
+    left: 9px;
+    display: none;
+}
+#mgifting-dialog .mg-friends-list.selected .mg-friends {
+    height: 200px;
+}
+#mgifting-dialog .mg-friends-list.selected .search-line {
+    height: 8px;
+}
+#mgifting-dialog .mg-friends-list.selected .search-line-for-friends-list {
+    display:none;
+}
+#mgifting-dialog .mg-friends-list.selected .not-friend-msg {
+    display:none;
+}
+#mgifting-dialog .mg-friends-list.show-error .has-gift-msg{
+    display: block;
+}
+
+
+#mgifting-dialog  .mg-search-container {
+    float: left;
+    width: 500px;
+    margin: 5px 0 0 6px;
+    height: 30px;
+    border: 1px solid #929292;
+    background-color: #f2f2f2;
+
+}
+#mgifting-dialog .mg-search-container .left{
+    float: left;
+}
+#mgifting-dialog .mg-search-container .right{
+    float: right;
+}
+
+#mgifting-dialog  .mg-search-container input.mg-search {
+    background: none;
+    width: 452px;
+    height: 20px;
+    margin: 5px 0 0 8px;
+    border: none;
+}
+#mgifting-dialog  .mg-search-submit,
+#mgifting-dialog  .mg-search-cancel{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+#mgifting-dialog  .mg-search-submit {
+    background: url(../../img/badges_sprite.png) -1px -147px  no-repeat;
+    margin: 6px 6px 0 0 ;
+    width: 20px;
+    height: 20px;
+}
+#mgifting-dialog  .mg-search-submit:hover {
+    background: url(../../img/badges_sprite.png) -1px -172px  no-repeat;
+    margin: 6px 6px 0 0 ;
+}
+#mgifting-dialog  .mg-search-cancel {
+    cursor: pointer;
+    margin: 6px 6px 0 0 ;
+    background: url(../../img/icon_16_close_brightnormal_g.png) center center  no-repeat;
+}
+#mgifting-dialog  .mg-search-cancel:hover {
+    background: url(../../img/icon_16_close_brighthover_g.png) center center  no-repeat;
+}
+#mgifting-dialog .select-actions-container {
+    float:left;
+    margin: 11px 0 0 12px;
+}
+#mgifting-dialog input.select-all {
+
+}
+
+/*** tabs ****/
+#mgifting-dialog #mg-friends-tabs{
+    padding: 0;
+    margin: 18px 0 0 0 ;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 0px solid #666;
+    background: none;
+}
+#mgifting-dialog #mg-friends-tabs.ui-tabs ul.ui-tabs-nav {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    border-bottom: 1px solid #666;
+    border-radius: 0 ;
+    border: none ;
+
+}
+#mgifting-dialog #mg-friends-tabs .ui-tabs-nav li{
+    float: right ;
+    border: none;
+}
+#mgifting-dialog #mg-friends-tabs.ui-tabs ul.ui-tabs-nav li{
+    float: right;
+    height: 27px;
+    border: 1px solid #666;
+    text-align: center;
+    padding: 5px 0 0 0;
+    font-size: 14px;
+    margin: 0;
+    width: 100px;
+
+    background: #646464;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#787878', endColorstr='#646464');*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#787878), to(#646464));
+    background: -moz-linear-gradient(top,  #787878,     #646464);
+
+
+}
+#mgifting-dialog #mg-friends-tabs.ui-tabs ul.ui-tabs-nav li a{
+    padding: 0 ;
+    float: none ;
+    color: #fff;
+    font-weight: normal;
+
+}
+
+#mgifting-dialog #mg-friends-tabs ul.ui-tabs-nav li.friends-selected-tab{
+    margin: 0 20px 0 4px;
+}
+#mgifting-dialog #mg-friends-tabs ul.ui-tabs-nav li.friends-selected-tab .selected-count{
+    font-weight: bold;
+}
+#mgifting-dialog .total-container .selected-count{
+    padding-left: 19px;
+}
+#mgifting-dialog #mg-friends-tabs.ui-tabs ul.ui-tabs-nav li.ui-state-default.ui-state-active{
+    background: #d1d0d0;
+    height: 33px;
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius:  4px 4px 0 0;
+    -webkit-border-radius:  4px 4px 0 0;
+
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e7e7', endColorstr='#d1d0d0');*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(#d1d0d0));
+    background: -moz-linear-gradient(top,  #e7e7e7,     #d1d0d0);
+
+}
+#mgifting-dialog #mg-friends-tabs.ui-tabs ul.ui-tabs-nav li.ui-state-default.ui-state-active a{
+    color: #1f1f1f;
+}
+#mgifting-dialog #mg-friends-tabs .ui-tabs-panel{
+    background-color: #e1e1e1;
+    border-radius: 0 ;
+    border: 1px solid #666;
+    border-top: none;
+    height: 225px;
+}
+
+
+
+/** tab panel **/
+#mgifting-dialog #mg-friends-tabs .ui-tabs-panel{
+    margin: 1px 0 0 0px;
+    padding: 0;
+    background: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    -webkit-border-radius: 6px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius: 6px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-radius: 6px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#mgifting-dialog .mg-friends-list {
+    min-height: 100%;
+    height: 100%;
+}
+#mgifting-dialog .mg-friends{
+    height: 168px;
+    width: 570px;
+    overflow: auto;
+    margin: 0;
+    padding: 5px 4px 10px;
+    overflow-x: hidden;
+}
+
+#mgifting-dialog .mg-friends .friend,
+#mgifting-dialog .mg-friends .non-friend {
+    position: relative;
+    float: left;
+    display: block;
+    margin: 0 4px 4px 0;
+    width: 179px;
+    height: 61px;
+    background: #ccc;
+    font-size: 12px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+
+}
+#mgifting-dialog .mg-friends .friend:hover,
+#mgifting-dialog .mg-friends .non-friend:hover {
+    background: #fff;
+    border: 1px solid #9dd4fd;
+}
+#mgifting-dialog .mg-friends .friend.selected,
+#mgifting-dialog .mg-friends .non-friend.selected
+{
+    background-color: #9dd4fd;
+}
+#mgifting-dialog .mg-friends .not-friend-msg{
+    background: none;
+    height: 100px;
+    width: 564px;
+    font-size: 14px;
+    
+    color: #767676;
+}
+#mgifting-dialog .mg-friends .not-friend-msg p{
+    text-align: center;
+}
+#mgifting-dialog .mg-friends .not-friend-msg .mg-error-line{
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+#mgifting-dialog img.friend-img {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 55px;
+    margin: 3px 0 4px 3px;
+}
+
+#mgifting-dialog .friend .info,
+#mgifting-dialog .non-friend .info {
+    display: block;
+    float: left;
+    height: 51px;
+    width: 110px;
+    margin: 9px 6px 4px;
+    overflow: hidden;
+}
+
+#mgifting-dialog .friend .info .scroll_container {
+    width: 110px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+#mgifting-dialog .friend .info .scroll_container .avname {
+}
+#mgifting-dialog .friend .ap-icon{
+    background:url(../../img/badges_sprite.png) -23px -1px no-repeat;
+    height:19px;
+    width: 23px;
+    display: block;
+    float:left;
+}
+#mgifting-dialog .selected-remove{
+    display: none;
+    width: 10px;
+    height:10px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    background: url(../../img/icon_16_close_brightnormal_g.png) center center no-repeat;
+
+}
+#mgifting-dialog  .selected:hover .selected-remove {
+    display: block;
+}
+
+#mgifting-dialog .show-someone-else-link{
+    margin: 10px 0 4px 0;
+}
+#mgifting-dialog .deliver-line{
+}
+#mgifting-dialog .deliver-line p.label-line{
+    margin: 20px 0 4px 0;
+}
+#mgifting-dialog .deliver-line select{
+    height: 23px;
+    background: #f2f2f2;
+    border: 1px solid #696969;
+    color: #000;
+    width: 260px;
+    
+    padding-top: 2px;
+}
+
+#mgifting-dialog .add-message{
+    margin: 10px 0;
+    position: relative;
+}
+
+
+#mgifting-dialog .add-not-friend {
+    width: 41px;
+}
+#mgifting-dialog .remove-not-friend {
+    width: 63px;
+}
+
+#mgifting-dialog .token-msg {
+    clear: both;
+    margin: 8px 0 0 0 ;
+    font-size: 11px;
+}
+
+/**** input token ****/
+#mgifting-dialog ul.token-input-list {
+    overflow: hidden;
+    height: 26px;
+    width: 218px;
+    border: 1px solid #999;
+    cursor: text;
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    list-style-type: none;
+    float: left;
+}
+
+#mgifting-dialog ul.token-input-list li {
+    list-style-type: none;
+}
+
+#mgifting-dialog ul.token-input-list li input {
+    border: 0;
+    width: 218px;
+    height: 20px;
+    padding: 3px 2px 3px 6px;
+    background: none;
+    -webkit-appearance: caret;
+}
+
+#mgifting-dialog li.token-input-token {
+    overflow: hidden;
+    display: block;
+}
+
+#mgifting-dialog li.token-input-token p {
+    padding: 3px 0 0 4px;
+    margin: 0;
+}
+
+
+#mgifting-dialog li.token-input-selected-token {
+    background-color: #08844e;
+    color: #fff;
+}
+
+#mgifting-dialog li.token-input-selected-token span {
+    color: #bbb;
+}
+
+#mgifting-dialog .total-container {
+    position: absolute;
+    bottom: 10px;
+    padding: 10px 15px;
+    right: 0px;
+    background-color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #696969;
+
+}
+#mgifting-dialog .total-container p {
+    margin: 0px;
+}
+#mgifting-dialog .total-container p label{
+    width: 117px;
+    display: inline-block;
+    text-align: right;
+}
+#mgifting-dialog .total-container  p span{
+    width: 95px;
+    display: inline-block;
+}
+#mgifting-dialog .total-container p.total-credits{
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid #696969;
+    padding-top: 5px;
+
+}
+
+#mgifting-dialog .total-container  .selected-recipients{
+    margin: 5px 0px;
+    white-space: nowrap;
+}
+
+/**/
+.mg-wraps-dialog, .mg-add-msg-dialog{
+    -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.61);
+    -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.61);
+    box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.61);
+}
+
+.mg-wraps-dialog.ui-dialog,
+.mg-add-msg-dialog.ui-dialog{
+    overflow: visible;
+    background: #ebebeb ;
+    border: 3px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.mg-wraps-dialog .arrow-left{
+    top: 119px;
+    left: -11px;
+}
+.mg-wraps-dialog .arrow-left-stroke{
+    top: 117px;
+    left: -15px;
+}
+.mg-add-msg-dialog .arrow-left{
+    top: 126px;
+    left: -23px;
+}
+.mg-add-msg-dialog .arrow-left-stroke{
+    left: -27px;
+    top: 124px;
+}
+.mg-add-msg-dialog.ui-dialog .ui-dialog-titlebar-close {
+    top: 7px;
+    right: 6px;
+}
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane,
+.mg-wraps-dialog.ui-dialog .ui-dialog-buttonpane{
+    height: 42px;
+    line-height: 42px;
+}
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane{
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+    position: relative;
+}
+
+.mg-wraps-dialog .ui-dialog-buttonpane button,
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane button{
+    font-weight: 400;
+    margin-top: 10px;
+}
+/* jQuery UI's CSS has some weird em padding that was screwing up the vertical alignment. */
+.mg-wraps-dialog .ui-dialog-buttonpane button .ui-button-text,
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane button .ui-button-text {
+    padding: 0;
+}
+.mg-wraps-dialog.ui-dialog .ui-dialog-buttonpane,
+.mg-add-msg-dialog.ui-dialog .ui-dialog-buttonpane{
+    margin-right: 10px;
+}
+/**/
+.mg-add-msg-dialog.ui-dialog{
+    padding: 0 ;
+}
+
+
+#mg-add-message-dialog{
+    display: none;
+    padding: 0 ;
+    
+    font-size: 13px;
+    color: #525252;
+
+}
+.mg-add-msg-dialog .ui-widget-header{
+    padding: 0 ;
+    margin: 10px 0 11px 10px ;
+
+    border-radius: none ;
+    border: none;
+
+    
+    color: #1f1f1f;
+    font-size: 14px;
+    font-weight: normal ;
+
+    background: none;
+}
+.mg-add-msg-dialog .ui-widget-header .ui-dialog-title{
+    padding: 0 ;
+    margin: 0 ;
+}
+#mg-add-message-dialog .add-message-container{
+    padding: 0;
+    margin: 0px 10px 0px
+}
+.mg-message{
+    width: 396px;
+    height: 90px;
+    
+    font-size: 12px;
+    color: #1f1f1f;
+    resize: none;
+    padding: 10px 5px;
+    border: 1px solid #c9c9c9;
+}
+.mg-add-msg-dialog .message-counter{
+    width: 40px;
+    position: absolute;
+    top: 1px;
+    left: -56px;
+    text-align: right;
+    font-size: 12px;
+    
+    font-weight: normal;
+    color: #1f1f1f;
+
+}
+.mg-wraps-dialog {
+    padding: 0 ;
+    background: #ebebeb ;
+    overflow: visible ;
+}
+.mg-wraps-dialog .ui-widget-header{
+    background: none;
+    border: none;
+    border-radius: none;
+    height: 11px;
+    padding: 0 ;
+}
+.mg-wraps-dialog.ui-dialog .ui-dialog-titlebar-close{
+    top: 17px;
+    right: 7px;
+    z-index: 10;
+}
+#mgifting-dialog .gift-wraps{
+    margin: 10px 0 10px;
+}
+#mgifting-dialog .show-gift-wraps{
+    color: #4499fe;
+}
+#mgifting-dialog .show-gift-wraps span{
+    color: #a9a9a9;
+}
+#mgifting-dialog .show-add-message{
+    color: #4499fe;
+}
+#mgifting-dialog .show-add-message span{
+    color: #a9a9a9;
+}
+.mg-wraps-dialog.ui-dialog .gift-wraps-container.ui-dialog-content{
+    padding: 0;
+    
+}
+.gift-wraps-container {
+    width: 420px;
+    height: 160px;
+    overflow: hidden;
+    display: none;
+}
+.mg-wraps-dialog .wrap-text{
+    width: 198px;
+    margin-bottom: 11px;
+    height: 13px;
+    overflow: hidden;
+    text-align: center;
+    text-shadow:0px 0px 3px #FFFFFF;
+
+}
+
+.mg-wraps-dialog .wrap-select-container{
+    margin: 0 10px;
+    overflow: hidden;
+    padding-bottom: 7px;
+    
+    font-size: 11px;
+    color: #1f1f1f;
+
+}
+.gift-wraps-container .footer-divider{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mg-wraps-dialog .wrap-image-holder{
+    width: 100px;
+    height: 100px;
+}
+.mg-wraps-dialog .gift-wrap-preview{
+    width: 198px;
+    height: 123px;
+    float: left
+}
+.mg-wraps-dialog .gift-wrap-preview .wrap-prod-image{
+    float:left;
+    width: 100px;
+    height: 80px;
+    margin-top: 20px;
+}
+.mg-wraps-dialog .gift-wrap-preview .wrap-title-wrap{
+    float: left;
+    width: 83px;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+    height: 120px;
+}
+.mg-wraps-dialog .gift-wrap-preview .wrap-title{
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000;
+    -webkit-text-shadow: 0 0 2px #000;
+    margin-top: 43px;
+}
+
+
+.mg-wraps-dialog .mg-carousel-container {
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 125px;
+    margin: 0 0 0 17px;
+}
+
+
+.mg-wraps-dialog .mg-wraps-carousel {
+    margin: 0 auto ;
+}
+#mgifting-dialog .slide{
+}
+.mg-wraps-dialog .mg-wraps-carousel a.wrap {
+    display: block;
+    float: left;
+    width: 46px;
+    height: 30px;
+    background-color: #ebebeb;
+    border: 1px solid #ebebeb;
+}
+.mg-wraps-dialog .mg-wraps-carousel a.wrap.selected {
+    border: 1px solid #4472cf ;
+    background-color: #9dd4fd;
+}
+.mg-wraps-dialog .mg-wraps-carousel img {
+    border: 0;
+    width: 42px;
+    height: 26px;
+    margin: 2px;
+}
+.mg-wraps-dialog .ui-carousel-next,
+.mg-wraps-dialog .ui-carousel-prev {
+    width: 20px;
+    height: 122px;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+.mg-wraps-dialog .ui-carousel-next {
+    background: url(images/btnrightbar_default.png) center center no-repeat;
+    right: 0;
+}
+.mg-wraps-dialog .ui-carousel-prev {
+    background: url(images/btnleftbar_default.png) center center no-repeat;
+    left: 0;
+}
+.mg-wraps-dialog .ui-carousel-next:hover {
+    background: url(images/btnrightbar_hover.png) center center no-repeat;
+    right: 0;
+}
+
+.mg-wraps-dialog .ui-carousel-prev:hover {
+    background: url(images/btnleftbar_hover.png) center center no-repeat;
+    left: 0;
+}
+
+.mg-wraps-dialog .ui-carousel-next > span, #mgifting-dialog .ui-carousel-prev > span {
+    display: none;
+}
+
+.mass-gifting-dialog .submit-success{
+    padding: 55px 10px 0;
+}
+
+.mass-gifting-dialog .submit-success p{
+    font-size: 16px;
+    
+    color: #fff;
+    text-align: left;
+}
+
+.mass-gifting-dialog .submit-success .error-line{
+    color: #fe6b5d;
+    padding: 22px 0 0;
+}
+.mass-gifting-dialog .submit-success .error-line a{ 
+    color: #4499fe;
+}
+.mass-gifting-dialog .submit-success .balance-line{
+    padding-top: 22px;
+}
+.mass-gifting-dialog .submit-success .paid-line{
+    padding-top: 22px;
+}
+.mass-gifting-dialog .submit-success .balance-line strong{
+    color: #fff;
+    font-size: 16px;
+}
+
+#mg-non-login-dialog .not-login-msg{
+    margin: 20px;
+    font-size: 16px;
+}
+.submit-success-dialog.im-dialog.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+    background: none;
+    padding: 0;
+}
+#mgifting-dialog #mg-friends-tabs .ui-tabs-panel.not-find-friend-bg {
+    background: #333;
+}
+.im-dialog .dialog-confirm-header {
+    background: none;
+    padding-left: 0;
+}
+.mass-gifting-dialog .mg-spinner{
+    position: absolute;
+    width: 620px;
+    height: 500px;
+    background: #000 url(../../img/spinner_white.apng) center center  no-repeat;
+    z-index: 500;
+    -moz-opacity: 0.60;
+    opacity: 0.60;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=60);
+}
+#mgifting-dialog .submit-failure-container{
+    width: 580px;
+    height: 416px;
+}
+#mgifting-dialog .submit-failure-container .info-line{
+    font-size: 16px;
+    
+    color: #fe6b5d;
+    text-align: left;
+    padding: 30px 30px 20px 30px;
+}
+
+.disabled.button-css-yellow:hover{
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd200', endColorstr='#f6b900');*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffe795), to(#ffd200));
+    background: -moz-linear-gradient(top,  #ffe795, #ffd200);
+}
+
+.template_div {
+    display: none;
+}
+.non-friend-sector{
+    clear:both;
+    padding-top: 30px;
+}
+.non-friend-sector h3{
+    margin: 0px 0 6px -6px ;
+    padding: 0 10px;
+    height: 26px;
+    line-height: 26px;
+    width: 560px;
+    font-size:12px;
+    font-weight: normal;
+    color: #fff;
+    
+    background-image: linear-gradient(bottom, rgb(55,55,55) 0%, rgb(85,85,85) 51%);
+    background-image: -o-linear-gradient(bottom, rgb(55,55,55) 0%, rgb(85,85,85) 51%);
+    background-image: -moz-linear-gradient(bottom, rgb(55,55,55) 0%, rgb(85,85,85) 51%);
+    background-image: -webkit-linear-gradient(bottom, rgb(55,55,55) 0%, rgb(85,85,85) 51%);
+    background-image: -ms-linear-gradient(bottom, rgb(55,55,55) 0%, rgb(85,85,85) 51%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, rgb(55,55,55)),
+            color-stop(0.51, rgb(85,85,85))
+    );
+
+   -webkit-box-shadow: 0px 2px 5px rgba(55, 55, 55, 0.44);
+    -moz-box-shadow:    0px 2px 5px rgba(55, 55, 55, 0.44);
+    box-shadow:         0px 2px 5px rgba(55, 55, 55, 0.44);
+}
+
+.mg-alert-msg-container{
+    background: none;
+    margin-top: 35px;
+}
+
+.avatarname-loaded{
+    padding-top: 31px;
+}
+    
+.mg-alert-msg-container p{
+    text-align: center;
+}
+.mg-alert-msg-container.success-msg p{
+    color: #1dae00;
+    font-size: 16px;
+}
+.mg-alert-msg-container.success-msg button{
+    margin-top: 30px;
+}
+
+#mgifting-dialog .mg-friends .not-friend-msg  .mg-alert-msg-container .mg-error-line.invalid-msg{
+    padding-top: 40px;
+}
+
+.mg-alert-msg-container .alert-msg{
+    color: #fe6b5d;
+    font-size: 16px;
+}
+.mg-alert-msg-container .alert-msg.sub-alert{
+    color: #bbb;
+}
+
+.mg-alert-msg-container .alert-icon{
+    background: url(../../img/icon_errors.png) -11px -8px  no-repeat;
+    heigth: 12px;
+    padding-left: 17px;
+}
+.mg-alert-msg-container .alert-msg-small{
+    font-size: 11px;
+}
+.mg-alert-msg-container button{
+    width: 150px;
+    margin: 25px 0 10px 0;
+    cursor: pointer;
+}
+
+#pillbox-container{
+    margin: 5px 0 0 5px;
+    display: none;
+}
+a.deliver-select.selectBox-dropdown {
+    background: #333;
+    color: #bbb;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+
+    border: 1px solid #696969;
+}
+
+a.deliver-select.selectBox-dropdown .selectBox-arrow{
+    border: 0;
+    background: url(../../js/jquery.selectbox/down_cue.png) 50% center no-repeat;
+}
+.deliver-select-selectBox-dropdown-menu{
+    height: 100px;
+    background: #333;
+    color: #bbb;
+    font-size: 12px;
+    
+}
+
+.deliver-select-selectBox-dropdown-menu.selectBox-options LI.selectBox-hover A {
+    background-color: #3399ff;
+    color: #fff;
+}
+
+.deliver-select-selectBox-dropdown-menu.selectBox-options LI.selectBox-selected A {
+    background-color: #3399ff;
+    color: #fff;
+}

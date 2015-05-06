@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/new-visd-buttons.css">
+    <link rel="stylesheet" type="text/css" href="../css/themed_room_dialog.css">
+
+    <script src="../../js/imvu.js"></script>
+    <script src="ThemedRoomPhotoReviewDialog.js" charset="utf-8"></script>
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/element/element-beta.js"></script>
+
+</head><body>
+<div id="content">
+    <div id="close-button"></div>
+    <div>
+        <div class="main-title"><script id="inline_translate">_iT("Submit", "inline_translate")</script> <span class="room-name"><script id="inline_translate">_iT("WWWWWWWWWWWWWWWWWWWW", "inline_translate")</script></span></div>
+    </div>
+    <div class="selected-theme"><script id="inline_translate">_iT("Theme Selected:", "inline_translate")</script> <span class="name"><script id="inline_translate">_iT("Goth", "inline_translate")</script></span></div>
+    <div class="dialog-body">
+            <div class="submission-instructions">
+                <p><script id="inline_translate">_iT("Like this photo? Click \"Submit\" and we will notify you if the room is selected!", "inline_translate")</script></p>
+                <p><script id="inline_translate">_iT("Any changes made to the room after it is listed in Featured Rooms may result in its removal from that section.", "inline_translate")</script></p>
+            </div>
+        <div class="dialog-content">
+            <div class="photo-container">
+                <div id="photo"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="disclaimer"><p><script id="inline_translate">_iT("All shared photos must be OK for", "inline_translate")</script> <a id="link_content_policy" href="#"><script id="inline_translate">_iT("general audiences.", "inline_translate")</script></a><br><span class="disclaimer-red"><script id="inline_translate">_iT("This photo will replace your current Room Image", "inline_translate")</script></span></p></div>
+            <div id="button-bar">
+                <button class="imvu-button level2 light-gray enabled visible ui-event ui-event tryAgain"><script id="inline_translate">_iT("Take Again", "inline_translate")</script></button>
+                <button class="imvu-button level2 enabled visible ui-event nominateButton"><script id="inline_translate">_iT("Submit", "inline_translate")</script></button>
+            </div>
+        </div>
+    </div>
+
+<script>
+if (IMVU.runJS()) {
+    new ThemedRoomPhotoReviewDialog({root: '#content', imvu: imvu});
+}
+</script>
+
+</div></body></html>

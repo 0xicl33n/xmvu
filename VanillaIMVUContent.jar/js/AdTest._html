@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>This is the local ad file</title>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+</head>
+<body id="test_body">
+    ZOMG ADTEST
+    <script>
+        YAHOO.util.Event.on(
+            'test_body',
+            'click',
+            function() {
+                var newwindow = window.open("http://localhost.imvu.com/catalog/newsletter/_test_client_ad_landing.html","newwindow_name");
+            }
+        )
+    </script>
+</body>
+</html>

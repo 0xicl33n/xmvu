@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/themed_room_dialog.css">
+    <link rel="stylesheet" type="text/css" href="../../css/new-visd-buttons.css">
+
+    <script src="../../js/imvu.js"></script>
+    <script src="../../chat_rooms/TranslatedThemeNames.js"></script>
+    <script src="NominateRoomDialog.js"></script>
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/element/element-beta.js"></script>
+    <script src="../../widgets/arrow/Arrow.js"></script>
+    <script src="../../widgets/dropdown/DropDown.js"></script>
+</head><body id="themed-room">
+<div id="content">
+    <div id="close-button"></div>
+    <div>
+        <div class="main-title"><script id="inline_translate">_iT("Submit", "inline_translate")</script> <span class="room-name"><script id="inline_translate">_iT("WWWWWWWWWWWWWWWWWWWW", "inline_translate")</script></span></div>
+    </div>
+    <div class="dialog-body">
+        <script id="inline_translate">_iT("Tips for rooms selection:", "inline_translate")</script>
+        <ul>
+            <li><span><script id="inline_translate">_iT("Take a wide-view photo of your room", "inline_translate")</script></span></li>
+            <li><span><script id="inline_translate">_iT("Have a great and inviting room name", "inline_translate")</script></span></li>
+            <li><span><script id="inline_translate">_iT("Have user-friendly and informative description", "inline_translate")</script></span></li>
+        </ul>
+    </div>
+    <div class="example-image-container">
+        <div class="example-image">
+            <p><script id="inline_translate">_iT("Example photo:", "inline_translate")</script></p>
+            <img src="img/generic_image.png">
+            <label class="image-note"><script id="inline_translate">_iT("The photo will automatically exclude avatars", "inline_translate")</script><br>
+                <span class="image-note-red"><script id="inline_translate">_iT("This photo will replace your current Room Image", "inline_translate")</script></span>
+            </label>
+        </div>
+    </div>
+    <div id="themes-label"><script id="inline_translate">_iT("Choose a theme that best matches your room:", "inline_translate")</script></div>
+    <div id="themes-dropdown">
+        <div class="label"></div>
+        <img class="arrow" src="img/dropdown_arrow.png">
+    </div>
+    <div id="button-bar">
+        <div id="not-submitted"><script id="inline_translate">_iT("Your Chat Room is not yet submitted!", "inline_translate")</script></div>
+        <button class="imvu-button level2 dark-gray visible ui-event take-themed-room-snapshot"><script id="inline_translate">_iT("Continue to take photo", "inline_translate")</script></button>
+    </div>
+</div>
+
+<script>
+if (IMVU.runJS()) {
+        if(IMVU.IS_FIREFOX) {
+            console.log("Hello Firefox");
+            nominateRoomdialog = new NominateRoomDialog({
+                imvu:imvu,
+                network:IMVU.Network,
+                dialoginfo:{'roomName': "Yomama's Crib"}
+            });
+        } else {
+            nominateRoomdialog = new NominateRoomDialog({
+                imvu:imvu,
+                network:IMVU.Network,
+                dialoginfo:imvu.call('getDialogInfo')
+            });
+        }
+}
+</script>
+</body></html>

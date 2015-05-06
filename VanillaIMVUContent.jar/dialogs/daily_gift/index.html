@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/dialog.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="../../js/imvu.js"></script>
+<link rel="stylesheet" href="http://www.imvu.com/gifts/daily/style.css" type="text/css">
+</head><body>
+
+
+<div id="close_button" class="close-button"></div>
+<div id="loading">
+    <img id="spinner" src="spinner.gif" height="32" width="32">
+    <h1><script id="inline_translate">_iT("Loading...", "inline_translate")</script></h1>
+</div>
+
+<script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="daily_dialog.js"></script>
+<script>
+if (IMVU.runJS()) {
+    IMVU.Client.DailyGiftDialog = new DailyGiftDialog(imvu, IMVU.Network);
+}
+</script>
+</body></html>

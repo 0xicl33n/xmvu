@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Upload Error</title>
+    <link rel="stylesheet" type="text/css" href="../../yui/reset-fonts-grids-base-min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+    <script src="../../widgets/button/imvuButton.js"></script>
+
+    <script src="../../js/imvu.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="DebugEditDialog.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head><body>
+
+<div id="debugEditDialog">
+    <div class="hd">
+        <p class="title"><script id="inline_translate">_iT("Add mesh", "inline_translate")</script></p>
+        <div class="close-button"></div>
+    </div>
+    <div class="bd">
+        <div class="operation"></div>
+        <div>
+            <input class="label" type="text"><input class="value" type="text"><span class="revertUndefined"> <script id="inline_translate">_iT("(it will no longer be defined)", "inline_translate")</script></span>
+        </div>
+        <div>
+            <span class="underLabel"><script id="inline_translate">_iT("under", "inline_translate")</script></span><script id="inline_translate">_iT("&nbsp;", "inline_translate")</script><span class="under"></span>
+        </div>
+        <div>
+            <div class="ok-button"><script id="inline_translate">_iT("OK", "inline_translate")</script></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (IMVU.runJS()) {
+        createDebugEditDialog({
+            $rootElement: $(document).find('#debugEditDialog'),
+            imvuCall: imvu.call,
+            network:IMVU.Network,
+            info: imvu.call("getDialogInfo")
+        });
+    }
+</script>
+
+</body></html>

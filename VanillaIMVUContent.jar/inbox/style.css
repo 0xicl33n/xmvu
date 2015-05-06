@@ -1,0 +1,63 @@
+html {
+    background: #121212;
+    color:#fff;
+}
+
+body {
+    padding-left:10px;
+    padding-top:16px;
+    min-width:600px;
+    overflow:hidden;
+}
+
+#tabs, #messages-pane, #friend-requests-pane, #missed-chats-pane {
+    -moz-user-select: -moz-none;
+}
+
+#tabs #buttons { 
+    -moz-user-select: -moz-none;
+}
+
+.container {
+    position:relative;
+}
+
+.loading-mask {
+    z-index: 999;
+    opacity: 0.66;
+    background: black;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.loading-spinner { 
+    display:table-cell;
+    position:absolute;
+    top:50%;
+    left:50%;
+    background: black url(../img/spinner_white.apng) no-repeat center center;
+    width: 50px;
+    height: 50px;
+    opacity: 0.66;
+}
+
+.confirm-buttons-holder {
+    margin-top: 20px;
+    height: 30px;
+}
+.confirm-buttons-holder div {
+    float: right;
+}
+
+#btn-confirm-remove-delete {
+    margin-left: 1px;
+}
+
+#confirm-dialog .bd {
+    color: black;
+}

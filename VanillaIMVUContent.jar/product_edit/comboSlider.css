@@ -1,0 +1,27 @@
+.comboSlider {
+    display: inline-block;
+}
+
+.comboSlider .thumb {
+    display: inline-block;
+    position: relative;
+    background-image: url(img/Config_Slider_Grip.png);
+    top: -9px;
+    width: 11px;
+    height: 20px;
+}
+
+.comboSlider .track {
+    position: relative;
+    display: inline-block;
+    top: 15px;
+    height: 2px;
+}
+
+.comboSlider input {
+    position: relative;
+    margin-left: 8px;
+    top: 2px;
+    width: 30px;
+}
+

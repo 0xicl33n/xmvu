@@ -1,0 +1,253 @@
+body, html {
+    height:100%;
+    overflow:hidden;
+}
+body {
+    background:#212121 url(/content/shop/img/shop_bg.png) repeat-x left bottom;
+    color:#fff;
+    margin:0;
+    padding:0;
+}
+
+#outfit_summary {
+    background:#727272;
+    height:32px;
+    position:relative;
+}
+
+#outfit_total_cost {
+    position:absolute;
+    top:9px;
+    right:94px;
+    font:bold 93%;
+    background:url(/content/shop/img/outfit_manage_credit_icon.png) no-repeat 0 0;
+    padding-left:17px;
+    display:none;
+}
+
+#carousel {
+    position:relative;
+    height:61px;
+    width:100% !important;
+    background:url(img/carousel_bg.png) repeat-x;
+    display:none;
+    overflow:visible;
+}
+
+.yui-carousel-content {
+    width:auto !important;
+    position:absolute;
+    left:15px;
+    right:17px;
+}
+
+.yui-carousel-nav {
+    display:none;
+}
+
+#prev, #next {
+    position:absolute;
+    display:none;
+    width:10px;
+    height:21px;
+    cursor:pointer;
+}
+
+#prev {
+    left:2px;
+    top:21px;
+    background:url(img/carousel_arrow_left.png) no-repeat;
+}
+
+#next {
+    right:2px;
+    top:21px;
+    background:url(img/carousel_arrow_right.png) no-repeat;
+}
+
+#wishlist_outfit_btn {
+    position:absolute;
+    width:127px;
+    height:25px;
+    display:block;
+    right:49px;
+    top:61px;
+    background:url(img/carousel_save_to_wishlist.png) no-repeat;
+    cursor:pointer;
+    display:none;
+}
+
+ol.yui-carousel-element {
+    margin-top:8px;
+    overflow:visible;
+    height:100px;
+    -moz-user-select:none;
+}
+
+ol.yui-carousel-element li {
+    width:50px;
+    height:40px;
+    margin-right:8px;
+    border:1px solid transparent;
+    overflow:visible;
+}
+
+*:focus {
+  -moz-outline-style: none;
+}
+
+.yui-carousel li.yui-carousel-item-selected {
+    margin-right:8px;
+    border:1px solid transparent;
+}
+
+div.carousel-item {
+    width:50px;
+    height:40px;
+    opacity:0;
+    position:relative;
+    overflow:visible;
+}
+
+div.carousel-item img {
+    position:relative;
+    z-index:1;
+    cursor:pointer;
+}
+
+div.carousel-item.not-worn img {
+    opacity:0.35 !important;
+}
+
+div.carousel-item div.overlay {
+    display:none;
+    position:absolute;
+    bottom:2px;
+    right:2px;
+    height:16px;
+    width:19px;
+    background:transparent url(img/carousel_overlays.png);
+    z-index:10;
+}
+
+div.carousel-item.room div.overlay {
+    display:block;
+    position:absolute;
+    width:19px;
+    background-position:0 0;
+}
+
+div.carousel-item.furniture div.overlay {
+    display:block;
+    position:absolute;
+    width:12px;
+    background-position:-16px 0;
+}
+
+div.carousel-close {
+    cursor:pointer;
+    width:18px;
+    height:17px;
+    background:url(img/carousel_close.png) no-repeat;
+    position:absolute;
+    right:-8px;
+    top:-5px;
+    z-index:2;
+}
+
+div.carousel-add {
+    cursor:pointer;
+    width:18px;
+    height:17px;
+    background:url(img/carousel_add.png) no-repeat;
+    position:absolute;
+    left:-8px;
+    top:-5px;
+    display:none;
+    opacity:1.0 !important;
+    z-index:2;
+}
+
+div.carousel-item.not-worn {
+    display:none;
+}
+
+div.carousel-item.not-worn div.carousel-close {
+    display:none;
+}
+
+div.carousel-item.not-worn div.carousel-add {
+    display:block;
+}
+
+div.carousel-glow {
+    width:62px;
+    height:52px;
+    background:url(img/carousel_glow.png) no-repeat;
+    position:absolute;
+    z-index:0;
+    left:-6px;
+    top:-6px;
+    opacity:0;
+}
+
+#mask {
+    z-index: 999; 
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+#outfit_cost {
+    position: absolute;
+    top: 71px;
+    right: 50px;
+    
+    font-size:12px;
+    background:url(../img/credits_no_box.png) 35px 0 no-repeat;
+    width:auto;
+    margin-right:10px;
+    margin-top:7px;
+    display:none;
+}
+
+#outfit_cost label {
+    color:#a5a5a5;
+    margin-right:25px;
+}
+
+#outfit_cost span {
+    color:#e9e9e9;
+    font-weight:bold;
+}
+
+#buy_outfit_btn {
+    min-width: 27px;
+    top: 10px;
+    width: 27px; 
+    height:15px;
+    float:right;
+    display:none;
+    position:relative;
+    z-index:100;
+    text-decoration:none;
+}
+
+#undo {
+    display:none;
+    position:absolute;
+    left:10px;
+    bottom:-41px;
+    z-index:5;
+    cursor:pointer;
+    height: 15px;
+    width: 49px; 
+    min-width: 49px; 
+}
+
+#undo:hover {
+    text-decoration:underline;
+}

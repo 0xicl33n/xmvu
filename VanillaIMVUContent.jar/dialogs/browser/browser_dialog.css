@@ -1,0 +1,21 @@
+@import url(../../css/reset.css);
+@import url(../css/new-visd-dialog.css);
+@import url(../css/imvu_jquery_dialog.css);
+
+iframe {
+    width: 100%;
+    border: none;
+}
+
+#dialog .close {
+    z-index: 3;
+}
+
+#spinner {
+    position:absolute;
+    right:0px;
+    top:0px;
+    background: black url(../../img/spinner_white.apng) no-repeat center center;
+    opacity:0.33;
+    z-index: 2;
+}

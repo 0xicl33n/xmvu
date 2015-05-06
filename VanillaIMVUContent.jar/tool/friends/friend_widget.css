@@ -1,0 +1,237 @@
+.avatar {
+    position: relative;
+    color: white;
+    
+    font-size: 11px;
+    height: 43px;
+    overflow: hidden;
+    margin: 0 1px 5px 1px;
+    border-bottom: 1px solid #454545;
+}
+
+.avatar .details {
+    margin-top: 2px;
+}
+
+.avatar:last-child {
+    border: 0px none;
+}
+
+.avatar .avpic {
+    float: left;
+    width: 32px;
+    height: 43px;
+    margin:0 6px 5px 0;
+    cursor: pointer;
+    opacity:0.5;
+    background:#000;
+}
+
+.avatar .title {
+    font-weight: bold;
+}
+
+.avatar .title .titleUnbold {
+    font-weight: normal;
+}
+
+.avatar.mouseover .avpic {
+    opacity:1.0;
+}
+
+.avatar .now-at-text {
+    color: #6F6F6D;
+}
+
+.avatar .locating-text {
+    color: #ADADAB;
+}
+
+.avatar .location {
+    color: #ADADAB;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.avatar .location-text {
+    display: inline-block;
+}
+
+.avatar .name {
+    font-weight: bold;
+}
+
+.avatar .name .guest {
+    font-weight: normal;
+    font-size:10px;
+}
+
+.avatar .name .avatar-name {
+    font-size:12px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.avatar .name div {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.avatar.vip .name .vip-icon {
+    background: transparent url(../../img/icon_vip_small.png) no-repeat;
+    width: 20px;
+    height: 14px;
+    margin-right:2px;
+}
+
+.avatar.ap .name .ap-icon {
+    background: transparent url(../../img/icon_ap_small.png) no-repeat;
+    width: 18px;
+    height: 14px;
+}
+
+.avatar.mp .name .mp-icon {
+    background: transparent url(../../img/marriage_badge_18x16.png) no-repeat; 
+    height:18px;
+    width:16px;
+}
+
+.avatar .actions {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2px 0 0;
+}
+
+.avatar .available-icon {
+    display: none;
+}
+
+.avatar .availability {
+    margin-top:3px;
+}
+
+.avatar .location-text {
+    display: inline-block;
+    cursor:default;
+}
+
+.avatar .location-details {
+    vertical-align: middle;
+}
+
+.avatar .online-text {
+    display: none;
+}
+
+.avatar .no-location .online-text {
+    display: none;
+}
+
+.avatar .locating .online-text {
+    display: none;
+}
+
+.online-icon {
+    display: none;
+}
+
+.avatar .no-location .location-text,
+.avatar .locating .location-text {
+    display: none;
+}
+
+.avatar .locating-text {
+    display: none;
+}
+
+.avatar .locating .locating-text {
+    display: inline-block;
+}
+
+.avatar.mouseover .actions {
+    display: block;
+}
+
+.avatar .actions div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.avatar.mouseover .actions .invite {
+    background: transparent url(img/icon_add_chat.png) no-repeat;
+    width: 20px;
+    height: 11px;
+    margin-top:2px;
+}
+
+.avatar.mouseover .actions .walkoff-invite {
+    background: transparent url(img/icon_add_walkoff.png) no-repeat;
+    width: 22px;
+    height: 13px;
+    margin-top:2px;
+    display: none;
+}
+
+.has-walkoff .avatar.mouseover .actions .walkoff-invite {
+    display: inline-block;
+}
+
+.avatar.mouseover .actions .shop-together {
+    background: transparent url(img/icon_shop_together.png) no-repeat;
+    width: 22px;
+    height: 13px;
+    margin-top:2px;
+    margin-right:4px;
+}
+
+.avatar.mouseover .actions .spinning {
+    background: transparent url(img/inviteintochat_spinner.gif) no-repeat;
+    width: 20px;
+    height: 17px;
+    margin-top:2px;
+}
+
+.avatar .actions .message {
+    background: transparent url(img/icon_send_message.png) no-repeat;
+    width: 12px;
+    height: 8px;
+    margin-top:1px;
+}
+
+.avatar .actions .info {
+    background: transparent url(img/icon_info.png) no-repeat;
+    width: 13px;
+    height: 13px;
+    margin-right: 4px;
+}
+
+.avatar.mouseover {
+    background:#e5e5e5 url(img/avatar_bg.png) repeat-x left bottom;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.avatar.mouseover:last-child {
+    border-bottom: 0px none;
+}
+
+.avatar.mouseover .now-at-text {
+    color: #323230;
+}
+
+.avatar.mouseover .location {
+    color: #343331;
+}
+
+.avatar.mouseover .actions {
+    display: block;
+}
+
+.avatar.mouseover .locating-text {
+    color: #343331;
+}

@@ -1,0 +1,277 @@
+.category-panel {
+    width: 210px;
+    min-height: 176px;
+    background: -moz-linear-gradient(top, #505050, #505050, black);
+    padding: 44px 0 0 0;
+    height: 100%;
+    -moz-box-sizing: border-box;
+}
+    .category-panel.tall {
+        padding-top: 34px;
+    }
+    .category-panel .category-panel-inner {
+        height: 100%;
+    }
+    .category-panel.tall .category-panel-inner {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .category-panel.tall .category-name {
+        display: none;
+    }
+    .category-panel .category-name {
+        font-size: 14px;
+        font-weight: bold;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: black;
+        position: relative;
+    }
+        /* The shape itself only needs 210 + 7 = 217px wide by 30px tall. Add an
+           extr 10px on the right and bottom to prevent clipping of the SVG drop
+           shadow filter. */
+        .category-panel .category-name .bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 227px; /* 210 + 17 + 10 */
+            height: 40px; /* 30 + 10 */
+        }
+        .category-panel .category-name .text {
+            
+            padding: 0 0 0 24px;
+            background: url(img/Inventory_icon_big_tops.png) no-repeat center left;
+            position: relative; /* Won't appear above the category bar without this. */
+        }
+    .category-panel .categories {
+        width: 196px;
+        overflow: hidden;
+        margin: 15px auto 0 auto;
+    }
+    .category-panel.tall .categories {
+        width: 210px;
+        /*padding-left: 14px;*/
+        margin: 0 auto 0 auto;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    
+        .category-panel.tall .categories li{
+            width: 210px;
+            position: relative;
+            padding-left: 43px;
+            padding-bottom: 0;
+            background-position: 20px 2px;
+            height: 27px;
+            color: #e6e6e6;
+            line-height: 25px;
+        }
+        .category-panel.tall .categories li.selected:not(.hidden-selection){
+            width: 210px;
+            position: relative;
+            left: -15px;
+            padding-left: 15px;
+            background: -moz-linear-gradient(top, #FFE88A, #FC0);
+            color: #222;
+            opacity: 1;
+        }
+        .category-panel.tall .categories li.selected:not(.hidden-selection):hover {
+            text-decoration: none;
+            color: #222;
+        }
+        .category-panel.tall .categories li:hover{
+            width: 210px;
+            position: relative;
+            opacity: 1;
+            text-decoration: underline;
+            color: #FFF;
+        }
+        .category-panel.tall .categories li span {
+            display: block;
+            position: absolute;
+            left: 43px;
+            top: 0px;
+            font-size: 14px;
+            
+           
+        }
+        .category-panel.tall .categories li.selected:not(.hidden-selection) span {
+            left: 58px;
+            color: #222;
+            font-weight: bold;
+        }
+        .category-panel .categories li {
+            width: 24px;
+            height: 25px;
+            float: left;
+            overflow: hidden;
+            padding: 0 4px 8px 0;
+            margin: 0;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+            .category-panel .categories li.hidden {
+                display: none;
+            }
+            .category-panel .categories li * {
+                display: none;
+            }
+            .category-panel:not(.tall) li.category-divider {
+                display: none;
+            }
+            .category-panel.tall li.category-divider {
+                background: url(img/DressUp_FadedDivisionLine.png) left center no-repeat;
+                height: 18px;
+                margin-left: 24px;
+            }
+            
+        .category-panel .categories li.recently-added        { background: url(img/category_button_recent.png) no-repeat; }
+        .category-panel .categories li.recently-added:hover  { background: url(img/category_button_recent_hover.png) no-repeat; }
+        .category-panel .categories li.recently-added.selected { background: url(img/category_button_recent_active.png) no-repeat; }
+        .category-panel.tall .categories li.recently-added { background: url('img/RecentlyAdded_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.recently-added.selected { background: url(img/RecentlyAdded_Active_Icon.png) no-repeat 35px 7px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.all-categories        { background: url(img/category_button_all.png) no-repeat; }
+        .category-panel .categories li.all-categories:hover  { background: url(img/category_button_all_hover.png) no-repeat; }
+        .category-panel .categories li.all-categories.selected:not(.hidden-selection) { background: url(img/category_button_all_active.png) no-repeat; }
+        .category-panel.tall .categories li.all-categories { background: url('img/All_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.all-categories.selected:not(.hidden-selection) { background: url(img/All_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.wearing        { background: url(img/category_button_wearing.png) no-repeat; }
+        .category-panel .categories li.wearing:hover  { background: url(img/category_button_wearing_hover.png) no-repeat; }
+        .category-panel .categories li.wearing.selected { background: url(img/category_button_wearing_active.png) no-repeat; }
+        .category-panel.tall .categories li.wearing { background: url('img/Wearing_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.wearing.selected { background: url(img/Wearing_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.tops        { background: url(img/category_button_tops.png) no-repeat; }
+        .category-panel .categories li.tops:hover  { background: url(img/category_button_tops_hover.png) no-repeat; }
+        .category-panel .categories li.tops.selected { background: url(img/category_button_tops_active.png) no-repeat; }
+        .category-panel.tall .categories li.tops { background: url('img/Tops_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.tops.selected { background: url(img/Tops_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.bottoms        { background: url(img/category_button_bottoms.png) no-repeat; }
+        .category-panel .categories li.bottoms:hover  { background: url(img/category_button_bottoms_hover.png) no-repeat; }
+        .category-panel .categories li.bottoms.selected { background: url(img/category_button_bottoms_active.png) no-repeat; }
+        .category-panel.tall .categories li.bottoms { background: url('img/Bottoms_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.bottoms.selected { background: url(img/Bottoms_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.hairstyles        { background: url(img/category_button_hairstyles.png) no-repeat; }
+        .category-panel .categories li.hairstyles:hover  { background: url(img/category_button_hairstyles_hover.png) no-repeat; }
+        .category-panel .categories li.hairstyles.selected { background: url(img/category_button_hairstyles_active.png) no-repeat; }
+        .category-panel.tall .categories li.hairstyles { background: url('img/Hair_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.hairstyles.selected { background: url(img/Hair_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.eyes        { background: url(img/category_button_eyes.png) no-repeat; }
+        .category-panel .categories li.eyes:hover  { background: url(img/category_button_eyes_hover.png) no-repeat; }
+        .category-panel .categories li.eyes.selected { background: url(img/category_button_eyes_active.png) no-repeat; }
+        .category-panel.tall .categories li.eyes { background: url('img/Eyes_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.eyes.selected { background: url(img/Eyes_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.skins        { background: url(img/category_button_skins.png) no-repeat; }
+        .category-panel .categories li.skins:hover  { background: url(img/category_button_skins_hover.png) no-repeat; }
+        .category-panel .categories li.skins.selected { background: url(img/category_button_skins_active.png) no-repeat; }
+        .category-panel.tall .categories li.skins { background: url('img/Skins_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.skins.selected { background: url(img/Skins_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.shoes        { background: url(img/category_button_shoes.png) no-repeat; }
+        .category-panel .categories li.shoes:hover  { background: url(img/category_button_shoes_hover.png) no-repeat; }
+        .category-panel .categories li.shoes.selected { background: url(img/category_button_shoes_active.png) no-repeat; }
+        .category-panel.tall .categories li.shoes { background: url('img/Shoes_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.shoes.selected { background: url(img/Shoes_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.actions        { background: url(img/category_button_actions.png) no-repeat; }
+        .category-panel .categories li.actions:hover  { background: url(img/category_button_actions_hover.png) no-repeat; }
+        .category-panel .categories li.actions.selected { background: url(img/category_button_actions_active.png) no-repeat; }
+        .category-panel.tall .categories li.actions { background: url('img/Animation_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.actions.selected { background: url(img/Animation_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.heads        { background: url(img/category_button_heads.png) no-repeat; }
+        .category-panel .categories li.heads:hover  { background: url(img/category_button_heads_hover.png) no-repeat; }
+        .category-panel .categories li.heads.selected { background: url(img/category_button_heads_active.png) no-repeat; }
+        .category-panel.tall .categories li.heads { background: url('img/Heads_Default_Icon.png') no-repeat 20px 6px;}
+        .category-panel.tall .categories li.heads.selected { background: url(img/Heads_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.avatars        { background: url(img/category_button_avatars.png) no-repeat; }
+        .category-panel .categories li.avatars:hover  { background: url(img/category_button_avatars_hover.png) no-repeat; }
+        .category-panel .categories li.avatars.selected { background: url(img/category_button_avatars_active.png) no-repeat; }
+        .category-panel.tall .categories li.avatars { background: url('img/Avatars_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.avatars.selected { background: url(img/Avatars_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.pets        { background: url(img/category_button_pets.png) no-repeat; }
+        .category-panel .categories li.pets:hover  { background: url(img/category_button_pets_hover.png) no-repeat; }
+        .category-panel .categories li.pets.selected { background: url(img/category_button_pets_active.png) no-repeat; }
+        .category-panel.tall .categories li.pets { background: url('img/Pets_Default_Icon.png') no-repeat 20px 6px; }
+        .category-panel.tall .categories li.pets.selected { background: url(img/Pets_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.accessories        { background: url(img/category_button_accessories.png) no-repeat; }
+        .category-panel .categories li.accessories:hover  { background: url(img/category_button_accessories_hover.png) no-repeat; }
+        .category-panel .categories li.accessories.selected { background: url(img/category_button_accessories_active.png) no-repeat; }
+        .category-panel.tall .categories li.accessories { background: url('img/Accessories_Default_Icon.png') no-repeat 20px 6px;}
+        .category-panel.tall .categories li.accessories.selected { background: url(img/Accessories_Active_Icon.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.TV        { background: url(img/category_button_TV.png) no-repeat; }
+        .category-panel .categories li.TV:hover  { background: url(img/category_button_TV_hover.png) no-repeat; }
+        .category-panel .categories li.TV.selected { background: url(img/category_button_TV_active.png) no-repeat; }
+        .category-panel.tall .categories li.TV.selected { background: url(img/category_button_TV_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.cityscape        { background: url(img/category_button_cityscape.png) no-repeat; }
+        .category-panel .categories li.cityscape:hover  { background: url(img/category_button_cityscape_hover.png) no-repeat; }
+        .category-panel .categories li.cityscape.selected { background: url(img/category_button_cityscape_active.png) no-repeat; }
+        .category-panel.tall .categories li.cityscape.selected { background: url(img/category_button_cityscape_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.chairs        { background: url(img/category_button_chairs.png) no-repeat; }
+        .category-panel .categories li.chairs:hover  { background: url(img/category_button_chairs_hover.png) no-repeat; }
+        .category-panel .categories li.chairs.selected { background: url(img/category_button_chairs_active.png) no-repeat; }
+        .category-panel.tall .categories li.chairs.selected { background: url(img/category_button_chairs_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.tables        { background: url(img/category_button_table.png) no-repeat; }
+        .category-panel .categories li.tables:hover  { background: url(img/category_button_table_hover.png) no-repeat; }
+        .category-panel .categories li.tables.selected { background: url(img/category_button_table_active.png) no-repeat; }
+        .category-panel.tall .categories li.tables.selected { background: url(img/category_button_table_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.homes        { background: url(img/category_button_homes.png) no-repeat; }
+        .category-panel .categories li.homes:hover  { background: url(img/category_button_homes_hover.png) no-repeat; }
+        .category-panel .categories li.homes.selected { background: url(img/category_button_homes_active.png) no-repeat; }
+        .category-panel.tall .categories li.homes.selected { background: url(img/category_button_homes_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.lamp        { background: url(img/category_button_lamp.png) no-repeat; }
+        .category-panel .categories li.lamp:hover  { background: url(img/category_button_lamp_hover.png) no-repeat; }
+        .category-panel .categories li.lamp.selected { background: url(img/category_button_lamp_active.png) no-repeat; }
+        .category-panel.tall .categories li.lamp.selected { background: url(img/category_button_lamp_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+        .category-panel .categories li.nature        { background: url(img/category_button_nature.png) no-repeat; }
+        .category-panel .categories li.nature:hover  { background: url(img/category_button_nature_hover.png) no-repeat; }
+        .category-panel .categories li.nature.selected { background: url(img/category_button_nature_active.png) no-repeat; }
+        .category-panel.tall .categories li.nature.selected { background: url(img/category_button_nature_active.png) no-repeat 35px 5px, -moz-linear-gradient(top, #FFE88A, #FC0); }
+
+        .category-panel.tall .categories li {
+            opacity: 0.5;
+        }
+        .category-panel.tall .categories li.hover {
+            opacity: 1;
+        }
+
+    .category-panel .go-shopping-link {
+        color: #c4c4c4;
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 15px;
+        width: 210px;
+    }
+    .category-panel.tall .go-shopping-link {
+        background: url(img/DressUp_DivisionLine.png) top center no-repeat;
+        width: 170px;
+        font-size: 10px;
+        color: #979797;
+        position: static;
+        margin-bottom: 8px;
+        text-align: left;
+        padding-left: -23px;
+        margin-top: 10px;
+        margin-left: 20px;
+        height: 29px;
+        padding-top: 7px;
+    }
+        .category-panel.tall .go-shopping-link > div {
+            background: url(img/DressUp_DivisionLine.png) bottom center no-repeat;
+            padding-bottom: 7px;
+        }
+        .category-panel .go-shopping-link a {
+            color: #4498fb;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    .category-panel.tabbedView {
+        position: relative;
+        height: 189px;
+        background: -moz-linear-gradient(top, #505050, #505050, black);
+        padding: 13px 0 0 0;
+        top: 31px;
+        border-top:1px solid #848484;
+        border-right:1px solid #848484;
+    }

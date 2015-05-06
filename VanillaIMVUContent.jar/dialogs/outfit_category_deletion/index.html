@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <script src="../../js/jquery-1.6.js"></script>
+    <script src="../../js/underscore.js"></script>
+<title>Outfit category deletion</title>
+    <link rel="stylesheet" type="text/css" href="../../yui/container/assets/container.css">
+    <link rel="stylesheet" type="text/css" href="OutfitCategoryDeletionDialog.css">
+    <link rel="stylesheet" type="text/css" href="../../widgets/button/imvuButton.css">
+
+    <script src="../../js/imvu.js"></script>
+
+    <script src="../../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../../yui/connection/connection.js"></script>
+    <script src="../../yui/json/json.js"></script>
+    <script src="../../yui/container/container.js"></script>
+    <script src="../../widgets/button/imvuButton.js"></script>
+    <script src="../../widgets/arrow/Arrow.js"></script>
+    <script src="../../widgets/dropdown/DropDown.js"></script>
+    <script src="../../js/card.js"></script>
+    <script src="../../js/eventbus.js"></script>
+    <script src="../../js/outfits.js"></script>
+    <script src="OutfitCategoryDeletionDialog.js"></script>
+</head><body>
+
+<div id="dialog" class="titlebar">
+    <div id="bd">
+        <div class="hd"><script id="inline_translate">_iT("Delete", "inline_translate")</script> <span id="category_name"><script id="inline_translate">_iT("category", "inline_translate")</script></span></div>
+        <div class="bd">
+            <p><script id="inline_translate">_iT("This category contains", "inline_translate")</script> <span class="notranslate"><span id="total">?</span></span> <script id="inline_translate">_iT("outfit", "inline_translate")</script><span class="plural"><script id="inline_translate">_iT("s", "inline_translate")</script></span><script id="inline_translate">_iT(".", "inline_translate")</script></p>
+            <div class="choices">
+                <input id="destroy" name="method" value="destroy" checked="checked" type="radio"> <label for="destroy"><script id="inline_translate">_iT("Delete category and outfit", "inline_translate")</script><span class="plural"><script id="inline_translate">_iT("s", "inline_translate")</script></span></label><br>
+                <input id="move" name="method" value="move" type="radio"> <label for="move"><script id="inline_translate">_iT("Move outfit", "inline_translate")</script><span class="plural"><script id="inline_translate">_iT("s", "inline_translate")</script></span> <script id="inline_translate">_iT("to category:", "inline_translate")</script> </label><div id="categories"><div class="label"></div></div>
+            </div>
+            <div class="buttons">
+                <div id="btn_cancel"><script id="inline_translate">_iT("Cancel", "inline_translate")</script></div>
+                <div id="btn_delete"><script id="inline_translate">_iT("Delete Category", "inline_translate")</script></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (IMVU.runJS()) {
+        createOutfitCategoryDeletionDialog({rootElement:Dom.get('dialog'), info:imvu.call('getDialogInfo'), imvuCall:imvu.call, network:IMVU.Network});
+    }
+</script>
+
+</body></html>
