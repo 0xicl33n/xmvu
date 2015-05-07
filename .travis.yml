@@ -1,10 +1,10 @@
 build:
-	sudo apt-get update
-	sudo apt-get -y install default-jre
-	which java
-	java -version
-	whoami
+- sudo apt-get update
+- sudo apt-get -y install default-jre
+- which java
+- java -version
+- whoami
 install:
-	mkdir ./XM_TMP
-	unzip vanillacontentcompiled.zip ./XM_TMP/
-	jar -uf ./XM_TMP/imvuContent.jar ./XMVU/imvucontent.jar/*
+- mkdir ./XM_TMP
+- unzip vanillacontentcompiled.zip ./XM_TMP/
+- jar -uf ./XM_TMP/imvuContent.jar ./XMVU/imvucontent.jar/*
