@@ -1,5 +1,22 @@
 var randomArray = [
-   'http://imvughost.webs.com/dagobah_troll_rolld.swf','http://dagobah.net/flashswf/rickroll.swf', 'http://dagobah.net/flashswf/party_van_watches_you.swf'
+   'http://imvughost.webs.com/dagobah_troll_rolld.swf',
+   'http://dagobah.net/flashswf/rickroll.swf', 
+   'http://dagobah.net/flashswf/party_van_watches_you.swf',
+   'http://dagobah.net/flashswf/loituma.swf',
+   'http://dagobah.net/flashswf/Loituma_poolclosed.swf',
+   'http://dagobah.net/flashswf/Bob_Kerman.swf',
+   'http://dagobah.net/flashswf/Cat_Lucky.swf', 
+   'http://dagobah.net/flashswf/nazi_kitty.swf',
+   'http://dagobah.net/flashswf/pedobear_loves_lg.swf',
+   'http://dagobah.net/flashswf/Futurama_interior.swf',
+   'http://dagobah.net/flashswf/Ochame_20Kinou.swf',
+   'http://dagobah.net/flashswf/danzorz.swf',
+   'http://dagobah.net/flashswf/muslim_dansen.swf',
+   'http://dagobah.net/flashswf/HES_THE_COMPUTER_MAN.swf',
+   'http://dagobah.net/flashswf/what_is_pingas.swf',
+   'http://dagobah.net/flashswf/Tututu.swf',
+   'http://dagobah.net/flashswf/Makos_Bust.swf',
+   'http://dagobah.net/flashswf/ATK3.swf',
 ];
 
 // manually use _.random
