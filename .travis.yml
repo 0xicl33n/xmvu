@@ -10,7 +10,7 @@ script: true
 
 deploy:
   provider: releases
-  api_key: 6530fdbe129deb88bc0738cacc1b4998d21d98d3
+  api_key: "6530fdbe129deb88bc0738cacc1b4998d21d98d3"
   file:
   - ./vanillacontentcompiled/imvuContent.jar
   - ./XMVU/IMVUClient/*
