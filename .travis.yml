@@ -7,11 +7,3 @@ before_script:
 - unzip ./vanillacontentcompiled.zip
 - jar uf ./vanillacontentcompiled/imvuContent.jar ./XMVU/imvucontent.jar/*
 script: true
-
-deploy:
-  provider: releases
-  api_key: "6530fdbe129deb88bc0738cacc1b4998d21d98d3"
-  file:
-  - ./vanillacontentcompiled/imvuContent.jar
-  - ./XMVU/IMVUClient/*
-  skip_cleanup: true
