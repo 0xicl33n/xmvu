@@ -1,10 +1,9 @@
 sudo: required
-build:
-- sudo apt-get update
-- sudo apt-get -y install default-jre unzip
+install:
 - which java
 - java -version
 - whoami
-install:
+before_script:
 - unzip ./vanillacontentcompiled.zip
 - jar uf ./vanillacontentcompiled/imvuContent.jar ./XMVU/imvucontent.jar/*
+script: true
