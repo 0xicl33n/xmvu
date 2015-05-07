@@ -1,11 +1,11 @@
 sudo: required
 build:
 - sudo apt-get update
-- sudo apt-get -y install default-jre file-roller
+- sudo apt-get -y install default-jre unzip
 - which java
 - java -version
 - whoami
 install:
 - mkdir ./XM_TMP
-- unzip ./vanillacontentcompiled.zip ./XM_TMP/
+- unzip ./vanillacontentcompiled.zip -d ./XM_TMP/
 - jar -uf ./XM_TMP/imvuContent.jar ./XMVU/imvucontent.jar/*
