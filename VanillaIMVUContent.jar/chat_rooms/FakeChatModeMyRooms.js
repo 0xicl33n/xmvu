@@ -1,3 +1,0 @@
-function FakeChatModeMyRooms(args) { 
-    
-}
