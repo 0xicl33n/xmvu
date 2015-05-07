@@ -6,6 +6,5 @@ build:
 - java -version
 - whoami
 install:
-- mkdir ./XM_TMP
-- unzip ./vanillacontentcompiled.zip -d ./XM_TMP/
-- jar -uf ./XM_TMP/imvuContent.jar ./XMVU/imvucontent.jar/*
+- unzip ./vanillacontentcompiled.zip
+- jar uf ./vanillacontentcompiled/imvuContent.jar ./XMVU/imvucontent.jar/*
