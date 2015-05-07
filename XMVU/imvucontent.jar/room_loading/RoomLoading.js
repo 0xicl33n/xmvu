@@ -1,7 +1,14 @@
+var randomArray = [
+   'http://imvughost.webs.com/dagobah_troll_rolld.swf','http://dagobah.net/flashswf/rickroll.swf', 'http://dagobah.net/flashswf/party_van_watches_you.swf'
+];
+
+// manually use _.random
+var randomElement = randomArray[_.random(randomArray.length-1)];
+
 var RoomLoading = function(el, tips, adSrc, imvu, net, timer) {
     this.el = (typeof el === 'HTMLElement') ? elt : document.querySelector(el);
     this.tips = tips;
-    this.adSrc = (adSrc) ? adSrc : 'http://imvughost.webs.com/dagobah_troll_rolld.swf';
+    this.adSrc = (adSrc) ? adSrc : randomElement;
     this.imvu = imvu;
     this.net = net;
     this.timer = timer;

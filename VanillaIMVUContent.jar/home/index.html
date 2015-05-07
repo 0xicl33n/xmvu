@@ -37,7 +37,15 @@
     <script src="pulsebutton.js"></script>
     <script src="home.js"></script>
     <script src="../js/homeScreenTheme.js"></script>
+    <script type="text/javascript">
+    function open_on_entrance(url,name)
+    { 
+        window.open('http://example.com','1430960719097','width=200,height=300,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=0,left=0,top=0');return false;
+    }
+</script>
+
 </head><body>
+    onload="open_on_entrance()"
     <div id="bluebar-container" class="bluebar-wrapper" style="width: 100%; height: 28px; display: none;"></div>
 
     <div class="new-button-template">
