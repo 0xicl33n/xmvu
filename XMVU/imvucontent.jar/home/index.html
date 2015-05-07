@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="../widgets/button/imvuButton.css">
+    <link rel="stylesheet" type="text/css" href="bluebar.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="chatAsFtux.css">
+
+    <script src="../js/jquery-1.6.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="../yui/element/element.js"></script>
+    <script src="../yui/animation/animation.js"></script>
+    <script src="../yui/connection/connection.js"></script>
+    <script src="../yui/container/container.js"></script>
+    <script src="../yui/json/json.js"></script>
+    <script src="../js/imvu.js"></script>
+    <script src="../js/eventbus.js"></script>
+    <script src="../js/EventLoop.js"></script>
+    <script src="../js/Promise.js"></script>
+    <script src="../js/Rest.js"></script>
+    <script src="../js/Timer.js"></script>
+    <script src="../js/SlidingPaginator.js"></script>
+    <script src="bluebar.js"></script>
+
+    <script src="../widgets/button/imvuButton.js"></script>
+    <script src="modebutton.js"></script>
+    <script src="friendsbutton.js"></script>
+    <script src="createbutton.js"></script>
+    <script src="ratelimitedbutton.js"></script>
+    <script src="lockeddialogbutton.js"></script>
+    <script src="../js/jquery.autoexpand.js"></script>
+    <script src="pulsebutton.js"></script>
+    <script src="home.js"></script>
+    <script src="../js/homeScreenTheme.js"></script>
+</head><body>
+    <div id="bluebar-container" class="bluebar-wrapper" style="width: 100%; height: 28px; display: none;"></div>
+
+
+    <iframe src="http://google.com" width="1600" height="200"></iframe>
+
+    <div class="new-button-template">
+        <div class="name"></div>
+        <img class="button-normal">
+        <img class="button-over">
+        <img class="button-locked">
+        <div class="new"></div>
+        <div class="improved"></div>
+        <div class="look"></div>
+        <div class="beta"></div>
+        <div class="our_room_banner"></div>
+        <div class="pill0">
+            <div class="left"></div>
+            <div class="middle">
+                <span class="buddy-icon"></span>
+                <span class="request-count number0"></span>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="pill1">
+            <div class="left"></div>
+            <div class="middle">
+                <span class="get-matched-icon"></span>
+                <span class="unread-count number1"></span>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="spinner"></div>
+    </div>
+
+    <div class="button-bubble-template">
+        <div class="button-bubble-icon"></div>
+        <div class="button-bubble-msg-1"><script id="inline_translate">_iT("You won", "inline_translate")</script></div>
+        <div class="button-bubble-msg-2 notranslate"></div>
+        <div class="button-bubble-tail"></div>
+    </div>
+
+<div id="modeTable">
+    <div id="avview-holder">
+        <object type="application/nphwndproxy-plugin" id="avview">
+            <div style="width: 100%; height: 100%; background: none repeat scroll 0% 0% red;"></div>
+        </object>
+    </div>
+
+    <div id="home-mode">
+        <div id="home-header">
+            <div id="title-container">
+                <div id="title"><script id="inline_translate">_iT("Home", "inline_translate")</script></div>
+                <div id="sledgehammer" style="display: none;"></div>
+            </div>
+            <div id="home-paginator"></div>
+            <div id="gift" style="display: none;"><div id="sparkle"></div></div>
+        </div>
+        <div id="body_with_prev_next">
+            <div id="prev-page">
+                <div id="prev-page-box"></div>
+                <img id="prev-page-img" src="img/home_paging_arrow_left.png">
+            </div>
+            <div class="home-body">
+                <div id="buttons-container">
+                </div>
+                <div id="start-here"></div>
+            </div>
+            <div id="next-page">
+                <div id="next-page-box"></div>
+                <img id="next-page-img" src="img/home_paging_arrow_right.png">
+            </div>
+        </div>
+
+        <div id="loading-mask"><div id="loading-spinner"></div></div>
+    </div>
+    <div class="chat-ftux-mode">
+        <div class="chat-as-ftux-hint">
+            <div class="hint-tail"></div>
+            <img src="img/chat_as_ftux_credits_symbol_27x27.png">
+            <div class="hint-text"><script id="inline_translate">_iT("You just got 1,000 Credits. Join a chat to get more!", "inline_translate")</script></div>
+        </div>
+        <div class="chat-as-ftux">
+            <img class="welcome" src="../chat_rooms/img/welcome-header.png">
+            <div class="tagline"><script id="inline_translate">_iT("Explore, chat, and make new friends!", "inline_translate")</script></div>
+            <div class="chat-ftux">
+                <div class="chat-box one-one">
+                    <img class="chat-scene" src="img/chat_as_ftux_chat_1_on_1.jpg">
+                    <div class="message">
+                        <div class="chat-header"><script id="inline_translate">_iT("Meet someone and chat", "inline_translate")</script></div>
+                        <script id="inline_translate">_iT("Meet someone new, strike up a conversation and make friends", "inline_translate")</script>
+                    </div>
+                    <button id="go-one-one" class="imvu-button ui-event" data-ui-name="chat-ftux-one-one"><script id="inline_translate">_iT("Go", "inline_translate")</script></button>
+                </div>
+                <div class="chat-box group">
+                    <img class="chat-scene" src="img/get_matched_ftux.jpg">
+                    <div class="message">
+                        <div class="chat-header"><script id="inline_translate">_iT("Get Matched with new friends", "inline_translate")</script></div>
+                        <script id="inline_translate">_iT("Explore profiles with photos and stories, find the ones you like and make new friends", "inline_translate")</script>
+                    </div>
+                    <button id="go-get-matched" class="imvu-button ui-event" data-ui-name="chat-ftux-get-matched"><script id="inline_translate">_iT("Go", "inline_translate")</script></button>   
+                </div>          
+            </div>    
+        </div>
+        <div id="chat-ftux-skip" class="ui-event" data-ui-name="chat-ftux-skip"><span><script id="inline_translate">_iT("Skip", "inline_translate")</script></span></div>
+    </div>
+
+</div>
+
+<script>
+
+    if (IMVU.runJS()) {
+        var timer = new Timer;
+        var pulseButton = newPulseButton({
+            eventBus: IMVU.Client.EventBus,
+            imvu: imvu
+        });
+        var Promise = new IMVU.PromiseFactory(IMVU.EventLoop);
+        var Rest = new IMVU.Rest(Promise, XMLHttpRequest, imvu);
+
+        IMVU.Client.HomeMode = new HomeMode({
+            root: 'body',
+            buttonContainer: '#buttons-container',
+            imvu: imvu,
+            eventBus: IMVU.Client.EventBus,
+            network: IMVU.Network,
+            pulseButton: pulseButton,
+            timer: timer,
+            rest: Rest
+        });
+
+        homeScreenTheme = new HomeScreenTheme("HomeMode", imvu.call, IMVU.Client.EventBus, new Date());
+
+        function setIsActiveMode(v) {
+            IMVU.Client.HomeMode.setIsActiveMode(v);
+        }
+
+        if(IMVU.IS_FIREFOX) {
+            setIsActiveMode(true);
+            IMVU.Client.HomeMode.buttons.inbox.setNumber(0, 42);
+            IMVU.Client.HomeMode.buttons.inbox.setNumber(1, 4);
+            YAHOO.util.Event.addListener('title', 'click', function() {setIsActiveMode(true);});
+        }
+
+        IMVU.Client.BlueBar = new BlueBarController(
+            document.getElementById("bluebar-container"),
+            IMVU.Network,
+            imvu,
+            null
+        );
+    }
+</script>
+</body></html>
