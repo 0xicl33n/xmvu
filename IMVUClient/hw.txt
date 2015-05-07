@@ -1,6 +1,0 @@
-CpuNameAndSpeed: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz, ~2493 Mhz
-SystemMemory: 4096
-VideoCardName: Intel(R) HD Graphics Family
-VideoCardMemory: 256
-cpudesc: INTELP=3 AMD=000 PPRO=1 MMX=1 SSE=1 SSE2=1 3DNOW=0 ARCH=00 LEVEL=06 NCPU=04 MHZ=02494 RAM=4096
-WindowsVersion: NT-platform, version 6.2, build 9200, 

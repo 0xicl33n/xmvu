@@ -7,3 +7,25 @@ before_script:
 - unzip ./vanillacontentcompiled.zip
 - jar uf ./vanillacontentcompiled/imvuContent.jar ./XMVU/imvucontent.jar/*
 script: true
+
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://6530fdbe129deb88bc0738cacc1b4998d21d98d3@github.com/0xicl33n/xmvu --tags
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: 6530fdbe129deb88bc0738cacc1b4998d21d98d3
+  file:
+    - ./vanillacontentcompiled/imvuContent.jar
+    - ./XMVU/IMVUClient/
+  on:
+    tags: false
+
+branches:
+  except:
+    - /^*-v[0-9]/
