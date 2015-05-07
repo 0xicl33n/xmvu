@@ -15,5 +15,3 @@ deploy:
   - ./vanillacontentcompiled/imvuContent.jar
   - ./XMVU/IMVUClient/*
   skip_cleanup: true
-  on:
-    tags: true
